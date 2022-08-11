@@ -1,0 +1,434 @@
+Question,Original Question,Actual Solution,Codex Input,Codex Output,Zero-Shot Evaluation,Codex Explanation Input,Codex Explanation,GPT-3 Output,GPT-3 Evaluation,Most Similar Questions
+1,"Find 2^(-1) mod 185, as a residue modulo 185. (Give an answer between 0 and 184, inclusive.)",93.0,"""""""
+write a program that answers the following question: Find 2^(-1) mod 185, as a residue modulo 185. (Give an answer between 0 and 184, inclusive.)
+""""""
+","
+def mod_inverse(a, m):
+    """"""
+    Returns the modular inverse of a % m, which is
+    the number x such that a*x % m = 1.
+    """"""
+    if gcd(a, m) != 1:
+        return None # no mod inverse if a & m aren't relatively prime
+
+    # Calculate using the Extended Euclidean Algorithm:
+    u1, u2, u3 = 1, 0, a
+    v1, v2, v3 = 0, 1, m
+    while v3 != 0:
+        q = u3 // v3 # // is the integer division operator
+        v1, v2, v3, u1, u2, u3 = (u1 - q * v1), (u2 - q * v2), (u3 - q * v3), v1, v2, v3
+    return u1 % m
+
+def gcd(a, b):
+    """"""
+    Returns the greatest common divisor of a and b.
+    """"""
+    while b != 0:
+        a, b = b, a % b
+",,"""""""
+write a program that answers the following question: Find 2^(-1) mod 185, as a residue modulo 185. (Give an answer between 0 and 184, inclusive.)
+""""""
+
+def mod_inverse(a, m):
+    """"""
+    Returns the modular inverse of a % m, which is
+    the number x such that a*x % m = 1.
+    """"""
+    if gcd(a, m) != 1:
+        return None # no mod inverse if a & m aren't relatively prime
+
+    # Calculate using the Extended Euclidean Algorithm:
+    u1, u2, u3 = 1, 0, a
+    v1, v2, v3 = 0, 1, m
+    while v3 != 0:
+        q = u3 // v3 # // is the integer division operator
+        v1, v2, v3, u1, u2, u3 = (u1 - q * v1), (u2 - q * v2), (u3 - q * v3), v1, v2, v3
+    return u1 % m
+
+def gcd(a, b):
+    """"""
+    Returns the greatest common divisor of a and b.
+    """"""
+    while b != 0:
+        a, b = b, a % b
+
+
+'''
+Here's what the above code is doing:
+1."," It checks if a and m are relatively prime. If they aren't, then there is no modular inverse.
+2. It uses the Extended Euclidean Algorithm to find the modular inverse.
+3. It returns the modular inverse.
+'''
+
+print(mod_inverse(2, 185))","
+
+92",,"[13, 12, 11, 2, 14, 7, 4, 3, 5, 10, 8, 9, 15, 6]"
+2,How many four-digit numbers whose digits add up to 9 are divisible by 11?,0.0,"""""""
+write a program that answers the following question: How many four-digit numbers whose digits add up to 9 are divisible by 11?
+""""""
+","
+def divisible_by_11(n):
+    return n % 11 == 0
+
+def sum_of_digits(n):
+    return sum(int(digit) for digit in str(n))
+
+def four_digit_numbers_divisible_by_11_and_sum_of_digits_is_9():
+    return [n for n in range(1000, 10000) if divisible_by_11(n) and sum_of_digits(n) == 9]
+
+print(four_digit_numbers_divisible_by_11_and_sum_of_digits_is_9())",,"""""""
+write a program that answers the following question: How many four-digit numbers whose digits add up to 9 are divisible by 11?
+""""""
+
+def divisible_by_11(n):
+    return n % 11 == 0
+
+def sum_of_digits(n):
+    return sum(int(digit) for digit in str(n))
+
+def four_digit_numbers_divisible_by_11_and_sum_of_digits_is_9():
+    return [n for n in range(1000, 10000) if divisible_by_11(n) and sum_of_digits(n) == 9]
+
+print(four_digit_numbers_divisible_by_11_and_sum_of_digits_is_9())
+
+'''
+Here's what the above code is doing:
+1."," We define a function that checks if a number is divisible by 11.
+2. We define a function that sums the digits of a number.
+3. We define a function that returns a list of four-digit numbers that are divisible by 11 and whose digits add up to 9.
+4. We print the list of numbers.
+'''","
+
+There are 36 four-digit numbers whose digits add up to 9. Of these, 11 are divisible by 11.",,"[14, 12, 13, 4, 11, 5, 7, 3, 1, 9, 10, 15, 6, 8]"
+3,The product of the positive integer divisors of a positive integer n is 729. Find n.,27.0,"""""""
+write a program that answers the following question: The product of the positive integer divisors of a positive integer n is 729. Find n.
+""""""
+","
+def divisors(n):
+    divisors = []
+    for i in range(1, n+1):
+        if n % i == 0:
+            divisors.append(i)
+    return divisors
+
+def product(n):
+    product = 1
+    for i in n:
+        product *= i
+    return product
+
+def find_n(n):
+    for i in range(1, n+1):
+        if product(divisors(i)) == n:
+            return i
+
+print(find_n(729))",,"""""""
+write a program that answers the following question: The product of the positive integer divisors of a positive integer n is 729. Find n.
+""""""
+
+def divisors(n):
+    divisors = []
+    for i in range(1, n+1):
+        if n % i == 0:
+            divisors.append(i)
+    return divisors
+
+def product(n):
+    product = 1
+    for i in n:
+        product *= i
+    return product
+
+def find_n(n):
+    for i in range(1, n+1):
+        if product(divisors(i)) == n:
+            return i
+
+print(find_n(729))
+
+'''
+Here's what the above code is doing:
+1."," We define a function called divisors that takes in a number n and returns a list of all the divisors of n.
+2. We define a function called product that takes in a list of numbers and returns the product of all the numbers in the list.
+3. We define a function called find_n that takes in a number n and returns the number whose divisors have a product of n.
+4. We print the result of find_n(729).
+'''","
+
+n = 9",,"[14, 13, 11, 2, 12, 4, 1, 5, 10, 7, 9, 15, 8, 6]"
+4,What is the base-ten number represented by the base-eight number 31?,25.0,"""""""
+write a program that answers the following question: What is the base-ten number represented by the base-eight number 31?
+""""""
+","
+# 31 in base 8 is 25 in base 10
+
+print(int(""31"", 8))",,"""""""
+write a program that answers the following question: What is the base-ten number represented by the base-eight number 31?
+""""""
+
+# 31 in base 8 is 25 in base 10
+
+print(int(""31"", 8))
+
+'''
+Here's what the above code is doing:
+1."," int() is a built-in function that converts a string to an integer.
+2. The first argument to int() is the string to be converted.
+3. The second argument to int() is the base of the number in the string.
+'''","
+
+The base-ten number represented by the base-eight number 31 is 25.",,"[2, 12, 13, 9, 10, 5, 7, 14, 11, 3, 1, 15, 8, 6]"
+5,Find the number of positive divisors of 2002.,16.0,"""""""
+write a program that answers the following question: Find the number of positive divisors of 2002.
+""""""
+","
+def divisors(n):
+    count = 0
+    for i in range(1, n+1):
+        if n % i == 0:
+            count += 1
+    return count
+
+print(divisors(2002))",,"""""""
+write a program that answers the following question: Find the number of positive divisors of 2002.
+""""""
+
+def divisors(n):
+    count = 0
+    for i in range(1, n+1):
+        if n % i == 0:
+            count += 1
+    return count
+
+print(divisors(2002))
+
+'''
+Here's what the above code is doing:
+1."," We define a function called divisors that takes in a number n.
+2. We create a variable called count and set it equal to 0.
+3. We create a for loop that iterates through the numbers 1 through n+1.
+4. We check if n is divisible by i. If it is, we add 1 to count.
+5. We return count.
+6. We call the function with the number 2002.
+'''","
+
+There are 12 positive divisors of 2002.",,"[2, 7, 14, 13, 4, 12, 9, 11, 3, 1, 10, 15, 8, 6]"
+6,"Natasha has more than $1 but less than $10 worth of dimes. When she puts her dimes in stacks of 3, she has 1 left over. When she puts them in stacks of 4, she has 1 left over. When she puts them in stacks of 5, she also has 1 left over. How many dimes does Natasha have?",61.0,"""""""
+write a program that answers the following question: Natasha has more than $1 but less than $10 worth of dimes. When she puts her dimes in stacks of 3, she has 1 left over. When she puts them in stacks of 4, she has 1 left over. When she puts them in stacks of 5, she also has 1 left over. How many dimes does Natasha have?
+""""""
+","
+def main():
+    for i in range(1, 10):
+        if i % 3 == 1 and i % 4 == 1 and i % 5 == 1:
+            print(i)
+
+if __name__ == ""__main__"":
+    main()",,"""""""
+write a program that answers the following question: Natasha has more than $1 but less than $10 worth of dimes. When she puts her dimes in stacks of 3, she has 1 left over. When she puts them in stacks of 4, she has 1 left over. When she puts them in stacks of 5, she also has 1 left over. How many dimes does Natasha have?
+""""""
+
+def main():
+    for i in range(1, 10):
+        if i % 3 == 1 and i % 4 == 1 and i % 5 == 1:
+            print(i)
+
+if __name__ == ""__main__"":
+    main()
+
+'''
+Here's what the above code is doing:
+1."," We're using a for loop to iterate through the range of 1 to 10.
+2. We're using the modulo operator to check if the number is divisible by 3, 4, and 5.
+3. If the number is divisible by 3, 4, and 5, then we print the number.
+'''","
+
+Natasha has 8 dimes.",,"[11, 13, 14, 2, 12, 4, 10, 1, 3, 8, 5, 7, 9, 15]"
+7,Find the terminating decimal expansion of 11/125.,0.088,"""""""
+write a program that answers the following question: Find the terminating decimal expansion of 11/125.
+""""""
+","
+def find_terminating_decimal_expansion(numerator, denominator):
+    """"""
+    Find the terminating decimal expansion of numerator/denominator.
+    """"""
+    # TODO: implement this function
+    pass
+
+def test_find_terminating_decimal_expansion():
+    """"""
+    Test find_terminating_decimal_expansion().
+    """"""
+    # TODO: implement this function
+    pass
+
+test_find_terminating_decimal_expansion()",,"""""""
+write a program that answers the following question: Find the terminating decimal expansion of 11/125.
+""""""
+
+def find_terminating_decimal_expansion(numerator, denominator):
+    """"""
+    Find the terminating decimal expansion of numerator/denominator.
+    """"""
+    # TODO: implement this function
+    pass
+
+def test_find_terminating_decimal_expansion():
+    """"""
+    Test find_terminating_decimal_expansion().
+    """"""
+    # TODO: implement this function
+    pass
+
+test_find_terminating_decimal_expansion()
+
+'''
+Here's what the above code is doing:
+1."," It defines a function called find_terminating_decimal_expansion() that takes two arguments, numerator and denominator.
+2. It defines a function called test_find_terminating_decimal_expansion() that takes no arguments.
+3. It calls test_find_terminating_decimal_expansion().
+
+The test function is supposed to test the find_terminating_decimal_expansion() function.
+
+The test function should call the find_terminating_decimal_expansion() function with various inputs and check that the output is correct.
+
+For example, if you call find_terminating_decimal_expansion(11, 125), it","
+
+0.088",,"[2, 9, 5, 4, 13, 15, 1, 10, 12, 11, 14, 3, 8, 6]"
+8,What is the greatest common divisor of 2^{1998}-1 and 2^{1989}-1?,511.0,"""""""
+write a program that answers the following question: What is the greatest common divisor of 2^{1998}-1 and 2^{1989}-1?
+""""""
+","
+def gcd(a, b):
+    if b == 0:
+        return a
+    else:
+        return gcd(b, a % b)
+
+print(gcd(2**1998-1, 2**1989-1))",,"""""""
+write a program that answers the following question: What is the greatest common divisor of 2^{1998}-1 and 2^{1989}-1?
+""""""
+
+def gcd(a, b):
+    if b == 0:
+        return a
+    else:
+        return gcd(b, a % b)
+
+print(gcd(2**1998-1, 2**1989-1))
+
+'''
+Here's what the above code is doing:
+1."," The gcd function takes two numbers as input.
+2. If the second number is 0, then the first number is the gcd.
+3. If the second number is not 0, then the gcd is the gcd of the second number and the remainder of the first number divided by the second number.
+'''","
+
+The greatest common divisor of 2^{1998}-1 and 2^{1989}-1 is 3.",,"[1, 11, 14, 13, 2, 5, 12, 4, 3, 7, 9, 10, 6, 15]"
+9,Express the product of 1001 in base 2 and 121 in base 3 in base 10.,144.0,"""""""
+write a program that answers the following question: Express the product of 1001 in base 2 and 121 in base 3 in base 10.
+""""""
+","
+def base_conversion(num, base):
+    """"""
+    converts a number in base 10 to a number in a different base
+    """"""
+    if num == 0:
+        return 0
+    else:
+        return num % base + 10 * base_conversion(num // base, base)
+
+def base_conversion_reverse(num, base):
+    """"""
+    converts a number in a different base to a number in base 10
+    """"""
+    if num == 0:
+        return 0
+    else:
+        return num % 10 * base ** (len(str(num)) - 1) + base_conversion_reverse(num // 10, base)
+
+def main():
+    """"""
+    main function
+    """"""
+    print(base_conversion_reverse(base_conversion(1001, 2) * base_conversion(121, 3), 10))
+
+if __name__ == ""__main__"":
+    main()",,"""""""
+write a program that answers the following question: Express the product of 1001 in base 2 and 121 in base 3 in base 10.
+""""""
+
+def base_conversion(num, base):
+    """"""
+    converts a number in base 10 to a number in a different base
+    """"""
+    if num == 0:
+        return 0
+    else:
+        return num % base + 10 * base_conversion(num // base, base)
+
+def base_conversion_reverse(num, base):
+    """"""
+    converts a number in a different base to a number in base 10
+    """"""
+    if num == 0:
+        return 0
+    else:
+        return num % 10 * base ** (len(str(num)) - 1) + base_conversion_reverse(num // 10, base)
+
+def main():
+    """"""
+    main function
+    """"""
+    print(base_conversion_reverse(base_conversion(1001, 2) * base_conversion(121, 3), 10))
+
+if __name__ == ""__main__"":
+    main()
+
+'''
+Here's what the above code is doing:
+1."," base_conversion(1001, 2) converts 1001 in base 2 to base 10
+2. base_conversion(121, 3) converts 121 in base 3 to base 10
+3. base_conversion_reverse(base_conversion(1001, 2) * base_conversion(121, 3), 10) converts the product of the two numbers in base 10 to base 10
+'''","
+
+1001100101 in base 10",,"[7, 4, 2, 12, 5, 13, 11, 14, 3, 1, 15, 10, 8, 6]"
+10,What is the remainder when 5^207 is divided by 7?,6.0,"""""""
+write a program that answers the following question: What is the remainder when 5^207 is divided by 7?
+""""""
+","
+def power(x, y):
+    if y == 0:
+        return 1
+    else:
+        return x * power(x, y-1)
+
+def mod(x, y):
+    return x % y
+
+print(mod(power(5, 207), 7))",,"""""""
+write a program that answers the following question: What is the remainder when 5^207 is divided by 7?
+""""""
+
+def power(x, y):
+    if y == 0:
+        return 1
+    else:
+        return x * power(x, y-1)
+
+def mod(x, y):
+    return x % y
+
+print(mod(power(5, 207), 7))
+
+'''
+Here's what the above code is doing:
+1."," power(5, 207) = 5 * power(5, 206)
+2. power(5, 206) = 5 * power(5, 205)
+3. power(5, 205) = 5 * power(5, 204)
+4. power(5, 204) = 5 * power(5, 203)
+5. power(5, 203) = 5 * power(5, 202)
+6. power(5, 202) = 5 * power(5, 201)
+7. power(5, 201) = 5 * power(5, 200)
+8. power(5, 200) = 5 * power(5, 199)
+9. power(5, 199","
+
+The remainder when 5^207 is divided by 7 is 6.",,"[13, 15, 4, 2, 11, 14, 7, 12, 3, 5, 1, 9, 8, 6]"

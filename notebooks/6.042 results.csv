@@ -1,0 +1,562 @@
+Question,Original Question,Actual Solution,Codex Input,Codex Output,Zero-Shot Evaluation,Codex Explanation Input,Codex Explanation,GPT-3 Output,GPT-3 Evaluation,Most Similar Questions
+1,"Find the multiplicative inverse of 17 modulo 72 in the range {0, 1, . . . , 71}.",17,"""""""
+write a program that answers the following question: Find the multiplicative inverse of 17 modulo 72 in the range {0, 1, . . . , 71}.
+""""""
+","
+def gcd(a, b):
+    while b != 0:
+        a, b = b, a % b
+    return a
+
+def multiplicative_inverse(a, b):
+    """"""
+    Returns a tuple (r, i, j) such that r = gcd(a, b) = ia + jb
+    """"""
+    # r = gcd(a,b) i = multiplicitive inverse of a mod b
+    #      or      j = multiplicitive inverse of b mod a
+    # Neg return values for i or j are made positive mod b or a respectively
+    # Iterateive Version is faster and uses much less stack space
+    x = 0
+    y = 1
+    lx = 1
+    ly = 0
+    oa = a  # Remember original a/b to remove
+    ob = b  # negative values from return results
+    while b != 0:
+        q = a // b
+        (a, b) = (b, a % b)
+        (x, lx) = ((lx - (q * x)), x)
+        (y, ly) =",,"""""""
+write a program that answers the following question: Find the multiplicative inverse of 17 modulo 72 in the range {0, 1, . . . , 71}.
+""""""
+
+def gcd(a, b):
+    while b != 0:
+        a, b = b, a % b
+    return a
+
+def multiplicative_inverse(a, b):
+    """"""
+    Returns a tuple (r, i, j) such that r = gcd(a, b) = ia + jb
+    """"""
+    # r = gcd(a,b) i = multiplicitive inverse of a mod b
+    #      or      j = multiplicitive inverse of b mod a
+    # Neg return values for i or j are made positive mod b or a respectively
+    # Iterateive Version is faster and uses much less stack space
+    x = 0
+    y = 1
+    lx = 1
+    ly = 0
+    oa = a  # Remember original a/b to remove
+    ob = b  # negative values from return results
+    while b != 0:
+        q = a // b
+        (a, b) = (b, a % b)
+        (x, lx) = ((lx - (q * x)), x)
+        (y, ly) =
+
+'''
+Here's what the above code is doing:
+1."," We start with a = 17 and b = 72.
+2. We divide 17 by 72 to get a quotient of 0 and a remainder of 17.
+3. We now have a = 72 and b = 17.
+4. We divide 72 by 17 to get a quotient of 4 and a remainder of 4.
+5. We now have a = 17 and b = 4.
+6. We divide 17 by 4 to get a quotient of 4 and a remainder of 1.
+7. We now have a = 4 and b = 1.
+8. We divide 4 by 1 to get a quotient of 4 and a remainder of 0.
+9. We now have a = 1 and b =","
+
+The multiplicative inverse of 17 modulo 72 is 41.",,"[25, 24, 2, 19, 22, 11, 10, 4, 9, 16, 8, 13, 20, 5, 6, 7, 14, 21, 15, 17, 3, 23, 18, 12]"
+2,"Find a number x ∈ {0, 1, . . . , 112} such that 11x ≡ 1 (mod 113).",72,"""""""
+write a program that answers the following question: Find a number x ∈ {0, 1, . . . , 112} such that 11x ≡ 1 (mod 113).
+""""""
+","
+def find_x(n):
+    for x in range(n):
+        if 11**x % n == 1:
+            return x
+
+print(find_x(113))",,"""""""
+write a program that answers the following question: Find a number x ∈ {0, 1, . . . , 112} such that 11x ≡ 1 (mod 113).
+""""""
+
+def find_x(n):
+    for x in range(n):
+        if 11**x % n == 1:
+            return x
+
+print(find_x(113))
+
+'''
+Here's what the above code is doing:
+1."," We define a function called find_x that takes in a number n.
+2. We create a for loop that iterates through all the numbers from 0 to n.
+3. We check if 11^x % n == 1. If it is, we return x.
+4. We call the function with 113 as the argument.
+'''","
+
+x = 102",,"[24, 1, 25, 22, 19, 8, 4, 11, 10, 16, 9, 13, 20, 6, 15, 5, 7, 14, 3, 21, 17, 23, 12, 18]"
+3,"Finalphobia is a rare disease in which the victim has the delusion that he or she is being subjected to an intense mathematical examination. A person selected uniformly at random has finalphobia with probability 1/100. A person with finalphobia has shaky hands with probability 9/10. A person without finalphobia has shaky hands with probability 1/20. What is the probablility that a person selected uniformly at random has finalphobia, given that he or she has shaky hands? ",18/117,"""""""
+write a program that answers the following question: Finalphobia is a rare disease in which the victim has the delusion that he or she is being subjected to an intense mathematical examination. A person selected uniformly at random has finalphobia with probability 1/100. A person with finalphobia has shaky hands with probability 9/10. A person without finalphobia has shaky hands with probability 1/20. What is the probablility that a person selected uniformly at random has finalphobia, given that he or she has shaky hands? 
+""""""
+","
+# P(A|B) = P(A and B) / P(B)
+# P(A and B) = P(A) * P(B|A)
+# P(B) = P(B|A) * P(A) + P(B|not A) * P(not A)
+
+# P(A|B) = P(A) * P(B|A) / (P(B|A) * P(A) + P(B|not A) * P(not A))
+
+# P(A) = 1/100
+# P(B|A) = 9/10
+# P(B|not A) = 1/20
+# P(not A) = 99/100
+
+# P(A|B) = 1/100 * 9/10 / (9/10 * 1/100 + 1/20 * 99/100)
+
+# P(A|B) = 9/100 / (9/1000 + 99/2000)
+
+# P(A|B) = 9/100 / (9/1000 + 99/2000)
+
+# P(A|",,"""""""
+write a program that answers the following question: Finalphobia is a rare disease in which the victim has the delusion that he or she is being subjected to an intense mathematical examination. A person selected uniformly at random has finalphobia with probability 1/100. A person with finalphobia has shaky hands with probability 9/10. A person without finalphobia has shaky hands with probability 1/20. What is the probablility that a person selected uniformly at random has finalphobia, given that he or she has shaky hands? 
+""""""
+
+# P(A|B) = P(A and B) / P(B)
+# P(A and B) = P(A) * P(B|A)
+# P(B) = P(B|A) * P(A) + P(B|not A) * P(not A)
+
+# P(A|B) = P(A) * P(B|A) / (P(B|A) * P(A) + P(B|not A) * P(not A))
+
+# P(A) = 1/100
+# P(B|A) = 9/10
+# P(B|not A) = 1/20
+# P(not A) = 99/100
+
+# P(A|B) = 1/100 * 9/10 / (9/10 * 1/100 + 1/20 * 99/100)
+
+# P(A|B) = 9/100 / (9/1000 + 99/2000)
+
+# P(A|B) = 9/100 / (9/1000 + 99/2000)
+
+# P(A|
+
+'''
+Here's what the above code is doing:
+1."," It's creating a list of all the possible outcomes.
+2. It's creating a list of all the possible outcomes that satisfy the condition.
+3. It's dividing the number of outcomes that satisfy the condition by the total number of outcomes.
+'''
+
+# P(A|B) = P(A and B) / P(B)
+# P(A and B) = P(A) * P(B|A)
+# P(B) = P(B|A) * P(A) + P(B|not A) * P(not A)
+
+# P(A|B) = P(A) * P(B|A) / (","
+
+The probability that a person selected uniformly at random has finalphobia, given that he or she has shaky hands, is 9/10.",,"[21, 15, 4, 22, 7, 9, 11, 6, 5, 10, 23, 8, 24, 17, 20, 19, 2, 16, 25, 18, 13, 12, 1, 14]"
+4,Suppose that you roll five 6-sided dice that are fair and mutually independent. What is the probability that all five dice show different values?,120/1296,"""""""
+write a program that answers the following question: Suppose that you roll five 6-sided dice that are fair and mutually independent. What is the probability that all five dice show different values?
+""""""
+","
+import random
+
+def roll_dice():
+    return random.randint(1,6)
+
+def roll_five_dice():
+    return [roll_dice() for i in range(5)]
+
+def check_dice(dice):
+    return len(set(dice)) == 5
+
+def simulate_dice(n):
+    return sum([check_dice(roll_five_dice()) for i in range(n)]) / n
+
+print(simulate_dice(100000))",,"""""""
+write a program that answers the following question: Suppose that you roll five 6-sided dice that are fair and mutually independent. What is the probability that all five dice show different values?
+""""""
+
+import random
+
+def roll_dice():
+    return random.randint(1,6)
+
+def roll_five_dice():
+    return [roll_dice() for i in range(5)]
+
+def check_dice(dice):
+    return len(set(dice)) == 5
+
+def simulate_dice(n):
+    return sum([check_dice(roll_five_dice()) for i in range(n)]) / n
+
+print(simulate_dice(100000))
+
+'''
+Here's what the above code is doing:
+1."," roll_dice() returns a random integer between 1 and 6
+2. roll_five_dice() returns a list of 5 random integers between 1 and 6
+3. check_dice() returns True if all 5 integers are different, False otherwise
+4. simulate_dice() rolls 5 dice n times and returns the fraction of times that all 5 dice are different
+'''","
+
+The probability that all five dice show different values is 1/6^5.",,"[8, 19, 22, 15, 11, 7, 10, 9, 25, 6, 17, 24, 16, 5, 2, 1, 21, 14, 13, 23, 20, 3, 12, 18]"
+5,MIT students sometimes delay laundry for a few days. Assume all random values described below are mutually independent. A busy student must complete 3 problem sets before doing laundry. Each problem set requires 1 day with probability 2/3 and 2 days with probability 1/3. Let B be the number of days a busy student delays laundry. What is Ex (B)?  ,4,"""""""
+write a program that answers the following question: MIT students sometimes delay laundry for a few days. Assume all random values described below are mutually independent. A busy student must complete 3 problem sets before doing laundry. Each problem set requires 1 day with probability 2/3 and 2 days with probability 1/3. Let B be the number of days a busy student delays laundry. What is Ex (B)?  
+""""""
+","
+import random
+
+def problem_set():
+    """"""
+    returns 1 with probability 2/3 and 2 with probability 1/3
+    """"""
+    return random.choice([1,2])
+
+def busy_student():
+    """"""
+    returns the number of days a busy student delays laundry
+    """"""
+    return sum([problem_set() for i in range(3)])
+
+def E_B(trials):
+    """"""
+    returns the expected value of B
+    """"""
+    return sum([busy_student() for i in range(trials)])/float(trials)
+
+print E_B(10000)",,"""""""
+write a program that answers the following question: MIT students sometimes delay laundry for a few days. Assume all random values described below are mutually independent. A busy student must complete 3 problem sets before doing laundry. Each problem set requires 1 day with probability 2/3 and 2 days with probability 1/3. Let B be the number of days a busy student delays laundry. What is Ex (B)?  
+""""""
+
+import random
+
+def problem_set():
+    """"""
+    returns 1 with probability 2/3 and 2 with probability 1/3
+    """"""
+    return random.choice([1,2])
+
+def busy_student():
+    """"""
+    returns the number of days a busy student delays laundry
+    """"""
+    return sum([problem_set() for i in range(3)])
+
+def E_B(trials):
+    """"""
+    returns the expected value of B
+    """"""
+    return sum([busy_student() for i in range(trials)])/float(trials)
+
+print E_B(10000)
+
+'''
+Here's what the above code is doing:
+1."," problem_set() returns 1 with probability 2/3 and 2 with probability 1/3
+2. busy_student() returns the number of days a busy student delays laundry
+3. E_B(trials) returns the expected value of B
+'''","
+
+Ex (B) = 3",,"[6, 7, 11, 9, 10, 22, 4, 17, 8, 21, 19, 12, 16, 13, 20, 23, 3, 25, 24, 1, 15, 2, 18, 14]"
+6,"MIT students sometimes delay laundry for a few days. Assume all random values described below are mutually independent. A relaxed student rolls a fair, 6-sided die in the morning. If he rolls a 1, then he does his laundry immediately (with zero days of delay). Otherwise, he delays for one day and repeats the experiment the following morning. Let R be the number of days a relaxed student delays laundry. What is Ex (R)? ",5,"""""""
+write a program that answers the following question: MIT students sometimes delay laundry for a few days. Assume all random values described below are mutually independent. A relaxed student rolls a fair, 6-sided die in the morning. If he rolls a 1, then he does his laundry immediately (with zero days of delay). Otherwise, he delays for one day and repeats the experiment the following morning. Let R be the number of days a relaxed student delays laundry. What is Ex (R)? 
+""""""
+","
+import random
+
+def roll_die():
+    return random.randint(1,6)
+
+def relaxed_student():
+    days = 0
+    while True:
+        roll = roll_die()
+        if roll == 1:
+            return days
+        else:
+            days += 1
+
+def main():
+    total_days = 0
+    for i in range(10000):
+        total_days += relaxed_student()
+    print(total_days/10000)
+
+if __name__ == ""__main__"":
+    main()",,"""""""
+write a program that answers the following question: MIT students sometimes delay laundry for a few days. Assume all random values described below are mutually independent. A relaxed student rolls a fair, 6-sided die in the morning. If he rolls a 1, then he does his laundry immediately (with zero days of delay). Otherwise, he delays for one day and repeats the experiment the following morning. Let R be the number of days a relaxed student delays laundry. What is Ex (R)? 
+""""""
+
+import random
+
+def roll_die():
+    return random.randint(1,6)
+
+def relaxed_student():
+    days = 0
+    while True:
+        roll = roll_die()
+        if roll == 1:
+            return days
+        else:
+            days += 1
+
+def main():
+    total_days = 0
+    for i in range(10000):
+        total_days += relaxed_student()
+    print(total_days/10000)
+
+if __name__ == ""__main__"":
+    main()
+
+'''
+Here's what the above code is doing:
+1."," We define a function that rolls a die.
+2. We define a function that simulates a relaxed student.
+3. We define a function that runs the simulation 10,000 times and prints the average number of days a relaxed student delays laundry.
+'''","
+
+Ex(R) = 1/6(0) + 5/6(1 + Ex(R))
+Ex(R) = 5/6(1 + Ex(R))
+Ex(R) = 5/6 + 5/6Ex(R)
+Ex(R) = 5/6 + 5/6Ex(R)
+Ex(R) = 1 + 5/6Ex(R)
+Ex(R) - Ex(R) = 1
+Ex(R)(1 - 5/6) = 1
+Ex(R) = 6/5",,"[7, 5, 9, 4, 11, 10, 22, 8, 17, 23, 19, 21, 12, 3, 20, 16, 1, 24, 25, 13, 2, 15, 18, 14]"
+7,"MIT students sometimes delay laundry for a few days. Assume all random values described below are mutually independent. Before doing laundry, an unlucky student must recover from illness for a number of days equal to the product of the numbers rolled on two fair, 6-sided dice. Let U be the expected number of days an unlucky student delays laundry. What is Ex (U)? ",49/4,"""""""
+write a program that answers the following question: MIT students sometimes delay laundry for a few days. Assume all random values described below are mutually independent. Before doing laundry, an unlucky student must recover from illness for a number of days equal to the product of the numbers rolled on two fair, 6-sided dice. Let U be the expected number of days an unlucky student delays laundry. What is Ex (U)? 
+""""""
+","
+import random
+
+def roll_dice():
+    return random.randint(1,6)
+
+def main():
+    num_trials = 100000
+    total_days = 0
+    for i in range(num_trials):
+        total_days += roll_dice() * roll_dice()
+    print(total_days/num_trials)
+
+if __name__ == ""__main__"":
+    main()",,"""""""
+write a program that answers the following question: MIT students sometimes delay laundry for a few days. Assume all random values described below are mutually independent. Before doing laundry, an unlucky student must recover from illness for a number of days equal to the product of the numbers rolled on two fair, 6-sided dice. Let U be the expected number of days an unlucky student delays laundry. What is Ex (U)? 
+""""""
+
+import random
+
+def roll_dice():
+    return random.randint(1,6)
+
+def main():
+    num_trials = 100000
+    total_days = 0
+    for i in range(num_trials):
+        total_days += roll_dice() * roll_dice()
+    print(total_days/num_trials)
+
+if __name__ == ""__main__"":
+    main()
+
+'''
+Here's what the above code is doing:
+1."," We define a function roll_dice() that returns a random integer between 1 and 6.
+2. We define a function main() that runs the simulation.
+3. We run the simulation num_trials times.
+4. For each trial, we roll the dice twice and multiply the results.
+5. We add the result of each trial to the total_days variable.
+6. We divide the total_days by the number of trials to get the expected value.
+'''","
+
+Ex(U) = 2.5",,"[6, 5, 4, 11, 9, 10, 22, 17, 8, 21, 12, 23, 19, 3, 20, 15, 25, 1, 24, 16, 13, 2, 18, 14]"
+8,"I have twelve cards: 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6. I shuffle them and deal them in a row. What is the expected number of adjacent pairs with the same value?",1,"""""""
+write a program that answers the following question: I have twelve cards: 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6. I shuffle them and deal them in a row. What is the expected number of adjacent pairs with the same value?
+""""""
+","
+import random
+
+def shuffle_cards():
+    cards = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6]
+    random.shuffle(cards)
+    return cards
+
+def count_pairs(cards):
+    pairs = 0
+    for i in range(len(cards) - 1):
+        if cards[i] == cards[i + 1]:
+            pairs += 1
+    return pairs
+
+def main():
+    trials = 100000
+    total_pairs = 0
+    for i in range(trials):
+        cards = shuffle_cards()
+        total_pairs += count_pairs(cards)
+    print(total_pairs / trials)
+
+if __name__ == '__main__':
+    main()",,"""""""
+write a program that answers the following question: I have twelve cards: 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6. I shuffle them and deal them in a row. What is the expected number of adjacent pairs with the same value?
+""""""
+
+import random
+
+def shuffle_cards():
+    cards = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6]
+    random.shuffle(cards)
+    return cards
+
+def count_pairs(cards):
+    pairs = 0
+    for i in range(len(cards) - 1):
+        if cards[i] == cards[i + 1]:
+            pairs += 1
+    return pairs
+
+def main():
+    trials = 100000
+    total_pairs = 0
+    for i in range(trials):
+        cards = shuffle_cards()
+        total_pairs += count_pairs(cards)
+    print(total_pairs / trials)
+
+if __name__ == '__main__':
+    main()
+
+'''
+Here's what the above code is doing:
+1."," We define a function shuffle_cards() that returns a list of cards in a random order.
+2. We define a function count_pairs() that takes a list of cards and returns the number of adjacent pairs with the same value.
+3. We define a function main() that runs the simulation.
+4. We run the simulation.
+'''","
+
+There are six possible pairs that can be formed: 1-1, 2-2, 3-3, 4-4, 5-5, 6-6. Each pair is equally likely to be formed, so the expected number of adjacent pairs with the same value is 6/12 = 1/2.",,"[4, 19, 22, 15, 9, 11, 25, 10, 16, 2, 13, 24, 12, 7, 6, 1, 5, 14, 20, 21, 17, 3, 23, 18]"
+9,"Scores for a final exam are given by picking an integer uniformly at random from the set {50, 51, . . . , 97, 98}. The scores of all 128 students in the class are assigned in this manner. Let S1, . . . , S128 be their scores. For i ∈ {1, . . . , 128}, what is E[Si] ? ",74,"""""""
+write a program that answers the following question: Scores for a final exam are given by picking an integer uniformly at random from the set {50, 51, . . . , 97, 98}. The scores of all 128 students in the class are assigned in this manner. Let S1, . . . , S128 be their scores. For i ∈ {1, . . . , 128}, what is E[Si] ? 
+""""""
+","
+import random
+
+def main():
+    scores = []
+    for i in range(128):
+        scores.append(random.randint(50,98))
+    print(scores)
+    print(sum(scores)/len(scores))
+
+if __name__ == ""__main__"":
+    main()",,"""""""
+write a program that answers the following question: Scores for a final exam are given by picking an integer uniformly at random from the set {50, 51, . . . , 97, 98}. The scores of all 128 students in the class are assigned in this manner. Let S1, . . . , S128 be their scores. For i ∈ {1, . . . , 128}, what is E[Si] ? 
+""""""
+
+import random
+
+def main():
+    scores = []
+    for i in range(128):
+        scores.append(random.randint(50,98))
+    print(scores)
+    print(sum(scores)/len(scores))
+
+if __name__ == ""__main__"":
+    main()
+
+'''
+Here's what the above code is doing:
+1."," It creates an empty list called scores.
+2. It then loops through 128 times, and each time it appends a random integer between 50 and 98 to the list.
+3. It then prints the list of scores.
+4. It then prints the sum of the scores divided by the length of the list.
+'''","
+
+E[Si] = 74",,"[10, 11, 22, 5, 6, 4, 7, 8, 19, 24, 16, 25, 1, 13, 17, 20, 2, 21, 12, 3, 23, 15, 18, 14]"
+10,"Scores for a final exam are given by picking an integer uniformly at random from the set {50, 51, . . . , 97, 98}. The scores of all 128 students in the class are assigned independently in this manner. Let S1, . . . , S128 be their scores. Find Var(Si).",200,"""""""
+write a program that answers the following question: Scores for a final exam are given by picking an integer uniformly at random from the set {50, 51, . . . , 97, 98}. The scores of all 128 students in the class are assigned independently in this manner. Let S1, . . . , S128 be their scores. Find Var(Si).
+""""""
+","
+import random
+
+def get_score():
+    return random.randint(50, 98)
+
+def get_scores(n):
+    scores = []
+    for i in range(n):
+        scores.append(get_score())
+    return scores
+
+def get_mean(scores):
+    return sum(scores) / len(scores)
+
+def get_variance(scores):
+    mean = get_mean(scores)
+    return sum([(score - mean)**2 for score in scores]) / len(scores)
+
+def get_std_dev(scores):
+    return get_variance(scores)**0.5
+
+def get_covariance(scores1, scores2):
+    mean1 = get_mean(scores1)
+    mean2 = get_mean(scores2)
+    return sum([(score1 - mean1) * (score2 - mean2) for score1, score2 in zip(scores1, scores2)]) / len(scores1)
+
+def get_correlation(scores1,",,"""""""
+write a program that answers the following question: Scores for a final exam are given by picking an integer uniformly at random from the set {50, 51, . . . , 97, 98}. The scores of all 128 students in the class are assigned independently in this manner. Let S1, . . . , S128 be their scores. Find Var(Si).
+""""""
+
+import random
+
+def get_score():
+    return random.randint(50, 98)
+
+def get_scores(n):
+    scores = []
+    for i in range(n):
+        scores.append(get_score())
+    return scores
+
+def get_mean(scores):
+    return sum(scores) / len(scores)
+
+def get_variance(scores):
+    mean = get_mean(scores)
+    return sum([(score - mean)**2 for score in scores]) / len(scores)
+
+def get_std_dev(scores):
+    return get_variance(scores)**0.5
+
+def get_covariance(scores1, scores2):
+    mean1 = get_mean(scores1)
+    mean2 = get_mean(scores2)
+    return sum([(score1 - mean1) * (score2 - mean2) for score1, score2 in zip(scores1, scores2)]) / len(scores1)
+
+def get_correlation(scores1,
+
+'''
+Here's what the above code is doing:
+1."," get_score() returns a random score from the set {50, 51, . . . , 97, 98}
+2. get_scores(n) returns a list of n scores
+3. get_mean(scores) returns the mean of the scores
+4. get_variance(scores) returns the variance of the scores
+5. get_std_dev(scores) returns the standard deviation of the scores
+6. get_covariance(scores1, scores2) returns the covariance of scores1 and scores2
+7. get_correlation(scores1, scores2) returns the correlation of scores1 and scores2
+'''
+
+def","
+
+The variance of Si is given by Var(Si) = E(Si2) - (E(Si))2. We have
+
+E(Si2) = E((Si - E(Si))2 + (E(Si))2) = E((Si - E(Si))2) + (E(Si))2
+
+= Var(Si) + (E(Si))2.
+
+Therefore, Var(Si) = E(Si2) - (E(Si))2 = E(Si2) - (E(Si))2.",,"[11, 9, 22, 4, 19, 8, 5, 7, 6, 24, 25, 1, 16, 2, 13, 17, 20, 12, 21, 3, 15, 23, 14, 18]"

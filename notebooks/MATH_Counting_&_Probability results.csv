@@ -1,0 +1,452 @@
+Question,Original Question,Actual Solution,Codex Input,Codex Output,Zero-Shot Evaluation,Codex Explanation Input,Codex Explanation,GPT-3 Output,GPT-3 Evaluation,Most Similar Questions
+1,"What is the value of 9^3 + 3(9^2) + 3(9) + 1?
+",1000.0,"""""""
+write a program that answers the following question: What is the value of 9^3 + 3(9^2) + 3(9) + 1?
+
+""""""
+","
+print(9**3 + 3*(9**2) + 3*9 + 1)",,"""""""
+write a program that answers the following question: What is the value of 9^3 + 3(9^2) + 3(9) + 1?
+
+""""""
+
+print(9**3 + 3*(9**2) + 3*9 + 1)
+
+'''
+Here's what the above code is doing:
+1."," 9**3 is 9 to the power of 3, which is 9*9*9, or 729.
+2. 3*(9**2) is 3*(9*9), or 3*81, or 243.
+3. 3*9 is 3*9, or 27.
+4. 1 is 1.
+5. 729 + 243 + 27 + 1 is 1000.
+'''","
+The value of 9^3 + 3(9^2) + 3(9) + 1 is 729.",,"[6, 10, 9, 4, 12, 2, 11, 14, 8, 5, 7, 15, 3, 13]"
+2,"A standard six-sided fair die is rolled four times. The probability that the product of all four numbers rolled is a perfect square is m/n, where m and n are relatively prime positive integers. Find m+n.",187.0,"""""""
+write a program that answers the following question: A standard six-sided fair die is rolled four times. The probability that the product of all four numbers rolled is a perfect square is m/n, where m and n are relatively prime positive integers. Find m+n.
+""""""
+","
+from math import sqrt
+
+def is_square(n):
+    return int(sqrt(n))**2 == n
+
+def main():
+    count = 0
+    for i in range(1,7):
+        for j in range(1,7):
+            for k in range(1,7):
+                for l in range(1,7):
+                    if is_square(i*j*k*l):
+                        count += 1
+    print(count)
+
+if __name__ == ""__main__"":
+    main()",,"""""""
+write a program that answers the following question: A standard six-sided fair die is rolled four times. The probability that the product of all four numbers rolled is a perfect square is m/n, where m and n are relatively prime positive integers. Find m+n.
+""""""
+
+from math import sqrt
+
+def is_square(n):
+    return int(sqrt(n))**2 == n
+
+def main():
+    count = 0
+    for i in range(1,7):
+        for j in range(1,7):
+            for k in range(1,7):
+                for l in range(1,7):
+                    if is_square(i*j*k*l):
+                        count += 1
+    print(count)
+
+if __name__ == ""__main__"":
+    main()
+
+'''
+Here's what the above code is doing:
+1."," We define a function is_square that takes in a number and returns True if the number is a perfect square and False otherwise.
+2. We define a function main that counts the number of times the product of four rolls of a die is a perfect square.
+3. We call the main function.
+'''","
+
+m+n=21",,"[9, 4, 6, 1, 10, 5, 12, 3, 13, 15, 7, 8, 14, 11]"
+3,"The Rotokas of Papua New Guinea have twelve letters in their alphabet. The letters are: A, E, G, I, K, O, P, R, S, T, U, and V. Suppose license plates of five letters utilize only the letters in the Rotoka alphabet. How many license plates of five letters are possible that begin with either G or K, end with T, cannot contain S, and have no letters that repeat?",1008.0,"""""""
+write a program that answers the following question: The Rotokas of Papua New Guinea have twelve letters in their alphabet. The letters are: A, E, G, I, K, O, P, R, S, T, U, and V. Suppose license plates of five letters utilize only the letters in the Rotoka alphabet. How many license plates of five letters are possible that begin with either G or K, end with T, cannot contain S, and have no letters that repeat?
+""""""
+","
+import itertools
+
+def rotokas_license_plates():
+    letters = ['A', 'E', 'G', 'I', 'K', 'O', 'P', 'R', 'S', 'T', 'U', 'V']
+    plates = itertools.permutations(letters, 5)
+    plates = [''.join(plate) for plate in plates]
+    plates = [plate for plate in plates if plate[0] in ['G', 'K'] and plate[-1] == 'T' and 'S' not in plate]
+    plates = [plate for plate in plates if len(set(plate)) == 5]
+    return len(plates)
+
+print(rotokas_license_plates())",,"""""""
+write a program that answers the following question: The Rotokas of Papua New Guinea have twelve letters in their alphabet. The letters are: A, E, G, I, K, O, P, R, S, T, U, and V. Suppose license plates of five letters utilize only the letters in the Rotoka alphabet. How many license plates of five letters are possible that begin with either G or K, end with T, cannot contain S, and have no letters that repeat?
+""""""
+
+import itertools
+
+def rotokas_license_plates():
+    letters = ['A', 'E', 'G', 'I', 'K', 'O', 'P', 'R', 'S', 'T', 'U', 'V']
+    plates = itertools.permutations(letters, 5)
+    plates = [''.join(plate) for plate in plates]
+    plates = [plate for plate in plates if plate[0] in ['G', 'K'] and plate[-1] == 'T' and 'S' not in plate]
+    plates = [plate for plate in plates if len(set(plate)) == 5]
+    return len(plates)
+
+print(rotokas_license_plates())
+
+'''
+Here's what the above code is doing:
+1."," Create a list of all the letters in the Rotokas alphabet.
+2. Create a list of all possible permutations of 5 letters from the Rotokas alphabet.
+3. Convert the list of tuples into a list of strings.
+4. Filter the list of strings to only include those that begin with G or K and end with T.
+5. Filter the list of strings to only include those that do not contain S.
+6. Filter the list of strings to only include those that do not have any repeated letters.
+7. Return the length of the list.
+'''","
+
+There are 60 possible license plates of five letters that begin with either G or K, end with T, cannot contain S, and have no letters that repeat.",,"[4, 6, 10, 2, 13, 9, 5, 15, 12, 1, 7, 11, 14, 8]"
+4,How many positive two-digit integers are there in which each of the two digits is prime?,16.0,"""""""
+write a program that answers the following question: How many positive two-digit integers are there in which each of the two digits is prime?
+""""""
+","
+def is_prime(n):
+    if n == 2:
+        return True
+    if n % 2 == 0:
+        return False
+    for i in range(3, int(n**0.5)+1, 2):
+        if n % i == 0:
+            return False
+    return True
+
+def main():
+    count = 0
+    for i in range(10, 100):
+        if is_prime(i//10) and is_prime(i%10):
+            count += 1
+    print(count)
+
+if __name__ == ""__main__"":
+    main()",,"""""""
+write a program that answers the following question: How many positive two-digit integers are there in which each of the two digits is prime?
+""""""
+
+def is_prime(n):
+    if n == 2:
+        return True
+    if n % 2 == 0:
+        return False
+    for i in range(3, int(n**0.5)+1, 2):
+        if n % i == 0:
+            return False
+    return True
+
+def main():
+    count = 0
+    for i in range(10, 100):
+        if is_prime(i//10) and is_prime(i%10):
+            count += 1
+    print(count)
+
+if __name__ == ""__main__"":
+    main()
+
+'''
+Here's what the above code is doing:
+1."," We define a function is_prime(n) that returns True if n is prime, and False otherwise.
+2. We define a function main() that counts the number of positive two-digit integers in which each of the two digits is prime.
+3. We call main()
+'''","
+
+There are 21 positive two-digit integers in which each of the two digits is prime.",,"[6, 10, 12, 2, 9, 1, 5, 3, 7, 15, 13, 11, 14, 8]"
+5,Write a program. Compute 17 choose 9. You are told that 15 choose 6 = 5005 and 15 choose 8 = 6435.,24310.0,"""""""
+write a program that answers the following question: Write a program. Compute 17 choose 9. You are told that 15 choose 6 = 5005 and 15 choose 8 = 6435.
+""""""
+","
+def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n-1)
+
+def choose(n, k):
+    return factorial(n) / (factorial(k) * factorial(n-k))
+
+print(choose(17, 9))",,"""""""
+write a program that answers the following question: Write a program. Compute 17 choose 9. You are told that 15 choose 6 = 5005 and 15 choose 8 = 6435.
+""""""
+
+def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n-1)
+
+def choose(n, k):
+    return factorial(n) / (factorial(k) * factorial(n-k))
+
+print(choose(17, 9))
+
+'''
+Here's what the above code is doing:
+1."," It's calling the choose function with the arguments 17 and 9.
+2. The choose function calls the factorial function with the argument 17.
+3. The factorial function calls itself with the argument 16.
+4. The factorial function calls itself with the argument 15.
+5. The factorial function calls itself with the argument 14.
+6. The factorial function calls itself with the argument 13.
+7. The factorial function calls itself with the argument 12.
+8. The factorial function calls itself with the argument 11.
+9. The factorial function calls itself with the argument 10.
+10. The factorial function calls itself with the argument 9.
+11. The factorial function calls","
+
+5005",,"[9, 4, 6, 10, 2, 11, 12, 1, 15, 14, 8, 7, 13, 3]"
+6,How many four-digit positive integers have at least one digit that is a 2 or a 3?,5416.0,"""""""
+write a program that answers the following question: How many four-digit positive integers have at least one digit that is a 2 or a 3?
+""""""
+","
+def main():
+    count = 0
+    for i in range(1000, 10000):
+        if '2' in str(i) or '3' in str(i):
+            count += 1
+    print(count)
+
+if __name__ == '__main__':
+    main()",,"""""""
+write a program that answers the following question: How many four-digit positive integers have at least one digit that is a 2 or a 3?
+""""""
+
+def main():
+    count = 0
+    for i in range(1000, 10000):
+        if '2' in str(i) or '3' in str(i):
+            count += 1
+    print(count)
+
+if __name__ == '__main__':
+    main()
+
+'''
+Here's what the above code is doing:
+1."," We create a variable called count and set it to 0. This will be used to keep track of the number of four-digit positive integers that have at least one digit that is a 2 or a 3.
+2. We create a for loop that iterates over the range of 1000 to 10000.
+3. We check if the string '2' is in the string representation of the current number. If it is, we add 1 to count.
+4. We check if the string '3' is in the string representation of the current number. If it is, we add 1 to count.
+5. We print the value of count.
+'''","
+
+There are 24 four-digit positive integers with at least one digit that is a 2 or a 3.",,"[4, 10, 9, 1, 12, 2, 5, 15, 3, 7, 13, 8, 14, 11]"
+7,In how many ways can George choose two out of seven colors to paint his room?,21.0,"""""""
+write a program that answers the following question: In how many ways can George choose two out of seven colors to paint his room?
+""""""
+","
+import itertools
+
+colors = ['red', 'blue', 'green', 'yellow', 'orange', 'purple', 'black']
+
+print(len(list(itertools.combinations(colors, 2))))",,"""""""
+write a program that answers the following question: In how many ways can George choose two out of seven colors to paint his room?
+""""""
+
+import itertools
+
+colors = ['red', 'blue', 'green', 'yellow', 'orange', 'purple', 'black']
+
+print(len(list(itertools.combinations(colors, 2))))
+
+'''
+Here's what the above code is doing:
+1."," itertools.combinations(colors, 2) returns a generator object that contains all possible combinations of two colors.
+2. list() converts the generator object into a list.
+3. len() returns the length of the list.
+'''","
+
+There are 21 ways to choose two out of seven colors to paint George's room.",,"[4, 6, 10, 15, 12, 13, 5, 9, 2, 1, 3, 14, 8, 11]"
+8,Compute \dbinom{8}{4}.,70.0,"""""""
+write a program that answers the following question: Compute \dbinom{8}{4}.
+""""""
+","
+def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n-1)
+
+def binomial(n, k):
+    return factorial(n) / (factorial(k) * factorial(n-k))
+
+print(binomial(8, 4))",,"""""""
+write a program that answers the following question: Compute \dbinom{8}{4}.
+""""""
+
+def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n-1)
+
+def binomial(n, k):
+    return factorial(n) / (factorial(k) * factorial(n-k))
+
+print(binomial(8, 4))
+
+'''
+Here's what the above code is doing:
+1."," We define a function called factorial that takes in a number n and returns the factorial of n.
+2. We define a function called binomial that takes in two numbers n and k and returns the binomial coefficient of n and k.
+3. We print the binomial coefficient of 8 and 4.
+'''","
+
+\dbinom{8}{4} = \frac{8!}{4!(8-4)!} = \frac{8!}{4!4!} = \frac{8 \cdot 7 \cdot 6 \cdot 5}{4 \cdot 3 \cdot 2 \cdot 1} = \frac{1680}{24} = 70",,"[14, 11, 9, 1, 12, 5, 6, 10, 2, 4, 15, 7, 13, 3]"
+9,Find the sum of all integers k such that \binom{23}{4} + \binom{23}{5} = \binom{24}{k}.,24.0,"""""""
+write a program that answers the following question: Find the sum of all integers k such that \binom{23}{4} + \binom{23}{5} = \binom{24}{k}.
+""""""
+","
+def binomial(n, k):
+    """"""
+    A fast way to calculate binomial coefficients by Andrew Dalke (contrib).
+    """"""
+    if 0 <= k <= n:
+        ntok = 1
+        ktok = 1
+        for t in range(1, min(k, n - k) + 1):
+            ntok *= n
+            ktok *= t
+            n -= 1
+        return ntok // ktok
+    else:
+        return 0
+
+def main():
+    """"""
+    Main function.
+    """"""
+    sum_ = 0
+    for k in range(5, 25):
+        if binomial(23, 4) + binomial(23, 5) == binomial(24, k):
+            sum_ += k
+    print(sum_)
+
+if __name__ == ""__main__"":
+    main()",,"""""""
+write a program that answers the following question: Find the sum of all integers k such that \binom{23}{4} + \binom{23}{5} = \binom{24}{k}.
+""""""
+
+def binomial(n, k):
+    """"""
+    A fast way to calculate binomial coefficients by Andrew Dalke (contrib).
+    """"""
+    if 0 <= k <= n:
+        ntok = 1
+        ktok = 1
+        for t in range(1, min(k, n - k) + 1):
+            ntok *= n
+            ktok *= t
+            n -= 1
+        return ntok // ktok
+    else:
+        return 0
+
+def main():
+    """"""
+    Main function.
+    """"""
+    sum_ = 0
+    for k in range(5, 25):
+        if binomial(23, 4) + binomial(23, 5) == binomial(24, k):
+            sum_ += k
+    print(sum_)
+
+if __name__ == ""__main__"":
+    main()
+
+'''
+Here's what the above code is doing:
+1."," We define a function that calculates the binomial coefficient.
+2. We define a function that calculates the sum of all integers k such that \binom{23}{4} + \binom{23}{5} = \binom{24}{k}.
+3. We call the main function.
+'''","
+
+The sum of all integers k such that \binom{23}{4} + \binom{23}{5} = \binom{24}{k} is 24.",,"[2, 6, 4, 12, 5, 1, 10, 8, 14, 11, 3, 15, 13, 7]"
+10,How many odd numbers between 100 and 999 have distinct digits?,320.0,"""""""
+write a program that answers the following question: How many odd numbers between 100 and 999 have distinct digits?
+""""""
+","
+def distinct_digits(n):
+    """"""
+    >>> distinct_digits(121)
+    False
+    >>> distinct_digits(123)
+    True
+    """"""
+    n = str(n)
+    for i in range(len(n)):
+        for j in range(i+1, len(n)):
+            if n[i] == n[j]:
+                return False
+    return True
+
+def count_odd_distinct_digits():
+    """"""
+    >>> count_odd_distinct_digits()
+    300
+    """"""
+    count = 0
+    for i in range(100, 1000):
+        if i % 2 == 1 and distinct_digits(i):
+            count += 1
+    return count
+
+if __name__ == ""__main__"":
+    import doctest
+    doctest.testmod()",,"""""""
+write a program that answers the following question: How many odd numbers between 100 and 999 have distinct digits?
+""""""
+
+def distinct_digits(n):
+    """"""
+    >>> distinct_digits(121)
+    False
+    >>> distinct_digits(123)
+    True
+    """"""
+    n = str(n)
+    for i in range(len(n)):
+        for j in range(i+1, len(n)):
+            if n[i] == n[j]:
+                return False
+    return True
+
+def count_odd_distinct_digits():
+    """"""
+    >>> count_odd_distinct_digits()
+    300
+    """"""
+    count = 0
+    for i in range(100, 1000):
+        if i % 2 == 1 and distinct_digits(i):
+            count += 1
+    return count
+
+if __name__ == ""__main__"":
+    import doctest
+    doctest.testmod()
+
+'''
+Here's what the above code is doing:
+1."," The first function, distinct_digits, takes a number and returns True if all the digits in the number are distinct.
+2. The second function, count_odd_distinct_digits, counts the number of odd numbers between 100 and 999 that have distinct digits.
+3. The doctest module is used to test the functions.
+'''","
+
+There are 72 odd numbers between 100 and 999 with distinct digits.",,"[6, 4, 1, 12, 9, 2, 5, 7, 3, 15, 13, 14, 11, 8]"

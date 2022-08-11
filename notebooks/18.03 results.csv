@@ -1,0 +1,578 @@
+Question,Original Question,Actual Solution,Codex Input,Codex Output,Zero-Shot Evaluation,Codex Explanation Input,Codex Explanation,GPT-3 Output,GPT-3 Evaluation,Most Similar Questions
+1,Find a function y = f(x) satisfying the given differential equation and the prescribed initial condition. dy/dx=2x+1;y(0)=3,data/images/18.03-q1-codex-output-plot.png,"""""""
+write a program that answers the following question: Find a function y = f(x) satisfying the given differential equation and the prescribed initial condition. dy/dx=2x+1;y(0)=3
+""""""
+","
+import numpy as np
+import matplotlib.pyplot as plt
+
+def f(x):
+    return x**2 + x + 3
+
+x = np.linspace(0, 10, 100)
+y = f(x)
+
+plt.plot(x, y)
+plt.show()",,"""""""
+write a program that answers the following question: Find a function y = f(x) satisfying the given differential equation and the prescribed initial condition. dy/dx=2x+1;y(0)=3
+""""""
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+def f(x):
+    return x**2 + x + 3
+
+x = np.linspace(0, 10, 100)
+y = f(x)
+
+plt.plot(x, y)
+plt.show()
+
+'''
+Here's what the above code is doing:
+1."," We import the numpy and matplotlib.pyplot modules.
+2. We define a function f(x) = x^2 + x + 3.
+3. We create an array of 100 evenly spaced points between 0 and 10.
+4. We create an array of 100 y-values using the function f(x).
+5. We plot the points (x, y).
+6. We show the plot.
+'''","
+
+y = f(x) = 3x^2 + x + 3",,"[7, 6, 8, 3, 18, 2, 12, 24, 14, 20, 5, 25, 22, 17, 19, 13, 4, 9, 11, 10, 23, 21, 15, 16]"
+2,"Find general solutions (implicit if necessary, explicit if convenient) of the differential equations. Primes denote derivatives with respect to x. dy/dx+2xy=0",y(x) = C * exp(-x^2),"""""""
+write a program that answers the following question: Find general solutions (implicit if necessary, explicit if convenient) of the differential equations. Primes denote derivatives with respect to x. dy/dx+2xy=0
+""""""
+","
+import sympy as sp
+
+x = sp.Symbol('x')
+y = sp.Function('y')
+
+eq = sp.Eq(y(x).diff(x) + 2*x*y(x), 0)
+
+print(sp.dsolve(eq))",,"""""""
+write a program that answers the following question: Find general solutions (implicit if necessary, explicit if convenient) of the differential equations. Primes denote derivatives with respect to x. dy/dx+2xy=0
+""""""
+
+import sympy as sp
+
+x = sp.Symbol('x')
+y = sp.Function('y')
+
+eq = sp.Eq(y(x).diff(x) + 2*x*y(x), 0)
+
+print(sp.dsolve(eq))
+
+'''
+Here's what the above code is doing:
+1."," We import the sympy module.
+2. We create a symbol x and a function y.
+3. We create an equation object eq by calling the Eq function.
+4. We call the dsolve function to solve the equation.
+'''","
+
+y=-x^2/2",,"[3, 1, 6, 25, 5, 7, 18, 17, 22, 8, 24, 4, 14, 12, 19, 13, 20, 10, 11, 9, 23, 15, 21, 16]"
+3,"Find general solutions of the differential equations. If an initial condition is given, find the corresponding particular solution. Throughout, primes denote derivatives with respect to x. y' + y = 2, y(0) = 0",y(x) = 2(1-e^-x),"""""""
+write a program that answers the following question: Find general solutions of the differential equations. If an initial condition is given, find the corresponding particular solution. Throughout, primes denote derivatives with respect to x. y' + y = 2, y(0) = 0
+""""""
+","
+import sympy as sp
+
+x = sp.Symbol('x')
+y = sp.Function('y')
+
+# y' + y = 2
+# y' = 2 - y
+# y' = 2 - y
+# y' = 2 - y
+# y' = 2 - y
+# y' = 2 - y
+# y' = 2 - y
+# y' = 2 - y
+# y' = 2 - y
+# y' = 2 - y
+# y' = 2 - y
+# y' = 2 - y
+# y' = 2 - y
+# y' = 2 - y
+# y' = 2 - y
+# y' = 2 - y
+# y' = 2 - y
+# y' = 2 - y
+# y' = 2 - y
+# y' = 2 - y
+# y' = 2 - y
+# y' = 2 - y
+# y' = 2 - y
+# y' = 2 - y
+# y' = 2 - y
+# y' = 2 - y
+# y' = 2 - y
+# y' = 2 - y
+# y'",,"""""""
+write a program that answers the following question: Find general solutions of the differential equations. If an initial condition is given, find the corresponding particular solution. Throughout, primes denote derivatives with respect to x. y' + y = 2, y(0) = 0
+""""""
+
+import sympy as sp
+
+x = sp.Symbol('x')
+y = sp.Function('y')
+
+# y' + y = 2
+# y' = 2 - y
+# y' = 2 - y
+# y' = 2 - y
+# y' = 2 - y
+# y' = 2 - y
+# y' = 2 - y
+# y' = 2 - y
+# y' = 2 - y
+# y' = 2 - y
+# y' = 2 - y
+# y' = 2 - y
+# y' = 2 - y
+# y' = 2 - y
+# y' = 2 - y
+# y' = 2 - y
+# y' = 2 - y
+# y' = 2 - y
+# y' = 2 - y
+# y' = 2 - y
+# y' = 2 - y
+# y' = 2 - y
+# y' = 2 - y
+# y' = 2 - y
+# y' = 2 - y
+# y' = 2 - y
+# y' = 2 - y
+# y' = 2 - y
+# y'
+
+'''
+Here's what the above code is doing:
+1."," We're defining the variable x as a symbol.
+2. We're defining the function y as a function of x.
+3. We're defining the differential equation y' + y = 2.
+4. We're solving the differential equation.
+5. We're defining the initial condition y(0) = 0.
+6. We're solving the initial condition.
+'''","
+
+y = 2x + C
+
+y = 2x",,"[2, 5, 1, 25, 6, 7, 4, 17, 13, 8, 14, 22, 24, 18, 19, 12, 20, 10, 15, 11, 23, 9, 21, 16]"
+4,"Separate variables and use partial fractions to solve the initial value problems. Use either the exact solution or a computer-generated slope field to sketch the graphs of several solutions of the given differential equation, and highlight the indicated particular solution. f'(x)=3*f(x)(5-f(x)), f(0)=8",x(t) = 40/(8-3e^-15t),"""""""
+write a program that answers the following question: Separate variables and use partial fractions to solve the initial value problems. Use either the exact solution or a computer-generated slope field to sketch the graphs of several solutions of the given differential equation, and highlight the indicated particular solution. f'(x)=3*f(x)(5-f(x)), f(0)=8
+""""""
+","
+import numpy as np
+import matplotlib.pyplot as plt
+
+def f(x,y):
+    return 3*y*(5-y)
+
+def exact(x):
+    return 5/(1+np.exp(-3*x+np.log(5/8)))
+
+def slope_field(x,y,f):
+    dx=0.1
+    dy=0.1
+    y,x=np.meshgrid(y,x)
+    u=1
+    v=f(x,y)
+    N=np.sqrt(u**2+v**2)
+    u2,v2=u/N,v/N
+    plt.quiver(x[::3,::3],y[::3,::3],u2[::3,::3],v2[::3,::3],scale=10)
+
+x=np.linspace(0,10,100)
+y=np.linspace(0,10,100)
+slope_field(x,y,f)
+plt.plot(x,exact",,"""""""
+write a program that answers the following question: Separate variables and use partial fractions to solve the initial value problems. Use either the exact solution or a computer-generated slope field to sketch the graphs of several solutions of the given differential equation, and highlight the indicated particular solution. f'(x)=3*f(x)(5-f(x)), f(0)=8
+""""""
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+def f(x,y):
+    return 3*y*(5-y)
+
+def exact(x):
+    return 5/(1+np.exp(-3*x+np.log(5/8)))
+
+def slope_field(x,y,f):
+    dx=0.1
+    dy=0.1
+    y,x=np.meshgrid(y,x)
+    u=1
+    v=f(x,y)
+    N=np.sqrt(u**2+v**2)
+    u2,v2=u/N,v/N
+    plt.quiver(x[::3,::3],y[::3,::3],u2[::3,::3],v2[::3,::3],scale=10)
+
+x=np.linspace(0,10,100)
+y=np.linspace(0,10,100)
+slope_field(x,y,f)
+plt.plot(x,exact
+
+'''
+Here's what the above code is doing:
+1."," Define the function f(x,y)
+2. Define the exact solution
+3. Define the slope field
+4. Define the x and y values
+5. Plot the slope field
+6. Plot the exact solution
+'''
+
+plt.show()","
+
+f'(x)=3*f(x)(5-f(x)), f(0)=8
+
+f(x)=8
+
+The particular solution is f(x)=8.",,"[7, 17, 3, 12, 1, 5, 25, 19, 22, 13, 2, 20, 6, 14, 15, 10, 8, 18, 24, 9, 11, 23, 16, 21]"
+5,"A homogeneous second-order linear differential equation, two functions y1 and y2, and a pair of initial conditions are given. First verify that y1 and y2 are solutions of the differential equation. Then find a particular solution of the form y=c1*y1+c2*y2 that satisfies the given initial conditions. Primes denote derivatives with respect to x. y''+4y=0; y1=cos2x, y2=sin2x; y(0)=3,  y'(0)=8",y(x) = 3 cos2x + 4 sin 2x ,"""""""
+write a program that answers the following question: A homogeneous second-order linear differential equation, two functions y1 and y2, and a pair of initial conditions are given. First verify that y1 and y2 are solutions of the differential equation. Then find a particular solution of the form y=c1*y1+c2*y2 that satisfies the given initial conditions. Primes denote derivatives with respect to x. y''+4y=0; y1=cos2x, y2=sin2x; y(0)=3,  y'(0)=8
+""""""
+","
+import sympy as sp
+
+x = sp.Symbol('x')
+y1 = sp.cos(2*x)
+y2 = sp.sin(2*x)
+
+y1_prime = sp.diff(y1, x)
+y2_prime = sp.diff(y2, x)
+
+y1_prime_prime = sp.diff(y1_prime, x)
+y2_prime_prime = sp.diff(y2_prime, x)
+
+print(y1_prime_prime + 4*y1)
+print(y2_prime_prime + 4*y2)
+
+c1 = sp.Symbol('c1')
+c2 = sp.Symbol('c2')
+
+y = c1*y1 + c2*y2
+
+y_prime = sp.diff(y, x)
+
+print(y.subs(x, 0))
+print(y_prime.subs(x, 0))",,"""""""
+write a program that answers the following question: A homogeneous second-order linear differential equation, two functions y1 and y2, and a pair of initial conditions are given. First verify that y1 and y2 are solutions of the differential equation. Then find a particular solution of the form y=c1*y1+c2*y2 that satisfies the given initial conditions. Primes denote derivatives with respect to x. y''+4y=0; y1=cos2x, y2=sin2x; y(0)=3,  y'(0)=8
+""""""
+
+import sympy as sp
+
+x = sp.Symbol('x')
+y1 = sp.cos(2*x)
+y2 = sp.sin(2*x)
+
+y1_prime = sp.diff(y1, x)
+y2_prime = sp.diff(y2, x)
+
+y1_prime_prime = sp.diff(y1_prime, x)
+y2_prime_prime = sp.diff(y2_prime, x)
+
+print(y1_prime_prime + 4*y1)
+print(y2_prime_prime + 4*y2)
+
+c1 = sp.Symbol('c1')
+c2 = sp.Symbol('c2')
+
+y = c1*y1 + c2*y2
+
+y_prime = sp.diff(y, x)
+
+print(y.subs(x, 0))
+print(y_prime.subs(x, 0))
+
+'''
+Here's what the above code is doing:
+1."," Define x as a symbol
+2. Define y1 and y2 as functions of x
+3. Take the first and second derivatives of y1 and y2
+4. Verify that y1 and y2 are solutions of the differential equation
+5. Define c1 and c2 as symbols
+6. Define y as a function of x, c1, and c2
+7. Take the first derivative of y
+8. Substitute x=0 into y and y'
+'''","
+
+y1 and y2 are solutions of the differential equation.
+
+A particular solution of the form y=c1*y1+c2*y2 that satisfies the given initial conditions is y=3*cos2x+8*sin2x.",,"[3, 13, 1, 25, 2, 6, 4, 7, 19, 17, 8, 14, 20, 15, 12, 10, 24, 22, 18, 16, 11, 23, 9, 21]"
+6,The problem pertains to the solution of differential equations with complex coefficients. Find a general solution of y'' − 2iy' + 3y = 0.,y(x) = c_1 * e ^{-ix} + c_2 * e^{3ix},"""""""
+write a program that answers the following question: The problem pertains to the solution of differential equations with complex coefficients. Find a general solution of y'' − 2iy' + 3y = 0.
+""""""
+","
+import numpy as np
+import matplotlib.pyplot as plt
+
+def f(x, y):
+    return np.array([y[1], -2j*y[1] + 3*y[0]])
+
+def rk4(f, x0, y0, x1, n):
+    vx = [0] * (n + 1)
+    vy = [0] * (n + 1)
+    h = (x1 - x0) / float(n)
+    vx[0] = x = x0
+    vy[0] = y = y0
+    for i in range(1, n + 1):
+        k1 = h * f(x, y)
+        k2 = h * f(x + 0.5 * h, y + 0.5 * k1)
+        k3 = h * f(x + 0.5 * h, y + 0.5 * k2)
+        k4 = h * f(x + h, y + k3)
+        vx[i] = x = x0 + i * h
+       ",,"""""""
+write a program that answers the following question: The problem pertains to the solution of differential equations with complex coefficients. Find a general solution of y'' − 2iy' + 3y = 0.
+""""""
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+def f(x, y):
+    return np.array([y[1], -2j*y[1] + 3*y[0]])
+
+def rk4(f, x0, y0, x1, n):
+    vx = [0] * (n + 1)
+    vy = [0] * (n + 1)
+    h = (x1 - x0) / float(n)
+    vx[0] = x = x0
+    vy[0] = y = y0
+    for i in range(1, n + 1):
+        k1 = h * f(x, y)
+        k2 = h * f(x + 0.5 * h, y + 0.5 * k1)
+        k3 = h * f(x + 0.5 * h, y + 0.5 * k2)
+        k4 = h * f(x + h, y + k3)
+        vx[i] = x = x0 + i * h
+       
+
+'''
+Here's what the above code is doing:
+1."," We define a function f(x, y) that returns the derivative of y.
+2. We define a function rk4(f, x0, y0, x1, n) that takes the function f, the initial x and y values, the final x value, and the number of steps n.
+3. We create two lists vx and vy to store the x and y values.
+4. We set the initial x and y values.
+5. We loop through the number of steps.
+6. We calculate the k1, k2, k3, and k4 values.
+7. We calculate the next x and y values.
+8. We append the new x","
+
+y = c_1e^{3t} + c_2e^{-it}",,"[1, 7, 3, 8, 24, 2, 22, 18, 5, 17, 14, 25, 12, 19, 13, 20, 4, 9, 10, 11, 23, 21, 15, 16]"
+7,Use the method of variation of parameters to find a particular solution of the given differential equation. f''(x) + 4*f(x) = cos(3*x),y_p(x) = -1/5 cos 3x,"""""""
+write a program that answers the following question: Use the method of variation of parameters to find a particular solution of the given differential equation. f''(x) + 4*f(x) = cos(3*x)
+""""""
+","
+import sympy as sp
+
+x = sp.Symbol('x')
+f = sp.Function('f')
+
+# f''(x) + 4*f(x) = cos(3*x)
+# f(x) = C1*sin(2*x) + C2*cos(2*x)
+# f'(x) = C1*2*cos(2*x) - C2*2*sin(2*x)
+# f''(x) = -4*C1*sin(2*x) - 4*C2*cos(2*x)
+
+# f''(x) + 4*f(x) = cos(3*x)
+# -4*C1*sin(2*x) - 4*C2*cos(2*x) + 4*C1*sin(2*x) + 4*C2*cos(2*x) = cos(3*x)
+# -4*C1*sin(2*x) + 4*C2*cos(2*x) = cos(3*x)
+
+# -4*",,"""""""
+write a program that answers the following question: Use the method of variation of parameters to find a particular solution of the given differential equation. f''(x) + 4*f(x) = cos(3*x)
+""""""
+
+import sympy as sp
+
+x = sp.Symbol('x')
+f = sp.Function('f')
+
+# f''(x) + 4*f(x) = cos(3*x)
+# f(x) = C1*sin(2*x) + C2*cos(2*x)
+# f'(x) = C1*2*cos(2*x) - C2*2*sin(2*x)
+# f''(x) = -4*C1*sin(2*x) - 4*C2*cos(2*x)
+
+# f''(x) + 4*f(x) = cos(3*x)
+# -4*C1*sin(2*x) - 4*C2*cos(2*x) + 4*C1*sin(2*x) + 4*C2*cos(2*x) = cos(3*x)
+# -4*C1*sin(2*x) + 4*C2*cos(2*x) = cos(3*x)
+
+# -4*
+
+'''
+Here's what the above code is doing:
+1."," We're defining the variable x as a symbol.
+2. We're defining the function f as a function of x.
+3. We're defining the differential equation f''(x) + 4*f(x) = cos(3*x).
+4. We're defining the general solution f(x) = C1*sin(2*x) + C2*cos(2*x).
+5. We're defining the first derivative f'(x) = C1*2*cos(2*x) - C2*2*sin(2*x).
+6. We're defining the second derivative f''(x) = -4*C1*sin(2*","
+
+f(x) = (1/4)*cos(3*x) - (1/16)*sin(3*x)",,"[1, 6, 22, 4, 3, 12, 8, 17, 2, 20, 14, 18, 25, 11, 9, 24, 23, 10, 5, 13, 19, 21, 15, 16]"
+8,Find a power series solution of the given differential equation y' = y,y(x) = c_0 e^x; p = +inf,"""""""
+write a program that answers the following question: Find a power series solution of the given differential equation y' = y
+""""""
+","
+import sympy as sp
+
+x = sp.Symbol('x')
+y = sp.Function('y')
+
+# y' = y
+# y' - y = 0
+
+# y = C*exp(x)
+# y = C*exp(x) + C*exp(x)
+# y = C*exp(x) + C*exp(x) + C*exp(x)
+# y = C*exp(x) + C*exp(x) + C*exp(x) + C*exp(x)
+# y = C*exp(x) + C*exp(x) + C*exp(x) + C*exp(x) + C*exp(x)
+# y = C*exp(x) + C*exp(x) + C*exp(x) + C*exp(x) + C*exp(x) + C*exp(x)
+# y = C*exp(x) + C*exp(x) + C*exp(x) + C*exp(x) + C*exp(x) + C*exp(x) + C*",,"""""""
+write a program that answers the following question: Find a power series solution of the given differential equation y' = y
+""""""
+
+import sympy as sp
+
+x = sp.Symbol('x')
+y = sp.Function('y')
+
+# y' = y
+# y' - y = 0
+
+# y = C*exp(x)
+# y = C*exp(x) + C*exp(x)
+# y = C*exp(x) + C*exp(x) + C*exp(x)
+# y = C*exp(x) + C*exp(x) + C*exp(x) + C*exp(x)
+# y = C*exp(x) + C*exp(x) + C*exp(x) + C*exp(x) + C*exp(x)
+# y = C*exp(x) + C*exp(x) + C*exp(x) + C*exp(x) + C*exp(x) + C*exp(x)
+# y = C*exp(x) + C*exp(x) + C*exp(x) + C*exp(x) + C*exp(x) + C*exp(x) + C*
+
+'''
+Here's what the above code is doing:
+1."," We are defining the variable x and the function y.
+2. We are defining the differential equation y' = y.
+3. We are defining the power series solution of the differential equation.
+'''
+
+# We can use the sympy.series() function to find the power series solution of the differential equation.
+
+# y = C*exp(x)
+# y = C*exp(x) + C*exp(x)
+# y = C*exp(x) + C*exp(x) + C*exp(x)
+# y = C*exp(x) + C*exp(x) + C*exp(x) + C*exp(x"," - x^2
+
+The power series solution is y = x^2/2 + x^4/24 + x^6/720 + ...",,"[24, 1, 6, 7, 11, 18, 9, 22, 23, 3, 21, 14, 12, 2, 5, 20, 17, 25, 13, 10, 19, 4, 15, 16]"
+9,Find the inverse Laplace transforms of the function 3/(s-4),3*e**(4t),"""""""
+write a program that answers the following question: Find the inverse Laplace transforms of the function 3/(s-4)
+""""""
+","
+from sympy import *
+s = Symbol('s')
+
+def inverse_laplace_transform(f, t, n=0):
+    return ilaplace(f, s, t, n)
+
+print(inverse_laplace_transform(3/(s-4), t))",,"""""""
+write a program that answers the following question: Find the inverse Laplace transforms of the function 3/(s-4)
+""""""
+
+from sympy import *
+s = Symbol('s')
+
+def inverse_laplace_transform(f, t, n=0):
+    return ilaplace(f, s, t, n)
+
+print(inverse_laplace_transform(3/(s-4), t))
+
+'''
+Here's what the above code is doing:
+1."," We import the sympy library
+2. We define the variable s as a symbol
+3. We define a function called inverse_laplace_transform that takes in 3 arguments: f, t, and n
+4. We return the inverse laplace transform of f with respect to s and t, and n
+5. We print the inverse laplace transform of 3/(s-4) with respect to t
+'''","
+
+The inverse Laplace transform of 3/(s-4) is 3e^(4t).",,"[21, 22, 11, 12, 23, 8, 24, 7, 18, 1, 6, 20, 14, 25, 3, 10, 2, 13, 17, 4, 19, 5, 15, 16]"
+10,"Suppose that m=1, k=9, c=0, and F(t)=6cos(3t). Use the inverse transform given in Eq. (16) to derive the solution x(t) = t sin(3t). Construct a figure that illustrates the resonance that occurs.",data/images/18.03-q10-codex-output-plot.png,"""""""
+write a program that answers the following question: Suppose that m=1, k=9, c=0, and F(t)=6cos(3t). Use the inverse transform given in Eq. (16) to derive the solution x(t) = t sin(3t). Construct a figure that illustrates the resonance that occurs.
+""""""
+","
+import numpy as np
+import matplotlib.pyplot as plt
+
+def x(t):
+    return t*np.sin(3*t)
+
+def F(t):
+    return 6*np.cos(3*t)
+
+def x_hat(w):
+    return (1/(m*w**2 - k + 1j*w*c))*F(w)
+
+def x_t(t):
+    return np.real(np.sum(x_hat(w)*np.exp(1j*w*t)))
+
+m = 1
+k = 9
+c = 0
+
+w = np.linspace(-10, 10, 1000)
+
+plt.plot(w, x_hat(w))
+plt.show()
+
+t = np.linspace(0, 10, 1000)
+
+plt.plot(t, x(t))
+plt.plot(t, x_t(t))
+plt.show()",,"""""""
+write a program that answers the following question: Suppose that m=1, k=9, c=0, and F(t)=6cos(3t). Use the inverse transform given in Eq. (16) to derive the solution x(t) = t sin(3t). Construct a figure that illustrates the resonance that occurs.
+""""""
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+def x(t):
+    return t*np.sin(3*t)
+
+def F(t):
+    return 6*np.cos(3*t)
+
+def x_hat(w):
+    return (1/(m*w**2 - k + 1j*w*c))*F(w)
+
+def x_t(t):
+    return np.real(np.sum(x_hat(w)*np.exp(1j*w*t)))
+
+m = 1
+k = 9
+c = 0
+
+w = np.linspace(-10, 10, 1000)
+
+plt.plot(w, x_hat(w))
+plt.show()
+
+t = np.linspace(0, 10, 1000)
+
+plt.plot(t, x(t))
+plt.plot(t, x_t(t))
+plt.show()
+
+'''
+Here's what the above code is doing:
+1."," Define the function x(t) = t sin(3t)
+2. Define the function F(t) = 6 cos(3t)
+3. Define the function x_hat(w) = (1/(mw^2 - k + iwc))*F(w)
+4. Define the function x_t(t) = sum(x_hat(w)*exp(iwt))
+5. Define the parameters m, k, and c
+6. Define the frequency range w
+7. Plot x_hat(w)
+8. Define the time range t
+9. Plot x(t) and x_t(t)","
+
+The inverse transform of F(t) is:
+
+x(t) = t sin(3t)",,"[7, 20, 12, 1, 19, 14, 6, 13, 4, 22, 17, 3, 5, 8, 25, 18, 11, 24, 9, 2, 23, 15, 21, 16]"

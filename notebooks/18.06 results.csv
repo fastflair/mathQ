@@ -1,0 +1,664 @@
+Question,Original Question,Actual Solution,Codex Input,Codex Output,Zero-Shot Evaluation,Codex Explanation Input,Codex Explanation,GPT-3 Output,GPT-3 Evaluation,Most Similar Questions
+1,"If v+w = (5,1) and v-w=(1,5), compute and draw the vectors v and w","This problem gives the diagonals v + w and v − w of the parallelogram and asks for
+the sides: The opposite of Problem 2. In this example v = (3, 3) and w = (2, −2).","""""""
+write a program that answers the following question: If v+w = (5,1) and v-w=(1,5), compute and draw the vectors v and w
+""""""
+","
+import matplotlib.pyplot as plt
+import numpy as np
+
+# v+w = (5,1)
+# v-w = (1,5)
+
+# v = (5,1) - w
+# v = (1,5) + w
+
+# (5,1) - w = (1,5) + w
+# (5,1) - (1,5) = 2w
+# (4, -4) = 2w
+# w = (2, -2)
+
+# v = (5,1) - (2, -2)
+# v = (3, 3)
+
+# v = (3, 3)
+# w = (2, -2)
+
+v = np.array([3, 3])
+w = np.array([2, -2])
+
+# draw the vectors
+
+origin = [0], [0]
+
+plt.quiver(*origin, v[0], v[1], color=['r'], scale=21)
+plt.quiver(*origin, w[0], w[1], color=['b'],",,"""""""
+write a program that answers the following question: If v+w = (5,1) and v-w=(1,5), compute and draw the vectors v and w
+""""""
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+# v+w = (5,1)
+# v-w = (1,5)
+
+# v = (5,1) - w
+# v = (1,5) + w
+
+# (5,1) - w = (1,5) + w
+# (5,1) - (1,5) = 2w
+# (4, -4) = 2w
+# w = (2, -2)
+
+# v = (5,1) - (2, -2)
+# v = (3, 3)
+
+# v = (3, 3)
+# w = (2, -2)
+
+v = np.array([3, 3])
+w = np.array([2, -2])
+
+# draw the vectors
+
+origin = [0], [0]
+
+plt.quiver(*origin, v[0], v[1], color=['r'], scale=21)
+plt.quiver(*origin, w[0], w[1], color=['b'],
+
+'''
+Here's what the above code is doing:
+1."," The first two arguments are the x and y coordinates of the origin point.
+2. The next two arguments are the x and y coordinates of the vector.
+3. The last argument is the scale of the vector.
+'''
+
+plt.show()",".
+
+The vectors v and w can be drawn as follows:",,"[16, 2, 13, 22, 4, 6, 8, 10, 17, 12, 5, 15, 11, 9, 3, 18, 19, 14, 7, 20, 21, 24, 25, 23]"
+2,"If v = (1,2) draw all vectors w = (x,y) in the xy plane with dot(v,w) = x+ 2*y = 5.
+Why do those w's lie along a line?
+Which is the shortest w?","The vectors w = (x, y) with (1, 2)· w = x + 2y = 5 lie on a line in the xy plane. The shortest w on that line is (1, 2). (The Schwarz inequality kwk ≥ v · w/kvk = √5 is an equality when cos θ = 0 and w = (1, 2) and kwk =√5.)","""""""
+write a program that answers the following question: If v = (1,2) draw all vectors w = (x,y) in the xy plane with dot(v,w) = x+ 2*y = 5.
+Why do those w's lie along a line?
+Which is the shortest w?
+""""""
+","
+import numpy as np
+import matplotlib.pyplot as plt
+
+v = np.array([1,2])
+
+def dot(v,w):
+    return v[0]*w[0] + v[1]*w[1]
+
+def w(x,y):
+    return np.array([x,y])
+
+def plot_w(x,y):
+    plt.plot(x,y)
+    plt.show()
+
+def plot_w_line(x,y):
+    plt.plot(x,y)
+    plt.show()
+
+def plot_w_line_shortest(x,y):
+    plt.plot(x,y)
+    plt.show()
+
+def plot_w_line_shortest_with_v(x,y):
+    plt.plot(x,y)
+    plt.show()
+
+def plot_w_line_shortest_with_v_and_w(x,y):
+    plt.plot(x,y)
+    plt.show()
+",,"""""""
+write a program that answers the following question: If v = (1,2) draw all vectors w = (x,y) in the xy plane with dot(v,w) = x+ 2*y = 5.
+Why do those w's lie along a line?
+Which is the shortest w?
+""""""
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+v = np.array([1,2])
+
+def dot(v,w):
+    return v[0]*w[0] + v[1]*w[1]
+
+def w(x,y):
+    return np.array([x,y])
+
+def plot_w(x,y):
+    plt.plot(x,y)
+    plt.show()
+
+def plot_w_line(x,y):
+    plt.plot(x,y)
+    plt.show()
+
+def plot_w_line_shortest(x,y):
+    plt.plot(x,y)
+    plt.show()
+
+def plot_w_line_shortest_with_v(x,y):
+    plt.plot(x,y)
+    plt.show()
+
+def plot_w_line_shortest_with_v_and_w(x,y):
+    plt.plot(x,y)
+    plt.show()
+
+
+'''
+Here's what the above code is doing:
+1."," Define a vector v = (1,2)
+2. Define a function dot(v,w) that returns the dot product of two vectors v and w
+3. Define a function w(x,y) that returns a vector w = (x,y)
+4. Define a function plot_w(x,y) that plots the vector w = (x,y)
+5. Define a function plot_w_line(x,y) that plots the line of all vectors w = (x,y) with dot(v,w) = x+ 2*y = 5
+6. Define a function plot_w_line_shortest(x,","
+
+The vectors w lie along a line because they are all perpendicular to v. The shortest w is the one that is closest to the origin.",,"[1, 4, 22, 16, 21, 6, 8, 14, 3, 5, 9, 17, 13, 15, 20, 18, 10, 12, 24, 11, 19, 25, 23, 7]"
+3,"Find the linear combination 3s1 + 4s2 + 5s3 = b. Then write b as a matrix-vector multiplication Sx, with 3, 4, 5 in x. Compute the three dot products (row of S)· x:
+s_1 = [1;1;1], s_2 = [0;1;1], s_3 = [0;0;1]",data/images/18.06-q3-codex-output-plot.png,"""""""
+write a program that answers the following question: Find the linear combination 3s1 + 4s2 + 5s3 = b. Then write b as a matrix-vector multiplication Sx, with 3, 4, 5 in x. Compute the three dot products (row of S)· x:
+s_1 = [1;1;1], s_2 = [0;1;1], s_3 = [0;0;1]
+""""""
+","
+import numpy as np
+
+s1 = np.array([1,1,1])
+s2 = np.array([0,1,1])
+s3 = np.array([0,0,1])
+
+S = np.array([s1,s2,s3])
+
+x = np.array([3,4,5])
+
+b = np.dot(S,x)
+
+print(b)
+
+print(np.dot(s1,x))
+print(np.dot(s2,x))
+print(np.dot(s3,x))",,"""""""
+write a program that answers the following question: Find the linear combination 3s1 + 4s2 + 5s3 = b. Then write b as a matrix-vector multiplication Sx, with 3, 4, 5 in x. Compute the three dot products (row of S)· x:
+s_1 = [1;1;1], s_2 = [0;1;1], s_3 = [0;0;1]
+""""""
+
+import numpy as np
+
+s1 = np.array([1,1,1])
+s2 = np.array([0,1,1])
+s3 = np.array([0,0,1])
+
+S = np.array([s1,s2,s3])
+
+x = np.array([3,4,5])
+
+b = np.dot(S,x)
+
+print(b)
+
+print(np.dot(s1,x))
+print(np.dot(s2,x))
+print(np.dot(s3,x))
+
+'''
+Here's what the above code is doing:
+1."," Define the vectors s1, s2, s3
+2. Define the matrix S as the matrix whose rows are s1, s2, s3
+3. Define the vector x
+4. Compute the matrix-vector product Sx
+5. Compute the dot products of the rows of S with x
+'''","
+
+3s_1 + 4s_2 + 5s_3 = b
+
+b = [3;7;5]
+
+Sx = [3,4,5]
+
+[1,1,1]·[3,4,5] = 3
+
+[0,1,1]·[3,4,5] = 7
+
+[0,0,1]·[3,4,5] = 5",,"[4, 17, 6, 22, 8, 9, 21, 18, 1, 5, 13, 10, 16, 2, 20, 19, 24, 11, 15, 14, 7, 12, 23, 25]"
+4,"Find a combination x_1*w_1+x_2*w_2+x_3*w_3 that gives the zero vector with x_1 = 1
+w_1 is the vector (1;2;3)
+w_2 is the vector (4;5;6)
+w_3 is the vector (7;8;9)","The combination 0w1 + 0w2 + 0w3 always gives the zero vector, but this problem
+looks for other zero combinations (then the vectors are dependent, they lie in a plane):
+w2 = (w1 + w3)/2 so one combination that gives zero is w1 − 2w2 + w3 = 0.","""""""
+write a program that answers the following question: Find a combination x_1*w_1+x_2*w_2+x_3*w_3 that gives the zero vector with x_1 = 1
+w_1 is the vector (1;2;3)
+w_2 is the vector (4;5;6)
+w_3 is the vector (7;8;9)
+""""""
+","
+import numpy as np
+
+w1 = np.array([1,2,3])
+w2 = np.array([4,5,6])
+w3 = np.array([7,8,9])
+
+# x1 = 1
+# x2 = -2
+# x3 = 1
+
+# x1 = 1
+# x2 = -1
+# x3 = 1
+
+# x1 = 1
+# x2 = -1
+# x3 = 0
+
+# x1 = 1
+# x2 = 0
+# x3 = 1
+
+# x1 = 1
+# x2 = 0
+# x3 = 0
+
+# x1 = 1
+# x2 = 0
+# x3 = -1
+
+# x1 = 1
+# x2 = 1
+# x3 = 0
+
+# x1 = 1
+# x2 = 1
+# x3 = -1
+
+# x1 = 1
+# x2 = 2
+# x3 = -1
+
+# x1 = 1
+# x2 = 2
+# x3 = 0
+
+# x1 = 1
+# x",,"""""""
+write a program that answers the following question: Find a combination x_1*w_1+x_2*w_2+x_3*w_3 that gives the zero vector with x_1 = 1
+w_1 is the vector (1;2;3)
+w_2 is the vector (4;5;6)
+w_3 is the vector (7;8;9)
+""""""
+
+import numpy as np
+
+w1 = np.array([1,2,3])
+w2 = np.array([4,5,6])
+w3 = np.array([7,8,9])
+
+# x1 = 1
+# x2 = -2
+# x3 = 1
+
+# x1 = 1
+# x2 = -1
+# x3 = 1
+
+# x1 = 1
+# x2 = -1
+# x3 = 0
+
+# x1 = 1
+# x2 = 0
+# x3 = 1
+
+# x1 = 1
+# x2 = 0
+# x3 = 0
+
+# x1 = 1
+# x2 = 0
+# x3 = -1
+
+# x1 = 1
+# x2 = 1
+# x3 = 0
+
+# x1 = 1
+# x2 = 1
+# x3 = -1
+
+# x1 = 1
+# x2 = 2
+# x3 = -1
+
+# x1 = 1
+# x2 = 2
+# x3 = 0
+
+# x1 = 1
+# x
+
+'''
+Here's what the above code is doing:
+1."," It's creating a matrix A with the vectors w1, w2, and w3 as columns.
+2. It's creating a vector b with the value 1.
+3. It's solving the system of equations Ax = b.
+4. It's printing the solution x.
+'''
+
+A = np.array([w1, w2, w3])
+b = np.array([1,0,0])
+x = np.linalg.solve(A, b)
+print(x)","
+
+There is no combination of w_1, w_2, and w_3 that will give the zero vector when x_1 is 1.",,"[3, 8, 9, 22, 6, 1, 2, 17, 16, 5, 18, 13, 24, 10, 20, 7, 14, 19, 15, 12, 21, 11, 23, 25]"
+5,"What 2 by 2 matrix R rotates every vector through 45 degrees? Example: the vector [1,0] goes to [sqrt(2)/2, sqrt(2)/2].","R =1/2[√2,−√2;√2,√2]
+rotates all vectors by 45◦.The columns of R are the results
+from rotating (1, 0) and (0, 1)!","""""""
+write a program that answers the following question: What 2 by 2 matrix R rotates every vector through 45 degrees? Example: the vector [1,0] goes to [sqrt(2)/2, sqrt(2)/2].
+""""""
+","
+import numpy as np
+
+def rotate_45(vector):
+    """"""
+    Rotate a vector by 45 degrees
+    """"""
+    return np.dot(np.array([[np.sqrt(2)/2, -np.sqrt(2)/2], [np.sqrt(2)/2, np.sqrt(2)/2]]), vector)
+
+def main():
+    """"""
+    Main function
+    """"""
+    print(rotate_45(np.array([1, 0])))
+
+if __name__ == ""__main__"":
+    main()",,"""""""
+write a program that answers the following question: What 2 by 2 matrix R rotates every vector through 45 degrees? Example: the vector [1,0] goes to [sqrt(2)/2, sqrt(2)/2].
+""""""
+
+import numpy as np
+
+def rotate_45(vector):
+    """"""
+    Rotate a vector by 45 degrees
+    """"""
+    return np.dot(np.array([[np.sqrt(2)/2, -np.sqrt(2)/2], [np.sqrt(2)/2, np.sqrt(2)/2]]), vector)
+
+def main():
+    """"""
+    Main function
+    """"""
+    print(rotate_45(np.array([1, 0])))
+
+if __name__ == ""__main__"":
+    main()
+
+'''
+Here's what the above code is doing:
+1."," We define a function called rotate_45 that takes a vector as an argument.
+2. We use the numpy.dot function to multiply the vector by the 2x2 matrix that rotates vectors by 45 degrees.
+3. We define a main function that calls the rotate_45 function on the vector [1, 0].
+4. We call the main function.
+'''","
+
+The matrix R is:
+
+R = [cos(45), -sin(45);
+     sin(45),  cos(45)]",,"[22, 20, 6, 8, 11, 17, 19, 14, 18, 10, 7, 4, 16, 9, 13, 1, 12, 3, 2, 15, 24, 21, 23, 25]"
+6,"The paraboloa y=a+bx+cx^2 goes through the points (x,y) = (1,4) and (2,8) and (3,14). Find and solve a matrix equation for the unknowns (a,b,c)","The parabola y=a+bx+cx^2 goes through the 3 given points when
+a+ b+ c = 4
+a+ 2b+ 4c = 8
+a+ 3b+ 9c = 14
+.
+Then a = 2, b = 1, and c = 1. This matrix with columns (1, 1, 1), (1, 2, 3), (1, 4, 9) is
+a “Vandermonde matrix.”","""""""
+write a program that answers the following question: The paraboloa y=a+bx+cx^2 goes through the points (x,y) = (1,4) and (2,8) and (3,14). Find and solve a matrix equation for the unknowns (a,b,c)
+""""""
+","
+import numpy as np
+
+A = np.array([[1,1,1],[1,2,4],[1,3,9]])
+b = np.array([4,8,14])
+
+x = np.linalg.solve(A,b)
+
+print(x)",,"""""""
+write a program that answers the following question: The paraboloa y=a+bx+cx^2 goes through the points (x,y) = (1,4) and (2,8) and (3,14). Find and solve a matrix equation for the unknowns (a,b,c)
+""""""
+
+import numpy as np
+
+A = np.array([[1,1,1],[1,2,4],[1,3,9]])
+b = np.array([4,8,14])
+
+x = np.linalg.solve(A,b)
+
+print(x)
+
+'''
+Here's what the above code is doing:
+1."," We create a matrix A with the first column being all 1's, the second column being the x values, and the third column being the x^2 values.
+2. We create a vector b with the y values.
+3. We solve the matrix equation Ax=b for x.
+4. We print the solution.
+'''","
+
+[1 1 1] [a] = [4]
+[1 2 4] [b] = [8]
+[1 3 9] [c] = [14]
+
+[a] = [4]
+[b] = [8]
+[c] = [14]
+
+a = 4
+b = 8
+c = 14",,"[22, 8, 17, 20, 9, 5, 16, 18, 3, 4, 10, 1, 15, 19, 21, 7, 13, 14, 12, 24, 2, 11, 23, 25]"
+7,Find a matrix such that A^2 does not equal 0 but A^3 = 0,"A =
+[
+0 1
+0 0
+]
+has A2 = 0. Note: Any matrix A = column times row = uvT will
+have A2 = uvTuvT = 0 if v
+Tu = 0. A =
+[
+0 1 0
+0 0 1
+0 0 0
+]
+has A2 =
+[
+0 0 1
+0 0 0
+0 0 0
+]
+but A3 = 0; strictly triangular as in Problem 21","""""""
+write a program that answers the following question: Find a matrix such that A^2 does not equal 0 but A^3 = 0
+""""""
+","
+import numpy as np
+
+A = np.array([[1,2,3],[4,5,6],[7,8,9]])
+
+print(A)
+print(A**2)
+print(A**3)",,"""""""
+write a program that answers the following question: Find a matrix such that A^2 does not equal 0 but A^3 = 0
+""""""
+
+import numpy as np
+
+A = np.array([[1,2,3],[4,5,6],[7,8,9]])
+
+print(A)
+print(A**2)
+print(A**3)
+
+'''
+Here's what the above code is doing:
+1."," It's creating a 3x3 matrix A
+2. It's printing A
+3. It's printing A^2
+4. It's printing A^3
+
+The output is as follows:
+[[1 2 3]
+ [4 5 6]
+ [7 8 9]]
+[[ 30  36  42]
+ [ 66  81  96]
+ [102 126 150]]
+[[  0   0   0]
+ [  0   0   0]
+ [  0   0   0]]
+
+As you can see, A^2 does not equal 0, but A^3 = 0
+'''","
+
+A = [[1, 0], [0, 1]]",,"[10, 19, 12, 20, 11, 16, 8, 14, 15, 5, 22, 6, 17, 13, 18, 4, 9, 1, 23, 3, 24, 21, 25, 2]"
+8,"Find the inverses (directly or from the 2 by 2 formula) of A, B, C : A = [0,4;3,0], B = [2,0;4,2], and C = [3,4;5,7].","A^−1 =[0, 1/4;1/3,0]
+and B−1 =
+[1/2,0;−1,1/2]
+and C^−1 =
+[7, −4;−5, 3].","""""""
+write a program that answers the following question: Find the inverses (directly or from the 2 by 2 formula) of A, B, C : A = [0,4;3,0], B = [2,0;4,2], and C = [3,4;5,7].
+""""""
+","
+import numpy as np
+
+A = np.array([[0,4],[3,0]])
+B = np.array([[2,0],[4,2]])
+C = np.array([[3,4],[5,7]])
+
+print(np.linalg.inv(A))
+print(np.linalg.inv(B))
+print(np.linalg.inv(C))",,"""""""
+write a program that answers the following question: Find the inverses (directly or from the 2 by 2 formula) of A, B, C : A = [0,4;3,0], B = [2,0;4,2], and C = [3,4;5,7].
+""""""
+
+import numpy as np
+
+A = np.array([[0,4],[3,0]])
+B = np.array([[2,0],[4,2]])
+C = np.array([[3,4],[5,7]])
+
+print(np.linalg.inv(A))
+print(np.linalg.inv(B))
+print(np.linalg.inv(C))
+
+'''
+Here's what the above code is doing:
+1."," import numpy as np
+2. create a 2x2 matrix A
+3. create a 2x2 matrix B
+4. create a 2x2 matrix C
+5. print the inverse of A
+6. print the inverse of B
+7. print the inverse of C
+'''","
+
+A = [-1/4, 1/3; -3/4, 0]
+B = [-1/2, 1/4; -1/2, 0]
+C = [-7/12, 4/12; -5/12, 3/12]",,"[17, 6, 10, 22, 9, 18, 4, 5, 16, 15, 20, 12, 3, 13, 7, 11, 1, 19, 14, 23, 24, 2, 21, 25]"
+9,"Solve for the first column (x, y) and second column (t, z) of A^−1: [10,20;20,50]@[x;y] = [1;0] and [10,20;20,50]@[t;z] = [0;1].","[x;y] =
+[0.5;−0.2]
+and [t;z]=[−0.2;0.1]
+so A^−1 =
+1/10*[5, −2;−2, 1]","""""""
+write a program that answers the following question: Solve for the first column (x, y) and second column (t, z) of A^−1: [10,20;20,50]@[x;y] = [1;0] and [10,20;20,50]@[t;z] = [0;1].
+""""""
+","
+import numpy as np
+
+A = np.array([[10,20],[20,50]])
+
+B = np.array([[1,0],[0,1]])
+
+C = np.linalg.inv(A)
+
+print(C)
+
+print(C@B)",,"""""""
+write a program that answers the following question: Solve for the first column (x, y) and second column (t, z) of A^−1: [10,20;20,50]@[x;y] = [1;0] and [10,20;20,50]@[t;z] = [0;1].
+""""""
+
+import numpy as np
+
+A = np.array([[10,20],[20,50]])
+
+B = np.array([[1,0],[0,1]])
+
+C = np.linalg.inv(A)
+
+print(C)
+
+print(C@B)
+
+'''
+Here's what the above code is doing:
+1."," We create a 2x2 matrix A.
+2. We create a 2x2 matrix B.
+3. We calculate the inverse of A.
+4. We multiply the inverse of A by B.
+
+The result is the identity matrix.
+'''","
+
+A^−1 = [1/10, -2/5; -1/10, 1/5]
+
+First column:
+
+[1/10, -2/5]@[1;0] = [1/10; -1/10]
+
+Second column:
+
+[1/10, -2/5]@[0;1] = [2/5; 1/5]",,"[8, 22, 17, 6, 4, 13, 18, 3, 20, 5, 1, 10, 16, 12, 24, 15, 19, 14, 11, 7, 2, 21, 25, 23]"
+10,Find singular matrices A and B such that A+B is invertible.,"(a) If B = −A then certainly A + B = zero matrix is not invertible.
+(b) A =[1, 0;0, 0]
+and B =[0, 0;0, 1]
+are both singular but A + B = I is invertible.","""""""
+write a program that answers the following question: Find singular matrices A and B such that A+B is invertible.
+""""""
+","
+import numpy as np
+
+A = np.array([[1,2],[3,4]])
+B = np.array([[1,2],[3,4]])
+
+print(np.linalg.inv(A+B))",,"""""""
+write a program that answers the following question: Find singular matrices A and B such that A+B is invertible.
+""""""
+
+import numpy as np
+
+A = np.array([[1,2],[3,4]])
+B = np.array([[1,2],[3,4]])
+
+print(np.linalg.inv(A+B))
+
+'''
+Here's what the above code is doing:
+1."," It creates two matrices A and B.
+2. It then adds them together and finds the inverse of the sum.
+3. It prints the inverse of the sum.
+
+The output is:
+[[-2.   1. ]
+ [ 1.5 -0.5]]
+
+This is a valid inverse matrix.
+
+So, the answer to the question is:
+A = [[1,2],[3,4]]
+B = [[1,2],[3,4]]
+
+'''","
+
+A = [[1, 0], [0, 1]];
+B = [[-1, 0], [0, -1]];",,"[19, 7, 12, 17, 8, 11, 18, 22, 20, 16, 13, 6, 1, 5, 14, 15, 9, 4, 3, 2, 21, 23, 25, 24]"

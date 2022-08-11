@@ -1,0 +1,672 @@
+Question,Original Question,Actual Solution,Codex Input,Codex Output,Zero-Shot Evaluation,Codex Explanation Input,Codex Explanation,GPT-3 Output,GPT-3 Evaluation,Most Similar Questions
+1,Calculate the probability of getting a three-of-a-kind poker hand.,0.021128,"""""""
+write a program that answers the following question: Calculate the probability of getting a three-of-a-kind poker hand.
+""""""
+","
+import random
+
+def poker_hand():
+    """"""
+    This function returns a random poker hand
+    """"""
+    hand = []
+    for i in range(5):
+        hand.append(random.randint(1,13))
+    return hand
+
+def three_of_a_kind(hand):
+    """"""
+    This function returns True if the hand is a three of a kind
+    """"""
+    for i in hand:
+        if hand.count(i) == 3:
+            return True
+    return False
+
+def main():
+    """"""
+    This function runs the program
+    """"""
+    count = 0
+    for i in range(10000):
+        if three_of_a_kind(poker_hand()):
+            count += 1
+    print(count/10000)
+
+main()",,"""""""
+write a program that answers the following question: Calculate the probability of getting a three-of-a-kind poker hand.
+""""""
+
+import random
+
+def poker_hand():
+    """"""
+    This function returns a random poker hand
+    """"""
+    hand = []
+    for i in range(5):
+        hand.append(random.randint(1,13))
+    return hand
+
+def three_of_a_kind(hand):
+    """"""
+    This function returns True if the hand is a three of a kind
+    """"""
+    for i in hand:
+        if hand.count(i) == 3:
+            return True
+    return False
+
+def main():
+    """"""
+    This function runs the program
+    """"""
+    count = 0
+    for i in range(10000):
+        if three_of_a_kind(poker_hand()):
+            count += 1
+    print(count/10000)
+
+main()
+
+'''
+Here's what the above code is doing:
+1."," It creates a function called poker_hand that returns a random poker hand
+2. It creates a function called three_of_a_kind that returns True if the hand is a three of a kind
+3. It creates a function called main that runs the program
+4. It runs the program 10000 times and counts the number of times that the hand is a three of a kind
+5. It prints the probability of getting a three of a kind
+'''","
+
+There are 13 possible values for a three-of-a-kind poker hand:
+
+2, 3, 4, 5, 6, 7, 8, 9, 10, Jack, Queen, King, Ace
+
+There are 4 suits, so there are 4 ways to choose 1 suit.
+
+There are 4*13 = 52 ways to choose 3 cards from a deck of 52 cards.
+
+There are C(52,3) = 52!/(3!*49!) = 2,598,960 ways to choose 3 cards from a deck of 52 cards.
+
+The probability of getting a three-of-a-kind poker hand is 4/52 = 1/13.",,"[25, 2, 3, 6, 8, 7, 21, 22, 5, 9, 24, 17, 18, 4, 19, 20, 12, 11, 15, 13, 14, 10, 23, 16]"
+2,In class we worked with non-transitive dice: Red: 3 3 3 3 3 6; Green: 1 4 4 4 4 4; White: 2 2 2 5 5 5. Find the probability that white beats green.,0.583333333,"""""""
+write a program that answers the following question: In class we worked with non-transitive dice: Red: 3 3 3 3 3 6; Green: 1 4 4 4 4 4; White: 2 2 2 5 5 5. Find the probability that white beats green.
+""""""
+","
+import random
+
+def roll(die):
+    return random.choice(die)
+
+def roll_dice(die1, die2):
+    return roll(die1), roll(die2)
+
+def roll_dice_many(die1, die2, n):
+    rolls = []
+    for i in range(n):
+        rolls.append(roll_dice(die1, die2))
+    return rolls
+
+def count_wins(die1, die2, n):
+    wins = 0
+    for i in range(n):
+        if roll_dice(die1, die2)[0] > roll_dice(die1, die2)[1]:
+            wins += 1
+    return wins
+
+def count_wins_many(die1, die2, n):
+    wins = 0
+    for i in range(n):
+        if roll_dice(die1, die2)[0] > roll_dice(die1, die2)[1]:
+            wins += 1
+    return wins
+
+def count_wins_many_many(die1, die",,"""""""
+write a program that answers the following question: In class we worked with non-transitive dice: Red: 3 3 3 3 3 6; Green: 1 4 4 4 4 4; White: 2 2 2 5 5 5. Find the probability that white beats green.
+""""""
+
+import random
+
+def roll(die):
+    return random.choice(die)
+
+def roll_dice(die1, die2):
+    return roll(die1), roll(die2)
+
+def roll_dice_many(die1, die2, n):
+    rolls = []
+    for i in range(n):
+        rolls.append(roll_dice(die1, die2))
+    return rolls
+
+def count_wins(die1, die2, n):
+    wins = 0
+    for i in range(n):
+        if roll_dice(die1, die2)[0] > roll_dice(die1, die2)[1]:
+            wins += 1
+    return wins
+
+def count_wins_many(die1, die2, n):
+    wins = 0
+    for i in range(n):
+        if roll_dice(die1, die2)[0] > roll_dice(die1, die2)[1]:
+            wins += 1
+    return wins
+
+def count_wins_many_many(die1, die
+
+'''
+Here's what the above code is doing:
+1."," roll_dice(die1, die2) is rolling two dice and returning the result as a tuple.
+2. roll_dice_many(die1, die2, n) is rolling two dice n times and returning the results as a list of tuples.
+3. count_wins(die1, die2, n) is rolling two dice n times and returning the number of times the first die wins.
+4. count_wins_many(die1, die2, n) is rolling two dice n times and returning the number of times the first die wins.
+5. count_wins_many_many(die1, die2, n) is rolling two","
+
+The probability that white beats green is 3/5.",,"[3, 6, 7, 8, 1, 17, 21, 18, 22, 25, 24, 19, 12, 5, 4, 20, 9, 15, 11, 10, 16, 13, 14, 23]"
+3,In class we worked with non-transitive dice: Red: 3 3 3 3 3 6; Green: 1 4 4 4 4 4; White: 2 2 2 5 5 5. Find the probability that green beats red.,0.694444444,"""""""
+write a program that answers the following question: In class we worked with non-transitive dice: Red: 3 3 3 3 3 6; Green: 1 4 4 4 4 4; White: 2 2 2 5 5 5. Find the probability that green beats red.
+""""""
+","
+import random
+
+def roll_die(die):
+    return random.choice(die)
+
+def roll_dice(die1, die2):
+    return roll_die(die1), roll_die(die2)
+
+def roll_dice_many(die1, die2, n):
+    rolls = []
+    for i in range(n):
+        rolls.append(roll_dice(die1, die2))
+    return rolls
+
+def count_wins(die1, die2, n):
+    wins = 0
+    for i in range(n):
+        if roll_dice(die1, die2)[0] > roll_dice(die1, die2)[1]:
+            wins += 1
+    return wins
+
+def count_wins_many(die1, die2, n):
+    wins = 0
+    for i in range(n):
+        if roll_dice(die1, die2)[0] > roll_dice(die1, die2)[1]:
+            wins += 1
+    return wins
+
+def count_wins_many_",,"""""""
+write a program that answers the following question: In class we worked with non-transitive dice: Red: 3 3 3 3 3 6; Green: 1 4 4 4 4 4; White: 2 2 2 5 5 5. Find the probability that green beats red.
+""""""
+
+import random
+
+def roll_die(die):
+    return random.choice(die)
+
+def roll_dice(die1, die2):
+    return roll_die(die1), roll_die(die2)
+
+def roll_dice_many(die1, die2, n):
+    rolls = []
+    for i in range(n):
+        rolls.append(roll_dice(die1, die2))
+    return rolls
+
+def count_wins(die1, die2, n):
+    wins = 0
+    for i in range(n):
+        if roll_dice(die1, die2)[0] > roll_dice(die1, die2)[1]:
+            wins += 1
+    return wins
+
+def count_wins_many(die1, die2, n):
+    wins = 0
+    for i in range(n):
+        if roll_dice(die1, die2)[0] > roll_dice(die1, die2)[1]:
+            wins += 1
+    return wins
+
+def count_wins_many_
+
+'''
+Here's what the above code is doing:
+1."," roll_die(die) returns a random value from the list die.
+2. roll_dice(die1, die2) returns a tuple of two random values, one from die1 and one from die2.
+3. roll_dice_many(die1, die2, n) returns a list of n tuples, each tuple containing two random values, one from die1 and one from die2.
+4. count_wins(die1, die2, n) returns the number of times die1 wins against die2 in n rolls.
+5. count_wins_many(die1, die2, n) returns a list of n numbers, each number representing","
+
+The probability that green beats red is 3/5.",,"[2, 6, 7, 8, 1, 17, 18, 22, 21, 25, 24, 19, 12, 4, 5, 9, 20, 15, 11, 10, 16, 13, 14, 23]"
+4,Mr. Jones has two children. The older child is a girl. What is the probability that both children are girls?,0.5,"""""""
+write a program that answers the following question: Mr. Jones has two children. The older child is a girl. What is the probability that both children are girls?
+""""""
+","
+# probability of having a girl is 1/2
+# probability of having a girl and a girl is 1/4
+
+print(1/4)",,"""""""
+write a program that answers the following question: Mr. Jones has two children. The older child is a girl. What is the probability that both children are girls?
+""""""
+
+# probability of having a girl is 1/2
+# probability of having a girl and a girl is 1/4
+
+print(1/4)
+
+'''
+Here's what the above code is doing:
+1."," The probability of having a girl is 1/2.
+2. The probability of having a girl and a girl is 1/4.
+'''","
+
+There is a 1/4 chance that both children are girls.",,"[5, 3, 2, 22, 17, 21, 18, 24, 8, 6, 1, 7, 25, 16, 15, 11, 19, 9, 12, 10, 20, 13, 14, 23]"
+5,Mr. Smith has two children. At least one of them is a boy. What is the probability that both children are boys?,0.333333333,"""""""
+write a program that answers the following question: Mr. Smith has two children. At least one of them is a boy. What is the probability that both children are boys?
+""""""
+","
+def boy_girl():
+    """"""
+    returns the probability that both children are boys
+    """"""
+    return 1/3
+
+print(boy_girl())",,"""""""
+write a program that answers the following question: Mr. Smith has two children. At least one of them is a boy. What is the probability that both children are boys?
+""""""
+
+def boy_girl():
+    """"""
+    returns the probability that both children are boys
+    """"""
+    return 1/3
+
+print(boy_girl())
+
+'''
+Here's what the above code is doing:
+1."," We have two children.
+2. At least one of them is a boy.
+3. We want to know the probability that both children are boys.
+
+We can solve this problem by using the following formula:
+
+P(A and B) = P(A) * P(B)
+
+In this case, we have two events:
+
+A: The first child is a boy.
+B: The second child is a boy.
+
+We know that the probability of A is 1/2.
+
+We also know that the probability of B is 1/2.
+
+So, the probability of A and B is 1/2 * 1/2 = 1/4.
+
+","
+
+There is a 50% chance that both children are boys.",,"[4, 22, 18, 3, 1, 2, 17, 25, 21, 24, 6, 8, 7, 11, 12, 19, 16, 15, 10, 20, 9, 14, 13, 23]"
+6,Let X be the result of rolling a fair 4-sided die. Let Y be the result of rolling a fair 6-sided die. Let Z be the average of X and Y. Find the standard deviation of X.,1.118,"""""""
+write a program that answers the following question: Let X be the result of rolling a fair 4-sided die. Let Y be the result of rolling a fair 6-sided die. Let Z be the average of X and Y. Find the standard deviation of X.
+""""""
+","
+import random
+import math
+
+def roll_die(sides):
+    return random.randint(1, sides)
+
+def roll_dice(sides, rolls):
+    results = []
+    for i in range(rolls):
+        results.append(roll_die(sides))
+    return results
+
+def mean(numbers):
+    return sum(numbers) / len(numbers)
+
+def variance(numbers):
+    avg = mean(numbers)
+    return sum([(x - avg) ** 2 for x in numbers]) / len(numbers)
+
+def standard_deviation(numbers):
+    return math.sqrt(variance(numbers))
+
+def main():
+    x = roll_dice(4, 100000)
+    y = roll_dice(6, 100000)
+    z = [mean([x[i], y[i]]) for i in range(len(x))]
+    print(standard_deviation(x))
+
+if __name__ == '__main__':
+    main()",,"""""""
+write a program that answers the following question: Let X be the result of rolling a fair 4-sided die. Let Y be the result of rolling a fair 6-sided die. Let Z be the average of X and Y. Find the standard deviation of X.
+""""""
+
+import random
+import math
+
+def roll_die(sides):
+    return random.randint(1, sides)
+
+def roll_dice(sides, rolls):
+    results = []
+    for i in range(rolls):
+        results.append(roll_die(sides))
+    return results
+
+def mean(numbers):
+    return sum(numbers) / len(numbers)
+
+def variance(numbers):
+    avg = mean(numbers)
+    return sum([(x - avg) ** 2 for x in numbers]) / len(numbers)
+
+def standard_deviation(numbers):
+    return math.sqrt(variance(numbers))
+
+def main():
+    x = roll_dice(4, 100000)
+    y = roll_dice(6, 100000)
+    z = [mean([x[i], y[i]]) for i in range(len(x))]
+    print(standard_deviation(x))
+
+if __name__ == '__main__':
+    main()
+
+'''
+Here's what the above code is doing:
+1."," We define a function that rolls a die with a given number of sides.
+2. We define a function that rolls a die with a given number of sides a given number of times.
+3. We define a function that calculates the mean of a list of numbers.
+4. We define a function that calculates the variance of a list of numbers.
+5. We define a function that calculates the standard deviation of a list of numbers.
+6. We define a function that runs the main program.
+7. We run the main program.
+
+The main program does the following:
+1. It rolls a 4-sided die 100,000 times and stores the results in a list called x.
+2. It","
+
+The standard deviation of X is 1.41.",,"[7, 8, 3, 2, 24, 17, 18, 9, 19, 1, 20, 25, 22, 12, 21, 15, 11, 23, 5, 4, 10, 13, 14, 16]"
+7,Let X be the result of rolling a fair 4-sided die. Let Y be the result of rolling a fair 6-sided die. Let Z be the average of X and Y. Find the standard deviation of Y.,1.708,"""""""
+write a program that answers the following question: Let X be the result of rolling a fair 4-sided die. Let Y be the result of rolling a fair 6-sided die. Let Z be the average of X and Y. Find the standard deviation of Y.
+""""""
+","
+import random
+
+def roll_die(sides):
+    return random.randint(1, sides)
+
+def roll_dice(sides, rolls):
+    results = []
+    for i in range(rolls):
+        results.append(roll_die(sides))
+    return results
+
+def average(numbers):
+    return sum(numbers) / len(numbers)
+
+def variance(numbers):
+    avg = average(numbers)
+    return sum([(x - avg) ** 2 for x in numbers]) / len(numbers)
+
+def standard_deviation(numbers):
+    return variance(numbers) ** 0.5
+
+def main():
+    x = roll_dice(4, 100000)
+    y = roll_dice(6, 100000)
+    z = [average([x[i], y[i]]) for i in range(len(x))]
+    print(standard_deviation(y))
+
+if __name__ == '__main__':
+    main()",,"""""""
+write a program that answers the following question: Let X be the result of rolling a fair 4-sided die. Let Y be the result of rolling a fair 6-sided die. Let Z be the average of X and Y. Find the standard deviation of Y.
+""""""
+
+import random
+
+def roll_die(sides):
+    return random.randint(1, sides)
+
+def roll_dice(sides, rolls):
+    results = []
+    for i in range(rolls):
+        results.append(roll_die(sides))
+    return results
+
+def average(numbers):
+    return sum(numbers) / len(numbers)
+
+def variance(numbers):
+    avg = average(numbers)
+    return sum([(x - avg) ** 2 for x in numbers]) / len(numbers)
+
+def standard_deviation(numbers):
+    return variance(numbers) ** 0.5
+
+def main():
+    x = roll_dice(4, 100000)
+    y = roll_dice(6, 100000)
+    z = [average([x[i], y[i]]) for i in range(len(x))]
+    print(standard_deviation(y))
+
+if __name__ == '__main__':
+    main()
+
+'''
+Here's what the above code is doing:
+1."," We define a function to roll a die with a given number of sides.
+2. We define a function to roll a die with a given number of sides a given number of times.
+3. We define a function to find the average of a list of numbers.
+4. We define a function to find the variance of a list of numbers.
+5. We define a function to find the standard deviation of a list of numbers.
+6. We define a function to run the experiment.
+7. We run the experiment.
+'''","
+
+The standard deviation of Y is 2.",,"[6, 8, 3, 2, 24, 17, 18, 9, 19, 1, 20, 25, 22, 12, 15, 21, 11, 23, 5, 10, 4, 13, 14, 16]"
+8,Let X be the result of rolling a fair 4-sided die. Let Y be the result of rolling a fair 6-sided die. Let Z be the average of X and Y. Find the standard deviation of Z.,1.021,"""""""
+write a program that answers the following question: Let X be the result of rolling a fair 4-sided die. Let Y be the result of rolling a fair 6-sided die. Let Z be the average of X and Y. Find the standard deviation of Z.
+""""""
+","
+import random
+import math
+
+def roll_die(sides):
+    return random.randint(1, sides)
+
+def roll_dice(sides, rolls):
+    return [roll_die(sides) for _ in range(rolls)]
+
+def mean(numbers):
+    return sum(numbers) / len(numbers)
+
+def variance(numbers):
+    avg = mean(numbers)
+    return sum([(x - avg) ** 2 for x in numbers]) / len(numbers)
+
+def stddev(numbers):
+    return math.sqrt(variance(numbers))
+
+def roll_dice_and_average(sides1, sides2, rolls):
+    return mean([(roll_die(sides1) + roll_die(sides2)) / 2 for _ in range(rolls)])
+
+def roll_dice_and_average_stddev(sides1, sides2, rolls):
+    return stddev([(roll_die(sides1) + roll_die(sides2)) / 2 for _",,"""""""
+write a program that answers the following question: Let X be the result of rolling a fair 4-sided die. Let Y be the result of rolling a fair 6-sided die. Let Z be the average of X and Y. Find the standard deviation of Z.
+""""""
+
+import random
+import math
+
+def roll_die(sides):
+    return random.randint(1, sides)
+
+def roll_dice(sides, rolls):
+    return [roll_die(sides) for _ in range(rolls)]
+
+def mean(numbers):
+    return sum(numbers) / len(numbers)
+
+def variance(numbers):
+    avg = mean(numbers)
+    return sum([(x - avg) ** 2 for x in numbers]) / len(numbers)
+
+def stddev(numbers):
+    return math.sqrt(variance(numbers))
+
+def roll_dice_and_average(sides1, sides2, rolls):
+    return mean([(roll_die(sides1) + roll_die(sides2)) / 2 for _ in range(rolls)])
+
+def roll_dice_and_average_stddev(sides1, sides2, rolls):
+    return stddev([(roll_die(sides1) + roll_die(sides2)) / 2 for _
+
+'''
+Here's what the above code is doing:
+1."," It rolls a 4-sided die and a 6-sided die.
+2. It takes the average of the two dice.
+3. It repeats this process a large number of times.
+4. It computes the standard deviation of the averages.
+'''
+
+print(roll_dice_and_average_stddev(4, 6, 100000))","
+
+The standard deviation of Z is 2.5.",,"[6, 7, 2, 3, 24, 17, 18, 9, 19, 1, 20, 25, 22, 12, 21, 15, 23, 11, 4, 5, 10, 13, 14, 16]"
+9,"Let X be the result of rolling a fair 4-sided die. Let Y be the result of rolling a fair 6-sided die. You win 2X dollars if X>Y and lose 1 dollar otherwise. After playing this game 60 times, what is your expected total gain?",55.0,"""""""
+write a program that answers the following question: Let X be the result of rolling a fair 4-sided die. Let Y be the result of rolling a fair 6-sided die. You win 2X dollars if X>Y and lose 1 dollar otherwise. After playing this game 60 times, what is your expected total gain?
+""""""
+","
+import random
+
+def roll_die(sides):
+    return random.randint(1, sides)
+
+def play_game(sides1, sides2):
+    x = roll_die(sides1)
+    y = roll_die(sides2)
+    if x > y:
+        return 2*x
+    else:
+        return -1
+
+def play_game_n_times(sides1, sides2, n):
+    total_gain = 0
+    for i in range(n):
+        total_gain += play_game(sides1, sides2)
+    return total_gain
+
+print(play_game_n_times(4, 6, 60))",,"""""""
+write a program that answers the following question: Let X be the result of rolling a fair 4-sided die. Let Y be the result of rolling a fair 6-sided die. You win 2X dollars if X>Y and lose 1 dollar otherwise. After playing this game 60 times, what is your expected total gain?
+""""""
+
+import random
+
+def roll_die(sides):
+    return random.randint(1, sides)
+
+def play_game(sides1, sides2):
+    x = roll_die(sides1)
+    y = roll_die(sides2)
+    if x > y:
+        return 2*x
+    else:
+        return -1
+
+def play_game_n_times(sides1, sides2, n):
+    total_gain = 0
+    for i in range(n):
+        total_gain += play_game(sides1, sides2)
+    return total_gain
+
+print(play_game_n_times(4, 6, 60))
+
+'''
+Here's what the above code is doing:
+1."," It defines a function called roll_die that takes a single argument, sides, and returns a random integer between 1 and sides.
+2. It defines a function called play_game that takes two arguments, sides1 and sides2, and returns 2X if X>Y and -1 otherwise.
+3. It defines a function called play_game_n_times that takes three arguments, sides1, sides2, and n, and returns the total gain after playing the game n times.
+4. It calls play_game_n_times with the arguments 4, 6, and 60.
+'''","
+
+Your expected total gain is 30 dollars.",,"[6, 7, 8, 22, 21, 3, 1, 2, 25, 18, 17, 12, 19, 24, 20, 15, 10, 11, 4, 5, 16, 23, 13, 14]"
+10,"Boxes of Raisin Bran cereal are 30cm tall. Due to settling, boxes have a higher density of raisins at the bottom (h = 0) than at the top (h = 30). Suppose the density (in raisins per cm of height) is given by f(h) = 40 − h. How many raisins are in a box?",750.0,"""""""
+write a program that answers the following question: Boxes of Raisin Bran cereal are 30cm tall. Due to settling, boxes have a higher density of raisins at the bottom (h = 0) than at the top (h = 30). Suppose the density (in raisins per cm of height) is given by f(h) = 40 − h. How many raisins are in a box?
+""""""
+","
+import numpy as np
+import matplotlib.pyplot as plt
+
+def f(h):
+    return 40 - h
+
+def trapezoid(f, a, b, n):
+    h = (b - a) / n
+    s = 0.5 * (f(a) + f(b))
+    for i in range(1, n):
+        s = s + f(a + i * h)
+    return s * h
+
+def simpson(f, a, b, n):
+    h = (b - a) / n
+    s = f(a) + f(b)
+    for i in range(1, n, 2):
+        s = s + 4 * f(a + i * h)
+    for i in range(2, n-1, 2):
+        s = s + 2 * f(a + i * h)
+    return s * h / 3
+
+def midpoint(f, a, b, n):
+    h = (b - a) / n
+    s = 0
+    for i in range(n):
+        s = s",,"""""""
+write a program that answers the following question: Boxes of Raisin Bran cereal are 30cm tall. Due to settling, boxes have a higher density of raisins at the bottom (h = 0) than at the top (h = 30). Suppose the density (in raisins per cm of height) is given by f(h) = 40 − h. How many raisins are in a box?
+""""""
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+def f(h):
+    return 40 - h
+
+def trapezoid(f, a, b, n):
+    h = (b - a) / n
+    s = 0.5 * (f(a) + f(b))
+    for i in range(1, n):
+        s = s + f(a + i * h)
+    return s * h
+
+def simpson(f, a, b, n):
+    h = (b - a) / n
+    s = f(a) + f(b)
+    for i in range(1, n, 2):
+        s = s + 4 * f(a + i * h)
+    for i in range(2, n-1, 2):
+        s = s + 2 * f(a + i * h)
+    return s * h / 3
+
+def midpoint(f, a, b, n):
+    h = (b - a) / n
+    s = 0
+    for i in range(n):
+        s = s
+
+'''
+Here's what the above code is doing:
+1."," Define the function f(h) = 40 - h
+2. Define the trapezoid rule function
+3. Define the Simpson's rule function
+4. Define the midpoint rule function
+5. Define the rectangle rule function
+6. Define the Gaussian quadrature function
+7. Define the adaptive quadrature function
+8. Define the adaptive quadrature function with error estimate
+9. Define the adaptive quadrature function with error estimate and tolerance
+10. Define the adaptive quadrature function with error estimate, tolerance, and max number of iterations
+11. Define the adaptive quadrature function with error estimate, tolerance, max number of iterations,","
+
+There are 1200 raisins in a box.",,"[11, 22, 21, 18, 17, 6, 8, 7, 24, 23, 12, 3, 2, 19, 20, 15, 9, 5, 4, 16, 13, 1, 14, 25]"

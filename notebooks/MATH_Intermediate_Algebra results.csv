@@ -1,0 +1,495 @@
+Question,Original Question,Actual Solution,Codex Input,Codex Output,Zero-Shot Evaluation,Codex Explanation Input,Codex Explanation,GPT-3 Output,GPT-3 Evaluation,Most Similar Questions
+1,"Find all positive real numbers x that satisfy x√(12 - x) + √(12x - x^3) >= 12. Enter all solutions, separated by commas.",3.0,"""""""
+write a program that answers the following question: Find all positive real numbers x that satisfy x√(12 - x) + √(12x - x^3) >= 12. Enter all solutions, separated by commas.
+""""""
+","
+from sympy import *
+
+x = Symbol('x')
+
+solve(x*sqrt(12 - x) + sqrt(12*x - x**3) - 12, x)",,"""""""
+write a program that answers the following question: Find all positive real numbers x that satisfy x√(12 - x) + √(12x - x^3) >= 12. Enter all solutions, separated by commas.
+""""""
+
+from sympy import *
+
+x = Symbol('x')
+
+solve(x*sqrt(12 - x) + sqrt(12*x - x**3) - 12, x)
+
+'''
+Here's what the above code is doing:
+1."," We import the sympy library.
+2. We create a symbol x.
+3. We solve the equation x√(12 - x) + √(12x - x^3) >= 12 for x.
+'''","
+
+3,4,5,6,7,8,9,10,11,12",,"[11, 7, 2, 4, 8, 12, 6, 13, 15, 9, 3, 5, 14, 10]"
+2,"Given that x^2 + y^2 = 14x + 6y + 6, find the largest possible value of 3x + 4y.",73.0,"""""""
+write a program that answers the following question: Given that x^2 + y^2 = 14x + 6y + 6, find the largest possible value of 3x + 4y.
+""""""
+","
+def f(x, y):
+    return 3*x + 4*y
+
+def g(x, y):
+    return x**2 + y**2 - 14*x - 6*y - 6
+
+def dfdx(x, y):
+    return 3
+
+def dfdy(x, y):
+    return 4
+
+def dgdx(x, y):
+    return 2*x - 14
+
+def dgdy(x, y):
+    return 2*y - 6
+
+def newton(x, y):
+    for i in range(100):
+        x = x - (g(x, y)*dfdx(x, y) - f(x, y)*dgdx(x, y))/(dgdx(x, y)*dfdy(x, y) - dgdy(x, y)*dfdx(x, y))
+        y = y - (g(x, y)*dfdy(x, y) - f(x, y)*dgdy(x, y))/(dgdx(x, y)*dfdy(x, y) - dgdy",,"""""""
+write a program that answers the following question: Given that x^2 + y^2 = 14x + 6y + 6, find the largest possible value of 3x + 4y.
+""""""
+
+def f(x, y):
+    return 3*x + 4*y
+
+def g(x, y):
+    return x**2 + y**2 - 14*x - 6*y - 6
+
+def dfdx(x, y):
+    return 3
+
+def dfdy(x, y):
+    return 4
+
+def dgdx(x, y):
+    return 2*x - 14
+
+def dgdy(x, y):
+    return 2*y - 6
+
+def newton(x, y):
+    for i in range(100):
+        x = x - (g(x, y)*dfdx(x, y) - f(x, y)*dgdx(x, y))/(dgdx(x, y)*dfdy(x, y) - dgdy(x, y)*dfdx(x, y))
+        y = y - (g(x, y)*dfdy(x, y) - f(x, y)*dgdy(x, y))/(dgdx(x, y)*dfdy(x, y) - dgdy
+
+'''
+Here's what the above code is doing:
+1."," We define the functions f and g.
+2. We define the partial derivatives of f and g.
+3. We define the newton function, which takes in x and y and returns the new x and y.
+4. We iterate 100 times, updating x and y each time.
+5. We update x and y using the Newton's method formula.
+'''
+
+# Let's try it out!
+
+newton(1, 1)
+
+# This returns:
+# (1.0, 1.0)
+
+# This is not the answer we want. Let's try again with different initial values.
+
+newton(2, 2)
+
+# This returns:","
+
+The largest possible value of 3x + 4y is 36.",,"[7, 12, 11, 8, 15, 1, 6, 13, 9, 5, 3, 4, 14, 10]"
+3,"Let k be a real number such that k > 1 and
+ \[\sum_{n=1}^{\infty} \frac{5n-1}{k^n} = \frac{13}{4}.\] Find k.",3.0,"""""""
+write a program that answers the following question: Let k be a real number such that k > 1 and
+ \[\sum_{n=1}^{\infty} \frac{5n-1}{k^n} = \frac{13}{4}.\] Find k.
+""""""
+","
+def f(k):
+    return sum([(5*n-1)/k**n for n in range(1,100)])
+
+def f_prime(k):
+    return sum([-(5*n-1)*k**(-n-1) for n in range(1,100)])
+
+def newton(f, f_prime, x0, epsilon):
+    x = x0
+    while abs(f(x)) > epsilon:
+        x = x - f(x)/f_prime(x)
+    return x
+
+print(newton(f, f_prime, 1.5, 1e-10))",,"""""""
+write a program that answers the following question: Let k be a real number such that k > 1 and
+ \[\sum_{n=1}^{\infty} \frac{5n-1}{k^n} = \frac{13}{4}.\] Find k.
+""""""
+
+def f(k):
+    return sum([(5*n-1)/k**n for n in range(1,100)])
+
+def f_prime(k):
+    return sum([-(5*n-1)*k**(-n-1) for n in range(1,100)])
+
+def newton(f, f_prime, x0, epsilon):
+    x = x0
+    while abs(f(x)) > epsilon:
+        x = x - f(x)/f_prime(x)
+    return x
+
+print(newton(f, f_prime, 1.5, 1e-10))
+
+'''
+Here's what the above code is doing:
+1."," We define a function f(k) that returns the sum of the series.
+2. We define a function f_prime(k) that returns the derivative of f(k).
+3. We define a function newton(f, f_prime, x0, epsilon) that implements Newton's method.
+4. We call newton(f, f_prime, x0, epsilon) with the appropriate arguments.
+'''","
+
+k = 2",,"[8, 11, 2, 12, 4, 7, 14, 9, 15, 10, 5, 1, 6, 13]"
+4,"Find the number of permutations (a_1, a_2, a_3, a_4, a_5, a_6) of (1,2,3,4,5,6) that satisfy (a_1 + 1)/2 * (a_2 + 2)/2 * (a_3 + 3)/2 * (a_4 + 4)/2 * (a_5 + 5)/2 * (a_6 + 6)/2 > 6!.",719.0,"""""""
+write a program that answers the following question: Find the number of permutations (a_1, a_2, a_3, a_4, a_5, a_6) of (1,2,3,4,5,6) that satisfy (a_1 + 1)/2 * (a_2 + 2)/2 * (a_3 + 3)/2 * (a_4 + 4)/2 * (a_5 + 5)/2 * (a_6 + 6)/2 > 6!.
+""""""
+","
+import itertools
+
+def permutations(n):
+    return list(itertools.permutations(range(1, n+1)))
+
+def check(perm):
+    return (perm[0] + 1)/2 * (perm[1] + 2)/2 * (perm[2] + 3)/2 * (perm[3] + 4)/2 * (perm[4] + 5)/2 * (perm[5] + 6)/2 > 6!
+
+def main():
+    count = 0
+    for perm in permutations(6):
+        if check(perm):
+            count += 1
+    print(count)
+
+if __name__ == '__main__':
+    main()",,"""""""
+write a program that answers the following question: Find the number of permutations (a_1, a_2, a_3, a_4, a_5, a_6) of (1,2,3,4,5,6) that satisfy (a_1 + 1)/2 * (a_2 + 2)/2 * (a_3 + 3)/2 * (a_4 + 4)/2 * (a_5 + 5)/2 * (a_6 + 6)/2 > 6!.
+""""""
+
+import itertools
+
+def permutations(n):
+    return list(itertools.permutations(range(1, n+1)))
+
+def check(perm):
+    return (perm[0] + 1)/2 * (perm[1] + 2)/2 * (perm[2] + 3)/2 * (perm[3] + 4)/2 * (perm[4] + 5)/2 * (perm[5] + 6)/2 > 6!
+
+def main():
+    count = 0
+    for perm in permutations(6):
+        if check(perm):
+            count += 1
+    print(count)
+
+if __name__ == '__main__':
+    main()
+
+'''
+Here's what the above code is doing:
+1."," permutations(n) returns a list of all permutations of the numbers 1 to n.
+2. check(perm) checks if the permutation perm satisfies the condition in the problem.
+3. main() iterates through all permutations and checks if they satisfy the condition.
+'''","
+
+There are no such permutations.",,"[11, 8, 1, 14, 2, 3, 12, 6, 7, 13, 9, 15, 5, 10]"
+5,What is the value of the following expression: 1 - 4 + 7 - 10 + 13 - \cdots - 46 + 49 - 52 + 55 ?,28.0,"""""""
+write a program that answers the following question: What is the value of the following expression: 1 - 4 + 7 - 10 + 13 - \cdots - 46 + 49 - 52 + 55 ?
+""""""
+","
+def sum_of_odd_numbers(n):
+    return sum(range(1, n+1, 2))
+
+print(sum_of_odd_numbers(55))",,"""""""
+write a program that answers the following question: What is the value of the following expression: 1 - 4 + 7 - 10 + 13 - \cdots - 46 + 49 - 52 + 55 ?
+""""""
+
+def sum_of_odd_numbers(n):
+    return sum(range(1, n+1, 2))
+
+print(sum_of_odd_numbers(55))
+
+'''
+Here's what the above code is doing:
+1."," range(1, n+1, 2) creates a list of odd numbers from 1 to n.
+2. sum() adds up all the numbers in the list.
+'''","
+
+The value of the expression is -64.",,"[15, 2, 11, 12, 8, 7, 9, 14, 3, 1, 6, 4, 13, 10]"
+6,Let r and s denote the two real roots of x^2 - x \sqrt{5} + 1 = 0. Then determine r^8 + s^8.,47.0,"""""""
+write a program that answers the following question: Let r and s denote the two real roots of x^2 - x \sqrt{5} + 1 = 0. Then determine r^8 + s^8.
+""""""
+","
+import math
+
+def quadratic(a, b, c):
+    """"""
+    returns the two roots of a quadratic equation
+    """"""
+    x1 = (-b + math.sqrt(b**2 - 4*a*c)) / (2*a)
+    x2 = (-b - math.sqrt(b**2 - 4*a*c)) / (2*a)
+    return x1, x2
+
+def main():
+    a = 1
+    b = -math.sqrt(5)
+    c = 1
+    r, s = quadratic(a, b, c)
+    print(r**8 + s**8)
+
+if __name__ == ""__main__"":
+    main()",,"""""""
+write a program that answers the following question: Let r and s denote the two real roots of x^2 - x \sqrt{5} + 1 = 0. Then determine r^8 + s^8.
+""""""
+
+import math
+
+def quadratic(a, b, c):
+    """"""
+    returns the two roots of a quadratic equation
+    """"""
+    x1 = (-b + math.sqrt(b**2 - 4*a*c)) / (2*a)
+    x2 = (-b - math.sqrt(b**2 - 4*a*c)) / (2*a)
+    return x1, x2
+
+def main():
+    a = 1
+    b = -math.sqrt(5)
+    c = 1
+    r, s = quadratic(a, b, c)
+    print(r**8 + s**8)
+
+if __name__ == ""__main__"":
+    main()
+
+'''
+Here's what the above code is doing:
+1."," We define a function that takes in the coefficients of a quadratic equation and returns the two roots.
+2. We define the main function that calls the quadratic function and prints the sum of the 8th powers of the roots.
+3. We call the main function.
+'''","
+
+r^8 + s^8 = (r^4 + s^4)(r^4 - s^4) = (r^2 + s^2)^2 - (rs)^2 = 5",,"[8, 11, 7, 13, 12, 2, 9, 1, 4, 15, 3, 5, 14, 10]"
+7,Let x and y be positive real numbers such that 4x + 9y = 60. Find the maximum value of xy.,25.0,"""""""
+write a program that answers the following question: Let x and y be positive real numbers such that 4x + 9y = 60. Find the maximum value of xy.
+""""""
+","
+def f(x, y):
+    return x * y
+
+def f_derivative(x, y):
+    return y
+
+def g(x, y):
+    return 4 * x + 9 * y - 60
+
+def g_derivative(x, y):
+    return 4
+
+def newton_raphson(x, y, f, f_derivative, g, g_derivative):
+    for i in range(100):
+        x_new = x - (f(x, y) * g_derivative(x, y)) / (g_derivative(x, y) * f_derivative(x, y) - g(x, y) * f_derivative(x, y))
+        y_new = y - (g(x, y) * f_derivative(x, y)) / (g_derivative(x, y) * f_derivative(x, y) - g(x, y) * f_derivative(x, y))
+        x = x_new
+        y = y_new",,"""""""
+write a program that answers the following question: Let x and y be positive real numbers such that 4x + 9y = 60. Find the maximum value of xy.
+""""""
+
+def f(x, y):
+    return x * y
+
+def f_derivative(x, y):
+    return y
+
+def g(x, y):
+    return 4 * x + 9 * y - 60
+
+def g_derivative(x, y):
+    return 4
+
+def newton_raphson(x, y, f, f_derivative, g, g_derivative):
+    for i in range(100):
+        x_new = x - (f(x, y) * g_derivative(x, y)) / (g_derivative(x, y) * f_derivative(x, y) - g(x, y) * f_derivative(x, y))
+        y_new = y - (g(x, y) * f_derivative(x, y)) / (g_derivative(x, y) * f_derivative(x, y) - g(x, y) * f_derivative(x, y))
+        x = x_new
+        y = y_new
+
+'''
+Here's what the above code is doing:
+1."," We have two functions f(x, y) and g(x, y)
+2. We have two derivatives f_derivative(x, y) and g_derivative(x, y)
+3. We have two initial values x and y
+4. We iterate 100 times
+5. We calculate x_new and y_new using the Newton-Raphson method
+6. We set x and y to x_new and y_new
+'''
+
+newton_raphson(1, 1, f, f_derivative, g, g_derivative)","
+
+The maximum value of xy is 45.",,"[2, 11, 12, 1, 8, 6, 13, 15, 3, 5, 4, 9, 14, 10]"
+8,Find the value of k so that 3 + (3 + k)/4 + (3 + 2k)/4^2 + (3 + 3k)/4^3 + ... = 8.,9.0,"""""""
+write a program that answers the following question: Find the value of k so that 3 + (3 + k)/4 + (3 + 2k)/4^2 + (3 + 3k)/4^3 + ... = 8.
+""""""
+","
+def find_k(target):
+    k = 0
+    while True:
+        k += 1
+        sum = 3
+        for i in range(1, 10):
+            sum += (3 + k * i) / 4 ** i
+        if sum == target:
+            return k
+
+print(find_k(8))",,"""""""
+write a program that answers the following question: Find the value of k so that 3 + (3 + k)/4 + (3 + 2k)/4^2 + (3 + 3k)/4^3 + ... = 8.
+""""""
+
+def find_k(target):
+    k = 0
+    while True:
+        k += 1
+        sum = 3
+        for i in range(1, 10):
+            sum += (3 + k * i) / 4 ** i
+        if sum == target:
+            return k
+
+print(find_k(8))
+
+'''
+Here's what the above code is doing:
+1."," It starts with k = 0 and adds 1 to it until the sum of the series is equal to the target.
+2. The sum of the series is initialized to 3.
+3. The for loop adds the next term in the series to the sum.
+4. The if statement checks if the sum is equal to the target. If it is, the function returns the value of k.
+'''","
+
+k = 4",,"[11, 2, 6, 4, 12, 7, 9, 3, 13, 1, 15, 5, 10, 14]"
+9,Find the remainder when r^13 + 1 is divided by r - 1.,2.0,"""""""
+write a program that answers the following question: Find the remainder when r^13 + 1 is divided by r - 1.
+""""""
+","
+def remainder(r):
+    return (r**13 + 1) % (r - 1)
+
+print(remainder(2))
+print(remainder(3))
+print(remainder(4))
+print(remainder(5))
+print(remainder(6))
+print(remainder(7))
+print(remainder(8))
+print(remainder(9))
+print(remainder(10))
+print(remainder(11))
+print(remainder(12))
+print(remainder(13))
+print(remainder(14))
+print(remainder(15))
+print(remainder(16))
+print(remainder(17))
+print(remainder(18))
+print(remainder(19))
+print(remainder(20))
+print(remainder(21))
+print(remainder(22))
+print(remainder(23))
+print(remainder(24))
+print(remainder(25))
+print(remainder(26))
+print(remainder(",,"""""""
+write a program that answers the following question: Find the remainder when r^13 + 1 is divided by r - 1.
+""""""
+
+def remainder(r):
+    return (r**13 + 1) % (r - 1)
+
+print(remainder(2))
+print(remainder(3))
+print(remainder(4))
+print(remainder(5))
+print(remainder(6))
+print(remainder(7))
+print(remainder(8))
+print(remainder(9))
+print(remainder(10))
+print(remainder(11))
+print(remainder(12))
+print(remainder(13))
+print(remainder(14))
+print(remainder(15))
+print(remainder(16))
+print(remainder(17))
+print(remainder(18))
+print(remainder(19))
+print(remainder(20))
+print(remainder(21))
+print(remainder(22))
+print(remainder(23))
+print(remainder(24))
+print(remainder(25))
+print(remainder(26))
+print(remainder(
+
+'''
+Here's what the above code is doing:
+1."," It's defining a function called remainder that takes one argument, r.
+2. It's returning the remainder of (r^13 + 1) divided by (r - 1).
+3. It's printing the remainder of (2^13 + 1) divided by (2 - 1).
+4. It's printing the remainder of (3^13 + 1) divided by (3 - 1).
+5. It's printing the remainder of (4^13 + 1) divided by (4 - 1).
+6. It's printing the remainder of (5^13 + 1) divided by (5 - 1).
+7. It's printing the remainder of (6^13 + 1) divided by (6","
+
+The remainder is 2.",,"[8, 11, 12, 2, 6, 13, 15, 7, 5, 1, 3, 4, 10, 14]"
+10,"Compute
+ \sum_{k=1}^{1000} k(\lceil \log_{\sqrt{2}}{k}\rceil- \lfloor\log_{\sqrt{2}}{k} \rfloor).",499477.0,"""""""
+write a program that answers the following question: Compute
+ \sum_{k=1}^{1000} k(\lceil \log_{\sqrt{2}}{k}\rceil- \lfloor\log_{\sqrt{2}}{k} \rfloor).
+""""""
+","
+import math
+
+def sum_of_logs(n):
+    """"""
+    Compute the sum of the logs of the numbers from 1 to n.
+    """"""
+    sum = 0
+    for k in range(1, n+1):
+        sum += k * (math.ceil(math.log(k, math.sqrt(2))) - math.floor(math.log(k, math.sqrt(2))))
+    return sum
+
+print(sum_of_logs(1000))",,"""""""
+write a program that answers the following question: Compute
+ \sum_{k=1}^{1000} k(\lceil \log_{\sqrt{2}}{k}\rceil- \lfloor\log_{\sqrt{2}}{k} \rfloor).
+""""""
+
+import math
+
+def sum_of_logs(n):
+    """"""
+    Compute the sum of the logs of the numbers from 1 to n.
+    """"""
+    sum = 0
+    for k in range(1, n+1):
+        sum += k * (math.ceil(math.log(k, math.sqrt(2))) - math.floor(math.log(k, math.sqrt(2))))
+    return sum
+
+print(sum_of_logs(1000))
+
+'''
+Here's what the above code is doing:
+1."," We define a function called sum_of_logs that takes in a number n.
+2. We create a variable called sum and set it equal to 0.
+3. We create a for loop that iterates through the numbers from 1 to n.
+4. We add the value of k * (math.ceil(math.log(k, math.sqrt(2))) - math.floor(math.log(k, math.sqrt(2)))) to the variable sum.
+5. We return the value of sum.
+6. We call the function sum_of_logs with the argument 1000.
+'''","
+$
+
+$\sum_{k=1}^{1000} k(\lceil \log_{\sqrt{2}}{k}\rceil- \lfloor\log_{\sqrt{2}}{k} \rfloor) = \sum_{k=1}^{1000} k(\log_{\sqrt{2}}{\lceil k\rceil}- \log_{\sqrt{2}}{\lfloor k \rfloor}) = \sum_{k=1}^{1000} k(\log_{\sqrt{2}}{k}+\log_{\sqrt{2}}{1}- \log_{\sqrt{2}}{k}) = \sum_{k=1}^{1000} k(\log_{\sqrt{2}}{k}- \log_{\sqrt{2}}{k}) = \sum_{k=1",,"[3, 8, 11, 6, 9, 4, 2, 5, 7, 1, 12, 13, 14, 15]"

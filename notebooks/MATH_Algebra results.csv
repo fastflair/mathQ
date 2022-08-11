@@ -1,0 +1,311 @@
+Question,Original Question,Actual Solution,Codex Input,Codex Output,Zero-Shot Evaluation,Codex Explanation Input,Codex Explanation,GPT-3 Output,GPT-3 Evaluation,Most Similar Questions
+1,What is the greatest integer less than -15/4?,-4.0,"""""""
+write a program that answers the following question: What is the greatest integer less than -15/4?
+""""""
+","
+print(int(-15/4))",,"""""""
+write a program that answers the following question: What is the greatest integer less than -15/4?
+""""""
+
+print(int(-15/4))
+
+'''
+Here's what the above code is doing:
+1."," -15/4 is -3.75
+2. int(-3.75) is -3
+3. -3 is the greatest integer less than -3.75
+'''","
+
+-4",,"[6, 4, 9, 12, 15, 7, 10, 5, 11, 3, 13, 14, 8, 2]"
+2,Evaluate log base sqrt(6) of 216*sqrt(6).,7.0,"""""""
+write a program that answers the following question: Evaluate log base sqrt(6) of 216*sqrt(6).
+""""""
+","
+import math
+
+print(math.log(216*math.sqrt(6), math.sqrt(6)))",,"""""""
+write a program that answers the following question: Evaluate log base sqrt(6) of 216*sqrt(6).
+""""""
+
+import math
+
+print(math.log(216*math.sqrt(6), math.sqrt(6)))
+
+'''
+Here's what the above code is doing:
+1."," import the math module
+2. print the log of 216*sqrt(6) with base sqrt(6)
+'''","
+
+log base sqrt(6) of 216*sqrt(6) = log base sqrt(6) of (6*6*6)*sqrt(6) = 3*log base sqrt(6) of 6 + log base sqrt(6) of sqrt(6) = 3*log base sqrt(6) of 6 + (1/2)*log base sqrt(6) of 6 = 9/2",,"[14, 3, 10, 15, 9, 8, 7, 5, 6, 13, 12, 4, 1, 11]"
+3,Evaluate x^3 + x^2 + x + 1 when x = 3.,40.0,"""""""
+write a program that answers the following question: Evaluate x^3 + x^2 + x + 1 when x = 3.
+""""""
+","
+x = 3
+
+print(x**3 + x**2 + x + 1)",,"""""""
+write a program that answers the following question: Evaluate x^3 + x^2 + x + 1 when x = 3.
+""""""
+
+x = 3
+
+print(x**3 + x**2 + x + 1)
+
+'''
+Here's what the above code is doing:
+1."," x = 3
+2. print(3**3 + 3**2 + 3 + 1)
+3. print(27 + 9 + 3 + 1)
+4. print(40)
+'''","
+
+x^3 + x^2 + x + 1 = 3^3 + 3^2 + 3 + 1 = 27 + 9 + 3 + 1 = 40",,"[14, 15, 10, 9, 7, 5, 2, 8, 13, 4, 11, 1, 6, 12]"
+4,"What is the distance between (-2,4) and (3,-8)?",13.0,"""""""
+write a program that answers the following question: What is the distance between (-2,4) and (3,-8)?
+""""""
+","
+import math
+
+def distance(x1, y1, x2, y2):
+    return math.sqrt((x2 - x1)**2 + (y2 - y1)**2)
+
+print(distance(-2, 4, 3, -8))",,"""""""
+write a program that answers the following question: What is the distance between (-2,4) and (3,-8)?
+""""""
+
+import math
+
+def distance(x1, y1, x2, y2):
+    return math.sqrt((x2 - x1)**2 + (y2 - y1)**2)
+
+print(distance(-2, 4, 3, -8))
+
+'''
+Here's what the above code is doing:
+1."," import the math module
+2. define a function called distance that takes four arguments: x1, y1, x2, y2
+3. return the square root of the sum of the squares of the differences between x2 and x1 and y2 and y1
+4. print the result of calling the distance function with the arguments -2, 4, 3, -8
+'''","
+
+The distance between (-2,4) and (3,-8) is 13.",,"[5, 15, 1, 9, 7, 6, 8, 12, 10, 3, 14, 13, 2, 11]"
+5,"Find the distance between the points (0,4) and (3,0).",5.0,"""""""
+write a program that answers the following question: Find the distance between the points (0,4) and (3,0).
+""""""
+","
+import math
+
+x1 = 0
+y1 = 4
+x2 = 3
+y2 = 0
+
+distance = math.sqrt((x2 - x1)**2 + (y2 - y1)**2)
+
+print(distance)",,"""""""
+write a program that answers the following question: Find the distance between the points (0,4) and (3,0).
+""""""
+
+import math
+
+x1 = 0
+y1 = 4
+x2 = 3
+y2 = 0
+
+distance = math.sqrt((x2 - x1)**2 + (y2 - y1)**2)
+
+print(distance)
+
+'''
+Here's what the above code is doing:
+1."," We import the math module.
+2. We define the coordinates of the two points.
+3. We calculate the distance between the two points using the distance formula.
+4. We print the distance.
+'''","
+
+The distance between the points (0,4) and (3,0) is 5.",,"[4, 8, 3, 9, 10, 15, 7, 13, 12, 1, 14, 6, 2, 11]"
+6,"What is the sum of the even, positive integers less than 62?",930.0,"""""""
+write a program that answers the following question: What is the sum of the even, positive integers less than 62?
+""""""
+","
+# sum of even numbers less than 62
+
+sum = 0
+
+for i in range(0, 62, 2):
+    sum += i
+
+print(sum)",,"""""""
+write a program that answers the following question: What is the sum of the even, positive integers less than 62?
+""""""
+
+# sum of even numbers less than 62
+
+sum = 0
+
+for i in range(0, 62, 2):
+    sum += i
+
+print(sum)
+
+'''
+Here's what the above code is doing:
+1."," We initialize a variable called sum and set it equal to 0.
+2. We create a for loop that iterates through the numbers 0 to 62, incrementing by 2 each time.
+3. We add the current value of i to the sum variable.
+4. We print the sum variable.
+'''","
+
+The sum of the even, positive integers less than 62 is 912.",,"[1, 12, 9, 15, 7, 4, 10, 13, 8, 5, 3, 2, 14, 11]"
+7,"If f(1)=5, f(2)=8 and f(x)=ax+bx+2, what is the value of f(3)?",11.0,"""""""
+write a program that answers the following question: If f(1)=5, f(2)=8 and f(x)=ax+bx+2, what is the value of f(3)?
+""""""
+","
+def f(x):
+    a = 1
+    b = 1
+    return a*x + b*x + 2
+
+print(f(3))",,"""""""
+write a program that answers the following question: If f(1)=5, f(2)=8 and f(x)=ax+bx+2, what is the value of f(3)?
+""""""
+
+def f(x):
+    a = 1
+    b = 1
+    return a*x + b*x + 2
+
+print(f(3))
+
+'''
+Here's what the above code is doing:
+1."," Define a function f(x) that takes in a parameter x
+2. Define two variables a and b
+3. Return the value of a*x + b*x + 2
+4. Call the function f(3) and print the result
+'''","
+
+f(3)=3a+3b+2",,"[10, 9, 15, 13, 8, 3, 12, 6, 4, 5, 14, 1, 11, 2]"
+8,What is the x-intercept of the line perpendicular to 3x-2y = 6 with y-intercept is 2.,3.0,"""""""
+write a program that answers the following question: What is the x-intercept of the line perpendicular to 3x-2y = 6 with y-intercept is 2.
+""""""
+","
+# 3x - 2y = 6
+# y = -3/2x + 3
+
+# y = mx + b
+# m = -3/2
+# b = 2
+
+# y = -3/2x + 2
+# y = -3/2x + 2
+# y = -3/2x + 2
+# y = -3/2x + 2
+# y = -3/2x + 2
+# y = -3/2x + 2
+# y = -3/2x + 2
+# y = -3/2x + 2
+# y = -3/2x + 2
+# y = -3/2x + 2
+# y = -3/2x + 2
+# y = -3/2x + 2
+# y = -3/2x + 2
+# y = -3/2x + 2
+# y = -3/2x + 2
+# y = -3/2x + 2
+# y = -3/2x + 2
+# y = -3/2x + 2
+# y = -3/2x + 2
+# y",,"""""""
+write a program that answers the following question: What is the x-intercept of the line perpendicular to 3x-2y = 6 with y-intercept is 2.
+""""""
+
+# 3x - 2y = 6
+# y = -3/2x + 3
+
+# y = mx + b
+# m = -3/2
+# b = 2
+
+# y = -3/2x + 2
+# y = -3/2x + 2
+# y = -3/2x + 2
+# y = -3/2x + 2
+# y = -3/2x + 2
+# y = -3/2x + 2
+# y = -3/2x + 2
+# y = -3/2x + 2
+# y = -3/2x + 2
+# y = -3/2x + 2
+# y = -3/2x + 2
+# y = -3/2x + 2
+# y = -3/2x + 2
+# y = -3/2x + 2
+# y = -3/2x + 2
+# y = -3/2x + 2
+# y = -3/2x + 2
+# y = -3/2x + 2
+# y = -3/2x + 2
+# y
+
+'''
+Here's what the above code is doing:
+1."," It's defining a function called ""slope_intercept"" that takes two arguments, ""x"" and ""y"".
+2. It's defining a variable called ""m"" that is equal to the value of ""y"" divided by the value of ""x"".
+3. It's defining a variable called ""b"" that is equal to the value of ""y"" minus the product of ""m"" and ""x"".
+4. It's returning the values of ""m"" and ""b"".
+'''
+
+# Now let's use the function to find the slope and y-intercept of the line 3x - 2y = 6.
+
+# First, we need to define the values of ""","
+
+The x-intercept of the line perpendicular to 3x-2y = 6 with y-intercept is 2 is -2.",,"[9, 7, 15, 5, 13, 14, 10, 12, 3, 4, 6, 2, 1, 11]"
+9,"When simplified, what is the value of 3^(1/2) * 3^(1/2) + 12 / 3 * 2 - 4^(3/2)?",3.0,"""""""
+write a program that answers the following question: When simplified, what is the value of 3^(1/2) * 3^(1/2) + 12 / 3 * 2 - 4^(3/2)?
+""""""
+","
+print(3**(1/2) * 3**(1/2) + 12 / 3 * 2 - 4**(3/2))",,"""""""
+write a program that answers the following question: When simplified, what is the value of 3^(1/2) * 3^(1/2) + 12 / 3 * 2 - 4^(3/2)?
+""""""
+
+print(3**(1/2) * 3**(1/2) + 12 / 3 * 2 - 4**(3/2))
+
+'''
+Here's what the above code is doing:
+1."," 3^(1/2) * 3^(1/2)
+    - 3^(1/2) is the same as 3^(1/2) * 1
+    - 3^(1/2) * 3^(1/2) is the same as 3^(1/2) * 1 * 3^(1/2) * 1
+    - 3^(1/2) * 3^(1/2) is the same as 3^(1/2 + 1/2)
+    - 3^(1/2 + 1/2) is the same as 3^1
+    - 3^1 is the same as 3
+2. 12 /","
+
+The value of 3^(1/2) * 3^(1/2) + 12 / 3 * 2 - 4^(3/2) is 9.",,"[7, 15, 12, 13, 6, 4, 8, 3, 1, 10, 5, 14, 2, 11]"
+10,"If f(x)=(5x+1)/(x-1), find the value of f(7).",6.0,"""""""
+write a program that answers the following question: If f(x)=(5x+1)/(x-1), find the value of f(7).
+""""""
+","
+def f(x):
+    return (5*x+1)/(x-1)
+
+print(f(7))",,"""""""
+write a program that answers the following question: If f(x)=(5x+1)/(x-1), find the value of f(7).
+""""""
+
+def f(x):
+    return (5*x+1)/(x-1)
+
+print(f(7))
+
+'''
+Here's what the above code is doing:
+1."," Define a function f(x) that takes in a parameter x.
+2. Return the value of (5x+1)/(x-1)
+3. Print the value of f(7)
+'''","
+
+The value of f(7) is 12.",,"[7, 15, 3, 9, 14, 8, 5, 13, 4, 12, 6, 2, 1, 11]"
