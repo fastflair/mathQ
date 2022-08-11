@@ -1,5 +1,5 @@
-Question,Original Question,Actual Solution,Codex Input,Codex Output,Zero-Shot Evaluation,Codex Explanation Input,Codex Explanation,GPT-3 Output,GPT-3 Evaluation,Most Similar Questions
-1,"At Frank's Fruit Market, 3 bananas cost as much as 2 apples, and 6 apples cost as much as 4 oranges. How many oranges cost as much as 18 bananas?",8.0,"""""""
+Question,Original Question,Actual Solution,Codex Input,Codex Output,Zero-Shot Evaluation,Codex Explanation Input,Codex Explanation,GPT-3 Output,GPT-3 Evaluation,GPT-3 CoT Input,GPT-3 CoT Output,GPT-3 CoT Evaluation,Most Similar Questions
+1,"At Frank's Fruit Market, 3 bananas cost as much as 2 apples, and 6 apples cost as much as 4 oranges. How many oranges cost as much as 18 bananas?",8,"""""""
 write a program that answers the following question: At Frank's Fruit Market, 3 bananas cost as much as 2 apples, and 6 apples cost as much as 4 oranges. How many oranges cost as much as 18 bananas?
 """"""
 ","
@@ -45,7 +45,7 @@ write a program that answers the following question: At Frank's Fruit Market, 3 
 # print(oranges)
 
 """"""
-write a program that answers",,"""""""
+write a program that answers",1,"""""""
 write a program that answers the following question: At Frank's Fruit Market, 3 bananas cost as much as 2 apples, and 6 apples cost as much as 4 oranges. How many oranges cost as much as 18 bananas?
 """"""
 
@@ -104,66 +104,67 @@ Here's what the above code is doing:
 7. It's creating a variable called ""oranges"" and assigning it the value of 18 * 4 / 3.
 ","
 
-36",,"[14, 11, 5, 2, 15, 13, 10, 6, 7, 4, 3, 12, 9, 8]"
-2,How many different primes are in the prime factorization of 87*89*91*93?,6.0,"""""""
+36 oranges",,"Q: At Frank's Fruit Market, 3 bananas cost as much as 2 apples, and 6 apples cost as much as 4 oranges. How many oranges cost as much as 18 bananas?
+A: Let's think step by step."," 
+3 bananas cost as much as 2 apples. 
+6 apples cost as much as 4 oranges. 
+Therefore, 18 bananas cost as much as 12 oranges.",,"[14, 11, 5, 2, 15, 13, 10, 6, 7, 4, 3, 12, 9, 8]"
+2,How many different primes are in the prime factorization of 87*89*91*93?,6,"""""""
 write a program that answers the following question: How many different primes are in the prime factorization of 87*89*91*93?
 """"""
 ","
-def prime_factorization(n):
-    """"""
-    returns a list of the prime factors of n
-    """"""
+def prime_factors(n):
+    i = 2
     factors = []
-    d = 2
-    while n > 1:
-        while n % d == 0:
-            factors.append(d)
-            n /= d
-        d = d + 1
+    while i * i <= n:
+        if n % i:
+            i += 1
+        else:
+            n //= i
+            factors.append(i)
+    if n > 1:
+        factors.append(n)
     return factors
 
 def main():
-    """"""
-    main function
-    """"""
-    print len(set(prime_factorization(87*89*91*93)))
+    print(len(set(prime_factors(87*89*91*93))))
 
-if __name__ == ""__main__"":
-    main()",,"""""""
+if __name__ == '__main__':
+    main()",0,"""""""
 write a program that answers the following question: How many different primes are in the prime factorization of 87*89*91*93?
 """"""
 
-def prime_factorization(n):
-    """"""
-    returns a list of the prime factors of n
-    """"""
+def prime_factors(n):
+    i = 2
     factors = []
-    d = 2
-    while n > 1:
-        while n % d == 0:
-            factors.append(d)
-            n /= d
-        d = d + 1
+    while i * i <= n:
+        if n % i:
+            i += 1
+        else:
+            n //= i
+            factors.append(i)
+    if n > 1:
+        factors.append(n)
     return factors
 
 def main():
-    """"""
-    main function
-    """"""
-    print len(set(prime_factorization(87*89*91*93)))
+    print(len(set(prime_factors(87*89*91*93))))
 
-if __name__ == ""__main__"":
+if __name__ == '__main__':
     main()
 
 '''
 Here's what the above code is doing:
-1."," prime_factorization(n) returns a list of the prime factors of n
-2. set(prime_factorization(87*89*91*93)) returns a set of the prime factors of 87*89*91*93
-3. len(set(prime_factorization(87*89*91*93))) returns the length of the set of the prime factors of 87*89*91*93
+1."," We define a function called prime_factors that takes in a number n and returns a list of the prime factors of n.
+2. We then define a function called main that prints the length of the set of the prime factors of 87*89*91*93.
+3. We then call the main function.
 '''","
 
-There are six different primes in the prime factorization of 87*89*91*93.",,"[5, 10, 12, 7, 14, 4, 3, 1, 11, 13, 6, 15, 8, 9]"
-3,"What is the greatest common factor of 84, 112 and 210?",14.0,"""""""
+There are six different primes in the prime factorization of 87*89*91*93.",,"Q: How many different primes are in the prime factorization of 87*89*91*93?
+A: Let's think step by step."," 
+87*89*91*93 = 7*11*13*17*19*23*29*31. 
+There are 7 different primes in the prime factorization of 87*89*91*93.",,"[5, 10, 12, 7, 14, 4, 3, 1, 11, 13, 6, 15, 8, 9]"
+3,"What is the greatest common factor of 84, 112 and 210?",14,"""""""
 write a program that answers the following question: What is the greatest common factor of 84, 112 and 210?
 """"""
 ","
@@ -173,7 +174,7 @@ def gcf(a, b):
     else:
         return gcf(b, a % b)
 
-print(gcf(84, gcf(112, 210)))",,"""""""
+print(gcf(84, gcf(112, 210)))",0,"""""""
 write a program that answers the following question: What is the greatest common factor of 84, 112 and 210?
 """"""
 
@@ -196,8 +197,13 @@ Here's what the above code is doing:
 7. 14
 '''","
 
-The greatest common factor of 84, 112 and 210 is 84.",,"[10, 2, 14, 12, 7, 5, 4, 13, 9, 6, 1, 8, 11, 15]"
-4,Find the smallest positive a such that a is a multiple of 4 and a is a multiple of 14.,28.0,"""""""
+The greatest common factor of 84, 112 and 210 is 84.",,"Q: What is the greatest common factor of 84, 112 and 210?
+A: Let's think step by step."," 
+
+The greatest common factor of 84 and 112 is 28. 
+
+The greatest common factor of 28 and 210 is 14.",,"[10, 2, 14, 12, 7, 5, 4, 13, 9, 6, 1, 8, 11, 15]"
+4,Find the smallest positive a such that a is a multiple of 4 and a is a multiple of 14.,28,"""""""
 write a program that answers the following question: Find the smallest positive a such that a is a multiple of 4 and a is a multiple of 14.
 """"""
 ","
@@ -211,7 +217,7 @@ def smallest_multiple(x,y):
             return a
         a += 1
 
-print(smallest_multiple(4,14))",,"""""""
+print(smallest_multiple(4,14))",1,"""""""
 write a program that answers the following question: Find the smallest positive a such that a is a multiple of 4 and a is a multiple of 14.
 """"""
 
@@ -237,8 +243,14 @@ Here's what the above code is doing:
 6. If it isn't, we add 1 to a and go back to step 4.
 '''","
 
-56",,"[5, 10, 2, 7, 14, 12, 1, 3, 8, 6, 15, 11, 13, 9]"
-5,How many four-digit positive integers are there with thousands digit 2?,1000.0,"""""""
+56",,"Q: Find the smallest positive a such that a is a multiple of 4 and a is a multiple of 14.
+A: Let's think step by step."," 
+
+The smallest positive integer that is a multiple of 4 is 4. 
+The smallest positive integer that is a multiple of 14 is 14. 
+
+Therefore, the smallest positive integer that is a multiple of both 4 and 14 is 4.",,"[5, 10, 2, 7, 14, 12, 1, 3, 8, 6, 15, 11, 13, 9]"
+5,How many four-digit positive integers are there with thousands digit 2?,1000,"""""""
 write a program that answers the following question: How many four-digit positive integers are there with thousands digit 2?
 """"""
 ","
@@ -253,7 +265,7 @@ write a program that answers the following question: How many four-digit positiv
 # The ones digit cannot be 2, so there are 7 choices for the ones digit.
 # The thousands digit cannot be the same as the hundreds digit, so there are 7 choices for the thousands digit.
 # The thousands digit cannot be the same as the tens digit, so there are 7 choices for the thousands digit.
-# The thousands digit cannot be the same as the ones digit, so there are 7 choices for the thousands",,"""""""
+# The thousands digit cannot be the same as the ones digit, so there are 7 choices for the thousands",0,"""""""
 write a program that answers the following question: How many four-digit positive integers are there with thousands digit 2?
 """"""
 
@@ -288,8 +300,15 @@ Here's what the above code is doing:
 14. The fourteenth line is a comment.
 15. The fifteenth line","
 
-There are 1,000 four-digit positive integers with thousands digit 2.",,"[10, 2, 4, 7, 12, 14, 1, 3, 11, 13, 6, 15, 9, 8]"
-6,"The 5 a.m. temperatures for seven consecutive days were -7 degrees, -4 degrees, -4 degrees, -5 degrees, 1 degree, 3 degrees and 2 degrees Celsius. What is the mean 5 a.m. temperature for the week in degrees Celsius?",-2.0,"""""""
+There are 1,000 four-digit positive integers with thousands digit 2.",,"Q: How many four-digit positive integers are there with thousands digit 2?
+A: Let's think step by step."," 
+There are 9 possibilities for the thousands digit. 
+There are 10 possibilities for the hundreds digit. 
+There are 10 possibilities for the tens digit. 
+There are 10 possibilities for the ones digit. 
+We can use the fundamental counting principle. 
+9*10*10*10=9000 possibilities.",,"[10, 2, 4, 7, 12, 14, 1, 3, 11, 13, 6, 15, 9, 8]"
+6,"The 5 a.m. temperatures for seven consecutive days were -7 degrees, -4 degrees, -4 degrees, -5 degrees, 1 degree, 3 degrees and 2 degrees Celsius. What is the mean 5 a.m. temperature for the week in degrees Celsius?",-2,"""""""
 write a program that answers the following question: The 5 a.m. temperatures for seven consecutive days were -7 degrees, -4 degrees, -4 degrees, -5 degrees, 1 degree, 3 degrees and 2 degrees Celsius. What is the mean 5 a.m. temperature for the week in degrees Celsius?
 """"""
 ","
@@ -301,7 +320,7 @@ def mean(temps):
         total += temp
     return total / len(temps)
 
-print(mean(temps))",,"""""""
+print(mean(temps))",1,"""""""
 write a program that answers the following question: The 5 a.m. temperatures for seven consecutive days were -7 degrees, -4 degrees, -4 degrees, -5 degrees, 1 degree, 3 degrees and 2 degrees Celsius. What is the mean 5 a.m. temperature for the week in degrees Celsius?
 """"""
 
@@ -327,14 +346,25 @@ Here's what the above code is doing:
 8. We print the result.
 '''","
 
-The mean 5 a.m. temperature for the week in degrees Celsius is -2.",,"[14, 1, 10, 13, 4, 7, 2, 11, 5, 15, 3, 12, 9, 8]"
-7,What is the value of sqrt(36*sqrt(16))?,12.0,"""""""
+The mean 5 a.m. temperature for the week in degrees Celsius is -2.",,"Q: The 5 a.m. temperatures for seven consecutive days were -7 degrees, -4 degrees, -4 degrees, -5 degrees, 1 degree, 3 degrees and 2 degrees Celsius. What is the mean 5 a.m. temperature for the week in degrees Celsius?
+A: Let's think step by step."," 
+
+The first thing we need to do is add up all of the temperatures. This will give us the sum of all the temperatures. 
+
+-7 + -4 + -4 + -5 + 1 + 3 + 2 = -14 
+
+Now that we have the sum of all the temperatures, we need to divide it by the number of days, which is 7. 
+
+-14 / 7 = -2 
+
+This gives us the mean, or average, temperature.",,"[14, 1, 10, 13, 4, 7, 2, 11, 5, 15, 3, 12, 9, 8]"
+7,What is the value of sqrt(36*sqrt(16))?,12,"""""""
 write a program that answers the following question: What is the value of sqrt(36*sqrt(16))?
 """"""
 ","
 import math
 
-print(math.sqrt(36*math.sqrt(16)))",,"""""""
+print(math.sqrt(36*math.sqrt(16)))",1,"""""""
 write a program that answers the following question: What is the value of sqrt(36*sqrt(16))?
 """"""
 
@@ -348,12 +378,21 @@ Here's what the above code is doing:
 2. print the square root of 36 times the square root of 16
 '''","
 
-The value of sqrt(36*sqrt(16)) is 12.",,"[12, 10, 5, 2, 8, 9, 4, 14, 3, 1, 6, 15, 11, 13]"
-8,Calculate 8 divided by 1/8.,64.0,"""""""
+The value of sqrt(36*sqrt(16)) is 12.",,"Q: What is the value of sqrt(36*sqrt(16))?
+A: Let's think step by step."," 
+
+The value of sqrt(36*sqrt(16)) is the same as sqrt(36)*sqrt(sqrt(16)). 
+
+The value of sqrt(36) is 6. 
+
+The value of sqrt(sqrt(16)) is 2. 
+
+Therefore, the value of sqrt(36*sqrt(16)) is 6*2, or 12.",,"[12, 10, 5, 2, 8, 9, 4, 14, 3, 1, 6, 15, 11, 13]"
+8,Calculate 8 divided by 1/8.,64,"""""""
 write a program that answers the following question: Calculate 8 divided by 1/8.
 """"""
 ","
-print(8 / (1 / 8))",,"""""""
+print(8 / (1 / 8))",1,"""""""
 write a program that answers the following question: Calculate 8 divided by 1/8.
 """"""
 
@@ -367,12 +406,27 @@ Here's what the above code is doing:
 4. 64
 '''","
 
-8 divided by 1/8 is equal to 64.",,"[7, 12, 9, 4, 10, 5, 3, 2, 14, 15, 1, 6, 13, 11]"
-9,What is 5/6 of 30?,25.0,"""""""
+8 divided by 1/8 is equal to 64.",,"Q: Calculate 8 divided by 1/8.
+A: Let's think step by step."," 
+
+8 divided by 1/8 is the same as 8 multiplied by 8. 
+
+8 multiplied by 8 is the same as 8 multiplied by 2, and then 8 multiplied by 2 again. 
+
+8 multiplied by 2 is the same as 8 added to 8. 
+
+8 added to 8 is the same as 16. 
+
+16 multiplied by 2 is the same as 16 added to 16. 
+
+16 added to 16 is the same as 32. 
+
+Therefore, 8 divided by 1/8 is 32.",,"[7, 12, 9, 4, 10, 5, 3, 2, 14, 15, 1, 6, 13, 11]"
+9,What is 5/6 of 30?,25,"""""""
 write a program that answers the following question: What is 5/6 of 30?
 """"""
 ","
-print(5/6*30)",,"""""""
+print(5/6*30)",1,"""""""
 write a program that answers the following question: What is 5/6 of 30?
 """"""
 
@@ -410,8 +464,22 @@ print(5/6*30) # This is also a comment.
 This is a comment.
 ","
 
-5/6 of 30 is 25.",,"[7, 10, 12, 8, 3, 5, 14, 6, 4, 2, 15, 13, 1, 11]"
-10,What is the sum of the prime numbers between 10 and 20?,60.0,"""""""
+5/6 of 30 is 25.",,"Q: What is 5/6 of 30?
+A: Let's think step by step."," 
+
+We know that 5/6 is equal to 10/12 because both fractions have the same numerator and denominator, just different values. 
+We also know that 10/12 is equal to 5/6. 
+
+Now, let's think about what 5/6 of 30 is. 
+
+We know that 5/6 is equal to 10/12. 
+We also know that 10/12 is equal to 5/6. 
+Therefore, 5/6 of 30 is equal to 10/12 of 30. 
+
+We can simplify this fraction by multiplying the numerator and denominator by 2.5. 
+
+This gives us the answer: 25/30.",,"[7, 10, 12, 8, 3, 5, 14, 6, 4, 2, 15, 13, 1, 11]"
+10,What is the sum of the prime numbers between 10 and 20?,60,"""""""
 write a program that answers the following question: What is the sum of the prime numbers between 10 and 20?
 """"""
 ","
@@ -430,7 +498,7 @@ def sum_of_primes(n, m):
             sum += i
     return sum
 
-print(sum_of_primes(10, 20))",,"""""""
+print(sum_of_primes(10, 20))",0,"""""""
 write a program that answers the following question: What is the sum of the prime numbers between 10 and 20?
 """"""
 
@@ -458,4 +526,5 @@ Here's what the above code is doing:
 3. We call the sum_of_primes function with the arguments 10 and 20 and print the result.
 '''","
 
-There are six prime numbers between 10 and 20: 11, 13, 17, 19, 23, 29. The sum of these numbers is 116.",,"[5, 2, 12, 7, 4, 3, 14, 9, 13, 1, 6, 11, 15, 8]"
+There are six prime numbers between 10 and 20: 11, 13, 17, 19, 23, 29. The sum of these numbers is 116.",,"Q: What is the sum of the prime numbers between 10 and 20?
+A: Let's think step by step."," The first prime number is 2, the second is 3, the third is 5, the fourth is 7, the fifth is 11, the sixth is 13, the seventh is 17, and the eighth is 19. So, 2 + 3 + 5 + 7 + 11 + 13 + 17 + 19 = 77.",,"[5, 2, 12, 7, 4, 3, 14, 9, 13, 1, 6, 11, 15, 8]"

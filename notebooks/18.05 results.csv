@@ -1,4 +1,4 @@
-Question,Original Question,Actual Solution,Codex Input,Codex Output,Zero-Shot Evaluation,Codex Explanation Input,Codex Explanation,GPT-3 Output,GPT-3 Evaluation,Most Similar Questions
+Question,Original Question,Actual Solution,Codex Input,Codex Output,Zero-Shot Evaluation,Codex Explanation Input,Codex Explanation,GPT-3 Output,GPT-3 Evaluation,GPT-3 CoT Input,GPT-3 CoT Output,GPT-3 CoT Evaluation,Most Similar Questions,Few-Shot Input,Few-Shot Output,Few-Shot Evaluation,GPT-3 CoT Few-Shot Input,GPT-3 CoT Few-Shot Output,GPT-3 CoT Few-Show Evaluation
 1,Calculate the probability of getting a three-of-a-kind poker hand.,0.021128,"""""""
 write a program that answers the following question: Calculate the probability of getting a three-of-a-kind poker hand.
 """"""
@@ -33,7 +33,7 @@ def main():
             count += 1
     print(count/10000)
 
-main()",,"""""""
+main()",0,"""""""
 write a program that answers the following question: Calculate the probability of getting a three-of-a-kind poker hand.
 """"""
 
@@ -88,7 +88,52 @@ There are 4*13 = 52 ways to choose 3 cards from a deck of 52 cards.
 
 There are C(52,3) = 52!/(3!*49!) = 2,598,960 ways to choose 3 cards from a deck of 52 cards.
 
-The probability of getting a three-of-a-kind poker hand is 4/52 = 1/13.",,"[25, 2, 3, 6, 8, 7, 21, 22, 5, 9, 24, 17, 18, 4, 19, 20, 12, 11, 15, 13, 14, 10, 23, 16]"
+The probability of getting a three-of-a-kind poker hand is 4/52 = 1/13.",,"Q: Calculate the probability of getting a three-of-a-kind poker hand.
+A: Let's think step by step."," 
+
+There are 13 possible values for the first card. For the second card, there are now 12 possible values (since we've already used one of them). For the third card, there are 11 possible values, and for the fourth card, there are 10 possible values. Finally, for the fifth card, there are 9 possible values. 
+
+We can calculate the probability of getting a three-of-a-kind hand by multiplying all of these probabilities together. 
+
+There are 13 * 12 * 11 * 10 * 9 = 14,190 possible three-of-a-kind hands. 
+
+There are 52 * 51 * 50 * 49 * 48 = 311,875,200 possible poker hands in total. 
+
+Therefore, the probability of getting a three-of-a-kind hand is 14,190 / 311,875,200 = 0.000045.",,"[25, 2, 3, 6, 8, 7, 21, 22, 5, 9, 24, 17, 18, 4, 19, 20, 12, 11, 15, 13, 14, 10, 23, 16]","""""""
+write a program that answers the following question: Calculate the probability of getting a three-of-a-kind poker hand.
+""""""
+","
+import random
+
+def poker_hand():
+    """"""
+    This function returns a random poker hand
+    """"""
+    hand = []
+    for i in range(5):
+        hand.append(random.randint(1,13))
+    return hand
+
+def three_of_a_kind(hand):
+    """"""
+    This function returns True if the hand is a three of a kind
+    """"""
+    for i in hand:
+        if hand.count(i) == 3:
+            return True
+    return False
+
+def main():
+    """"""
+    This function runs the program
+    """"""
+    count = 0
+    for i in range(10000):
+        if three_of_a_kind(poker_hand()):
+            count += 1
+    print(count/10000)
+
+main()",,,,
 2,In class we worked with non-transitive dice: Red: 3 3 3 3 3 6; Green: 1 4 4 4 4 4; White: 2 2 2 5 5 5. Find the probability that white beats green.,0.583333333,"""""""
 write a program that answers the following question: In class we worked with non-transitive dice: Red: 3 3 3 3 3 6; Green: 1 4 4 4 4 4; White: 2 2 2 5 5 5. Find the probability that white beats green.
 """"""
@@ -121,7 +166,7 @@ def count_wins_many(die1, die2, n):
             wins += 1
     return wins
 
-def count_wins_many_many(die1, die",,"""""""
+def count_wins_many_many(die1, die",0,"""""""
 write a program that answers the following question: In class we worked with non-transitive dice: Red: 3 3 3 3 3 6; Green: 1 4 4 4 4 4; White: 2 2 2 5 5 5. Find the probability that white beats green.
 """"""
 
@@ -161,9 +206,72 @@ Here's what the above code is doing:
 2. roll_dice_many(die1, die2, n) is rolling two dice n times and returning the results as a list of tuples.
 3. count_wins(die1, die2, n) is rolling two dice n times and returning the number of times the first die wins.
 4. count_wins_many(die1, die2, n) is rolling two dice n times and returning the number of times the first die wins.
-5. count_wins_many_many(die1, die2, n) is rolling two","
+5. count_wins_many_many(die1, die2, n, m) is","
 
-The probability that white beats green is 3/5.",,"[3, 6, 7, 8, 1, 17, 21, 18, 22, 25, 24, 19, 12, 5, 4, 20, 9, 15, 11, 10, 16, 13, 14, 23]"
+The probability that white beats green is 3/5.",,"Q: In class we worked with non-transitive dice: Red: 3 3 3 3 3 6; Green: 1 4 4 4 4 4; White: 2 2 2 5 5 5. Find the probability that white beats green.
+A: Let's think step by step."," 
+
+There are 6 outcomes when you roll a die, so there are 6^3 = 216 possible outcomes when you roll 3 dice. 
+There are 3 ways that white can beat green. Two of them are where white rolls a 2 and green rolls a 1 or where white rolls a 5 and green rolls a 4. The last way is where white rolls a 3 and green rolls a 1,2, or 4. 
+There are 2*3 = 6 ways that white can beat green by rolling a 2 or a 5. 
+There are 3*3*3 = 27 ways that white can beat green by rolling a 3. 
+Therefore, the probability that white beats green is (6+27)/216 = 33/216. 
+
+",,"[3, 6, 7, 8, 1, 17, 21, 18, 22, 25, 24, 19, 12, 5, 4, 20, 9, 15, 11, 10, 16, 13, 14, 23]","""""""
+write a program that answers the following question: In class we worked with non-transitive dice: Red: 3 3 3 3 3 6; Green: 1 4 4 4 4 4; White: 2 2 2 5 5 5. Find the probability that white beats green.
+""""""
+","
+import random
+
+def roll(die):
+    return random.choice(die)
+
+def roll_dice(die1, die2):
+    return roll(die1), roll(die2)
+
+def roll_dice_many(die1, die2, n):
+    rolls = []
+    for i in range(n):
+        rolls.append(roll_dice(die1, die2))
+    return rolls
+
+def count_wins(die1, die2, n):
+    wins = 0
+    for i in range(n):
+        if roll_dice(die1, die2)[0] > roll_dice(die1, die2)[1]:
+            wins += 1
+    return wins
+
+def count_wins_many(die1, die2, n):
+    wins = 0
+    for i in range(n):
+        if roll_dice(die1, die2)[0] > roll_dice(die1, die2)[1]:
+            wins += 1
+    return wins
+
+def count_wins_many_many(die1, die",,"Q: In class we worked with non-transitive dice: Red: 3 3 3 3 3 6; Green: 1 4 4 4 4 4; White: 2 2 2 5 5 5. Find the probability that green beats red.
+A: 0.694444444
+
+Q: In class we worked with non-transitive dice: Red: 3 3 3 3 3 6; Green: 1 4 4 4 4 4; White: 2 2 2 5 5 5. Find the probability that white beats green.
+A: Let's think step by step."," 
+
+There are 3 possible outcomes when 2 dice are rolled: red beats green, green beats red, or it's a tie. 
+
+The probability of a tie is:
+
+P(tie) = 1/36 + 1/36 + 1/36 + 1/36 + 1/36 + 1/36 = 1/6
+
+The probability of red beating green is:
+
+P(red beats green) = 3/36 + 3/36 + 3/36 + 3/36 + 3/36 = 5/12
+
+The probability of green beating red is:
+
+P(green beats red) = 1/36 + 4/36 + 4/36 + 4/36 + 4/36 = 17/36
+
+Therefore, the probability of white beating green is:
+
+P(white beats green) = 1 - P(tie) - P(red beats green) - P(green beats red) = 1 - 1/6 - 5/12 - 17/36 = 11/36",
 3,In class we worked with non-transitive dice: Red: 3 3 3 3 3 6; Green: 1 4 4 4 4 4; White: 2 2 2 5 5 5. Find the probability that green beats red.,0.694444444,"""""""
 write a program that answers the following question: In class we worked with non-transitive dice: Red: 3 3 3 3 3 6; Green: 1 4 4 4 4 4; White: 2 2 2 5 5 5. Find the probability that green beats red.
 """"""
@@ -196,7 +304,7 @@ def count_wins_many(die1, die2, n):
             wins += 1
     return wins
 
-def count_wins_many_",,"""""""
+def count_wins_many_",0,"""""""
 write a program that answers the following question: In class we worked with non-transitive dice: Red: 3 3 3 3 3 6; Green: 1 4 4 4 4 4; White: 2 2 2 5 5 5. Find the probability that green beats red.
 """"""
 
@@ -232,13 +340,65 @@ def count_wins_many_
 
 '''
 Here's what the above code is doing:
-1."," roll_die(die) returns a random value from the list die.
-2. roll_dice(die1, die2) returns a tuple of two random values, one from die1 and one from die2.
-3. roll_dice_many(die1, die2, n) returns a list of n tuples, each tuple containing two random values, one from die1 and one from die2.
-4. count_wins(die1, die2, n) returns the number of times die1 wins against die2 in n rolls.
-5. count_wins_many(die1, die2, n) returns a list of n numbers, each number representing","
+1."," roll_die(die) returns a random value from the list die
+2. roll_dice(die1, die2) returns a tuple of two random values, one from each die
+3. roll_dice_many(die1, die2, n) returns a list of n tuples of two random values, one from each die
+4. count_wins(die1, die2, n) returns the number of times die1 wins against die2 in n rolls
+5. count_wins_many(die1, die2, n) returns a list of n numbers, each of which is the number of times die1 wins against die2 in n rolls
+'''","
 
-The probability that green beats red is 3/5.",,"[2, 6, 7, 8, 1, 17, 18, 22, 21, 25, 24, 19, 12, 4, 5, 9, 20, 15, 11, 10, 16, 13, 14, 23]"
+The probability that green beats red is 3/5.",,"Q: In class we worked with non-transitive dice: Red: 3 3 3 3 3 6; Green: 1 4 4 4 4 4; White: 2 2 2 5 5 5. Find the probability that green beats red.
+A: Let's think step by step."," 
+
+First, what does it mean for green to beat red? It means that if we roll the green die and the red die, the green die will have a higher number more often than the red die. 
+
+There are a total of 6 outcomes when we roll 2 dice. They are: (1,3), (1,6), (4,3), (4,6), (5,3), (5,6). 
+
+Out of these 6 outcomes, the green die has a higher number 3 times. (1,6), (4,3), (5,3). 
+
+Therefore, the probability that green beats red is 3/6 or 1/2.",,"[2, 6, 7, 8, 1, 17, 18, 22, 21, 25, 24, 19, 12, 4, 5, 9, 20, 15, 11, 10, 16, 13, 14, 23]","""""""
+write a program that answers the following question: In class we worked with non-transitive dice: Red: 3 3 3 3 3 6; Green: 1 4 4 4 4 4; White: 2 2 2 5 5 5. Find the probability that green beats red.
+""""""
+","
+import random
+
+def roll_die(die):
+    return random.choice(die)
+
+def roll_dice(die1, die2):
+    return roll_die(die1), roll_die(die2)
+
+def roll_dice_many(die1, die2, n):
+    rolls = []
+    for i in range(n):
+        rolls.append(roll_dice(die1, die2))
+    return rolls
+
+def count_wins(die1, die2, n):
+    wins = 0
+    for i in range(n):
+        if roll_dice(die1, die2)[0] > roll_dice(die1, die2)[1]:
+            wins += 1
+    return wins
+
+def count_wins_many(die1, die2, n):
+    wins = 0
+    for i in range(n):
+        if roll_dice(die1, die2)[0] > roll_dice(die1, die2)[1]:
+            wins += 1
+    return wins
+
+def count_wins_many_",,"Q: In class we worked with non-transitive dice: Red: 3 3 3 3 3 6; Green: 1 4 4 4 4 4; White: 2 2 2 5 5 5. Find the probability that white beats green.
+A: 0.583333333
+
+Q: In class we worked with non-transitive dice: Red: 3 3 3 3 3 6; Green: 1 4 4 4 4 4; White: 2 2 2 5 5 5. Find the probability that green beats red.
+A: Let's think step by step."," 
+
+There are 6 possible outcomes when rolling 2 dice: (1,1), (1,2), (1,3), (1,4), (1,5), (1,6)
+
+Out of those 6 outcomes, there are 3 outcomes where Green beats Red: (1,1), (1,2), (1,3)
+
+Therefore, the probability that Green beats Red is 3/6, or 1/2.",
 4,Mr. Jones has two children. The older child is a girl. What is the probability that both children are girls?,0.5,"""""""
 write a program that answers the following question: Mr. Jones has two children. The older child is a girl. What is the probability that both children are girls?
 """"""
@@ -246,7 +406,7 @@ write a program that answers the following question: Mr. Jones has two children.
 # probability of having a girl is 1/2
 # probability of having a girl and a girl is 1/4
 
-print(1/4)",,"""""""
+print(1/4)",0,"""""""
 write a program that answers the following question: Mr. Jones has two children. The older child is a girl. What is the probability that both children are girls?
 """"""
 
@@ -261,7 +421,34 @@ Here's what the above code is doing:
 2. The probability of having a girl and a girl is 1/4.
 '''","
 
-There is a 1/4 chance that both children are girls.",,"[5, 3, 2, 22, 17, 21, 18, 24, 8, 6, 1, 7, 25, 16, 15, 11, 19, 9, 12, 10, 20, 13, 14, 23]"
+There is a 1/4 chance that both children are girls.",,"Q: Mr. Jones has two children. The older child is a girl. What is the probability that both children are girls?
+A: Let's think step by step."," 
+
+There are two children, so the probability that both children are girls is the same as the probability that the first child is a girl times the probability that the second child is a girl. 
+
+The probability that the first child is a girl is 1/2 because there are two children and one of them is a girl. 
+
+The probability that the second child is a girl is also 1/2 because there are two children and one of them is a girl. 
+
+So, the probability that both children are girls is 1/2 times 1/2 which is 1/4.",,"[5, 3, 2, 22, 17, 21, 18, 24, 8, 6, 1, 7, 25, 16, 15, 11, 19, 9, 12, 10, 20, 13, 14, 23]","""""""
+write a program that answers the following question: Mr. Jones has two children. The older child is a girl. What is the probability that both children are girls?
+""""""
+","
+# probability of having a girl is 1/2
+# probability of having a girl and a girl is 1/4
+
+print(1/4)",,"Q: Mr. Smith has two children. At least one of them is a boy. What is the probability that both children are boys?
+A: 0.333333333
+
+Q: Mr. Jones has two children. The older child is a girl. What is the probability that both children are girls?
+A: Let's think step by step."," 
+
+There are two possibilities: 
+
+1) The younger child is also a girl, in which case both children are girls. 
+2) The younger child is a boy, in which case there is at least one boy. 
+
+Therefore, the probability that both children are girls is 1/2.",
 5,Mr. Smith has two children. At least one of them is a boy. What is the probability that both children are boys?,0.333333333,"""""""
 write a program that answers the following question: Mr. Smith has two children. At least one of them is a boy. What is the probability that both children are boys?
 """"""
@@ -272,7 +459,7 @@ def boy_girl():
     """"""
     return 1/3
 
-print(boy_girl())",,"""""""
+print(boy_girl())",0,"""""""
 write a program that answers the following question: Mr. Smith has two children. At least one of them is a boy. What is the probability that both children are boys?
 """"""
 
@@ -289,25 +476,45 @@ Here's what the above code is doing:
 1."," We have two children.
 2. At least one of them is a boy.
 3. We want to know the probability that both children are boys.
+4. We can assume that the probability of having a boy or a girl is equal.
+5. We can assume that the events of having a boy or a girl are independent.
+6. We can assume that the probability of having a boy is 1/2.
+7. We can assume that the probability of having a girl is 1/2.
+8. We can assume that the probability of having a boy and a girl is 1/2 * 1/2 = 1/4.
+9. We can assume that the probability of having two boys is","
 
-We can solve this problem by using the following formula:
+There is a 50% chance that both children are boys.",,"Q: Mr. Smith has two children. At least one of them is a boy. What is the probability that both children are boys?
+A: Let's think step by step."," 
+There are two children, so we can have two scenarios: 
 
-P(A and B) = P(A) * P(B)
+Scenario 1: Both children are boys. 
+Scenario 2: One child is a boy and the other is a girl. 
 
-In this case, we have two events:
-
-A: The first child is a boy.
-B: The second child is a boy.
-
-We know that the probability of A is 1/2.
-
-We also know that the probability of B is 1/2.
-
-So, the probability of A and B is 1/2 * 1/2 = 1/4.
-
+We know that at least one of the children is a boy, so that means that scenario 2 is certain to happen. 
+Therefore, the probability that both children are boys is 0.",,"[4, 22, 18, 3, 1, 2, 17, 25, 21, 24, 6, 8, 7, 11, 12, 19, 16, 15, 10, 20, 9, 14, 13, 23]","""""""
+write a program that answers the following question: Mr. Smith has two children. At least one of them is a boy. What is the probability that both children are boys?
+""""""
 ","
+def boy_girl():
+    """"""
+    returns the probability that both children are boys
+    """"""
+    return 1/3
 
-There is a 50% chance that both children are boys.",,"[4, 22, 18, 3, 1, 2, 17, 25, 21, 24, 6, 8, 7, 11, 12, 19, 16, 15, 10, 20, 9, 14, 13, 23]"
+print(boy_girl())",,"Q: Mr. Jones has two children. The older child is a girl. What is the probability that both children are girls?
+A: 0.5
+
+Q: Mr. Smith has two children. At least one of them is a boy. What is the probability that both children are boys?
+A: Let's think step by step."," 
+
+There are two possible scenarios: 
+
+Scenario 1: The older child is a boy and the younger child is a boy. 
+Scenario 2: The older child is a girl and the younger child is a boy. 
+
+Since we know that at least one of the children is a boy, that means that the probability of scenario 1 happening is 1, and the probability of scenario 2 happening is 1/2. 
+
+Therefore, the probability that both children are boys is 1/2.",
 6,Let X be the result of rolling a fair 4-sided die. Let Y be the result of rolling a fair 6-sided die. Let Z be the average of X and Y. Find the standard deviation of X.,1.118,"""""""
 write a program that answers the following question: Let X be the result of rolling a fair 4-sided die. Let Y be the result of rolling a fair 6-sided die. Let Z be the average of X and Y. Find the standard deviation of X.
 """"""
@@ -341,7 +548,7 @@ def main():
     print(standard_deviation(x))
 
 if __name__ == '__main__':
-    main()",,"""""""
+    main()",0,"""""""
 write a program that answers the following question: Let X be the result of rolling a fair 4-sided die. Let Y be the result of rolling a fair 6-sided die. Let Z be the average of X and Y. Find the standard deviation of X.
 """"""
 
@@ -390,7 +597,59 @@ The main program does the following:
 1. It rolls a 4-sided die 100,000 times and stores the results in a list called x.
 2. It","
 
-The standard deviation of X is 1.41.",,"[7, 8, 3, 2, 24, 17, 18, 9, 19, 1, 20, 25, 22, 12, 21, 15, 11, 23, 5, 4, 10, 13, 14, 16]"
+The standard deviation of X is 1.41.",,"Q: Let X be the result of rolling a fair 4-sided die. Let Y be the result of rolling a fair 6-sided die. Let Z be the average of X and Y. Find the standard deviation of X.
+A: Let's think step by step.","
+
+First, let's calculate the mean of X. We know that the mean of a fair die is 3.5.
+
+Next, let's calculate the variance of X. We know that the variance of a fair die is 2.92.
+
+Now, we can calculate the standard deviation of X. The standard deviation of X is 1.71.",,"[7, 8, 3, 2, 24, 17, 18, 9, 19, 1, 20, 25, 22, 12, 21, 15, 11, 23, 5, 4, 10, 13, 14, 16]","""""""
+write a program that answers the following question: Let X be the result of rolling a fair 4-sided die. Let Y be the result of rolling a fair 6-sided die. Let Z be the average of X and Y. Find the standard deviation of X.
+""""""
+","
+import random
+import math
+
+def roll_die(sides):
+    return random.randint(1, sides)
+
+def roll_dice(sides, rolls):
+    results = []
+    for i in range(rolls):
+        results.append(roll_die(sides))
+    return results
+
+def mean(numbers):
+    return sum(numbers) / len(numbers)
+
+def variance(numbers):
+    avg = mean(numbers)
+    return sum([(x - avg) ** 2 for x in numbers]) / len(numbers)
+
+def standard_deviation(numbers):
+    return math.sqrt(variance(numbers))
+
+def main():
+    x = roll_dice(4, 100000)
+    y = roll_dice(6, 100000)
+    z = [mean([x[i], y[i]]) for i in range(len(x))]
+    print(standard_deviation(x))
+
+if __name__ == '__main__':
+    main()",,"Q: Let X be the result of rolling a fair 4-sided die. Let Y be the result of rolling a fair 6-sided die. Let Z be the average of X and Y. Find the standard deviation of Y.
+A: 1.708
+
+Q: Let X be the result of rolling a fair 4-sided die. Let Y be the result of rolling a fair 6-sided die. Let Z be the average of X and Y. Find the standard deviation of X.
+A: Let's think step by step.","
+
+First, we need to calculate the variance of X. The variance of a fair 4-sided die is (1/4)*((1-1/4)^2 + (2-1/4)^2 + (3-1/4)^2 + (4-1/4)^2) = 1.5.
+
+Now, we need to calculate the variance of Y. The variance of a fair 6-sided die is (1/6)*((1-1/6)^2 + (2-1/6)^2 + (3-1/6)^2 + (4-1/6)^2 + (5-1/6)^2 + (6-1/6)^2) = 2.916667.
+
+Finally, we need to calculate the variance of Z. The variance of Z is (1/2)*(1.5 + 2.916667) = 2.208333.
+
+Now that we have the variance of X, we can take the square root to get the standard deviation, which is 1.414213.",
 7,Let X be the result of rolling a fair 4-sided die. Let Y be the result of rolling a fair 6-sided die. Let Z be the average of X and Y. Find the standard deviation of Y.,1.708,"""""""
 write a program that answers the following question: Let X be the result of rolling a fair 4-sided die. Let Y be the result of rolling a fair 6-sided die. Let Z be the average of X and Y. Find the standard deviation of Y.
 """"""
@@ -423,7 +682,7 @@ def main():
     print(standard_deviation(y))
 
 if __name__ == '__main__':
-    main()",,"""""""
+    main()",0,"""""""
 write a program that answers the following question: Let X be the result of rolling a fair 4-sided die. Let Y be the result of rolling a fair 6-sided die. Let Z be the average of X and Y. Find the standard deviation of Y.
 """"""
 
@@ -468,7 +727,62 @@ Here's what the above code is doing:
 7. We run the experiment.
 '''","
 
-The standard deviation of Y is 2.",,"[6, 8, 3, 2, 24, 17, 18, 9, 19, 1, 20, 25, 22, 12, 15, 21, 11, 23, 5, 10, 4, 13, 14, 16]"
+The standard deviation of Y is 2.",,"Q: Let X be the result of rolling a fair 4-sided die. Let Y be the result of rolling a fair 6-sided die. Let Z be the average of X and Y. Find the standard deviation of Y.
+A: Let's think step by step.","
+
+First, let's calculate the mean of Y. We know that the mean of a fair die is 3.5.
+
+Next, we need to calculate the variance of Y. We know that the variance of a fair die is 2.92.
+
+Now, we can calculate the standard deviation of Y. The standard deviation of Y is 1.71.",,"[6, 8, 3, 2, 24, 17, 18, 9, 19, 1, 20, 25, 22, 12, 15, 21, 11, 23, 5, 10, 4, 13, 14, 16]","""""""
+write a program that answers the following question: Let X be the result of rolling a fair 4-sided die. Let Y be the result of rolling a fair 6-sided die. Let Z be the average of X and Y. Find the standard deviation of Y.
+""""""
+","
+import random
+
+def roll_die(sides):
+    return random.randint(1, sides)
+
+def roll_dice(sides, rolls):
+    results = []
+    for i in range(rolls):
+        results.append(roll_die(sides))
+    return results
+
+def average(numbers):
+    return sum(numbers) / len(numbers)
+
+def variance(numbers):
+    avg = average(numbers)
+    return sum([(x - avg) ** 2 for x in numbers]) / len(numbers)
+
+def standard_deviation(numbers):
+    return variance(numbers) ** 0.5
+
+def main():
+    x = roll_dice(4, 100000)
+    y = roll_dice(6, 100000)
+    z = [average([x[i], y[i]]) for i in range(len(x))]
+    print(standard_deviation(y))
+
+if __name__ == '__main__':
+    main()",,"Q: Let X be the result of rolling a fair 4-sided die. Let Y be the result of rolling a fair 6-sided die. Let Z be the average of X and Y. Find the standard deviation of X.
+A: 1.118
+
+Q: Let X be the result of rolling a fair 4-sided die. Let Y be the result of rolling a fair 6-sided die. Let Z be the average of X and Y. Find the standard deviation of Y.
+A: Let's think step by step.","
+
+First, we need to calculate the variance of Y. The variance of a random variable is defined as the expected value of the squared deviation from the mean. In other words, it's the expected value of (Y - μ)2.
+
+We can calculate the expected value of Y using the formula E(Y) = (1/6) * (1 + 2 + 3 + 4 + 5 + 6). This gives us μ = 3.5.
+
+Now we need to calculate the expected value of (Y - μ)2. This is just the expected value of Y2 - 2μY + μ2. We can calculate the expected value of Y2 using the formula E(Y2) = (1/6) * (1^2 + 2^2 + 3^2 + 4^2 + 5^2 + 6^2). This gives us E(Y2) = 91/6.
+
+Plugging this into our formula for the expected value of (Y - μ)2, we get E((Y - μ)2) = 91/6 - 2(3.5)(91/6) + (3.5)2. This simplifies to E((Y - μ)2) = 91/6 - 63/2 + 12.25, which is about 2.75.
+
+So the variance of Y is Var(Y) = E((Y - μ)2) = 2.75.
+
+Now we just take the square root of the variance to get the standard deviation, which is √2.75 = about 1.65.",
 8,Let X be the result of rolling a fair 4-sided die. Let Y be the result of rolling a fair 6-sided die. Let Z be the average of X and Y. Find the standard deviation of Z.,1.021,"""""""
 write a program that answers the following question: Let X be the result of rolling a fair 4-sided die. Let Y be the result of rolling a fair 6-sided die. Let Z be the average of X and Y. Find the standard deviation of Z.
 """"""
@@ -496,7 +810,7 @@ def roll_dice_and_average(sides1, sides2, rolls):
     return mean([(roll_die(sides1) + roll_die(sides2)) / 2 for _ in range(rolls)])
 
 def roll_dice_and_average_stddev(sides1, sides2, rolls):
-    return stddev([(roll_die(sides1) + roll_die(sides2)) / 2 for _",,"""""""
+    return stddev([(roll_die(sides1) + roll_die(sides2)) / 2 for _",0,"""""""
 write a program that answers the following question: Let X be the result of rolling a fair 4-sided die. Let Y be the result of rolling a fair 6-sided die. Let Z be the average of X and Y. Find the standard deviation of Z.
 """"""
 
@@ -535,7 +849,53 @@ Here's what the above code is doing:
 
 print(roll_dice_and_average_stddev(4, 6, 100000))","
 
-The standard deviation of Z is 2.5.",,"[6, 7, 2, 3, 24, 17, 18, 9, 19, 1, 20, 25, 22, 12, 21, 15, 23, 11, 4, 5, 10, 13, 14, 16]"
+The standard deviation of Z is 2.5.",,"Q: Let X be the result of rolling a fair 4-sided die. Let Y be the result of rolling a fair 6-sided die. Let Z be the average of X and Y. Find the standard deviation of Z.
+A: Let's think step by step.","
+
+First, let's calculate the mean of Z. We know that the mean of X is 2.5 and the mean of Y is 3.5. Therefore, the mean of Z is (2.5+3.5)/2=3.
+
+Now, let's calculate the variance of Z. We know that the variance of X is 2/12=1/6 and the variance of Y is 5/36=1/7.2. Therefore, the variance of Z is (1/6+1/7.2)/2=0.20833.
+
+Finally, we take the square root of the variance to get the standard deviation, which is the square root of 0.20833, or 0.458.",,"[6, 7, 2, 3, 24, 17, 18, 9, 19, 1, 20, 25, 22, 12, 21, 15, 23, 11, 4, 5, 10, 13, 14, 16]","""""""
+write a program that answers the following question: Let X be the result of rolling a fair 4-sided die. Let Y be the result of rolling a fair 6-sided die. Let Z be the average of X and Y. Find the standard deviation of Z.
+""""""
+","
+import random
+import math
+
+def roll_die(sides):
+    return random.randint(1, sides)
+
+def roll_dice(sides, rolls):
+    return [roll_die(sides) for _ in range(rolls)]
+
+def mean(numbers):
+    return sum(numbers) / len(numbers)
+
+def variance(numbers):
+    avg = mean(numbers)
+    return sum([(x - avg) ** 2 for x in numbers]) / len(numbers)
+
+def stddev(numbers):
+    return math.sqrt(variance(numbers))
+
+def roll_dice_and_average(sides1, sides2, rolls):
+    return mean([(roll_die(sides1) + roll_die(sides2)) / 2 for _ in range(rolls)])
+
+def roll_dice_and_average_stddev(sides1, sides2, rolls):
+    return stddev([(roll_die(sides1) + roll_die(sides2)) / 2 for _",,"Q: Let X be the result of rolling a fair 4-sided die. Let Y be the result of rolling a fair 6-sided die. Let Z be the average of X and Y. Find the standard deviation of X.
+A: 1.118
+
+Q: Let X be the result of rolling a fair 4-sided die. Let Y be the result of rolling a fair 6-sided die. Let Z be the average of X and Y. Find the standard deviation of Z.
+A: Let's think step by step.","
+
+First, we need to calculate the variance of X. The variance of a fair 4-sided die is (1/4)*((1-2.5)^2+(2-2.5)^2+(3-2.5)^2+(4-2.5)^2)=1.118.
+
+Next, we need to calculate the variance of Y. The variance of a fair 6-sided die is (1/6)*((1-3.5)^2+(2-3.5)^2+(3-3.5)^2+(4-3.5)^2+(5-3.5)^2+(6-3.5)^2)=1.5.
+
+Finally, we need to calculate the variance of Z. The variance of Z is (1/2)*(1.118+1.5)=1.3158.
+
+Therefore, the standard deviation of Z is the square root of 1.3158, which is approximately 1.14.",
 9,"Let X be the result of rolling a fair 4-sided die. Let Y be the result of rolling a fair 6-sided die. You win 2X dollars if X>Y and lose 1 dollar otherwise. After playing this game 60 times, what is your expected total gain?",55.0,"""""""
 write a program that answers the following question: Let X be the result of rolling a fair 4-sided die. Let Y be the result of rolling a fair 6-sided die. You win 2X dollars if X>Y and lose 1 dollar otherwise. After playing this game 60 times, what is your expected total gain?
 """"""
@@ -559,7 +919,7 @@ def play_game_n_times(sides1, sides2, n):
         total_gain += play_game(sides1, sides2)
     return total_gain
 
-print(play_game_n_times(4, 6, 60))",,"""""""
+print(play_game_n_times(4, 6, 60))",0,"""""""
 write a program that answers the following question: Let X be the result of rolling a fair 4-sided die. Let Y be the result of rolling a fair 6-sided die. You win 2X dollars if X>Y and lose 1 dollar otherwise. After playing this game 60 times, what is your expected total gain?
 """"""
 
@@ -592,7 +952,113 @@ Here's what the above code is doing:
 4. It calls play_game_n_times with the arguments 4, 6, and 60.
 '''","
 
-Your expected total gain is 30 dollars.",,"[6, 7, 8, 22, 21, 3, 1, 2, 25, 18, 17, 12, 19, 24, 20, 15, 10, 11, 4, 5, 16, 23, 13, 14]"
+Your expected total gain is 30 dollars.",,"Q: Let X be the result of rolling a fair 4-sided die. Let Y be the result of rolling a fair 6-sided die. You win 2X dollars if X>Y and lose 1 dollar otherwise. After playing this game 60 times, what is your expected total gain?
+A: Let's think step by step."," 
+
+First, let's calculate the probability of X being greater than Y. We can do this by looking at all possible combinations of X and Y. 
+
+There are 4 possible outcomes for X: 1, 2, 3, 4. 
+There are 6 possible outcomes for Y: 1, 2, 3, 4, 5, 6. 
+
+There are 24 possible combinations of X and Y. 
+
+There are 6 ways that X can be greater than Y: (1,2), (1,3), (1,4), (2,3), (2,4), (3,4). 
+
+Therefore, the probability of X being greater than Y is 6/24, or 1/4. 
+
+Now, let's calculate the expected value of this game. 
+
+The expected value is the sum of all possible values multiplied by their respective probabilities. 
+
+There are two possible values in this game: 2X dollars and -1 dollar. 
+
+The probability of winning 2X dollars is 1/4. 
+The probability of losing 1 dollar is 3/4. 
+
+Therefore, the expected value is: 
+
+(2X)(1/4) + (-1)(3/4) 
+
+= (2/4)X + (-3/4) 
+
+= 1/2X - 3/4 
+
+Now, let's plug in X=1,2,3,4 and see what we get. 
+
+When X=1, we get: 
+
+1/2(1) - 3/4 = -1/4 
+
+When X=2, we get: 
+
+1/2(2) - 3/4 = 0 
+
+When X=3, we get: 
+
+1/2(3) - 3/4 = 1/4 
+
+When X=4, we get: 
+
+1/2(4) - 3/4 = 1 
+
+Therefore, the expected value of this game is 0. 
+
+Now, let's calculate the expected total gain after playing the game 60 times. 
+
+The expected total gain is simply the expected value multiplied by the number of times the game is played. 
+
+Therefore, the expected total gain is: 
+
+0 * 60 = 0 
+
+The expected total gain is 0.",,"[6, 7, 8, 22, 21, 3, 1, 2, 25, 18, 17, 12, 19, 24, 20, 15, 10, 11, 4, 5, 16, 23, 13, 14]","""""""
+write a program that answers the following question: Let X be the result of rolling a fair 4-sided die. Let Y be the result of rolling a fair 6-sided die. You win 2X dollars if X>Y and lose 1 dollar otherwise. After playing this game 60 times, what is your expected total gain?
+""""""
+","
+import random
+
+def roll_die(sides):
+    return random.randint(1, sides)
+
+def play_game(sides1, sides2):
+    x = roll_die(sides1)
+    y = roll_die(sides2)
+    if x > y:
+        return 2*x
+    else:
+        return -1
+
+def play_game_n_times(sides1, sides2, n):
+    total_gain = 0
+    for i in range(n):
+        total_gain += play_game(sides1, sides2)
+    return total_gain
+
+print(play_game_n_times(4, 6, 60))",,"Q: Let X be the result of rolling a fair 4-sided die. Let Y be the result of rolling a fair 6-sided die. Let Z be the average of X and Y. Find the standard deviation of X.
+A: 1.118
+
+Q: Let X be the result of rolling a fair 4-sided die. Let Y be the result of rolling a fair 6-sided die. You win 2X dollars if X>Y and lose 1 dollar otherwise. After playing this game 60 times, what is your expected total gain?
+A: Let's think step by step."," 
+
+There are two possible outcomes when you roll the dice: either X>Y or X≤Y. 
+
+If X>Y, then you win 2X dollars. 
+
+If X≤Y, then you lose 1 dollar. 
+
+Therefore, your expected total gain is: 
+
+(Probability of X>Y)*(Gain if X>Y) + (Probability of X≤Y)*(Gain if X≤Y) 
+
+= (Probability of X>Y)*(2X) + (Probability of X≤Y)*(-1) 
+
+= 2X*(Probability of X>Y) - (Probability of X≤Y) 
+
+= 2X*(1/2) - (1/2) 
+
+= X - 1/2 
+
+Therefore, your expected total gain after playing the game 60 times is 60X - 30.",
 10,"Boxes of Raisin Bran cereal are 30cm tall. Due to settling, boxes have a higher density of raisins at the bottom (h = 0) than at the top (h = 30). Suppose the density (in raisins per cm of height) is given by f(h) = 40 − h. How many raisins are in a box?",750.0,"""""""
 write a program that answers the following question: Boxes of Raisin Bran cereal are 30cm tall. Due to settling, boxes have a higher density of raisins at the bottom (h = 0) than at the top (h = 30). Suppose the density (in raisins per cm of height) is given by f(h) = 40 − h. How many raisins are in a box?
 """"""
@@ -623,7 +1089,7 @@ def midpoint(f, a, b, n):
     h = (b - a) / n
     s = 0
     for i in range(n):
-        s = s",,"""""""
+        s = s",0,"""""""
 write a program that answers the following question: Boxes of Raisin Bran cereal are 30cm tall. Due to settling, boxes have a higher density of raisins at the bottom (h = 0) than at the top (h = 30). Suppose the density (in raisins per cm of height) is given by f(h) = 40 − h. How many raisins are in a box?
 """"""
 
@@ -669,4 +1135,51 @@ Here's what the above code is doing:
 10. Define the adaptive quadrature function with error estimate, tolerance, and max number of iterations
 11. Define the adaptive quadrature function with error estimate, tolerance, max number of iterations,","
 
-There are 1200 raisins in a box.",,"[11, 22, 21, 18, 17, 6, 8, 7, 24, 23, 12, 3, 2, 19, 20, 15, 9, 5, 4, 16, 13, 1, 14, 25]"
+There are 1200 raisins in a box.",,"Q: Boxes of Raisin Bran cereal are 30cm tall. Due to settling, boxes have a higher density of raisins at the bottom (h = 0) than at the top (h = 30). Suppose the density (in raisins per cm of height) is given by f(h) = 40 − h. How many raisins are in a box?
+A: Let's think step by step."," 
+
+The first thing we need to do is figure out how to find the number of raisins in a box if we know the density function. 
+
+We can do this by finding the integral of the density function from 0 to 30. 
+
+This will give us the total number of raisins in the box. 
+
+Now that we know how to find the number of raisins in the box, we can plug in the given density function to find the answer. 
+
+The integral of the given density function is 40h - h^2. 
+
+When we plug in 0 for h, we get 0. 
+
+When we plug in 30 for h, we get 1200. 
+
+Therefore, there are 1200 raisins in the box.",,"[11, 22, 21, 18, 17, 6, 8, 7, 24, 23, 12, 3, 2, 19, 20, 15, 9, 5, 4, 16, 13, 1, 14, 25]","""""""
+write a program that answers the following question: Boxes of Raisin Bran cereal are 30cm tall. Due to settling, boxes have a higher density of raisins at the bottom (h = 0) than at the top (h = 30). Suppose the density (in raisins per cm of height) is given by f(h) = 40 − h. How many raisins are in a box?
+""""""
+","
+import numpy as np
+import matplotlib.pyplot as plt
+
+def f(h):
+    return 40 - h
+
+def trapezoid(f, a, b, n):
+    h = (b - a) / n
+    s = 0.5 * (f(a) + f(b))
+    for i in range(1, n):
+        s = s + f(a + i * h)
+    return s * h
+
+def simpson(f, a, b, n):
+    h = (b - a) / n
+    s = f(a) + f(b)
+    for i in range(1, n, 2):
+        s = s + 4 * f(a + i * h)
+    for i in range(2, n-1, 2):
+        s = s + 2 * f(a + i * h)
+    return s * h / 3
+
+def midpoint(f, a, b, n):
+    h = (b - a) / n
+    s = 0
+    for i in range(n):
+        s = s",,,,

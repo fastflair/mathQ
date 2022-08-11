@@ -1,4 +1,4 @@
-Question,Original Question,Actual Solution,Codex Input,Codex Output,Zero-Shot Evaluation,Codex Explanation Input,Codex Explanation,GPT-3 Output,GPT-3 Evaluation,Most Similar Questions
+Question,Original Question,Actual Solution,Codex Input,Codex Output,Zero-Shot Evaluation,Codex Explanation Input,Codex Explanation,GPT-3 Output,GPT-3 Evaluation,GPT-3 CoT Input,GPT-3 CoT Output,GPT-3 CoT Evaluation,Most Similar Questions,Few-Shot Input,Few-Shot Output,Few-Shot Evaluation,GPT-3 CoT Few-Shot Input,GPT-3 CoT Few-Shot Output,GPT-3 CoT Few-Show Evaluation
 1,"Find the multiplicative inverse of 17 modulo 72 in the range {0, 1, . . . , 71}.",17,"""""""
 write a program that answers the following question: Find the multiplicative inverse of 17 modulo 72 in the range {0, 1, . . . , 71}.
 """"""
@@ -26,7 +26,7 @@ def multiplicative_inverse(a, b):
         q = a // b
         (a, b) = (b, a % b)
         (x, lx) = ((lx - (q * x)), x)
-        (y, ly) =",,"""""""
+        (y, ly) =",0,"""""""
 write a program that answers the following question: Find the multiplicative inverse of 17 modulo 72 in the range {0, 1, . . . , 71}.
 """"""
 
@@ -67,7 +67,118 @@ Here's what the above code is doing:
 8. We divide 4 by 1 to get a quotient of 4 and a remainder of 0.
 9. We now have a = 1 and b =","
 
-The multiplicative inverse of 17 modulo 72 is 41.",,"[25, 24, 2, 19, 22, 11, 10, 4, 9, 16, 8, 13, 20, 5, 6, 7, 14, 21, 15, 17, 3, 23, 18, 12]"
+The multiplicative inverse of 17 modulo 72 is 41.",,"Q: Find the multiplicative inverse of 17 modulo 72 in the range {0, 1, . . . , 71}.
+A: Let's think step by step."," 
+
+The number we are looking for is called the modular inverse of $17$ modulo $72$. 
+The number $17$ is called the modulus. 
+The number $72$ is called the base. 
+
+The modular inverse of $17$ modulo $72$ is the number $x$ such that $17x \equiv 1 \pmod{72}$. 
+
+We can use the Euclidean algorithm to find this number. 
+
+$\gcd(17, 72) = 1$ so $17$ is relatively prime to $72$. 
+
+$72 = 4 \cdot 17 + 4$
+$17 = 4 \cdot 4 + 1$
+$4 = 4 \cdot 1 + 0$
+
+$17 \cdot 1 + (-4) \cdot 72 = 1$
+$17 \cdot 1 + (-4) \cdot (4 \cdot 17 + 4) = 1$
+$17 \cdot 1 + (-4) \cdot (4 \cdot (4 \cdot 4 + 1) + 4) = 1$
+$17 \cdot 1 + (-4) \cdot (4 \cdot (4 \cdot 1 + 0) + 4) = 1$
+$17 \cdot 1 + (-4) \cdot (4 \cdot 1 + 4) = 1$
+$17 \cdot 1 + (-4) \cdot 5 = 1$
+$17 \cdot 1 + (-20) = 1$
+$17 \cdot 21 + (-20) \cdot 72 = 1$
+$17 \cdot 21 + (-20) \cdot (4 \cdot 17 + 4) = 1$
+$17 \cdot 21 + (-20) \cdot (4 \cdot (4 \cdot 4 + 1) + 4) = 1$
+$17 \cdot 21 + (-20) \cdot (4 \cdot (4 \cdot 1 + 0) + 4) = 1$
+$17 \cdot 21 + (-20) \cdot (4 \cdot 1 + 4) = 1$
+$17 \cdot 21 + (-20) \cdot 5 = 1$
+$17 \cdot 21 + (-100) = 1$
+$17 \cdot 121 + (-100) \cdot 72 = 1$
+$17 \cdot 121 + (-100) \cdot (4 \cdot 17 + 4) = 1$
+$17 \cdot 121 + (-100) \cdot (4 \cdot (4 \cdot 4 + 1) + 4) = 1$
+$17 \cdot 121 + (-100) \cdot (4 \cdot (4 \cdot 1 + 0) + 4) = 1$
+$17 \cdot 121 + (-100) \cdot (4 \cdot 1 + 4) = 1$
+$17 \cdot 121 + (-100) \cdot 5 = 1$
+$17 \cdot 121 + (-500) = 1$
+$17 \cdot 641 + (-500) \cdot 72 = 1$
+$17 \cdot 641 + (-500) \cdot (4 \cdot 17 + 4) = 1$
+$17 \cdot 641 + (-500) \cdot (4 \cdot (4 \cdot 4 + 1) + 4) = 1$
+$17 \cdot 641 + (-500) \cdot (4 \cdot (4 \cdot 1 + 0) + 4) = 1$
+$17 \cdot 641 + (-500) \cdot (4 \cdot 1 + 4) = 1$
+$17 \cdot 641 + (-500) \cdot 5 = 1$
+$17 \cdot 641 + (-2500) = 1$
+$17 \cdot 3361 + (-2500) \cdot 72 = 1$
+$17 \cdot 3361 + (-2500) \cdot (4 \cdot 17 + 4) = 1$
+$17 \cdot 3361 + (-2500) \cdot (4 \cdot (4 \cdot 4 + 1) + 4) = 1$
+$17 \cdot 3361 + (-2500) \cdot (4 \cdot (4 \cdot 1 + 0) + 4) = 1$
+$17 \cdot 3361 + (-2500) \cdot (4 \cdot 1 + 4) = 1$
+$17 \",,"[25, 24, 2, 19, 22, 11, 10, 4, 9, 16, 8, 13, 20, 5, 6, 7, 14, 21, 15, 17, 3, 23, 18, 12]","""""""
+write a program that answers the following question: Find a number x ∈ {0, 1, . . . , 112} such that 11x ≡ 1 (mod 113).
+""""""
+
+def find_x(n):
+    for x in range(n):
+        if 11**x % n == 1:
+            return x
+
+print(find_x(113))
+
+""""""
+write a program that answers the following question: Scores for a final exam are given by picking an integer uniformly at random from the set {50, 51, . . . , 97, 98}. The scores of all 128 students in the class are assigned in this manner. Let S1, . . . , S128 be their scores. For i ∈ {1, . . . , 128}, what is E[Si] ? 
+""""""
+
+import random
+
+def main():
+    scores = []
+    for i in range(128):
+        scores.append(random.randint(50,98))
+    print(scores)
+    print(sum(scores)/len(scores))
+
+if __name__ == ""__main__"":
+    main()
+
+""""""
+write a program that answers the following question: Find the multiplicative inverse of 17 modulo 72 in the range {0, 1, . . . , 71}.
+""""""
+","
+def find_inverse(a, n):
+    for i in range(n):
+        if a*i % n == 1:
+            return i
+
+print(find_inverse(17, 72))
+
+""""""
+write a program that answers the following question: Find the multiplicative inverse of 17 modulo 72 in the range {0, 1, . . . , 71}.
+""""""
+
+def find_inverse(a, n):
+    for i in range(n):
+        if a*i % n == 1:
+            return i
+
+print(find_inverse(17, 72))
+
+""""""
+write a program that answers the following question: Find the multiplicative inverse of 17 modulo 72 in the range {0, 1, . . . , 71}.
+""""""
+
+def find_inverse(a, n):
+    for i in range(n):
+        if a*i % n == 1:
+            return i
+
+print(find_inverse(17, 72))
+
+""""""
+write a program that answers the following question: Find the multiplicative inverse of 17 modulo 72 in the range {0, 1,",,,,
 2,"Find a number x ∈ {0, 1, . . . , 112} such that 11x ≡ 1 (mod 113).",72,"""""""
 write a program that answers the following question: Find a number x ∈ {0, 1, . . . , 112} such that 11x ≡ 1 (mod 113).
 """"""
@@ -77,7 +188,7 @@ def find_x(n):
         if 11**x % n == 1:
             return x
 
-print(find_x(113))",,"""""""
+print(find_x(113))",1,"""""""
 write a program that answers the following question: Find a number x ∈ {0, 1, . . . , 112} such that 11x ≡ 1 (mod 113).
 """"""
 
@@ -96,7 +207,18 @@ Here's what the above code is doing:
 4. We call the function with 113 as the argument.
 '''","
 
-x = 102",,"[24, 1, 25, 22, 19, 8, 4, 11, 10, 16, 9, 13, 20, 6, 15, 5, 7, 14, 3, 21, 17, 23, 12, 18]"
+x = 102",,"Q: Find a number x ∈ {0, 1, . . . , 112} such that 11x ≡ 1 (mod 113).
+A: Let's think step by step."," 
+First, we need to find a number x such that 11x ≡ 1 (mod 113). 
+We know that 113 is a prime number, so we can use the fact that if a and m are relatively prime, then a^-1 ≡ a^(m-2) (mod m). 
+We also know that 11 and 113 are relatively prime because their only common factor is 1. 
+So we have: 11^-1 ≡ 11^111 (mod 113) 
+⇒ x ≡ 11^111 (mod 113) 
+⇒ x ≡ 121 (mod 113) 
+Now we need to find a number x such that x ≡ 121 (mod 113). 
+We can do this by finding the smallest positive integer that is congruent to 121 modulo 113. 
+This number is 134. 
+So our final answer is 134.",,"[24, 1, 25, 22, 19, 8, 4, 11, 10, 16, 9, 13, 20, 6, 15, 5, 7, 14, 3, 21, 17, 23, 12, 18]",,,,,,
 3,"Finalphobia is a rare disease in which the victim has the delusion that he or she is being subjected to an intense mathematical examination. A person selected uniformly at random has finalphobia with probability 1/100. A person with finalphobia has shaky hands with probability 9/10. A person without finalphobia has shaky hands with probability 1/20. What is the probablility that a person selected uniformly at random has finalphobia, given that he or she has shaky hands? ",18/117,"""""""
 write a program that answers the following question: Finalphobia is a rare disease in which the victim has the delusion that he or she is being subjected to an intense mathematical examination. A person selected uniformly at random has finalphobia with probability 1/100. A person with finalphobia has shaky hands with probability 9/10. A person without finalphobia has shaky hands with probability 1/20. What is the probablility that a person selected uniformly at random has finalphobia, given that he or she has shaky hands? 
 """"""
@@ -118,7 +240,7 @@ write a program that answers the following question: Finalphobia is a rare disea
 
 # P(A|B) = 9/100 / (9/1000 + 99/2000)
 
-# P(A|",,"""""""
+# P(A|",0,"""""""
 write a program that answers the following question: Finalphobia is a rare disease in which the victim has the delusion that he or she is being subjected to an intense mathematical examination. A person selected uniformly at random has finalphobia with probability 1/100. A person with finalphobia has shaky hands with probability 9/10. A person without finalphobia has shaky hands with probability 1/20. What is the probablility that a person selected uniformly at random has finalphobia, given that he or she has shaky hands? 
 """"""
 
@@ -154,7 +276,71 @@ Here's what the above code is doing:
 
 # P(A|B) = P(A) * P(B|A) / (","
 
-The probability that a person selected uniformly at random has finalphobia, given that he or she has shaky hands, is 9/10.",,"[21, 15, 4, 22, 7, 9, 11, 6, 5, 10, 23, 8, 24, 17, 20, 19, 2, 16, 25, 18, 13, 12, 1, 14]"
+The probability that a person selected uniformly at random has finalphobia, given that he or she has shaky hands, is 9/10.",,"Q: Finalphobia is a rare disease in which the victim has the delusion that he or she is being subjected to an intense mathematical examination. A person selected uniformly at random has finalphobia with probability 1/100. A person with finalphobia has shaky hands with probability 9/10. A person without finalphobia has shaky hands with probability 1/20. What is the probablility that a person selected uniformly at random has finalphobia, given that he or she has shaky hands? 
+A: Let's think step by step."," 
+
+First, let's think about the probability that a person has finalphobia. We know that the probability of this is 1/100. 
+
+Next, let's think about the probability that a person has shaky hands. We know that the probability of this is 9/10 if the person has finalphobia and 1/20 if the person does not have finalphobia. 
+
+Now, let's think about the probability that a person has finalphobia given that he or she has shaky hands. We can use Bayes' theorem to calculate this. 
+
+Bayes' theorem states that the probability of A given B is equal to the probability of B given A times the probability of A divided by the probability of B. 
+
+So, in this case, the probability of finalphobia given shaky hands is equal to the probability of shaky hands given finalphobia times the probability of finalphobia divided by the probability of shaky hands. 
+
+We can plug in the values that we know. The probability of shaky hands given finalphobia is 9/10. The probability of finalphobia is 1/100. The probability of shaky hands is 9/10 times 1/100, which is 9/1000, plus 1/20, which is 1/200, which is 1/150. 
+
+So, the probability of finalphobia given shaky hands is 9/10 times 1/100 divided by 1/150, which is 9/15. 
+",,"[21, 15, 4, 22, 7, 9, 11, 6, 5, 10, 23, 8, 24, 17, 20, 19, 2, 16, 25, 18, 13, 12, 1, 14]","""""""
+write a program that answers the following question: Scores for a final exam are given by picking an integer uniformly at random from the set {50, 51, . . . , 97, 98}. The scores of all 128 students in the class are assigned in this manner. Let S1, . . . , S128 be their scores. For i ∈ {1, . . . , 128}, what is E[Si] ? 
+""""""
+
+import random
+
+def main():
+    scores = []
+    for i in range(128):
+        scores.append(random.randint(50,98))
+    print(scores)
+    print(sum(scores)/len(scores))
+
+if __name__ == ""__main__"":
+    main()
+
+""""""
+write a program that answers the following question: Find a number x ∈ {0, 1, . . . , 112} such that 11x ≡ 1 (mod 113).
+""""""
+
+def find_x(n):
+    for x in range(n):
+        if 11**x % n == 1:
+            return x
+
+print(find_x(113))
+
+""""""
+write a program that answers the following question: Finalphobia is a rare disease in which the victim has the delusion that he or she is being subjected to an intense mathematical examination. A person selected uniformly at random has finalphobia with probability 1/100. A person with finalphobia has shaky hands with probability 9/10. A person without finalphobia has shaky hands with probability 1/20. What is the probablility that a person selected uniformly at random has finalphobia, given that he or she has shaky hands? 
+""""""
+","
+def main():
+    p_finalphobia = 1/100
+    p_shaky_hands_given_finalphobia = 9/10
+    p_shaky_hands_given_not_finalphobia = 1/20
+    p_shaky_hands = (p_finalphobia * p_shaky_hands_given_finalphobia) + ((1-p_finalphobia) * p_shaky_hands_given_not_finalphobia)
+    p_finalphobia_given_shaky_hands = (p_finalphobia * p_shaky_hands_given_finalphobia) / p_shaky_hands
+    print(p_finalphobia_given_shaky_hands)
+
+if __name__ == ""__main__"":
+    main()
+
+""""""
+write a program that answers the following question: A student is selected uniformly at random from the class. What is the probability that the student is a senior, given that the student is a math major? 
+""""""
+
+def main():
+    p_senior = 1/4
+    p_math_major = 1/",,,,
 4,Suppose that you roll five 6-sided dice that are fair and mutually independent. What is the probability that all five dice show different values?,120/1296,"""""""
 write a program that answers the following question: Suppose that you roll five 6-sided dice that are fair and mutually independent. What is the probability that all five dice show different values?
 """"""
@@ -173,7 +359,7 @@ def check_dice(dice):
 def simulate_dice(n):
     return sum([check_dice(roll_five_dice()) for i in range(n)]) / n
 
-print(simulate_dice(100000))",,"""""""
+print(simulate_dice(100000))",0,"""""""
 write a program that answers the following question: Suppose that you roll five 6-sided dice that are fair and mutually independent. What is the probability that all five dice show different values?
 """"""
 
@@ -201,7 +387,80 @@ Here's what the above code is doing:
 4. simulate_dice() rolls 5 dice n times and returns the fraction of times that all 5 dice are different
 '''","
 
-The probability that all five dice show different values is 1/6^5.",,"[8, 19, 22, 15, 11, 7, 10, 9, 25, 6, 17, 24, 16, 5, 2, 1, 21, 14, 13, 23, 20, 3, 12, 18]"
+The probability that all five dice show different values is 1/6^5.",,"Q: Suppose that you roll five 6-sided dice that are fair and mutually independent. What is the probability that all five dice show different values?
+A: Let's think step by step."," 
+
+There are $6^5$ possible outcomes. 
+There are $\binom{6}{5}$ ways to choose 5 different values from 6 values. 
+There are $5!$ ways to arrange 5 different values. 
+
+So the probability is $\frac{\binom{6}{5}5!}{6^5}=\frac{6}{6^5}=\frac{1}{6^4}$
+",,"[8, 19, 22, 15, 11, 7, 10, 9, 25, 6, 17, 24, 16, 5, 2, 1, 21, 14, 13, 23, 20, 3, 12, 18]","""""""
+write a program that answers the following question: Scores for a final exam are given by picking an integer uniformly at random from the set {50, 51, . . . , 97, 98}. The scores of all 128 students in the class are assigned in this manner. Let S1, . . . , S128 be their scores. For i ∈ {1, . . . , 128}, what is E[Si] ? 
+""""""
+
+import random
+
+def main():
+    scores = []
+    for i in range(128):
+        scores.append(random.randint(50,98))
+    print(scores)
+    print(sum(scores)/len(scores))
+
+if __name__ == ""__main__"":
+    main()
+
+""""""
+write a program that answers the following question: Find a number x ∈ {0, 1, . . . , 112} such that 11x ≡ 1 (mod 113).
+""""""
+
+def find_x(n):
+    for x in range(n):
+        if 11**x % n == 1:
+            return x
+
+print(find_x(113))
+
+""""""
+write a program that answers the following question: Suppose that you roll five 6-sided dice that are fair and mutually independent. What is the probability that all five dice show different values?
+""""""
+","
+def main():
+    count = 0
+    for i in range(1,7):
+        for j in range(1,7):
+            for k in range(1,7):
+                for l in range(1,7):
+                    for m in range(1,7):
+                        if i != j and i != k and i != l and i != m and j != k and j != l and j != m and k != l and k != m and l != m:
+                            count += 1
+    print(count/7776)
+
+if __name__ == ""__main__"":
+    main()
+
+""""""
+write a program that answers the following question: Suppose that you roll five 6-sided dice that are fair and mutually independent. What is the probability that all five dice show different values?
+""""""
+
+def main():
+    count = 0
+    for i in range(1,7):
+        for j in range(1,7):
+            for k in range(1,7):
+                for l in range(1,7):
+                    for m in range(1,7):
+                        if i != j and i !=",,"Q: I have twelve cards: 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6. I shuffle them and deal them in a row. What is the expected number of adjacent pairs with the same value?
+A: 1
+
+Q: Suppose that you roll five 6-sided dice that are fair and mutually independent. What is the probability that all five dice show different values?
+A: Let's think step by step."," 
+
+There are 6^5 ways to roll 5 dice. 
+There are 5! ways to roll 5 dice and have all different values. 
+
+So the probability is 5!/6^5.",
 5,MIT students sometimes delay laundry for a few days. Assume all random values described below are mutually independent. A busy student must complete 3 problem sets before doing laundry. Each problem set requires 1 day with probability 2/3 and 2 days with probability 1/3. Let B be the number of days a busy student delays laundry. What is Ex (B)?  ,4,"""""""
 write a program that answers the following question: MIT students sometimes delay laundry for a few days. Assume all random values described below are mutually independent. A busy student must complete 3 problem sets before doing laundry. Each problem set requires 1 day with probability 2/3 and 2 days with probability 1/3. Let B be the number of days a busy student delays laundry. What is Ex (B)?  
 """"""
@@ -226,7 +485,7 @@ def E_B(trials):
     """"""
     return sum([busy_student() for i in range(trials)])/float(trials)
 
-print E_B(10000)",,"""""""
+print E_B(10000)",0,"""""""
 write a program that answers the following question: MIT students sometimes delay laundry for a few days. Assume all random values described below are mutually independent. A busy student must complete 3 problem sets before doing laundry. Each problem set requires 1 day with probability 2/3 and 2 days with probability 1/3. Let B be the number of days a busy student delays laundry. What is Ex (B)?  
 """"""
 
@@ -259,7 +518,86 @@ Here's what the above code is doing:
 3. E_B(trials) returns the expected value of B
 '''","
 
-Ex (B) = 3",,"[6, 7, 11, 9, 10, 22, 4, 17, 8, 21, 19, 12, 16, 13, 20, 23, 3, 25, 24, 1, 15, 2, 18, 14]"
+Ex (B) = 3",,"Q: MIT students sometimes delay laundry for a few days. Assume all random values described below are mutually independent. A busy student must complete 3 problem sets before doing laundry. Each problem set requires 1 day with probability 2/3 and 2 days with probability 1/3. Let B be the number of days a busy student delays laundry. What is Ex (B)?  
+A: Let's think step by step."," 
+
+A busy student must complete 3 problem sets before doing laundry.
+
+This means that the student will do laundry on the fourth day. 
+
+Each problem set requires 1 day with probability 2/3 and 2 days with probability 1/3.
+
+This means that the student has a 2/3 chance of completing the problem set in 1 day and a 1/3 chance of completing the problem set in 2 days. 
+
+Let B be the number of days a busy student delays laundry.
+
+This means that B is the number of days it takes for the student to complete the problem set. 
+
+What is Ex (B)?
+
+This means that the expected value of B is the number of days it takes for the student to complete the problem set.",,"[6, 7, 11, 9, 10, 22, 4, 17, 8, 21, 19, 12, 16, 13, 20, 23, 3, 25, 24, 1, 15, 2, 18, 14]","""""""
+write a program that answers the following question: Scores for a final exam are given by picking an integer uniformly at random from the set {50, 51, . . . , 97, 98}. The scores of all 128 students in the class are assigned in this manner. Let S1, . . . , S128 be their scores. For i ∈ {1, . . . , 128}, what is E[Si] ? 
+""""""
+
+import random
+
+def main():
+    scores = []
+    for i in range(128):
+        scores.append(random.randint(50,98))
+    print(scores)
+    print(sum(scores)/len(scores))
+
+if __name__ == ""__main__"":
+    main()
+
+""""""
+write a program that answers the following question: Find a number x ∈ {0, 1, . . . , 112} such that 11x ≡ 1 (mod 113).
+""""""
+
+def find_x(n):
+    for x in range(n):
+        if 11**x % n == 1:
+            return x
+
+print(find_x(113))
+
+""""""
+write a program that answers the following question: MIT students sometimes delay laundry for a few days. Assume all random values described below are mutually independent. A busy student must complete 3 problem sets before doing laundry. Each problem set requires 1 day with probability 2/3 and 2 days with probability 1/3. Let B be the number of days a busy student delays laundry. What is Ex (B)?  
+""""""
+","
+import random
+
+def main():
+    days = 0
+    for i in range(3):
+        days += random.randint(1,2)
+    print(days)
+
+if __name__ == ""__main__"":
+    main()
+
+""""""
+write a program that answers the following question: A student is given a sequence of n integers. The student is allowed to change the sign of any number in the sequence. The student is asked to find the maximum sum of the resulting sequence. For example, if the sequence is (1, 2, 3, 4), the student can change the sign of any of the numbers to obtain the sequence (1, 2, -3, 4). The maximum sum is 1 + 2 - 3 + 4 = 4. What is the maximum sum of the sequence (1, 2, 3, . . . , n)?
+""""""
+
+def max_sum(n):
+    return n*(n+1)/2
+
+print(max_sum(10))
+
+""""""
+write a program that answers the following question: A student is given a sequence of n integers. The student is allowed to change the sign of any number in the sequence.",,"Q: MIT students sometimes delay laundry for a few days. Assume all random values described below are mutually independent. A relaxed student rolls a fair, 6-sided die in the morning. If he rolls a 1, then he does his laundry immediately (with zero days of delay). Otherwise, he delays for one day and repeats the experiment the following morning. Let R be the number of days a relaxed student delays laundry. What is Ex (R)? 
+A: 5
+
+Q: MIT students sometimes delay laundry for a few days. Assume all random values described below are mutually independent. A busy student must complete 3 problem sets before doing laundry. Each problem set requires 1 day with probability 2/3 and 2 days with probability 1/3. Let B be the number of days a busy student delays laundry. What is Ex (B)?  
+A: Let's think step by step."," 
+
+First, the student has to complete 3 problem sets. The expected number of days to complete 3 problem sets is 9. 
+
+Then, the student can do laundry. The expected number of days to do laundry is 1. 
+
+Therefore, the expected number of days to delay laundry is 9 + 1 = 10.",
 6,"MIT students sometimes delay laundry for a few days. Assume all random values described below are mutually independent. A relaxed student rolls a fair, 6-sided die in the morning. If he rolls a 1, then he does his laundry immediately (with zero days of delay). Otherwise, he delays for one day and repeats the experiment the following morning. Let R be the number of days a relaxed student delays laundry. What is Ex (R)? ",5,"""""""
 write a program that answers the following question: MIT students sometimes delay laundry for a few days. Assume all random values described below are mutually independent. A relaxed student rolls a fair, 6-sided die in the morning. If he rolls a 1, then he does his laundry immediately (with zero days of delay). Otherwise, he delays for one day and repeats the experiment the following morning. Let R be the number of days a relaxed student delays laundry. What is Ex (R)? 
 """"""
@@ -285,7 +623,7 @@ def main():
     print(total_days/10000)
 
 if __name__ == ""__main__"":
-    main()",,"""""""
+    main()",0,"""""""
 write a program that answers the following question: MIT students sometimes delay laundry for a few days. Assume all random values described below are mutually independent. A relaxed student rolls a fair, 6-sided die in the morning. If he rolls a 1, then he does his laundry immediately (with zero days of delay). Otherwise, he delays for one day and repeats the experiment the following morning. Let R be the number of days a relaxed student delays laundry. What is Ex (R)? 
 """"""
 
@@ -326,7 +664,192 @@ Ex(R) = 5/6 + 5/6Ex(R)
 Ex(R) = 1 + 5/6Ex(R)
 Ex(R) - Ex(R) = 1
 Ex(R)(1 - 5/6) = 1
-Ex(R) = 6/5",,"[7, 5, 9, 4, 11, 10, 22, 8, 17, 23, 19, 21, 12, 3, 20, 16, 1, 24, 25, 13, 2, 15, 18, 14]"
+Ex(R) = 6/5",,"Q: MIT students sometimes delay laundry for a few days. Assume all random values described below are mutually independent. A relaxed student rolls a fair, 6-sided die in the morning. If he rolls a 1, then he does his laundry immediately (with zero days of delay). Otherwise, he delays for one day and repeats the experiment the following morning. Let R be the number of days a relaxed student delays laundry. What is Ex (R)? 
+A: Let's think step by step."," 
+
+A relaxed student rolls a fair, 6-sided die in the morning. 
+
+There are six possible outcomes: 1, 2, 3, 4, 5, 6. 
+
+The probability of rolling a 1 is 1/6. The probability of rolling a number other than 1 is 5/6. 
+
+If he rolls a 1, then he does his laundry immediately (with zero days of delay). Otherwise, he delays for one day and repeats the experiment the following morning. 
+
+This means that if he rolls a 1, R = 0. If he rolls a number other than 1, R = 1 + R', where R' is a new random variable that is the number of days of delay for the second day. 
+
+Therefore, we have: 
+
+Ex (R) = (1/6) * 0 + (5/6) * (1 + Ex (R'))
+
+Ex (R') is a new random variable that is the number of days of delay for the second day. This is a different random variable than R, so we cannot simply plug R in for R'. We need to find the expected value for R' and plug that in. 
+
+We can use the same reasoning as before. We know that: 
+
+Ex (R') = (1/6) * 0 + (5/6) * (1 + Ex (R''))
+
+R'' is a new random variable that is the number of days of delay for the third day. We need to find the expected value for R'' and plug that in. 
+
+We can keep going like this until we get to a point where we can solve for Ex (R). 
+
+Ex (R) = (1/6) * 0 + (5/6) * (1 + Ex (R'))
+
+Ex (R') = (1/6) * 0 + (5/6) * (1 + Ex (R''))
+
+Ex (R'') = (1/6) * 0 + (5/6) * (1 + Ex (R'''))
+
+...
+
+Ex (Rn) = (1/6) * 0 + (5/6) * (1 + Ex (Rn+1))
+
+We can solve this using geometric series. We get: 
+
+Ex (Rn) = (5/6)n
+
+Therefore, 
+
+Ex (R) = limn→∞ (5/6)n
+
+The limit of this goes to infinity, so the expected value of R is infinity.",,"[7, 5, 9, 4, 11, 10, 22, 8, 17, 23, 19, 21, 12, 3, 20, 16, 1, 24, 25, 13, 2, 15, 18, 14]","""""""
+write a program that answers the following question: Scores for a final exam are given by picking an integer uniformly at random from the set {50, 51, . . . , 97, 98}. The scores of all 128 students in the class are assigned in this manner. Let S1, . . . , S128 be their scores. For i ∈ {1, . . . , 128}, what is E[Si] ? 
+""""""
+
+import random
+
+def main():
+    scores = []
+    for i in range(128):
+        scores.append(random.randint(50,98))
+    print(scores)
+    print(sum(scores)/len(scores))
+
+if __name__ == ""__main__"":
+    main()
+
+""""""
+write a program that answers the following question: Find a number x ∈ {0, 1, . . . , 112} such that 11x ≡ 1 (mod 113).
+""""""
+
+def find_x(n):
+    for x in range(n):
+        if 11**x % n == 1:
+            return x
+
+print(find_x(113))
+
+""""""
+write a program that answers the following question: MIT students sometimes delay laundry for a few days. Assume all random values described below are mutually independent. A relaxed student rolls a fair, 6-sided die in the morning. If he rolls a 1, then he does his laundry immediately (with zero days of delay). Otherwise, he delays for one day and repeats the experiment the following morning. Let R be the number of days a relaxed student delays laundry. What is Ex (R)? 
+""""""
+","
+import random
+
+def main():
+    days = 0
+    while True:
+        roll = random.randint(1,6)
+        if roll == 1:
+            break
+        else:
+            days += 1
+    print(days)
+
+if __name__ == ""__main__"":
+    main()
+
+""""""
+write a program that answers the following question: A student is given a sequence of n integers, each of which is either 0 or 1. The student is allowed to perform the following operation as many times as he wants: choose any two adjacent integers in the sequence and swap them. What is the maximum number of 1s that can be obtained in the sequence after performing the operation? 
+""""""
+
+def main():
+    n = int(input(""Enter n: ""))
+    seq = [int(x) for x in input(""Enter sequence: "").split()]
+    print(seq)
+    print(max_ones(seq))
+
+def max_ones(seq):
+    max_ones = 0
+    for i in range(len(seq)):
+        if seq[i] == 1:
+            max_ones +=",,"Q: MIT students sometimes delay laundry for a few days. Assume all random values described below are mutually independent. Before doing laundry, an unlucky student must recover from illness for a number of days equal to the product of the numbers rolled on two fair, 6-sided dice. Let U be the expected number of days an unlucky student delays laundry. What is Ex (U)? 
+A: 49/4
+
+Q: MIT students sometimes delay laundry for a few days. Assume all random values described below are mutually independent. A relaxed student rolls a fair, 6-sided die in the morning. If he rolls a 1, then he does his laundry immediately (with zero days of delay). Otherwise, he delays for one day and repeats the experiment the following morning. Let R be the number of days a relaxed student delays laundry. What is Ex (R)? 
+A: Let's think step by step."," 
+
+First, let's calculate the probability of rolling a 1 on the first day. This is 1/6. 
+
+Now, let's calculate the probability of rolling a 1 on the second day. This is 1/6. 
+
+Now, let's calculate the probability of rolling a 1 on the third day. This is 1/6. 
+
+Now, let's calculate the probability of rolling a 1 on the fourth day. This is 1/6. 
+
+Now, let's calculate the probability of rolling a 1 on the fifth day. This is 1/6. 
+
+Now, let's calculate the probability of rolling a 1 on the sixth day. This is 1/6. 
+
+Now, let's calculate the probability of rolling a 1 on the seventh day. This is 1/6. 
+
+Now, let's calculate the probability of rolling a 1 on the eighth day. This is 1/6. 
+
+Now, let's calculate the probability of rolling a 1 on the ninth day. This is 1/6. 
+
+Now, let's calculate the probability of rolling a 1 on the tenth day. This is 1/6. 
+
+Now, let's calculate the probability of rolling a 1 on the eleventh day. This is 1/6. 
+
+Now, let's calculate the probability of rolling a 1 on the twelfth day. This is 1/6. 
+
+Now, let's calculate the probability of rolling a 1 on the thirteenth day. This is 1/6. 
+
+Now, let's calculate the probability of rolling a 1 on the fourteenth day. This is 1/6. 
+
+Now, let's calculate the probability of rolling a 1 on the fifteenth day. This is 1/6. 
+
+Now, let's calculate the probability of rolling a 1 on the sixteenth day. This is 1/6. 
+
+Now, let's calculate the probability of rolling a 1 on the seventeenth day. This is 1/6. 
+
+Now, let's calculate the probability of rolling a 1 on the eighteenth day. This is 1/6. 
+
+Now, let's calculate the probability of rolling a 1 on the nineteenth day. This is 1/6. 
+
+Now, let's calculate the probability of rolling a 1 on the twentieth day. This is 1/6. 
+
+Now, let's calculate the probability of rolling a 1 on the twenty-first day. This is 1/6. 
+
+Now, let's calculate the probability of rolling a 1 on the twenty-second day. This is 1/6. 
+
+Now, let's calculate the probability of rolling a 1 on the twenty-third day. This is 1/6. 
+
+Now, let's calculate the probability of rolling a 1 on the twenty-fourth day. This is 1/6. 
+
+Now, let's calculate the probability of rolling a 1 on the twenty-fifth day. This is 1/6. 
+
+Now, let's calculate the probability of rolling a 1 on the twenty-sixth day. This is 1/6. 
+
+Now, let's calculate the probability of rolling a 1 on the twenty-seventh day. This is 1/6. 
+
+Now, let's calculate the probability of rolling a 1 on the twenty-eighth day. This is 1/6. 
+
+Now, let's calculate the probability of rolling a 1 on the twenty-ninth day. This is 1/6. 
+
+Now, let's calculate the probability of rolling a 1 on the thirtieth day. This is 1/6. 
+
+Now, let's calculate the probability of rolling a 1 on the thirty-first day. This is 1/6. 
+
+Now, let's calculate the probability of rolling a 1 on the thirty-second day. This is 1/6. 
+
+Now, let's calculate the probability of rolling a 1 on the thirty-third day. This is 1/6. 
+
+Now, let's calculate the probability of rolling a 1 on the thirty-fourth day. This is 1/6. 
+
+Now, let's calculate the probability of rolling a 1 on the thirty-fifth day. This is 1/6. 
+
+Now, let's calculate the probability of rolling a 1 on the thirty-sixth day. This is 1/6. 
+
+Now, let's calculate the probability of rolling a 1 on the thirty-seventh day. This is 1/6. 
+
+Now, let's calculate the probability of rolling a 1 on the thirty-eighth day. This is 1/6",
 7,"MIT students sometimes delay laundry for a few days. Assume all random values described below are mutually independent. Before doing laundry, an unlucky student must recover from illness for a number of days equal to the product of the numbers rolled on two fair, 6-sided dice. Let U be the expected number of days an unlucky student delays laundry. What is Ex (U)? ",49/4,"""""""
 write a program that answers the following question: MIT students sometimes delay laundry for a few days. Assume all random values described below are mutually independent. Before doing laundry, an unlucky student must recover from illness for a number of days equal to the product of the numbers rolled on two fair, 6-sided dice. Let U be the expected number of days an unlucky student delays laundry. What is Ex (U)? 
 """"""
@@ -344,7 +867,7 @@ def main():
     print(total_days/num_trials)
 
 if __name__ == ""__main__"":
-    main()",,"""""""
+    main()",0,"""""""
 write a program that answers the following question: MIT students sometimes delay laundry for a few days. Assume all random values described below are mutually independent. Before doing laundry, an unlucky student must recover from illness for a number of days equal to the product of the numbers rolled on two fair, 6-sided dice. Let U be the expected number of days an unlucky student delays laundry. What is Ex (U)? 
 """"""
 
@@ -373,7 +896,97 @@ Here's what the above code is doing:
 6. We divide the total_days by the number of trials to get the expected value.
 '''","
 
-Ex(U) = 2.5",,"[6, 5, 4, 11, 9, 10, 22, 17, 8, 21, 12, 23, 19, 3, 20, 15, 25, 1, 24, 16, 13, 2, 18, 14]"
+Ex(U) = 2.5",,"Q: MIT students sometimes delay laundry for a few days. Assume all random values described below are mutually independent. Before doing laundry, an unlucky student must recover from illness for a number of days equal to the product of the numbers rolled on two fair, 6-sided dice. Let U be the expected number of days an unlucky student delays laundry. What is Ex (U)? 
+A: Let's think step by step."," 
+
+An unlucky student must recover from illness for a number of days equal to the product of the numbers rolled on two fair, 6-sided dice. 
+
+This means that the number of days an unlucky student delays laundry is equal to the product of two random variables, X and Y, where X and Y ~ Unif(1,6). 
+
+Now, we can use the fact that if X and Y are independent random variables, then E(XY) = E(X)E(Y). 
+
+Therefore, E(U) = E(XY) = E(X)E(Y) = (1/6)(1/6)(36) = 6. 
+
+Therefore, the expected number of days an unlucky student delays laundry is 6.",,"[6, 5, 4, 11, 9, 10, 22, 17, 8, 21, 12, 23, 19, 3, 20, 15, 25, 1, 24, 16, 13, 2, 18, 14]","""""""
+write a program that answers the following question: Scores for a final exam are given by picking an integer uniformly at random from the set {50, 51, . . . , 97, 98}. The scores of all 128 students in the class are assigned in this manner. Let S1, . . . , S128 be their scores. For i ∈ {1, . . . , 128}, what is E[Si] ? 
+""""""
+
+import random
+
+def main():
+    scores = []
+    for i in range(128):
+        scores.append(random.randint(50,98))
+    print(scores)
+    print(sum(scores)/len(scores))
+
+if __name__ == ""__main__"":
+    main()
+
+""""""
+write a program that answers the following question: Find a number x ∈ {0, 1, . . . , 112} such that 11x ≡ 1 (mod 113).
+""""""
+
+def find_x(n):
+    for x in range(n):
+        if 11**x % n == 1:
+            return x
+
+print(find_x(113))
+
+""""""
+write a program that answers the following question: MIT students sometimes delay laundry for a few days. Assume all random values described below are mutually independent. Before doing laundry, an unlucky student must recover from illness for a number of days equal to the product of the numbers rolled on two fair, 6-sided dice. Let U be the expected number of days an unlucky student delays laundry. What is Ex (U)? 
+""""""
+","
+import random
+
+def main():
+    days = []
+    for i in range(10000):
+        days.append(random.randint(1,6)*random.randint(1,6))
+    print(sum(days)/len(days))
+
+if __name__ == ""__main__"":
+    main()
+
+""""""
+write a program that answers the following question: A fair coin is tossed repeatedly until the first time it lands heads. Let X be the number of tosses required. What is E[X]? 
+""""""
+
+import random
+
+def main():
+    tosses = []
+    for i in range(10000):
+        toss = 0
+        while random.randint(0,1) == 0:
+            toss += 1
+        tosses.append(toss)
+    print(sum(tosses)/len(tosses))
+
+if __name__ == ""__main__"":
+    main()
+
+""""""
+write a program that answers the following question: A fair coin is tossed repeatedly until the first time it lands heads. Let X be the number of tosses required. What is E[X]",,"Q: MIT students sometimes delay laundry for a few days. Assume all random values described below are mutually independent. A relaxed student rolls a fair, 6-sided die in the morning. If he rolls a 1, then he does his laundry immediately (with zero days of delay). Otherwise, he delays for one day and repeats the experiment the following morning. Let R be the number of days a relaxed student delays laundry. What is Ex (R)? 
+A: 5
+
+Q: MIT students sometimes delay laundry for a few days. Assume all random values described below are mutually independent. Before doing laundry, an unlucky student must recover from illness for a number of days equal to the product of the numbers rolled on two fair, 6-sided dice. Let U be the expected number of days an unlucky student delays laundry. What is Ex (U)? 
+A: Let's think step by step."," 
+
+First, the student rolls two dice. The possible outcomes are (1,1), (1,2), (1,3), (1,4), (1,5), (1,6), (2,1), (2,2), and so on. 
+
+There are 36 possible outcomes in total. 
+
+Now, we need to calculate the expected value for each of the possible outcomes. 
+
+For example, if the student rolls a (1,1), then he will have to recover from illness for 1 day. 
+
+If the student rolls a (1,2), then he will have to recover from illness for 2 days. 
+
+And so on. 
+
+Once we have calculated the expected value for each of the possible outcomes, we can add them all up to get the expected value for U.",
 8,"I have twelve cards: 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6. I shuffle them and deal them in a row. What is the expected number of adjacent pairs with the same value?",1,"""""""
 write a program that answers the following question: I have twelve cards: 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6. I shuffle them and deal them in a row. What is the expected number of adjacent pairs with the same value?
 """"""
@@ -401,7 +1014,7 @@ def main():
     print(total_pairs / trials)
 
 if __name__ == '__main__':
-    main()",,"""""""
+    main()",0,"""""""
 write a program that answers the following question: I have twelve cards: 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6. I shuffle them and deal them in a row. What is the expected number of adjacent pairs with the same value?
 """"""
 
@@ -434,11 +1047,94 @@ if __name__ == '__main__':
 Here's what the above code is doing:
 1."," We define a function shuffle_cards() that returns a list of cards in a random order.
 2. We define a function count_pairs() that takes a list of cards and returns the number of adjacent pairs with the same value.
-3. We define a function main() that runs the simulation.
-4. We run the simulation.
-'''","
+3. We define a function main() that runs the simulation. It does the following:
+    a. It creates a variable trials and sets it to 100000. This is the number of times we will run the simulation.
+    b. It creates a variable total_pairs and sets it to 0. This is the total number of pairs we will see in all the trials.
+    c. It creates a for loop that runs trials times.
+    d. In each","
 
-There are six possible pairs that can be formed: 1-1, 2-2, 3-3, 4-4, 5-5, 6-6. Each pair is equally likely to be formed, so the expected number of adjacent pairs with the same value is 6/12 = 1/2.",,"[4, 19, 22, 15, 9, 11, 25, 10, 16, 2, 13, 24, 12, 7, 6, 1, 5, 14, 20, 21, 17, 3, 23, 18]"
+There are six possible pairs that can be formed: 1-1, 2-2, 3-3, 4-4, 5-5, 6-6. Each pair is equally likely to be formed, so the expected number of adjacent pairs with the same value is 6/12 = 1/2.",,"Q: I have twelve cards: 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6. I shuffle them and deal them in a row. What is the expected number of adjacent pairs with the same value?
+A: Let's think step by step."," 
+
+There are $\binom{12}{2} = 66$ ways to choose two cards from the twelve. 
+There are $\binom{10}{2} = 45$ ways to choose two cards from the remaining ten. 
+There are $\binom{8}{2} = 28$ ways to choose two cards from the remaining eight. 
+There are $\binom{6}{2} = 15$ ways to choose two cards from the remaining six. 
+
+Thus, the probability of having two adjacent pairs with the same value is 
+$$\frac{66 + 45 + 28 + 15}{\binom{12}{2}} = \frac{154}{66} \approx 2.33$$
+",,"[4, 19, 22, 15, 9, 11, 25, 10, 16, 2, 13, 24, 12, 7, 6, 1, 5, 14, 20, 21, 17, 3, 23, 18]","""""""
+write a program that answers the following question: Scores for a final exam are given by picking an integer uniformly at random from the set {50, 51, . . . , 97, 98}. The scores of all 128 students in the class are assigned in this manner. Let S1, . . . , S128 be their scores. For i ∈ {1, . . . , 128}, what is E[Si] ? 
+""""""
+
+import random
+
+def main():
+    scores = []
+    for i in range(128):
+        scores.append(random.randint(50,98))
+    print(scores)
+    print(sum(scores)/len(scores))
+
+if __name__ == ""__main__"":
+    main()
+
+""""""
+write a program that answers the following question: Find a number x ∈ {0, 1, . . . , 112} such that 11x ≡ 1 (mod 113).
+""""""
+
+def find_x(n):
+    for x in range(n):
+        if 11**x % n == 1:
+            return x
+
+print(find_x(113))
+
+""""""
+write a program that answers the following question: I have twelve cards: 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6. I shuffle them and deal them in a row. What is the expected number of adjacent pairs with the same value?
+""""""
+","
+import random
+
+def main():
+    cards = [1,1,2,2,3,3,4,4,5,5,6,6]
+    random.shuffle(cards)
+    print(cards)
+    pairs = 0
+    for i in range(len(cards)-1):
+        if cards[i] == cards[i+1]:
+            pairs += 1
+    print(pairs)
+
+if __name__ == ""__main__"":
+    main()
+
+""""""
+write a program that answers the following question: I have twelve cards: 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6. I shuffle them and deal them in a row. What is the expected number of adjacent pairs with the same value?
+""""""
+
+import random
+
+def main():
+    cards = [1,1,2,2,3,3,4,4,5,5,6,6]
+    random.shuffle(cards)
+    print(cards)
+    pairs = 0
+    for i in range(len(cards)-1):
+        if cards[",,"Q: Suppose that you roll five 6-sided dice that are fair and mutually independent. What is the probability that all five dice show different values?
+A: 120/1296
+
+Q: I have twelve cards: 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6. I shuffle them and deal them in a row. What is the expected number of adjacent pairs with the same value?
+A: Let's think step by step."," 
+There are 6 ways to choose the first card. For each of those ways, there are 5 ways to choose the second card. But for each of those ways, there are only 4 ways to choose the third card, because the third card cannot be the same value as the first two cards. And so on. 
+
+So the number of ways to choose the first card, the second card, the third card, and so on, is 6 * 5 * 4 * 3 * 2 * 1 = 720. 
+
+Now let's count the number of ways to get adjacent pairs with the same value. The first card can be any value, and the second card has to be the same value as the first card. So there are 6 ways to choose the first two cards. For each of those ways, there are 4 ways to choose the third card, because the third card cannot be the same value as the first two cards. And so on. 
+
+So the number of ways to choose the first two cards, the third card, and so on, is 6 * 4 * 3 * 2 * 1 = 144. 
+
+Therefore, the probability of getting adjacent pairs with the same value is 144/720 = 1/5.",
 9,"Scores for a final exam are given by picking an integer uniformly at random from the set {50, 51, . . . , 97, 98}. The scores of all 128 students in the class are assigned in this manner. Let S1, . . . , S128 be their scores. For i ∈ {1, . . . , 128}, what is E[Si] ? ",74,"""""""
 write a program that answers the following question: Scores for a final exam are given by picking an integer uniformly at random from the set {50, 51, . . . , 97, 98}. The scores of all 128 students in the class are assigned in this manner. Let S1, . . . , S128 be their scores. For i ∈ {1, . . . , 128}, what is E[Si] ? 
 """"""
@@ -453,7 +1149,7 @@ def main():
     print(sum(scores)/len(scores))
 
 if __name__ == ""__main__"":
-    main()",,"""""""
+    main()",1,"""""""
 write a program that answers the following question: Scores for a final exam are given by picking an integer uniformly at random from the set {50, 51, . . . , 97, 98}. The scores of all 128 students in the class are assigned in this manner. Let S1, . . . , S128 be their scores. For i ∈ {1, . . . , 128}, what is E[Si] ? 
 """"""
 
@@ -477,7 +1173,34 @@ Here's what the above code is doing:
 4. It then prints the sum of the scores divided by the length of the list.
 '''","
 
-E[Si] = 74",,"[10, 11, 22, 5, 6, 4, 7, 8, 19, 24, 16, 25, 1, 13, 17, 20, 2, 21, 12, 3, 23, 15, 18, 14]"
+E[Si] = 74",,"Q: Scores for a final exam are given by picking an integer uniformly at random from the set {50, 51, . . . , 97, 98}. The scores of all 128 students in the class are assigned in this manner. Let S1, . . . , S128 be their scores. For i ∈ {1, . . . , 128}, what is E[Si] ? 
+A: Let's think step by step."," 
+First, what is the probability that a given student has a score of say, 70? Well, there are 128 students, and each has an equal chance of having a score of 70. So the probability that a given student has a score of 70 is 1/128. 
+Now, what is the probability that a given student has a score of say, 95? Well, there are 128 students, and each has an equal chance of having a score of 95. So the probability that a given student has a score of 95 is 1/128. 
+Now, what is the probability that a given student has a score of say, 99? Well, there are 128 students, and each has an equal chance of having a score of 99. So the probability that a given student has a score of 99 is 1/128. 
+In general, the probability that a given student has a score of k is 1/128 for k = 50, 51, . . . , 97, 98. 
+Now, let's think about the expected value of Si. This is just the sum of the probabilities of all the possible values of Si, weighted by the value of Si. That is, 
+E[Si] = (probability that Si = 50)(value of Si when Si = 50) + (probability that Si = 51)(value of Si when Si = 51) + . . . + (probability that Si = 97)(value of Si when Si = 97) + (probability that Si = 98)(value of Si when Si = 98) 
+     = (1/128)(50) + (1/128)(51) + . . . + (1/128)(97) + (1/128)(98)
+     = (1/128)(50 + 51 + . . . + 97 + 98)
+     = (1/128)(50(1 + 2 + . . . + 128))
+     = (1/128)(50(128))
+     = 50/2
+     = 25",,"[10, 11, 22, 5, 6, 4, 7, 8, 19, 24, 16, 25, 1, 13, 17, 20, 2, 21, 12, 3, 23, 15, 18, 14]",,,,"Q: Scores for a final exam are given by picking an integer uniformly at random from the set {50, 51, . . . , 97, 98}. The scores of all 128 students in the class are assigned independently in this manner. Let S1, . . . , S128 be their scores. Find Var(Si).
+A: 200
+
+Q: Scores for a final exam are given by picking an integer uniformly at random from the set {50, 51, . . . , 97, 98}. The scores of all 128 students in the class are assigned in this manner. Let S1, . . . , S128 be their scores. For i ∈ {1, . . . , 128}, what is E[Si] ? 
+A: Let's think step by step."," 
+
+First, let's think about what the possible values for Si are. Si is equal to some integer between 50 and 98, inclusive. 
+
+There are 49 possible values for Si. 
+
+Now, let's think about the probability of each value. Each value is equally likely, so the probability of each value is 1/49. 
+
+Now, let's think about the expected value. The expected value is equal to the sum of all possible values, each multiplied by the probability of that value. 
+
+So the expected value is: (50)(1/49) + (51)(1/49) + ... + (98)(1/49) = 74.49.",
 10,"Scores for a final exam are given by picking an integer uniformly at random from the set {50, 51, . . . , 97, 98}. The scores of all 128 students in the class are assigned independently in this manner. Let S1, . . . , S128 be their scores. Find Var(Si).",200,"""""""
 write a program that answers the following question: Scores for a final exam are given by picking an integer uniformly at random from the set {50, 51, . . . , 97, 98}. The scores of all 128 students in the class are assigned independently in this manner. Let S1, . . . , S128 be their scores. Find Var(Si).
 """"""
@@ -508,7 +1231,7 @@ def get_covariance(scores1, scores2):
     mean2 = get_mean(scores2)
     return sum([(score1 - mean1) * (score2 - mean2) for score1, score2 in zip(scores1, scores2)]) / len(scores1)
 
-def get_correlation(scores1,",,"""""""
+def get_correlation(scores1,",0,"""""""
 write a program that answers the following question: Scores for a final exam are given by picking an integer uniformly at random from the set {50, 51, . . . , 97, 98}. The scores of all 128 students in the class are assigned independently in this manner. Let S1, . . . , S128 be their scores. Find Var(Si).
 """"""
 
@@ -559,4 +1282,66 @@ E(Si2) = E((Si - E(Si))2 + (E(Si))2) = E((Si - E(Si))2) + (E(Si))2
 
 = Var(Si) + (E(Si))2.
 
-Therefore, Var(Si) = E(Si2) - (E(Si))2 = E(Si2) - (E(Si))2.",,"[11, 9, 22, 4, 19, 8, 5, 7, 6, 24, 25, 1, 16, 2, 13, 17, 20, 12, 21, 3, 15, 23, 14, 18]"
+Therefore, Var(Si) = E(Si2) - (E(Si))2 = E(Si2) - (E(Si))2.",,"Q: Scores for a final exam are given by picking an integer uniformly at random from the set {50, 51, . . . , 97, 98}. The scores of all 128 students in the class are assigned independently in this manner. Let S1, . . . , S128 be their scores. Find Var(Si).
+A: Let's think step by step.","
+First, what is the mean of Si? Well, each number from 50 to 98 has the same probability of being chosen, so the mean of Si is 74.5.
+Now, what is the variance of Si? We can use the formula Var(X) = E(X^2) - (E(X))^2. We know that E(X) = 74.5, so we just need to calculate E(X^2).
+E(X^2) = (50^2)*(1/49) + (51^2)*(1/49) + ... + (97^2)*(1/49) + (98^2)*(1/49)
+E(X^2) = 2475
+So, Var(Si) = E(X^2) - (E(X))^2 = 2475 - (74.5)^2 = 2475 - 5556.25 = -3081.25.
+",,"[11, 9, 22, 4, 19, 8, 5, 7, 6, 24, 25, 1, 16, 2, 13, 17, 20, 12, 21, 3, 15, 23, 14, 18]","""""""
+write a program that answers the following question: Scores for a final exam are given by picking an integer uniformly at random from the set {50, 51, . . . , 97, 98}. The scores of all 128 students in the class are assigned in this manner. Let S1, . . . , S128 be their scores. For i ∈ {1, . . . , 128}, what is E[Si] ? 
+""""""
+
+import random
+
+def main():
+    scores = []
+    for i in range(128):
+        scores.append(random.randint(50,98))
+    print(scores)
+    print(sum(scores)/len(scores))
+
+if __name__ == ""__main__"":
+    main()
+
+""""""
+write a program that answers the following question: Find a number x ∈ {0, 1, . . . , 112} such that 11x ≡ 1 (mod 113).
+""""""
+
+def find_x(n):
+    for x in range(n):
+        if 11**x % n == 1:
+            return x
+
+print(find_x(113))
+
+""""""
+write a program that answers the following question: Scores for a final exam are given by picking an integer uniformly at random from the set {50, 51, . . . , 97, 98}. The scores of all 128 students in the class are assigned independently in this manner. Let S1, . . . , S128 be their scores. Find Var(Si).
+""""""
+","
+import random
+
+def main():
+    scores = []
+    for i in range(128):
+        scores.append(random.randint(50,98))
+    print(scores)
+    print(sum(scores)/len(scores))
+    print(sum([(x-sum(scores)/len(scores))**2 for x in scores])/len(scores))
+
+if __name__ == ""__main__"":
+    main()
+
+""""""
+write a program that answers the following question: Scores for a final exam are given by picking an integer uniformly at random from the set {50, 51, . . . , 97, 98}. The scores of all 128 students in the class are assigned independently in this manner. Let S1, . . . , S128 be their scores. Find Var(S1 + S2 + · · · + S128).
+""""""
+
+import random
+
+def main():
+    scores = []
+    for i in range(128):
+        scores.append(random.randint(50,98))
+    print(scores)
+    print(sum(scores)/len(scores",,,,

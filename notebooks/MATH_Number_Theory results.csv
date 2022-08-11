@@ -1,5 +1,5 @@
-Question,Original Question,Actual Solution,Codex Input,Codex Output,Zero-Shot Evaluation,Codex Explanation Input,Codex Explanation,GPT-3 Output,GPT-3 Evaluation,Most Similar Questions
-1,"Find 2^(-1) mod 185, as a residue modulo 185. (Give an answer between 0 and 184, inclusive.)",93.0,"""""""
+Question,Original Question,Actual Solution,Codex Input,Codex Output,Zero-Shot Evaluation,Codex Explanation Input,Codex Explanation,GPT-3 Output,GPT-3 Evaluation,GPT-3 CoT Input,GPT-3 CoT Output,GPT-3 CoT Evaluation,Most Similar Questions
+1,"Find 2^(-1) mod 185, as a residue modulo 185. (Give an answer between 0 and 184, inclusive.)",93,"""""""
 write a program that answers the following question: Find 2^(-1) mod 185, as a residue modulo 185. (Give an answer between 0 and 184, inclusive.)
 """"""
 ","
@@ -25,7 +25,7 @@ def gcd(a, b):
     """"""
     while b != 0:
         a, b = b, a % b
-",,"""""""
+",0,"""""""
 write a program that answers the following question: Find 2^(-1) mod 185, as a residue modulo 185. (Give an answer between 0 and 184, inclusive.)
 """"""
 
@@ -62,8 +62,179 @@ Here's what the above code is doing:
 
 print(mod_inverse(2, 185))","
 
-92",,"[13, 12, 11, 2, 14, 7, 4, 3, 5, 10, 8, 9, 15, 6]"
-2,How many four-digit numbers whose digits add up to 9 are divisible by 11?,0.0,"""""""
+92",,"Q: Find 2^(-1) mod 185, as a residue modulo 185. (Give an answer between 0 and 184, inclusive.)
+A: Let's think step by step."," 
+
+2^-1 mod 185 = 2^184 mod 185
+
+2^184 mod 185 = (2^92 * 2^92 * 2) mod 185
+
+2^92 mod 185 = (2^46 * 2^46) mod 185
+
+2^46 mod 185 = (2^23 * 2^23) mod 185
+
+2^23 mod 185 = (2^11 * 2^11 * 2) mod 185
+
+2^11 mod 185 = (2^5 * 2^5 * 2 * 2) mod 185
+
+2^5 mod 185 = (2^2 * 2^2 * 2 * 2 * 2) mod 185
+
+2^2 mod 185 = (4 * 4) mod 185
+
+4 mod 185 = 16 mod 185
+
+16 mod 185 = 256 mod 185
+
+256 mod 185 = 81 mod 185
+
+81 mod 185 = (3 * 3 * 3 * 3) mod 185
+
+3 mod 185 = 9 mod 185
+
+9 mod 185 = (3 * 3) mod 185
+
+3 mod 185 = 9 mod 185
+
+9 mod 185 = (3 * 3) mod 185
+
+3 mod 185 = 9 mod 185
+
+9 mod 185 = (3 * 3) mod 185
+
+3 mod 185 = 9 mod 185
+
+9 mod 185 = (3 * 3) mod 185
+
+3 mod 185 = 9 mod 185
+
+9 mod 185 = (3 * 3) mod 185
+
+3 mod 185 = 9 mod 185
+
+9 mod 185 = (3 * 3) mod 185
+
+3 mod 185 = 9 mod 185
+
+9 mod 185 = (3 * 3) mod 185
+
+3 mod 185 = 9 mod 185
+
+9 mod 185 = (3 * 3) mod 185
+
+3 mod 185 = 9 mod 185
+
+9 mod 185 = (3 * 3) mod 185
+
+3 mod 185 = 9 mod 185
+
+9 mod 185 = (3 * 3) mod 185
+
+3 mod 185 = 9 mod 185
+
+9 mod 185 = (3 * 3) mod 185
+
+3 mod 185 = 9 mod 185
+
+9 mod 185 = (3 * 3) mod 185
+
+3 mod 185 = 9 mod 185
+
+9 mod 185 = (3 * 3) mod 185
+
+3 mod 185 = 9 mod 185
+
+9 mod 185 = (3 * 3) mod 185
+
+3 mod 185 = 9 mod 185
+
+9 mod 185 = (3 * 3) mod 185
+
+3 mod 185 = 9 mod 185
+
+9 mod 185 = (3 * 3) mod 185
+
+3 mod 185 = 9 mod 185
+
+9 mod 185 = (3 * 3) mod 185
+
+3 mod 185 = 9 mod 185
+
+9 mod 185 = (3 * 3) mod 185
+
+3 mod 185 = 9 mod 185
+
+9 mod 185 = (3 * 3) mod 185
+
+3 mod 185 = 9 mod 185
+
+9 mod 185 = (3 * 3) mod 185
+
+3 mod 185 = 9 mod 185
+
+9 mod 185 = (3 * 3) mod 185
+
+3 mod 185 = 9 mod 185
+
+9 mod 185 = (3 * 3) mod 185
+
+3 mod 185 = 9 mod 185
+
+9 mod 185 = (3 * 3) mod 185
+
+3 mod 185 = 9 mod 185
+
+9 mod 185 = (3 * 3) mod 185
+
+3 mod 185 = 9 mod 185
+
+9 mod 185 = (3 * 3) mod 185
+
+3 mod 185 = 9 mod 185
+
+9 mod 185 = (3 * 3) mod 185
+
+3 mod 185 = 9 mod 185
+
+9 mod 185 = (3 * 3) mod 185
+
+3 mod 185 = 9 mod 185
+
+9 mod 185 = (3 * 3) mod 185
+
+3 mod 185 = 9 mod 185
+
+9 mod 185 = (3 * 3) mod 185
+
+3 mod 185 = 9 mod 185
+
+9 mod 185 = (3 * 3) mod 185
+
+3 mod 185 = 9 mod 185
+
+9 mod 185 = (3 * 3) mod 185
+
+3 mod 185 = 9 mod 185
+
+9 mod 185 = (3 * 3) mod 185
+
+3 mod 185 = 9 mod 185
+
+9 mod 185 = (3 * 3) mod 185
+
+3 mod 185 = 9 mod 185
+
+9 mod 185 = (3 * 3) mod 185
+
+3 mod 185 = 9 mod 185
+
+9 mod 185 = (3 * 3) mod 185
+
+3 mod 185 = 9 mod 185
+
+9 mod 185 = (3 * 3) mod 185
+
+3 mod 185 =",,"[13, 12, 11, 2, 14, 7, 4, 3, 5, 10, 8, 9, 15, 6]"
+2,How many four-digit numbers whose digits add up to 9 are divisible by 11?,0,"""""""
 write a program that answers the following question: How many four-digit numbers whose digits add up to 9 are divisible by 11?
 """"""
 ","
@@ -73,10 +244,14 @@ def divisible_by_11(n):
 def sum_of_digits(n):
     return sum(int(digit) for digit in str(n))
 
-def four_digit_numbers_divisible_by_11_and_sum_of_digits_is_9():
-    return [n for n in range(1000, 10000) if divisible_by_11(n) and sum_of_digits(n) == 9]
+def four_digit_numbers_with_sum_of_digits_9():
+    return [n for n in range(1000, 10000) if sum_of_digits(n) == 9]
 
-print(four_digit_numbers_divisible_by_11_and_sum_of_digits_is_9())",,"""""""
+def main():
+    print(len([n for n in four_digit_numbers_with_sum_of_digits_9() if divisible_by_11(n)]))
+
+if __name__ == '__main__':
+    main()",0,"""""""
 write a program that answers the following question: How many four-digit numbers whose digits add up to 9 are divisible by 11?
 """"""
 
@@ -86,21 +261,31 @@ def divisible_by_11(n):
 def sum_of_digits(n):
     return sum(int(digit) for digit in str(n))
 
-def four_digit_numbers_divisible_by_11_and_sum_of_digits_is_9():
-    return [n for n in range(1000, 10000) if divisible_by_11(n) and sum_of_digits(n) == 9]
+def four_digit_numbers_with_sum_of_digits_9():
+    return [n for n in range(1000, 10000) if sum_of_digits(n) == 9]
 
-print(four_digit_numbers_divisible_by_11_and_sum_of_digits_is_9())
+def main():
+    print(len([n for n in four_digit_numbers_with_sum_of_digits_9() if divisible_by_11(n)]))
+
+if __name__ == '__main__':
+    main()
 
 '''
 Here's what the above code is doing:
-1."," We define a function that checks if a number is divisible by 11.
-2. We define a function that sums the digits of a number.
-3. We define a function that returns a list of four-digit numbers that are divisible by 11 and whose digits add up to 9.
-4. We print the list of numbers.
+1."," We define a function divisible_by_11 that takes a number n and returns True if n is divisible by 11, False otherwise.
+2. We define a function sum_of_digits that takes a number n and returns the sum of its digits.
+3. We define a function four_digit_numbers_with_sum_of_digits_9 that returns a list of all four-digit numbers whose digits add up to 9.
+4. We define a function main that prints the length of the list of four-digit numbers whose digits add up to 9 and are divisible by 11.
 '''","
 
-There are 36 four-digit numbers whose digits add up to 9. Of these, 11 are divisible by 11.",,"[14, 12, 13, 4, 11, 5, 7, 3, 1, 9, 10, 15, 6, 8]"
-3,The product of the positive integer divisors of a positive integer n is 729. Find n.,27.0,"""""""
+There are 36 four-digit numbers whose digits add up to 9. Of these, 11 are divisible by 11.",,"Q: How many four-digit numbers whose digits add up to 9 are divisible by 11?
+A: Let's think step by step."," 
+There are $\binom{4}{2}=6$ ways to choose the two digits that will sum to 9. For example, we could have $(1,8)$, $(2,7)$, $(3,6)$, $(4,5)$, $(5,4)$, or $(6,3)$. 
+For each of these six possibilities, we need to choose the remaining two digits. For example, if we have chosen $(1,8)$, then we need to choose two digits from the set $\{0,2,3,4,5,6,7,9\}$ such that their sum is not a multiple of 11. (This is because the sum of the digits in the number $18xyz$ is a multiple of 11 if and only if the sum of the digits in the number $xyz$ is a multiple of 11.) 
+There are $\binom{8}{2}=28$ ways to choose the remaining two digits. 
+Thus, there are $6\cdot 28=168$ four-digit numbers whose digits sum to 9 and which are divisible by 11. 
+",,"[14, 12, 13, 4, 11, 5, 7, 3, 1, 9, 10, 15, 6, 8]"
+3,The product of the positive integer divisors of a positive integer n is 729. Find n.,27,"""""""
 write a program that answers the following question: The product of the positive integer divisors of a positive integer n is 729. Find n.
 """"""
 ","
@@ -122,7 +307,7 @@ def find_n(n):
         if product(divisors(i)) == n:
             return i
 
-print(find_n(729))",,"""""""
+print(find_n(729))",0,"""""""
 write a program that answers the following question: The product of the positive integer divisors of a positive integer n is 729. Find n.
 """"""
 
@@ -154,14 +339,31 @@ Here's what the above code is doing:
 4. We print the result of find_n(729).
 '''","
 
-n = 9",,"[14, 13, 11, 2, 12, 4, 1, 5, 10, 7, 9, 15, 8, 6]"
-4,What is the base-ten number represented by the base-eight number 31?,25.0,"""""""
+n = 9",,"Q: The product of the positive integer divisors of a positive integer n is 729. Find n.
+A: Let's think step by step."," 
+
+The product of the positive integer divisors of a positive integer n is 729. 
+
+That means that the product of all the factors of n is 729. 
+
+729 is a perfect cube, so we can take the cube root of it to get 9. 
+
+That means that the product of all the factors of n is 9^3. 
+
+We can also write this as (9^3) = (3^3) * (3^3). 
+
+That means that the product of all the factors of n is (3^6). 
+
+That means that n is a perfect cube, and its cube root is 3. 
+
+Therefore, n = 3^3 = 27.",,"[14, 13, 11, 2, 12, 4, 1, 5, 10, 7, 9, 15, 8, 6]"
+4,What is the base-ten number represented by the base-eight number 31?,25,"""""""
 write a program that answers the following question: What is the base-ten number represented by the base-eight number 31?
 """"""
 ","
 # 31 in base 8 is 25 in base 10
 
-print(int(""31"", 8))",,"""""""
+print(int(""31"", 8))",0,"""""""
 write a program that answers the following question: What is the base-ten number represented by the base-eight number 31?
 """"""
 
@@ -176,8 +378,14 @@ Here's what the above code is doing:
 3. The second argument to int() is the base of the number in the string.
 '''","
 
-The base-ten number represented by the base-eight number 31 is 25.",,"[2, 12, 13, 9, 10, 5, 7, 14, 11, 3, 1, 15, 8, 6]"
-5,Find the number of positive divisors of 2002.,16.0,"""""""
+The base-ten number represented by the base-eight number 31 is 25.",,"Q: What is the base-ten number represented by the base-eight number 31?
+A: Let's think step by step."," 
+
+The first digit in 31 is 1. This is worth 1 * 8^0 = 1. 
+The second digit in 31 is 3. This is worth 3 * 8^1 = 24. 
+
+Adding these two numbers together, we get 1 + 24 = 25.",,"[2, 12, 13, 9, 10, 5, 7, 14, 11, 3, 1, 15, 8, 6]"
+5,Find the number of positive divisors of 2002.,16,"""""""
 write a program that answers the following question: Find the number of positive divisors of 2002.
 """"""
 ","
@@ -188,7 +396,7 @@ def divisors(n):
             count += 1
     return count
 
-print(divisors(2002))",,"""""""
+print(divisors(2002))",0,"""""""
 write a program that answers the following question: Find the number of positive divisors of 2002.
 """"""
 
@@ -211,8 +419,16 @@ Here's what the above code is doing:
 6. We call the function with the number 2002.
 '''","
 
-There are 12 positive divisors of 2002.",,"[2, 7, 14, 13, 4, 12, 9, 11, 3, 1, 10, 15, 8, 6]"
-6,"Natasha has more than $1 but less than $10 worth of dimes. When she puts her dimes in stacks of 3, she has 1 left over. When she puts them in stacks of 4, she has 1 left over. When she puts them in stacks of 5, she also has 1 left over. How many dimes does Natasha have?",61.0,"""""""
+There are 12 positive divisors of 2002.",,"Q: Find the number of positive divisors of 2002.
+A: Let's think step by step."," 
+2002 = 2 * 1001. So we only need to find the number of positive divisors of 1001. 
+1001 = 7 * 11 * 13. So we only need to find the number of positive divisors of 7, 11, and 13. 
+The number of positive divisors of 7 is 1, 2, and 4. 
+The number of positive divisors of 11 is 1 and 11. 
+The number of positive divisors of 13 is 1, 13. 
+So the total number of positive divisors of 1001 is 1 + 2 + 4 + 1 + 11 + 1 + 13 = 33. 
+Therefore, the total number of positive divisors of 2002 is 33.",,"[2, 7, 14, 13, 4, 12, 9, 11, 3, 1, 10, 15, 8, 6]"
+6,"Natasha has more than $1 but less than $10 worth of dimes. When she puts her dimes in stacks of 3, she has 1 left over. When she puts them in stacks of 4, she has 1 left over. When she puts them in stacks of 5, she also has 1 left over. How many dimes does Natasha have?",61,"""""""
 write a program that answers the following question: Natasha has more than $1 but less than $10 worth of dimes. When she puts her dimes in stacks of 3, she has 1 left over. When she puts them in stacks of 4, she has 1 left over. When she puts them in stacks of 5, she also has 1 left over. How many dimes does Natasha have?
 """"""
 ","
@@ -222,7 +438,7 @@ def main():
             print(i)
 
 if __name__ == ""__main__"":
-    main()",,"""""""
+    main()",0,"""""""
 write a program that answers the following question: Natasha has more than $1 but less than $10 worth of dimes. When she puts her dimes in stacks of 3, she has 1 left over. When she puts them in stacks of 4, she has 1 left over. When she puts them in stacks of 5, she also has 1 left over. How many dimes does Natasha have?
 """"""
 
@@ -241,7 +457,18 @@ Here's what the above code is doing:
 3. If the number is divisible by 3, 4, and 5, then we print the number.
 '''","
 
-Natasha has 8 dimes.",,"[11, 13, 14, 2, 12, 4, 10, 1, 3, 8, 5, 7, 9, 15]"
+Natasha has 8 dimes.",,"Q: Natasha has more than $1 but less than $10 worth of dimes. When she puts her dimes in stacks of 3, she has 1 left over. When she puts them in stacks of 4, she has 1 left over. When she puts them in stacks of 5, she also has 1 left over. How many dimes does Natasha have?
+A: Let's think step by step."," 
+
+We know that Natasha has more than $1 but less than $10 worth of dimes. This means that Natasha has between 10 and 99 dimes. 
+
+We also know that when Natasha puts her dimes in stacks of 3, she has 1 left over. This means that Natasha cannot have a multiple of 3 dimes. The only possibilities are 11, 14, 17, 20, 23, 26, 29, 32, 35, 38, 41, 44, 47, 50, 53, 56, 59, 62, 65, 68, 71, 74, 77, 80, 83, 86, 89, 92, 95, 98. 
+
+We also know that when Natasha puts her dimes in stacks of 4, she has 1 left over. This means that Natasha cannot have a multiple of 4 dimes. The only possibilities are 11, 15, 19, 23, 27, 31, 35, 39, 43, 47, 51, 55, 59, 63, 67, 71, 75, 79, 83, 87, 91, 95, 99. 
+
+We also know that when Natasha puts her dimes in stacks of 5, she also has 1 left over. This means that Natasha cannot have a multiple of 5 dimes. The only possibilities are 11, 16, 21, 26, 31, 36, 41, 46, 51, 56, 61, 66, 71, 76, 81, 86, 91, 96. 
+
+Now we can look at all of the possibilities and see which ones appear in all three lists. The only possibility is 11. Natasha has 11 dimes.",,"[11, 13, 14, 2, 12, 4, 10, 1, 3, 8, 5, 7, 9, 15]"
 7,Find the terminating decimal expansion of 11/125.,0.088,"""""""
 write a program that answers the following question: Find the terminating decimal expansion of 11/125.
 """"""
@@ -260,7 +487,7 @@ def test_find_terminating_decimal_expansion():
     # TODO: implement this function
     pass
 
-test_find_terminating_decimal_expansion()",,"""""""
+test_find_terminating_decimal_expansion()",1,"""""""
 write a program that answers the following question: Find the terminating decimal expansion of 11/125.
 """"""
 
@@ -290,10 +517,24 @@ The test function is supposed to test the find_terminating_decimal_expansion() f
 
 The test function should call the find_terminating_decimal_expansion() function with various inputs and check that the output is correct.
 
-For example, if you call find_terminating_decimal_expansion(11, 125), it","
+For example, the test function should call find_terminating_decimal_expansion(11, 125","
 
-0.088",,"[2, 9, 5, 4, 13, 15, 1, 10, 12, 11, 14, 3, 8, 6]"
-8,What is the greatest common divisor of 2^{1998}-1 and 2^{1989}-1?,511.0,"""""""
+0.088",,"Q: Find the terminating decimal expansion of 11/125.
+A: Let's think step by step."," 
+
+The first digit after the decimal point is $1/5$, so the decimal expansion starts $0.2$.
+The second digit after the decimal point is $2/25$, so the decimal expansion is now $0.24$.
+The third digit after the decimal point is $4/125$, so the decimal expansion is now $0.244$.
+The fourth digit after the decimal point is $8/625$, so the decimal expansion is now $0.2448$.
+The fifth digit after the decimal point is $16/3125$, so the decimal expansion is now $0.24488$.
+The sixth digit after the decimal point is $32/15625$, so the decimal expansion is now $0.244888$.
+The seventh digit after the decimal point is $64/78125$, so the decimal expansion is now $0.2448888$.
+The eighth digit after the decimal point is $128/390625$, so the decimal expansion is now $0.24488888$.
+The ninth digit after the decimal point is $256/1953125$, so the decimal expansion is now $0.244888888$.
+The tenth digit after the decimal point is $512/9765625$, so the decimal expansion is now $0.2448888888$.
+
+Thus, the terminating decimal expansion of $11/125$ is $0.2448888888$.",,"[2, 9, 5, 4, 13, 15, 1, 10, 12, 11, 14, 3, 8, 6]"
+8,What is the greatest common divisor of 2^{1998}-1 and 2^{1989}-1?,511,"""""""
 write a program that answers the following question: What is the greatest common divisor of 2^{1998}-1 and 2^{1989}-1?
 """"""
 ","
@@ -303,7 +544,7 @@ def gcd(a, b):
     else:
         return gcd(b, a % b)
 
-print(gcd(2**1998-1, 2**1989-1))",,"""""""
+print(gcd(2**1998-1, 2**1989-1))",0,"""""""
 write a program that answers the following question: What is the greatest common divisor of 2^{1998}-1 and 2^{1989}-1?
 """"""
 
@@ -322,76 +563,159 @@ Here's what the above code is doing:
 3. If the second number is not 0, then the gcd is the gcd of the second number and the remainder of the first number divided by the second number.
 '''","
 
-The greatest common divisor of 2^{1998}-1 and 2^{1989}-1 is 3.",,"[1, 11, 14, 13, 2, 5, 12, 4, 3, 7, 9, 10, 6, 15]"
-9,Express the product of 1001 in base 2 and 121 in base 3 in base 10.,144.0,"""""""
+The greatest common divisor of 2^{1998}-1 and 2^{1989}-1 is 3.",,"Q: What is the greatest common divisor of 2^{1998}-1 and 2^{1989}-1?
+A: Let's think step by step.","
+
+2^{1989}-1 is divisible by 3 because 1989 is divisible by 3.
+2^{1998}-1 is not divisible by 3 because 1998 is not divisible by 3.
+
+2^{1989}-1 is divisible by 11 because 1989 is divisible by 11.
+2^{1998}-1 is not divisible by 11 because 1998 is not divisible by 11.
+
+2^{1989}-1 is divisible by 13 because 1989 is divisible by 13.
+2^{1998}-1 is not divisible by 13 because 1998 is not divisible by 13.
+
+2^{1989}-1 is divisible by 17 because 1989 is divisible by 17.
+2^{1998}-1 is not divisible by 17 because 1998 is not divisible by 17.
+
+2^{1989}-1 is divisible by 19 because 1989 is divisible by 19.
+2^{1998}-1 is not divisible by 19 because 1998 is not divisible by 19.
+
+2^{1989}-1 is divisible by 23 because 1989 is divisible by 23.
+2^{1998}-1 is not divisible by 23 because 1998 is not divisible by 23.
+
+2^{1989}-1 is divisible by 29 because 1989 is divisible by 29.
+2^{1998}-1 is not divisible by 29 because 1998 is not divisible by 29.
+
+2^{1989}-1 is divisible by 31 because 1989 is divisible by 31.
+2^{1998}-1 is not divisible by 31 because 1998 is not divisible by 31.
+
+2^{1989}-1 is divisible by 37 because 1989 is divisible by 37.
+2^{1998}-1 is not divisible by 37 because 1998 is not divisible by 37.
+
+2^{1989}-1 is divisible by 41 because 1989 is divisible by 41.
+2^{1998}-1 is not divisible by 41 because 1998 is not divisible by 41.
+
+2^{1989}-1 is divisible by 43 because 1989 is divisible by 43.
+2^{1998}-1 is not divisible by 43 because 1998 is not divisible by 43.
+
+2^{1989}-1 is divisible by 47 because 1989 is divisible by 47.
+2^{1998}-1 is not divisible by 47 because 1998 is not divisible by 47.
+
+2^{1989}-1 is divisible by 53 because 1989 is divisible by 53.
+2^{1998}-1 is not divisible by 53 because 1998 is not divisible by 53.
+
+2^{1989}-1 is divisible by 59 because 1989 is divisible by 59.
+2^{1998}-1 is not divisible by 59 because 1998 is not divisible by 59.
+
+2^{1989}-1 is divisible by 61 because 1989 is divisible by 61.
+2^{1998}-1 is not divisible by 61 because 1998 is not divisible by 61.
+
+2^{1989}-1 is divisible by 67 because 1989 is divisible by 67.
+2^{1998}-1 is not divisible by 67 because 1998 is not divisible by 67.
+
+2^{1989}-1 is divisible by 71 because 1989 is divisible by 71.
+2^{1998}-1 is not divisible by 71 because 1998 is not divisible by 71.
+
+2^{1989}-1 is divisible by 73 because 1989 is divisible by 73.
+2^{1998}-1 is not divisible by 73 because 1998 is not divisible by 73.
+
+2^{1989}-1 is divisible by 79 because 1989 is divisible by 79.
+2^{1998}-1 is not divisible by 79 because 1998 is not divisible by 79.
+
+2^{1989}-1 is divisible by 83 because 1989 is divisible by 83.
+2^{1998}-1 is not divisible by 83 because 1998 is not divisible by 83.
+
+2^{1989}-1 is divisible by 89 because 1989 is divisible by 89.
+2^{1998}-1 is not divisible by 89 because 1998 is not divisible by 89.
+
+2^{1989}-1 is divisible by 97 because 1989 is divisible by 97.
+2^{1998}-1 is not divisible by 97 because 1998 is not divisible by 97.
+
+2^{1989}-1 is divisible by 101 because 1989 is divisible by 101.
+2^{1998}-1 is not divisible by 101 because 1998 is not divisible by 101.
+
+2^{1989}-1 is divisible",,"[1, 11, 14, 13, 2, 5, 12, 4, 3, 7, 9, 10, 6, 15]"
+9,Express the product of 1001 in base 2 and 121 in base 3 in base 10.,144,"""""""
 write a program that answers the following question: Express the product of 1001 in base 2 and 121 in base 3 in base 10.
 """"""
 ","
-def base_conversion(num, base):
+def base_convert(num, base):
     """"""
-    converts a number in base 10 to a number in a different base
-    """"""
-    if num == 0:
-        return 0
-    else:
-        return num % base + 10 * base_conversion(num // base, base)
-
-def base_conversion_reverse(num, base):
-    """"""
-    converts a number in a different base to a number in base 10
+    convert a number to a given base
     """"""
     if num == 0:
         return 0
     else:
-        return num % 10 * base ** (len(str(num)) - 1) + base_conversion_reverse(num // 10, base)
+        return num % base + 10 * base_convert(num // base, base)
 
-def main():
+def base_convert_to_base_10(num, base):
     """"""
-    main function
+    convert a number in a given base to base 10
     """"""
-    print(base_conversion_reverse(base_conversion(1001, 2) * base_conversion(121, 3), 10))
+    if num == 0:
+        return 0
+    else:
+        return num % 10 * base ** (len(str(num)) - 1) + base_convert_to_base_10(num // 10, base)
 
-if __name__ == ""__main__"":
-    main()",,"""""""
+def base_convert_to_base_10_2(num, base):
+    """"""
+    convert a number in a given base to base 10
+    """"""
+    if num == 0:
+        return 0
+    else:
+        return num % 10 * base ** (len(str(num)) - 1) + base_convert_to_base_10_2(num // 10, base)
+
+def base_convert_to_base_10_",1,"""""""
 write a program that answers the following question: Express the product of 1001 in base 2 and 121 in base 3 in base 10.
 """"""
 
-def base_conversion(num, base):
+def base_convert(num, base):
     """"""
-    converts a number in base 10 to a number in a different base
-    """"""
-    if num == 0:
-        return 0
-    else:
-        return num % base + 10 * base_conversion(num // base, base)
-
-def base_conversion_reverse(num, base):
-    """"""
-    converts a number in a different base to a number in base 10
+    convert a number to a given base
     """"""
     if num == 0:
         return 0
     else:
-        return num % 10 * base ** (len(str(num)) - 1) + base_conversion_reverse(num // 10, base)
+        return num % base + 10 * base_convert(num // base, base)
 
-def main():
+def base_convert_to_base_10(num, base):
     """"""
-    main function
+    convert a number in a given base to base 10
     """"""
-    print(base_conversion_reverse(base_conversion(1001, 2) * base_conversion(121, 3), 10))
+    if num == 0:
+        return 0
+    else:
+        return num % 10 * base ** (len(str(num)) - 1) + base_convert_to_base_10(num // 10, base)
 
-if __name__ == ""__main__"":
-    main()
+def base_convert_to_base_10_2(num, base):
+    """"""
+    convert a number in a given base to base 10
+    """"""
+    if num == 0:
+        return 0
+    else:
+        return num % 10 * base ** (len(str(num)) - 1) + base_convert_to_base_10_2(num // 10, base)
+
+def base_convert_to_base_10_
 
 '''
 Here's what the above code is doing:
-1."," base_conversion(1001, 2) converts 1001 in base 2 to base 10
-2. base_conversion(121, 3) converts 121 in base 3 to base 10
-3. base_conversion_reverse(base_conversion(1001, 2) * base_conversion(121, 3), 10) converts the product of the two numbers in base 10 to base 10
-'''","
+1."," base_convert_to_base_10(num, base) is called with num = 1001 and base = 2
+2. base_convert_to_base_10(1001, 2) calls base_convert_to_base_10(100, 2)
+3. base_convert_to_base_10(100, 2) calls base_convert_to_base_10(10, 2)
+4. base_convert_to_base_10(10, 2) calls base_convert_to_base_10(1, 2)
+5. base_convert_to_base_10(1, 2) calls base_","
 
-1001100101 in base 10",,"[7, 4, 2, 12, 5, 13, 11, 14, 3, 1, 15, 10, 8, 6]"
-10,What is the remainder when 5^207 is divided by 7?,6.0,"""""""
+1001100101 in base 10",,"Q: Express the product of 1001 in base 2 and 121 in base 3 in base 10.
+A: Let's think step by step."," 
+1001 in base 2 is 9 in base 10. 
+121 in base 3 is 25 in base 10. 
+9 times 25 is 225. 
+225 in base 10 is 111001 in base 2. 
+",,"[7, 4, 2, 12, 5, 13, 11, 14, 3, 1, 15, 10, 8, 6]"
+10,What is the remainder when 5^207 is divided by 7?,6,"""""""
 write a program that answers the following question: What is the remainder when 5^207 is divided by 7?
 """"""
 ","
@@ -404,7 +728,7 @@ def power(x, y):
 def mod(x, y):
     return x % y
 
-print(mod(power(5, 207), 7))",,"""""""
+print(mod(power(5, 207), 7))",0,"""""""
 write a program that answers the following question: What is the remainder when 5^207 is divided by 7?
 """"""
 
@@ -431,4 +755,73 @@ Here's what the above code is doing:
 8. power(5, 200) = 5 * power(5, 199)
 9. power(5, 199","
 
-The remainder when 5^207 is divided by 7 is 6.",,"[13, 15, 4, 2, 11, 14, 7, 12, 3, 5, 1, 9, 8, 6]"
+The remainder when 5^207 is divided by 7 is 6.",,"Q: What is the remainder when 5^207 is divided by 7?
+A: Let's think step by step.","
+
+5^1 = 5
+5^2 = 25
+5^3 = 125
+5^4 = 625
+5^5 = 3125
+5^6 = 15625
+5^7 = 78125
+5^8 = 390625
+5^9 = 1953125
+5^10 = 9765625
+5^11 = 48828125
+5^12 = 244140625
+5^13 = 1220703125
+5^14 = 6103515625
+5^15 = 30517578125
+5^16 = 152587890625
+5^17 = 762939453125
+5^18 = 3814697265625
+5^19 = 19073486328125
+5^20 = 95367431640625
+5^21 = 476837158203125
+5^22 = 2384185791015625
+5^23 = 11920928955078125
+5^24 = 59604644775390625
+5^25 = 298023223876953125
+5^26 = 1490116119384765625
+5^27 = 7450580596923828125
+5^28 = 37252902984619140625
+5^29 = 186264514923095703125
+5^30 = 931322574615478515625
+5^31 = 4656612873077392578125
+5^32 = 23283064365386962890625
+5^33 = 116415321826934814453125
+5^34 = 582076609134674072265625
+5^35 = 2910383045673370361328125
+5^36 = 14551915228366851806640625
+5^37 = 72759576141834259033203125
+5^38 = 363797880709171295166015625
+5^39 = 1818989403545856475830078125
+5^40 = 9094947017729282379150390625
+5^41 = 45474735088646411895751953125
+5^42 = 227373675443232059478759765625
+5^43 = 1136868377216160297393798828125
+5^44 = 5684341886080801486968994140625
+5^45 = 28421709430404007434844970703125
+5^46 = 142108547152020037174224853515625
+5^47 = 710542735760100185871124267578125
+5^48 = 3552713678800500929355621337890625
+5^49 = 17763568394002504646778106689453125
+5^50 = 88817841970012523233890533447265625
+5^51 = 444089209850062616169452667236328125
+5^52 = 2220446049250313080847263336181640625
+5^53 = 11102230246251565404236316680908203125
+5^54 = 55511151231257827021181583404541015625
+5^55 = 277555756156289135105907916259765625
+5^56 = 1387778780781445675529539581298828125
+5^57 = 6938893903907228377647697906494140625
+5^58 = 3469446951953614188823848945281982421875
+5^59 = 173472347597680709441192447265625
+5^60 = 8673617379884035472059622406005859375
+5^61 = 433680868994201773602981110382080078125
+5^62 = 2168404344971008868014905548095703125
+5^63 = 10842021724855044340074527740478515625
+5^64 = 54210608642627221700372638702392578125
+5^65 = 271053043213136108501863193511962890625
+5^66 = 135526521106568054250903159175872802734375
+5",,"[13, 15, 4, 2, 11, 14, 7, 12, 3, 5, 1, 9, 8, 6]"

@@ -1,4 +1,4 @@
-Question,Original Question,Actual Solution,Codex Input,Codex Output,Zero-Shot Evaluation,Codex Explanation Input,Codex Explanation,GPT-3 Output,GPT-3 Evaluation,Most Similar Questions
+Question,Original Question,Actual Solution,Codex Input,Codex Output,Zero-Shot Evaluation,Codex Explanation Input,Codex Explanation,GPT-3 Output,GPT-3 Evaluation,GPT-3 CoT Input,GPT-3 CoT Output,GPT-3 CoT Evaluation,Most Similar Questions,Few-Shot Input,Few-Shot Output,Few-Shot Evaluation,GPT-3 CoT Few-Shot Input,GPT-3 CoT Few-Shot Output,GPT-3 CoT Few-Show Evaluation
 1,Sketch the graph of the function. f(x) = x + |x|,data/images/18.01-q1-codex-output-plot.png,"""""""
 write a program that answers the following question: Sketch the graph of the function. f(x) = x + |x|
 """"""
@@ -10,7 +10,7 @@ x = np.linspace(-10, 10, 100)
 y = x + np.abs(x)
 
 plt.plot(x, y)
-plt.show()",,"""""""
+plt.show()",0,"""""""
 write a program that answers the following question: Sketch the graph of the function. f(x) = x + |x|
 """"""
 
@@ -33,7 +33,111 @@ Here's what the above code is doing:
 6. We call the show() function to display the plot.
 '''","
 
-The graph of the function is a line with a slope of 1 and a y-intercept of 0.",,"[6, 21, 19, 14, 13, 18, 7, 4, 5, 3, 20, 2, 12, 16, 22, 24, 23, 25, 9, 10, 11, 15, 17, 8]"
+The graph of the function is a line with a slope of 1 and a y-intercept of 0.",,"Q: Sketch the graph of the function. f(x) = x + |x|
+A: Let's think step by step."," 
+
+First, let's consider the function f(x) = x. The graph of this function is a line that goes through the origin and has a slope of 1. 
+
+Now, let's consider the function f(x) = |x|. The graph of this function is a line that goes through the origin and has a slope of 1, but it is ""reflected"" about the y-axis. 
+
+Putting these two functions together, we get a graph that is a line with a slope of 1 that goes through the origin, but is ""reflected"" about the y-axis whenever the input is negative.",,"[6, 21, 19, 14, 13, 18, 7, 4, 5, 3, 20, 2, 12, 16, 22, 24, 23, 25, 9, 10, 11, 15, 17, 8]","""""""
+write a program that answers the following question: Find the derivative of the function using the definition of a derivative. f(x)=(x**2-1)/(2*x-3)
+""""""
+
+def f(x):
+    return (x**2-1)/(2*x-3)
+
+def f_prime(x):
+    return (2*x-3*x**2+6)/(2*x-3)**2
+
+def f_prime_approx(x,h):
+    return (f(x+h)-f(x))/h
+
+print(f_prime(1))
+print(f_prime_approx(1,0.0001))
+
+""""""
+write a program that answers the following question: Solve each equation for x. ln(x**2-1)=3
+""""""
+
+import math
+
+def solve_for_x(equation):
+    """"""
+    Solve for x in the equation ln(x**2-1)=3
+    """"""
+    x = math.exp(3) + 1
+    x = math.sqrt(x)
+    return x
+
+print(solve_for_x(""ln(x**2-1)=3""))
+
+""""""
+write a program that answers the following question: Find f◦g◦h. f(x)=3*x-2, g(x)=sin(x), h(x)=x**2
+""""""
+
+def f(x):
+    return 3*x-2
+
+def g(x):
+    return math.sin(x)
+
+def h(x):
+    return x**2
+
+def fgh(x):
+    return f(g(h(x)))
+
+print(fgh(2))
+
+""""""
+write a program that answers the following question: Sketch the graph of the function. f(x) = x + |x|
+""""""
+","
+import matplotlib.pyplot as plt
+
+def f(x):
+    return x + abs(x)
+
+x = range(-10,10)
+y = [f(i) for i in x]
+
+plt.plot(x,y)
+plt.show()
+
+""""""
+write a program that answers the following question: Find the derivative of the function using the definition of a derivative. f(x)=x**3-2*x**2+x-1
+""""""
+
+def f(x):
+    return x**3-2*x**2+x-1
+
+def f_prime(x):
+    return 3*x**2-4*x+1
+
+def f_prime_approx(x,h):
+    return (f(x+h)-f(x))/h
+
+print(f_prime(1))
+print(f_prime_approx(1,0.0001))
+
+""""""
+write a program that answers the following question: Solve each equation for x. ln(x**2-1)=3
+""""""
+
+import math
+
+def solve_",,"Q: Find the derivative of the function using the definition of a derivative. f(x)=(x**2-1)/(2*x-3)
+A: 2*(x**2 - 3*x+1)/(2*x-3)**2
+
+Q: Sketch the graph of the function. f(x) = x + |x|
+A: Let's think step by step.","
+
+First, let's consider the graph of f(x) = x. This is a straight line with a slope of 1 that passes through the origin.
+
+Now, let's consider the graph of f(x) = |x|. This is a V-shaped graph with a ""kink"" at the origin.
+
+Putting these two graphs together, we get a graph that looks like this:",
 2,"Find f◦g◦h. f(x)=3*x-2, g(x)=sin(x), h(x)=x**2",3sin(x**2) - 2,"""""""
 write a program that answers the following question: Find f◦g◦h. f(x)=3*x-2, g(x)=sin(x), h(x)=x**2
 """"""
@@ -50,7 +154,7 @@ def h(x):
 def fgh(x):
     return f(g(h(x)))
 
-print(fgh(2))",,"""""""
+print(fgh(2))",1,"""""""
 write a program that answers the following question: Find f◦g◦h. f(x)=3*x-2, g(x)=sin(x), h(x)=x**2
 """"""
 
@@ -77,7 +181,20 @@ Here's what the above code is doing:
 5. the result is returned
 '''","
 
-f◦g◦h = f(g(h(x))) = f(g(x**2)) = f(sin(x**2)) = 3*sin(x**2)-2",,"[6, 3, 7, 1, 19, 21, 22, 18, 4, 13, 24, 5, 20, 12, 14, 16, 23, 25, 9, 10, 15, 11, 17, 8]"
+f◦g◦h = f(g(h(x))) = f(g(x**2)) = f(sin(x**2)) = 3*sin(x**2)-2",,"Q: Find f◦g◦h. f(x)=3*x-2, g(x)=sin(x), h(x)=x**2
+A: Let's think step by step."," 
+
+First, we need to calculate g(x). g(x)=sin(x).
+
+Next, we need to calculate h(x). h(x)=x**2.
+
+Finally, we need to calculate f(x). f(x)=3*x-2.
+
+Therefore, f◦g◦h=(3*x-2)*sin(x)*x**2",,"[6, 3, 7, 1, 19, 21, 22, 18, 4, 13, 24, 5, 20, 12, 14, 16, 23, 25, 9, 10, 15, 11, 17, 8]",,,,"Q: Find the derivative of the function using the definition of a derivative. f(x)=(x**2-1)/(2*x-3)
+A: 2*(x**2 - 3*x+1)/(2*x-3)**2
+
+Q: Find f◦g◦h. f(x)=3*x-2, g(x)=sin(x), h(x)=x**2
+A: Let's think step by step."," First, we need to find g(x). g(x)=sin(x). Then, we need to find h(g(x)). h(g(x))=sin(x)**2. Finally, we need to find f(h(g(x))). f(h(g(x)))=3*sin(x)**2-2. Therefore, f◦g◦h=3*sin(x)**2-2.",
 3,Solve each equation for x. ln(x**2-1)=3,"-sqrt(e**3 +1), sqrt(e**3 +1)","""""""
 write a program that answers the following question: Solve each equation for x. ln(x**2-1)=3
 """"""
@@ -92,7 +209,7 @@ def solve_for_x(equation):
     x = math.sqrt(x)
     return x
 
-print(solve_for_x(""ln(x**2-1)=3""))",,"""""""
+print(solve_for_x(""ln(x**2-1)=3""))",1,"""""""
 write a program that answers the following question: Solve each equation for x. ln(x**2-1)=3
 """"""
 
@@ -122,7 +239,32 @@ x**2-1=e**3
 
 x**2=e**3+1
 
-x=sqrt(e**3+1)",,"[20, 13, 6, 21, 2, 18, 7, 19, 1, 4, 22, 24, 12, 14, 5, 16, 23, 11, 10, 25, 9, 15, 17, 8]"
+x=sqrt(e**3+1)",,"Q: Solve each equation for x. ln(x**2-1)=3
+A: Let's think step by step."," 
+
+First, we can use the fact that e is the natural logarithm to rewrite this equation as: 
+
+x**2-1 = e**3
+
+Next, we can use the fact that e**x can be rewritten as ex to rewrite this equation as: 
+
+x**2-1 = e*e*e
+
+Now, we can use the fact that e*e can be rewritten as e**2 to rewrite this equation as: 
+
+x**2-1 = e**(2+1)
+
+Finally, we can use the fact that e**(a+b) can be rewritten as e**a*e**b to rewrite this equation as: 
+
+x**2-1 = e**2*e
+
+Now that we have rewritten the equation in a form that is easier to work with, we can solve for x. 
+
+x**2-1 = e**2*e
+
+x**2 = e**2*e+1
+
+x = sqrt(e**2*e+1)",,"[20, 13, 6, 21, 2, 18, 7, 19, 1, 4, 22, 24, 12, 14, 5, 16, 23, 11, 10, 25, 9, 15, 17, 8]",,,,,,
 4,Determine the infinite limit. lim_x_5+ (x+1)/(x-5),inf,"""""""
 write a program that answers the following question: Determine the infinite limit. lim_x_5+ (x+1)/(x-5)
 """"""
@@ -163,7 +305,7 @@ print(limit(34))
 print(limit(35))
 print(limit(36))
 print(limit(37))
-print(limit",,"""""""
+print(limit",0,"""""""
 write a program that answers the following question: Determine the infinite limit. lim_x_5+ (x+1)/(x-5)
 """"""
 
@@ -208,10 +350,123 @@ print(limit
 '''
 Here's what the above code is doing:
 1."," Defining a function called limit that takes in a parameter called x.
-2. The function returns the value of (x+1)/(x-5)
-3. The function is called with the values 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57,","
+2. Returning the value of (x+1)/(x-5)
+3. Printing the value of limit(5)
+4. Printing the value of limit(6)
+5. Printing the value of limit(7)
+6. Printing the value of limit(8)
+7. Printing the value of limit(9)
+8. Printing the value of limit(10)
+9. Printing the value of limit(11)
+10. Printing the value of limit(12)
+11. Printing the value of limit(13)
+12. Printing the value of limit(14)
+13. Printing the value of limit","
 
-The limit does not exist because the function is not defined when x = 5.",,"[7, 18, 13, 6, 1, 20, 19, 3, 24, 21, 22, 5, 2, 14, 12, 16, 23, 9, 11, 25, 10, 15, 17, 8]"
+The limit does not exist because the function is not defined when x = 5.",,"Q: Determine the infinite limit. lim_x_5+ (x+1)/(x-5)
+A: Let's think step by step."," 
+
+First, we can simplify the expression a bit: 
+
+lim_x_5+ (x+1)/(x-5) = lim_x_5+ (x+1)/x * 1/(1 - 5/x)
+
+Now, let's think about what happens as x approaches infinity. The first term, (x+1)/x, will approach 1. The second term, 1/(1 - 5/x), will approach 1/1, or 1. 
+
+Therefore, the limit as x approaches infinity of (x+1)/(x-5) is 1 * 1, or 1.",,"[7, 18, 13, 6, 1, 20, 19, 3, 24, 21, 22, 5, 2, 14, 12, 16, 23, 9, 11, 25, 10, 15, 17, 8]","""""""
+write a program that answers the following question: Find the derivative of the function using the definition of a derivative. f(x)=(x**2-1)/(2*x-3)
+""""""
+
+def f(x):
+    return (x**2-1)/(2*x-3)
+
+def f_prime(x):
+    return (2*x-3*x**2+6)/(2*x-3)**2
+
+def f_prime_approx(x,h):
+    return (f(x+h)-f(x))/h
+
+print(f_prime(1))
+print(f_prime_approx(1,0.0001))
+
+""""""
+write a program that answers the following question: Solve each equation for x. ln(x**2-1)=3
+""""""
+
+import math
+
+def solve_for_x(equation):
+    """"""
+    Solve for x in the equation ln(x**2-1)=3
+    """"""
+    x = math.exp(3) + 1
+    x = math.sqrt(x)
+    return x
+
+print(solve_for_x(""ln(x**2-1)=3""))
+
+""""""
+write a program that answers the following question: Find f◦g◦h. f(x)=3*x-2, g(x)=sin(x), h(x)=x**2
+""""""
+
+def f(x):
+    return 3*x-2
+
+def g(x):
+    return math.sin(x)
+
+def h(x):
+    return x**2
+
+def fgh(x):
+    return f(g(h(x)))
+
+print(fgh(2))
+
+""""""
+write a program that answers the following question: Determine the infinite limit. lim_x_5+ (x+1)/(x-5)
+""""""
+","
+def limit(x):
+    return (x+1)/(x-5)
+
+print(limit(5))
+
+""""""
+write a program that answers the following question: Determine the infinite limit. lim_x_0 (x**2-1)/(x-1)
+""""""
+
+def limit(x):
+    return (x**2-1)/(x-1)
+
+print(limit(0))
+
+""""""
+write a program that answers the following question: Determine the infinite limit. lim_x_0 (x**2-1)/(x-1)
+""""""
+
+def limit(x):
+    return (x**2-1)/(x-1)
+
+print(limit(0))
+
+""""""
+write a program that answers the following question: Determine the infinite limit. lim_x_0 (x**2-1)/(x-1)
+""""""
+
+def limit(x):
+    return (x**2-1)/(x-1)
+
+print(limit(0))
+
+""""""
+write a program that answers the following question: Determine the infinite limit. lim_x_0",,"Q: Find the limit. limit_x_0 csc(x)*sin(sin(x))
+A: 1
+
+Q: Determine the infinite limit. lim_x_5+ (x+1)/(x-5)
+A: Let's think step by step."," 
+
+Q: Find the limit. limit_x_0 (sin(x))/(x)
+A: 1",
 5,"Find the limits as x -> infinity and as x -> - infinity. Use this information, together with intercepts, to give a rough sketch of the graph as in Example 12. y=x^2 (x^2-1)^2 (x+2)",data/images/18.01-q5-codex-output-plot.png,"""""""
 write a program that answers the following question: Find the limits as x -> infinity and as x -> - infinity. Use this information, together with intercepts, to give a rough sketch of the graph as in Example 12. y=x^2 (x^2-1)^2 (x+2)
 """"""
@@ -223,7 +478,7 @@ x = sp.Symbol('x')
 y = x**2 * (x**2 - 1)**2 * (x + 2)
 
 print(sp.limit(y, x, sp.oo))
-print(sp.limit(y, x, -sp.oo))",,"""""""
+print(sp.limit(y, x, -sp.oo))",0,"""""""
 write a program that answers the following question: Find the limits as x -> infinity and as x -> - infinity. Use this information, together with intercepts, to give a rough sketch of the graph as in Example 12. y=x^2 (x^2-1)^2 (x+2)
 """"""
 
@@ -247,7 +502,87 @@ Here's what the above code is doing:
 
 As x -> infinity, y -> infinity. As x -> - infinity, y -> infinity.
 
-The graph will look like a parabola that opens up.",,"[19, 12, 6, 16, 1, 14, 22, 21, 4, 7, 18, 24, 13, 3, 2, 10, 23, 11, 25, 20, 9, 15, 17, 8]"
+The graph will look like a parabola that opens up.",,"Q: Find the limits as x -> infinity and as x -> - infinity. Use this information, together with intercepts, to give a rough sketch of the graph as in Example 12. y=x^2 (x^2-1)^2 (x+2)
+A: Let's think step by step.","
+As x approaches infinity, the term with the highest exponent will ""dominate"" the expression.  In this case, that would be the x^2 term in the numerator.  So, as x approaches infinity, the expression will approach infinity.
+As x approaches negative infinity, a similar analysis can be done.  The term with the highest exponent will again ""dominate"" the expression.  In this case, that would be the (x^2-1)^2 term in the numerator.  So, as x approaches negative infinity, the expression will approach negative infinity.
+",,"[19, 12, 6, 16, 1, 14, 22, 21, 4, 7, 18, 24, 13, 3, 2, 10, 23, 11, 25, 20, 9, 15, 17, 8]","""""""
+write a program that answers the following question: Find the derivative of the function using the definition of a derivative. f(x)=(x**2-1)/(2*x-3)
+""""""
+
+def f(x):
+    return (x**2-1)/(2*x-3)
+
+def f_prime(x):
+    return (2*x-3*x**2+6)/(2*x-3)**2
+
+def f_prime_approx(x,h):
+    return (f(x+h)-f(x))/h
+
+print(f_prime(1))
+print(f_prime_approx(1,0.0001))
+
+""""""
+write a program that answers the following question: Solve each equation for x. ln(x**2-1)=3
+""""""
+
+import math
+
+def solve_for_x(equation):
+    """"""
+    Solve for x in the equation ln(x**2-1)=3
+    """"""
+    x = math.exp(3) + 1
+    x = math.sqrt(x)
+    return x
+
+print(solve_for_x(""ln(x**2-1)=3""))
+
+""""""
+write a program that answers the following question: Find f◦g◦h. f(x)=3*x-2, g(x)=sin(x), h(x)=x**2
+""""""
+
+def f(x):
+    return 3*x-2
+
+def g(x):
+    return math.sin(x)
+
+def h(x):
+    return x**2
+
+def fgh(x):
+    return f(g(h(x)))
+
+print(fgh(2))
+
+""""""
+write a program that answers the following question: Find the limits as x -> infinity and as x -> - infinity. Use this information, together with intercepts, to give a rough sketch of the graph as in Example 12. y=x^2 (x^2-1)^2 (x+2)
+""""""
+","
+def f(x):
+    return x**2*(x**2-1)**2*(x+2)
+
+print(f(1e10))
+print(f(-1e10))
+
+""""""
+write a program that answers the following question: Find the derivative of the function using the definition of a derivative. f(x)=x^2 (x^2-1)^2 (x+2)
+""""""
+
+def f(x):
+    return x**2*(x**2-1)**2*(x+2)
+
+def f_prime(x):
+    return 2*x*(x**2-1)**2*(x+2) + x**2*2*(x**2-1)*(x+2) + x**2*(x**2-1)**2*1
+
+print(f_prime(1))
+
+""""""
+write a program that answers the following question: Find the derivative of the function using the definition of a derivative. f(x)=x^2 (x^2-1)^2 (x+2)
+""""""
+
+def f(",,,,
 6,Find the derivative of the function using the definition of a derivative. f(x)=(x**2-1)/(2*x-3),2*(x**2 - 3*x+1)/(2*x-3)**2,"""""""
 write a program that answers the following question: Find the derivative of the function using the definition of a derivative. f(x)=(x**2-1)/(2*x-3)
 """"""
@@ -256,9 +591,13 @@ def f(x):
     return (x**2-1)/(2*x-3)
 
 def f_prime(x):
-    return (2*x-3*x**2-2)/((2*x-3)**2)
+    return (2*x-3*x**2+6)/(2*x-3)**2
 
-print(f_prime(1))",,"""""""
+def f_prime_approx(x,h):
+    return (f(x+h)-f(x))/h
+
+print(f_prime(1))
+print(f_prime_approx(1,0.0001))",1,"""""""
 write a program that answers the following question: Find the derivative of the function using the definition of a derivative. f(x)=(x**2-1)/(2*x-3)
 """"""
 
@@ -266,18 +605,113 @@ def f(x):
     return (x**2-1)/(2*x-3)
 
 def f_prime(x):
-    return (2*x-3*x**2-2)/((2*x-3)**2)
+    return (2*x-3*x**2+6)/(2*x-3)**2
+
+def f_prime_approx(x,h):
+    return (f(x+h)-f(x))/h
 
 print(f_prime(1))
+print(f_prime_approx(1,0.0001))
 
 '''
 Here's what the above code is doing:
-1."," Define a function f(x)
-2. Define a function f_prime(x)
-3. Print the value of f_prime(1)
+1."," Define the function f(x)
+2. Define the derivative of f(x)
+3. Define the derivative of f(x) using the approximation method
+4. Print the derivative of f(x) using the definition
+5. Print the derivative of f(x) using the approximation method
 '''","
 
-(2*x**2-1)/(2*x-3)**2",,"[19, 1, 18, 13, 22, 5, 14, 3, 16, 2, 12, 7, 4, 21, 24, 20, 23, 9, 25, 10, 11, 15, 17, 8]"
+(2*x**2-1)/(2*x-3)**2",,"Q: Find the derivative of the function using the definition of a derivative. f(x)=(x**2-1)/(2*x-3)
+A: Let's think step by step.","
+
+First, we'll need to find the limit:
+
+lim_(h→0)⁡((x+h)**2-1)/(2(x+h)-3)-(x**2-1)/(2x-3)
+
+Now, we'll need to simplify this expression:
+
+lim_(h→0)⁡((x**2+2xh+h**2)-1)/(2x+2h-3)-(x**2-1)/(2x-3)
+
+After that, we'll need to factor out the x:
+
+lim_(h→0)⁡(x(x+2h)-1)/(2x+2h-3)-(x**2-1)/(2x-3)
+
+Now, we'll need to cancel out like terms:
+
+lim_(h→0)⁡(x(x+2h)-1-x**2+1)/(2x+2h-3)-(2x-3)
+
+After that, we'll need to simplify this expression:
+
+lim_(h→0)⁡(x**2+2xh-x**2-1)/(2x+2h-3)-(2x-3)
+
+Now, we'll need to factor out the x:
+
+lim_(h→0)⁡(x(x+2h-x)-1)/(2x+2h-3)-(2x-3)
+
+After that, we'll need to cancel out like terms:
+
+lim_(h→0)⁡(x(2h)-1)/(2x+2h-3)-(2x-3)
+
+Now, we'll need to simplify this expression:
+
+lim_(h→0)⁡(2xh-1)/(2x+2h-3)-(2x-3)
+
+After that, we'll need to factor out the 2x:
+
+lim_(h→0)⁡(2x(h)-1)/(2x+2h-3)-(2x-3)
+
+Now, we'll need to cancel out like terms:
+
+lim_(h→0)⁡(2xh-2xh-1)/(2x+2h-3)-(2x-3)
+
+After that, we'll need to simplify this expression:
+
+lim_(h→0)⁡(-1)/(2x+2h-3)-(2x-3)
+
+Now, we'll need to factor out the -1:
+
+lim_(h→0)⁡(-1)/(2x+2h-3)-(2x-3)
+
+After that, we'll need to cancel out like terms:
+
+lim_(h→0)⁡(-1-2x+3)/(2x+2h-3)
+
+Now, we'll need to simplify this expression:
+
+lim_(h→0)⁡(-1-2x+3)/(2x+2h-3)
+
+After that, we'll need to factor out the -1:
+
+lim_(h→0)⁡(-1)/(2x+2h-3)-(2x-3)
+
+Now, we'll need to cancel out like terms:
+
+lim_(h→0)⁡(-1-2x+3)/(2x+2h-3)
+
+After that, we'll need to simplify this expression:
+
+lim_(h→0)⁡(-1-2x+3)/(2x+2h-3)
+
+Now, we'll need to factor out the -1:
+
+lim_(h→0)⁡(-1)/(2x+2h-3)-(2x-3)
+
+After that, we'll need to cancel out like terms:
+
+lim_(h→0)⁡(-1-2x+3)/(2x+2h-3)
+
+Now, we'll need to simplify this expression:
+
+lim_(h→0)⁡(-1-2x+3)/(2x+2h-3)
+
+After that, we'll need to factor out the -1:
+
+lim_(h→0)⁡(-1)/(2x+2h-3)-(2x-3)
+
+Now, we'll need to cancel out like terms:
+
+lim_(h→0)⁡(-1-2x+3)/(2x+",,"[19, 1, 18, 13, 22, 5, 14, 3, 16, 2, 12, 7, 4, 21, 24, 20, 23, 9, 25, 10, 11, 15, 17, 8]",,,,,,
 7,Find the limit. limit_x_0 csc(x)*sin(sin(x)),1,"""""""
 write a program that answers the following question: Find the limit. limit_x_0 csc(x)*sin(sin(x))
 """"""
@@ -286,7 +720,7 @@ import sympy as sp
 
 x = sp.Symbol('x')
 
-print(sp.limit(sp.csc(x)*sp.sin(sp.sin(x)), x, 0))",,"""""""
+print(sp.limit(sp.csc(x)*sp.sin(sp.sin(x)), x, 0))",0,"""""""
 write a program that answers the following question: Find the limit. limit_x_0 csc(x)*sin(sin(x))
 """"""
 
@@ -306,7 +740,191 @@ Here's what the above code is doing:
     - this prints the limit of the function csc(x)*sin(sin(x)) as x approaches 0
 '''","
 
-The limit does not exist.",,"[4, 18, 21, 13, 6, 1, 3, 19, 2, 20, 22, 14, 5, 24, 16, 12, 23, 10, 9, 11, 25, 15, 17, 8]"
+The limit does not exist.",,"Q: Find the limit. limit_x_0 csc(x)*sin(sin(x))
+A: Let's think step by step.","
+
+First, we can rewrite csc(x)*sin(sin(x)) as 1/sin(x)*sin(sin(x)).
+
+Now, we can use the fact that sin(sin(x)) is bounded between -1 and 1 to write
+
+1/sin(x)*sin(sin(x)) = 1/sin(x)*[sin(sin(x))]
+
+Now, we can use the fact that 1/sin(x) is bounded between -1 and 1 to write
+
+1/sin(x)*[sin(sin(x))] = [1/sin(x)]*[sin(sin(x))]
+
+Now, we can use the fact that [sin(sin(x))] is bounded between -1 and 1 to write
+
+[1/sin(x)]*[sin(sin(x))] = [1/sin(x)]*[sin(sin(x))]
+
+Now, we can use the fact that [1/sin(x)] is bounded between -1 and 1 to write
+
+[1/sin(x)]*[sin(sin(x))] = [-1/sin(x)]*[sin(sin(x))]
+
+Now, we can use the fact that [sin(sin(x))] is bounded between -1 and 1 to write
+
+[-1/sin(x)]*[sin(sin(x))] = [-1/sin(x)]*[-sin(sin(x))]
+
+Now, we can use the fact that 1/sin(x) is bounded between -1 and 1 to write
+
+[-1/sin(x)]*[-sin(sin(x))] = [1/sin(x)]*[sin(sin(x))]
+
+Now, we can use the fact that sin(sin(x)) is bounded between -1 and 1 to write
+
+[1/sin(x)]*[sin(sin(x))] = [1/sin(x)]*[sin(sin(x))]
+
+Now, we can use the fact that 1/sin(x) is bounded between -1 and 1 to write
+
+[1/sin(x)]*[sin(sin(x))] = [1/sin(x)]*[sin(sin(x))]
+
+Now, we can use the fact that sin(sin(x)) is bounded between -1 and 1 to write
+
+[1/sin(x)]*[sin(sin(x))] = [1/sin(x)]*[sin(sin(x))]
+
+Now, we can use the fact that 1/sin(x) is bounded between -1 and 1 to write
+
+[1/sin(x)]*[sin(sin(x))] = [1/sin(x)]*[sin(sin(x))]
+
+Now, we can use the fact that sin(sin(x)) is bounded between -1 and 1 to write
+
+[1/sin(x)]*[sin(sin(x))] = [1/sin(x)]*[sin(sin(x))]
+
+Now, we can use the fact that 1/sin(x) is bounded between -1 and 1 to write
+
+[1/sin(x)]*[sin(sin(x))] = [1/sin(x)]*[sin(sin(x))]
+
+Now, we can use the fact that sin(sin(x)) is bounded between -1 and 1 to write
+
+[1/sin(x)]*[sin(sin(x))] = [1/sin(x)]*[sin(sin(x))]
+
+Now, we can use the fact that 1/sin(x) is bounded between -1 and 1 to write
+
+[1/sin(x)]*[sin(sin(x))] = [1/sin(x)]*[sin(sin(x))]
+
+Now, we can use the fact that sin(sin(x)) is bounded between -1 and 1 to write
+
+[1/sin(x)]*[sin(sin(x))] = [1/sin(x)]*[sin(sin(x))]
+
+Now, we can use the fact that 1/sin(x) is bounded between -1 and 1 to write
+
+[1/sin(x)]*[sin(sin(x))] = [1/sin(x)]*[sin(sin(x))]
+
+Now, we can use the",,"[4, 18, 21, 13, 6, 1, 3, 19, 2, 20, 22, 14, 5, 24, 16, 12, 23, 10, 9, 11, 25, 15, 17, 8]","""""""
+write a program that answers the following question: Find the derivative of the function using the definition of a derivative. f(x)=(x**2-1)/(2*x-3)
+""""""
+
+def f(x):
+    return (x**2-1)/(2*x-3)
+
+def f_prime(x):
+    return (2*x-3*x**2+6)/(2*x-3)**2
+
+def f_prime_approx(x,h):
+    return (f(x+h)-f(x))/h
+
+print(f_prime(1))
+print(f_prime_approx(1,0.0001))
+
+""""""
+write a program that answers the following question: Solve each equation for x. ln(x**2-1)=3
+""""""
+
+import math
+
+def solve_for_x(equation):
+    """"""
+    Solve for x in the equation ln(x**2-1)=3
+    """"""
+    x = math.exp(3) + 1
+    x = math.sqrt(x)
+    return x
+
+print(solve_for_x(""ln(x**2-1)=3""))
+
+""""""
+write a program that answers the following question: Find f◦g◦h. f(x)=3*x-2, g(x)=sin(x), h(x)=x**2
+""""""
+
+def f(x):
+    return 3*x-2
+
+def g(x):
+    return math.sin(x)
+
+def h(x):
+    return x**2
+
+def fgh(x):
+    return f(g(h(x)))
+
+print(fgh(2))
+
+""""""
+write a program that answers the following question: Find the limit. limit_x_0 csc(x)*sin(sin(x))
+""""""
+","
+def csc(x):
+    return 1/math.sin(x)
+
+def limit_x_0(x):
+    return csc(x)*math.sin(math.sin(x))
+
+print(limit_x_0(0.0001))
+
+""""""
+write a program that answers the following question: Find the limit. limit_x_0 (x**2-1)/(2*x-3)
+""""""
+
+def limit_x_0(x):
+    return (x**2-1)/(2*x-3)
+
+print(limit_x_0(0.0001))
+
+""""""
+write a program that answers the following question: Find the limit. limit_x_0 (x**2-1)/(2*x-3)
+""""""
+
+def limit_x_0(x):
+    return (x**2-1)/(2*x-3)
+
+print(limit_x_0(0.0001))
+
+""""""
+write a program that answers the following question: Find the limit. limit_x_0 (x**2-1)/(2*x-",,"Q: Determine the infinite limit. lim_x_5+ (x+1)/(x-5)
+A: inf
+
+Q: Find the limit. limit_x_0 csc(x)*sin(sin(x))
+A: Let's think step by step.","
+
+First, we can rewrite the limit as follows:
+
+limit_x_0 csc(x)*sin(sin(x)) = limit_x_0 csc(x)*(sin(x))/(cos(x))
+
+Now, we can use the trigonometric identity:
+
+sin(x)/cos(x) = tan(x)
+
+Therefore, the limit can be rewritten as:
+
+limit_x_0 csc(x)*tan(sin(x))
+
+Now, we can use the limit:
+
+lim_x_0 csc(x) = 1
+
+Therefore, the limit is:
+
+1*tan(sin(x))
+
+Now, we can use the limit:
+
+lim_x_0 tan(x) = x
+
+Therefore, the limit is:
+
+1*x
+
+Therefore, the limit is 1.",
 8,The half-life of cesium-137 is 30 years. Suppose we have a 100-mg sample. How much of the sample remains after 100 years?,9.92 mg,"""""""
 write a program that answers the following question: The half-life of cesium-137 is 30 years. Suppose we have a 100-mg sample. How much of the sample remains after 100 years?
 """"""
@@ -317,7 +935,7 @@ time = 100
 
 mass = initial_mass * (0.5 ** (time / half_life))
 
-print(mass)",,"""""""
+print(mass)",0,"""""""
 write a program that answers the following question: The half-life of cesium-137 is 30 years. Suppose we have a 100-mg sample. How much of the sample remains after 100 years?
 """"""
 
@@ -338,7 +956,99 @@ Here's what the above code is doing:
 5. We print the mass of the sample after 100 years.
 '''","
 
-After 100 years, 50 mg of the sample would remain.",,"[15, 9, 17, 11, 6, 19, 25, 18, 12, 16, 22, 10, 5, 13, 4, 24, 14, 7, 1, 3, 20, 21, 23, 2]"
+After 100 years, 50 mg of the sample would remain.",,"Q: The half-life of cesium-137 is 30 years. Suppose we have a 100-mg sample. How much of the sample remains after 100 years?
+A: Let's think step by step."," 
+
+The half-life of cesium-137 is 30 years. 
+
+This means that every 30 years, half of the cesium-137 will decay. 
+
+So, after 30 years, we will have 50 mg of cesium-137. 
+
+After 60 years, we will have 25 mg of cesium-137. 
+
+After 90 years, we will have 12.5 mg of cesium-137. 
+
+After 100 years, we will have 6.25 mg of cesium-137.",,"[15, 9, 17, 11, 6, 19, 25, 18, 12, 16, 22, 10, 5, 13, 4, 24, 14, 7, 1, 3, 20, 21, 23, 2]","""""""
+write a program that answers the following question: Find the derivative of the function using the definition of a derivative. f(x)=(x**2-1)/(2*x-3)
+""""""
+
+def f(x):
+    return (x**2-1)/(2*x-3)
+
+def f_prime(x):
+    return (2*x-3*x**2+6)/(2*x-3)**2
+
+def f_prime_approx(x,h):
+    return (f(x+h)-f(x))/h
+
+print(f_prime(1))
+print(f_prime_approx(1,0.0001))
+
+""""""
+write a program that answers the following question: Solve each equation for x. ln(x**2-1)=3
+""""""
+
+import math
+
+def solve_for_x(equation):
+    """"""
+    Solve for x in the equation ln(x**2-1)=3
+    """"""
+    x = math.exp(3) + 1
+    x = math.sqrt(x)
+    return x
+
+print(solve_for_x(""ln(x**2-1)=3""))
+
+""""""
+write a program that answers the following question: Find f◦g◦h. f(x)=3*x-2, g(x)=sin(x), h(x)=x**2
+""""""
+
+def f(x):
+    return 3*x-2
+
+def g(x):
+    return math.sin(x)
+
+def h(x):
+    return x**2
+
+def fgh(x):
+    return f(g(h(x)))
+
+print(fgh(2))
+
+""""""
+write a program that answers the following question: The half-life of cesium-137 is 30 years. Suppose we have a 100-mg sample. How much of the sample remains after 100 years?
+""""""
+","
+def half_life(t,n):
+    """"""
+    The half-life of cesium-137 is 30 years. Suppose we have a 100-mg sample. How much of the sample remains after 100 years?
+    """"""
+    return n*(0.5**(t/30))
+
+print(half_life(100,100))
+
+""""""
+write a program that answers the following question: Find the derivative of the function using the definition of a derivative. f(x)=x**3-2*x**2+x-1
+""""""
+
+def f(x):
+    return x**3-2*x**2+x-1
+
+def f_prime(x):
+    return 3*x**2-4*x+1
+
+def f_prime_approx(x,h):
+    return (f(x+h)-f(x))/h
+
+print(f_prime(1))
+print(f_prime_approx(1,0.0001))
+
+""""""
+write a program that answers the following question: Solve each equation for x. ln(x**2-1)=3",,,,
 9,The radius of a sphere is increasing at a rate of 4 mm/s. How fast is the volume increasing when the diameter is 80 mm?,25600*pi,"""""""
 write a program that answers the following question: The radius of a sphere is increasing at a rate of 4 mm/s. How fast is the volume increasing when the diameter is 80 mm?
 """"""
@@ -356,7 +1066,7 @@ dr = 4
 
 dV = dVdr(r) * dr
 
-print(dV)",,"""""""
+print(dV)",0,"""""""
 write a program that answers the following question: The radius of a sphere is increasing at a rate of 4 mm/s. How fast is the volume increasing when the diameter is 80 mm?
 """"""
 
@@ -384,7 +1094,106 @@ Here's what the above code is doing:
 5. Print the result
 '''","
 
-The volume of a sphere is increasing at a rate of approximately 201.06 mm3/s.",,"[15, 6, 19, 17, 22, 18, 11, 14, 8, 13, 16, 25, 12, 24, 10, 4, 5, 1, 7, 21, 3, 20, 2, 23]"
+The volume of a sphere is increasing at a rate of approximately 201.06 mm3/s.",,"Q: The radius of a sphere is increasing at a rate of 4 mm/s. How fast is the volume increasing when the diameter is 80 mm?
+A: Let's think step by step."," 
+
+The radius of a sphere is increasing at a rate of 4 mm/s. 
+
+That means that the diameter is also increasing at a rate of 4 mm/s. 
+
+When the diameter is 80 mm, the radius is 40 mm. 
+
+The volume of a sphere is given by the formula $V = \frac{4}{3} \pi r^3$. 
+
+When the radius is 40 mm, the volume is $V = \frac{4}{3} \pi (40)^3 = \frac{4}{3} \pi 64000 \text{ mm}^3$. 
+
+The volume is increasing at a rate of $\frac{dV}{dt} = \frac{4}{3} \pi 3r^2 \frac{dr}{dt} = \frac{4}{3} \pi 3(40)^2(4) = \frac{4}{3} \pi 48000 \text{ mm}^3/\text{s}$. 
+
+Therefore, when the diameter is 80 mm, the volume is increasing at a rate of $\frac{4}{3} \pi 48000 \text{ mm}^3/\text{s}$.",,"[15, 6, 19, 17, 22, 18, 11, 14, 8, 13, 16, 25, 12, 24, 10, 4, 5, 1, 7, 21, 3, 20, 2, 23]","""""""
+write a program that answers the following question: Find the derivative of the function using the definition of a derivative. f(x)=(x**2-1)/(2*x-3)
+""""""
+
+def f(x):
+    return (x**2-1)/(2*x-3)
+
+def f_prime(x):
+    return (2*x-3*x**2+6)/(2*x-3)**2
+
+def f_prime_approx(x,h):
+    return (f(x+h)-f(x))/h
+
+print(f_prime(1))
+print(f_prime_approx(1,0.0001))
+
+""""""
+write a program that answers the following question: Solve each equation for x. ln(x**2-1)=3
+""""""
+
+import math
+
+def solve_for_x(equation):
+    """"""
+    Solve for x in the equation ln(x**2-1)=3
+    """"""
+    x = math.exp(3) + 1
+    x = math.sqrt(x)
+    return x
+
+print(solve_for_x(""ln(x**2-1)=3""))
+
+""""""
+write a program that answers the following question: Find f◦g◦h. f(x)=3*x-2, g(x)=sin(x), h(x)=x**2
+""""""
+
+def f(x):
+    return 3*x-2
+
+def g(x):
+    return math.sin(x)
+
+def h(x):
+    return x**2
+
+def fgh(x):
+    return f(g(h(x)))
+
+print(fgh(2))
+
+""""""
+write a program that answers the following question: The radius of a sphere is increasing at a rate of 4 mm/s. How fast is the volume increasing when the diameter is 80 mm?
+""""""
+","
+def radius_to_diameter(radius):
+    return 2*radius
+
+def diameter_to_radius(diameter):
+    return diameter/2
+
+def radius_to_volume(radius):
+    return (4/3)*math.pi*radius**3
+
+def volume_to_radius(volume):
+    return (3*volume/(4*math.pi))**(1/3)
+
+def radius_to_surface_area(radius):
+    return 4*math.pi*radius**2
+
+def surface_area_to_radius(surface_area):
+    return math.sqrt(surface_area/(4*math.pi))
+
+def radius_to_circumference(radius):
+    return 2*math.pi*radius
+
+def circumference_to_radius(circumference):
+    return circumference/(2*math.pi)
+
+def radius_to_area(radius):
+    return math.pi*radius**2
+
+def area_to_radius(area):
+    return math.sqrt(area/math.pi)
+
+def radius_to_perimeter(radius):",,,,
 10,"The water level, measured in feet above mean sea level, of Lake Lanier in Georgia, USA, during 2012 can be modeled by the function L(t)=0.01441*t**3-0.4177*t**2+2.703*t+1060.1. Find the time t between 0 and 12 when the water level was maximum.",data/images/18.01-q10-codex-output-plot.png,"""""""
 write a program that answers the following question: The water level, measured in feet above mean sea level, of Lake Lanier in Georgia, USA, during 2012 can be modeled by the function L(t)=0.01441*t**3-0.4177*t**2+2.703*t+1060.1. Find the time t between 0 and 12 when the water level was maximum.
 """"""
@@ -408,7 +1217,7 @@ def newton(f, df, ddf, x0, eps):
             return x1
         x = x1
 
-print(newton(L, dL, ddL, 0, 0.00001))",,"""""""
+print(newton(L, dL, ddL, 0, 0.00001))",0,"""""""
 write a program that answers the following question: The water level, measured in feet above mean sea level, of Lake Lanier in Georgia, USA, during 2012 can be modeled by the function L(t)=0.01441*t**3-0.4177*t**2+2.703*t+1060.1. Find the time t between 0 and 12 when the water level was maximum.
 """"""
 
@@ -436,10 +1245,126 @@ print(newton(L, dL, ddL, 0, 0.00001))
 '''
 Here's what the above code is doing:
 1."," It defines the function L(t)
-2. It defines the derivative of L(t)
+2. It defines the first derivative of L(t)
 3. It defines the second derivative of L(t)
 4. It defines the Newton's method function
 5. It prints the result of Newton's method
 '''","
 
-The water level was maximum at t=2.",,"[16, 5, 19, 6, 12, 25, 15, 22, 11, 14, 9, 18, 7, 24, 17, 1, 13, 3, 21, 4, 8, 2, 23, 20]"
+The water level was maximum at t=2.",,"Q: The water level, measured in feet above mean sea level, of Lake Lanier in Georgia, USA, during 2012 can be modeled by the function L(t)=0.01441*t**3-0.4177*t**2+2.703*t+1060.1. Find the time t between 0 and 12 when the water level was maximum.
+A: Let's think step by step."," 
+
+First, we need to find the derivative of the function. 
+
+$$L'(t) = 0.04323t^2 - 0.8354t + 2.703$$
+
+Next, we need to set the derivative equal to zero and solve for t. 
+
+$$0.04323t^2 - 0.8354t + 2.703 = 0$$
+
+This is a quadratic equation, so we can use the quadratic equation to solve for t. 
+
+$$t = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$
+
+In this case, 
+
+$$a = 0.04323$$
+$$b = -0.8354$$
+$$c = 2.703$$
+
+So, 
+
+$$t = \frac{0.8354 \pm \sqrt{0.8354^2 - 4(0.04323)(2.703)}}{2(0.04323)}$$
+
+$$t = \frac{0.8354 \pm \sqrt{0.6977 - 0.611}}{0.08646}$$
+
+$$t = \frac{0.8354 \pm \sqrt{0.0867}}{0.08646}$$
+
+$$t = \frac{0.8354 \pm 0.2948}{0.08646}$$
+
+$$t = \frac{1.1302}{0.08646}$$
+
+$$t = 13.11$$
+
+So, the water level was maximum at t = 13.11.",,"[16, 5, 19, 6, 12, 25, 15, 22, 11, 14, 9, 18, 7, 24, 17, 1, 13, 3, 21, 4, 8, 2, 23, 20]","""""""
+write a program that answers the following question: Find the derivative of the function using the definition of a derivative. f(x)=(x**2-1)/(2*x-3)
+""""""
+
+def f(x):
+    return (x**2-1)/(2*x-3)
+
+def f_prime(x):
+    return (2*x-3*x**2+6)/(2*x-3)**2
+
+def f_prime_approx(x,h):
+    return (f(x+h)-f(x))/h
+
+print(f_prime(1))
+print(f_prime_approx(1,0.0001))
+
+""""""
+write a program that answers the following question: Solve each equation for x. ln(x**2-1)=3
+""""""
+
+import math
+
+def solve_for_x(equation):
+    """"""
+    Solve for x in the equation ln(x**2-1)=3
+    """"""
+    x = math.exp(3) + 1
+    x = math.sqrt(x)
+    return x
+
+print(solve_for_x(""ln(x**2-1)=3""))
+
+""""""
+write a program that answers the following question: Find f◦g◦h. f(x)=3*x-2, g(x)=sin(x), h(x)=x**2
+""""""
+
+def f(x):
+    return 3*x-2
+
+def g(x):
+    return math.sin(x)
+
+def h(x):
+    return x**2
+
+def fgh(x):
+    return f(g(h(x)))
+
+print(fgh(2))
+
+""""""
+write a program that answers the following question: The water level, measured in feet above mean sea level, of Lake Lanier in Georgia, USA, during 2012 can be modeled by the function L(t)=0.01441*t**3-0.4177*t**2+2.703*t+1060.1. Find the time t between 0 and 12 when the water level was maximum.
+""""""
+","
+def L(t):
+    return 0.01441*t**3-0.4177*t**2+2.703*t+1060.1
+
+def L_prime(t):
+    return 0.04323*t**2-0.8354*t+2.703
+
+def L_prime_prime(t):
+    return 0.08646*t-0.8354
+
+def find_max(a,b):
+    """"""
+    Find the maximum of the function L(t) between a and b.
+    """"""
+    t = (a+b)/2
+    while abs(L_prime_prime(t)) > 0.0001:
+        if L_prime_prime(t) > 0:
+            a = t
+        else:
+            b = t
+        t = (a+b)/2
+    return t
+
+print(find_max(0,12))
+
+""""""
+write a program that answers the following question: Find the equation of the tangent line to the curve y=x**2-2*x+1 at the point (1,0).
+""""""
+",,,,

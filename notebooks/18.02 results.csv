@@ -1,4 +1,4 @@
-Question,Original Question,Actual Solution,Codex Input,Codex Output,Zero-Shot Evaluation,Codex Explanation Input,Codex Explanation,GPT-3 Output,GPT-3 Evaluation,Most Similar Questions
+Question,Original Question,Actual Solution,Codex Input,Codex Output,Zero-Shot Evaluation,Codex Explanation Input,Codex Explanation,GPT-3 Output,GPT-3 Evaluation,GPT-3 CoT Input,GPT-3 CoT Output,GPT-3 CoT Evaluation,Most Similar Questions,Few-Shot Input,Few-Shot Output,Few-Shot Evaluation,GPT-3 CoT Few-Shot Input,GPT-3 CoT Few-Shot Output,GPT-3 CoT Few-Show Evaluation
 1,Sketch the graph of the polar equation. Indicate any symmetries around either coordinate axis or the origin. r = (2 + 7*sin(theta))*(cos(5*theta)),data/images/18.02-q1-codex-output-plot.png,"""""""
 write a program that answers the following question: Sketch the graph of the polar equation. Indicate any symmetries around either coordinate axis or the origin. r = (2 + 7*sin(theta))*(cos(5*theta))
 """"""
@@ -10,7 +10,7 @@ theta = np.linspace(0, 2*np.pi, 1000)
 r = (2 + 7*np.sin(theta))*(np.cos(5*theta))
 
 plt.polar(theta, r)
-plt.show()",,"""""""
+plt.show()",0,"""""""
 write a program that answers the following question: Sketch the graph of the polar equation. Indicate any symmetries around either coordinate axis or the origin. r = (2 + 7*sin(theta))*(cos(5*theta))
 """"""
 
@@ -32,7 +32,41 @@ Here's what the above code is doing:
 5. We show the graph.
 '''","
 
-The graph has symmetry around the origin and the y-axis.",,"[3, 7, 23, 2, 4, 6, 8, 18, 9, 10, 24, 21, 12, 5, 16, 25, 22, 19, 11, 20, 17, 15, 13, 14]"
+The graph has symmetry around the origin and the y-axis.",,"Q: Sketch the graph of the polar equation. Indicate any symmetries around either coordinate axis or the origin. r = (2 + 7*sin(theta))*(cos(5*theta))
+A: Let's think step by step."," 
+
+First, draw the graph of `r=2+7sin(theta)`. This is a graph of a sine wave with amplitude 7 and vertical shift 2. It looks like this:
+
+![sine wave](https://raw.githubusercontent.com/marielleb/Precalculus/master/sine%20wave.png)
+
+Now, multiply this graph by `cos(5theta)`. This will cause the graph to oscillate faster. It will look something like this:
+
+![fast sine wave](https://raw.githubusercontent.com/marielleb/Precalculus/master/fast%20sine%20wave.png)
+
+The final graph will look something like this:
+
+![final graph](https://raw.githubusercontent.com/marielleb/Precalculus/master/final%20graph.png)",,"[3, 7, 23, 2, 4, 6, 8, 18, 9, 10, 24, 21, 12, 5, 16, 25, 22, 19, 11, 20, 17, 15, 13, 14]","""""""
+write a program that answers the following question: Sketch the graph of the polar equation. Indicate any symmetries around either coordinate axis or the origin. r = (2 + 7*sin(theta))*(cos(5*theta))
+""""""
+","
+import numpy as np
+import matplotlib.pyplot as plt
+
+theta = np.linspace(0, 2*np.pi, 1000)
+r = (2 + 7*np.sin(theta))*(np.cos(5*theta))
+
+plt.polar(theta, r)
+plt.show()",,"Q: Sketch the graph of the polar equation. Indicate any symmetries around either coordinate axis or the origin. r = 3*theta (spiral of Archimedes)
+A: data/images/18.02-q3-codex-output-plot.png
+
+Q: Sketch the graph of the polar equation. Indicate any symmetries around either coordinate axis or the origin. r = (2 + 7*sin(theta))*(cos(5*theta))
+A: Let's think step by step.","
+
+First, we can sketch the graph of the function r(theta) = 2 + 7*sin(theta). This is a sinusoidal function with amplitude 7 and period 2pi.
+
+Next, we can sketch the graph of the function r(theta) = (2 + 7*sin(theta))*cos(5*theta). This is a cosine function with amplitude 7*cos(5*theta) and period 2pi/5.
+
+Finally, we can sketch the graph of the function r(theta) = (2 + 7*sin(theta))*(cos(5*theta)). This is a spiral with arms that rotate 5 times as fast as the radius increases. There is no symmetry around either coordinate axis or the origin.",
 2,Find the center and radius of the circle described in the given equation. x^2 + 2x + y^2 = 4,"Center (-1,0), radius sqrt(5)","""""""
 write a program that answers the following question: Find the center and radius of the circle described in the given equation. x^2 + 2x + y^2 = 4
 """"""
@@ -54,7 +88,7 @@ def find_center_and_radius(a, b, c):
 
 
 if __name__ == '__main__':
-    print(find_center_and_radius(1, 2, 4))",,"""""""
+    print(find_center_and_radius(1, 2, 4))",0,"""""""
 write a program that answers the following question: Find the center and radius of the circle described in the given equation. x^2 + 2x + y^2 = 4
 """"""
 
@@ -83,7 +117,63 @@ Here's what the above code is doing:
 2. We are using the distance formula to find the radius of the circle.
 '''","
 
-The center of the circle is at (1, 0) and the radius is √3.",,"[8, 6, 4, 7, 24, 5, 23, 12, 20, 21, 11, 1, 9, 10, 19, 3, 25, 17, 22, 16, 18, 13, 15, 14]"
+The center of the circle is at (1, 0) and the radius is √3.",,"Q: Find the center and radius of the circle described in the given equation. x^2 + 2x + y^2 = 4
+A: Let's think step by step."," 
+
+First, we can rewrite the equation in standard form: 
+
+(x - h)^2 + (y - k)^2 = r^2
+
+where h and k are the coordinates of the center of the circle, and r is the radius. 
+
+Now, we can plug in a known point on the circle, such as (1, 1). 
+
+(1 - h)^2 + (1 - k)^2 = r^2
+
+We can solve for h: 
+
+h = 1 - sqrt(r^2 - (1 - k)^2)
+
+We can plug this back into the original equation: 
+
+x^2 + 2x + y^2 = 4
+
+(1 - (1 - sqrt(r^2 - (1 - k)^2)))^2 + 2(1 - (1 - sqrt(r^2 - (1 - k)^2))) + y^2 = 4
+
+This simplifies to: 
+
+sqrt(r^2 - (1 - k)^2) = 1 - y
+
+We can solve for r: 
+
+r = sqrt((1 - y)^2 + (1 - k)^2)
+
+Therefore, the center of the circle is at (h, k) = (1 - sqrt(r^2 - (1 - k)^2), k) and the radius is sqrt((1 - y)^2 + (1 - k)^2).",,"[8, 6, 4, 7, 24, 5, 23, 12, 20, 21, 11, 1, 9, 10, 19, 3, 25, 17, 22, 16, 18, 13, 15, 14]","""""""
+write a program that answers the following question: Find the center and radius of the circle described in the given equation. x^2 + 2x + y^2 = 4
+""""""
+","
+import math
+
+def find_center_and_radius(a, b, c):
+    """"""
+    Find the center and radius of the circle described in the given equation.
+    :param a:
+    :param b:
+    :param c:
+    :return:
+    """"""
+    x = -b / (2 * a)
+    y = -(b ** 2 - 4 * a * c) / (4 * a)
+    r = math.sqrt(x ** 2 + y ** 2 - c)
+    return x, y, r
+
+
+if __name__ == '__main__':
+    print(find_center_and_radius(1, 2, 4))",,"Q: Find an equation of the ellipse specified. Foci (-2, 2) and (4, 2), eccentricity 1/3
+A: (x-1)^2/81 + (y-2)^2/72 = 1
+
+Q: Find the center and radius of the circle described in the given equation. x^2 + 2x + y^2 = 4
+A: Let's think step by step."," First, we can rewrite this equation in standard form: (x+1)^2 + (y)^2 = 5. This should look familiar - it's a circle with a radius of 5 and a center of (-1, 0).",
 3,Sketch the graph of the polar equation. Indicate any symmetries around either coordinate axis or the origin. r = 3*theta (spiral of Archimedes),data/images/18.02-q3-codex-output-plot.png,"""""""
 write a program that answers the following question: Sketch the graph of the polar equation. Indicate any symmetries around either coordinate axis or the origin. r = 3*theta (spiral of Archimedes)
 """"""
@@ -108,7 +198,7 @@ def graph_polar_equation(r, theta_min, theta_max, theta_step):
     plt.plot(x_list, y_list)
     plt.show()
 
-graph_polar_equation(3, 0, 2*math.pi, 0.01)",,"""""""
+graph_polar_equation(3, 0, 2*math.pi, 0.01)",0,"""""""
 write a program that answers the following question: Sketch the graph of the polar equation. Indicate any symmetries around either coordinate axis or the origin. r = 3*theta (spiral of Archimedes)
 """"""
 
@@ -141,7 +231,44 @@ Here's what the above code is doing:
 3. We call the function that graphs a polar equation.
 '''","
 
-The graph of the polar equation is a spiral of Archimedes. There is no symmetry around either coordinate axis or the origin.",,"[1, 7, 8, 2, 23, 6, 4, 18, 10, 9, 21, 24, 5, 19, 12, 25, 11, 22, 20, 16, 13, 17, 15, 14]"
+The graph of the polar equation is a spiral of Archimedes. There is no symmetry around either coordinate axis or the origin.",,"Q: Sketch the graph of the polar equation. Indicate any symmetries around either coordinate axis or the origin. r = 3*theta (spiral of Archimedes)
+A: Let's think step by step."," 
+
+First, let's draw the coordinate axes. Then, we can draw a circle with radius 3 around the origin. Finally, we can draw a spiral emanating from the origin. 
+
+The graph has rotational symmetry around the origin.",,"[1, 7, 8, 2, 23, 6, 4, 18, 10, 9, 21, 24, 5, 19, 12, 25, 11, 22, 20, 16, 13, 17, 15, 14]","""""""
+write a program that answers the following question: Sketch the graph of the polar equation. Indicate any symmetries around either coordinate axis or the origin. r = 3*theta (spiral of Archimedes)
+""""""
+","
+import math
+import matplotlib.pyplot as plt
+
+def polar_to_cartesian(r, theta):
+    x = r * math.cos(theta)
+    y = r * math.sin(theta)
+    return x, y
+
+def graph_polar_equation(r, theta_min, theta_max, theta_step):
+    theta = theta_min
+    x_list = []
+    y_list = []
+    while theta <= theta_max:
+        x, y = polar_to_cartesian(r, theta)
+        x_list.append(x)
+        y_list.append(y)
+        theta += theta_step
+    plt.plot(x_list, y_list)
+    plt.show()
+
+graph_polar_equation(3, 0, 2*math.pi, 0.01)",,"Q: Sketch the graph of the polar equation. Indicate any symmetries around either coordinate axis or the origin. r = (2 + 7*sin(theta))*(cos(5*theta))
+A: data/images/18.02-q1-codex-output-plot.png
+
+Q: Sketch the graph of the polar equation. Indicate any symmetries around either coordinate axis or the origin. r = 3*theta (spiral of Archimedes)
+A: Let's think step by step."," 
+
+First, we can see that this is a spiral, because as theta goes from 0 to 2pi, r goes from 0 to infinity. 
+
+Next, we can see that this spiral has a lot of symmetry. It is symmetric around the origin, the x-axis, and the y-axis.",
 4,Find the area bounded by the given curve. r = 2*cos(theta),pi,"""""""
 write a program that answers the following question: Find the area bounded by the given curve. r = 2*cos(theta)
 """"""
@@ -157,7 +284,7 @@ def main():
     print(area(r))
 
 if __name__ == ""__main__"":
-    main()",,"""""""
+    main()",0,"""""""
 write a program that answers the following question: Find the area bounded by the given curve. r = 2*cos(theta)
 """"""
 
@@ -185,7 +312,93 @@ Here's what the above code is doing:
 4. We call the main function.
 '''","
 
-The area is 8π.",,"[6, 2, 8, 12, 1, 5, 21, 20, 23, 24, 7, 3, 17, 25, 9, 11, 18, 10, 19, 22, 16, 13, 15, 14]"
+The area is 8π.",,"Q: Find the area bounded by the given curve. r = 2*cos(theta)
+A: Let's think step by step.","
+
+First, we need to find the limits of integration. In this case, we're looking at the area bounded by the curve, so our limits will be from 0 to 2pi.
+
+Next, we need to find the function that we're going to be integrating. In this case, it's just r, which is 2*cos(theta).
+
+Finally, we need to actually do the integration. We'll be integrating with respect to theta, so our final answer will be the integral of 2*cos(theta) from 0 to 2pi.
+
+The answer is 4.",,"[6, 2, 8, 12, 1, 5, 21, 20, 23, 24, 7, 3, 17, 25, 9, 11, 18, 10, 19, 22, 16, 13, 15, 14]","""""""
+write a program that answers the following question: Find the area bounded by the given curve. r = 2*cos(theta)
+""""""
+","
+import math
+
+def area(r):
+    return math.pi * r**2
+
+def main():
+    theta = 0
+    r = 2 * math.cos(theta)
+    print(area(r))
+
+if __name__ == ""__main__"":
+    main()",,"Q: Find the arc length of the given curve. x = 2t, y = 2/3*t^(3/2), 5<=t<=12
+A: 74/3
+
+Q: Find the area bounded by the given curve. r = 2*cos(theta)
+A: Let's think step by step."," 
+
+First, we need to find the limits of integration. We can see that when theta is 0, r is 2. When theta is pi/2, r is 0. So, our limits of integration are 0 and pi/2. 
+
+Next, we need to find the function to integrate. We can see that the function is r = 2*cos(theta). 
+
+Now, we can set up our integral. It will look like this: 
+
+int_0^(pi/2) 2*cos(theta) d(theta)
+
+We can solve this integral by using the trigonometric identity cos(theta) = (1/2)(e^(i*theta) + e^(-i*theta)). This gives us the following integral: 
+
+(1/2) int_0^(pi/2) (e^(i*theta) + e^(-i*theta)) d(theta)
+
+Now, we can use the fact that the integral of e^(ax) is e^(ax)/a. This gives us the following integral: 
+
+(1/2) int_0^(pi/2) (e^(i*theta)/i + e^(-i*theta)/(-i)) d(theta)
+
+Now, we can solve this integral using the fact that the integral of e^x is e^x. This gives us the following integral: 
+
+(1/2) int_0^(pi/2) (e^(i*theta) - e^(-i*theta)) d(theta)
+
+Now, we can use the fact that the integral of e^x is e^x. This gives us the following integral: 
+
+(1/2) int_0^(pi/2) (e^(i*theta) - e^(-i*theta)) d(theta)
+
+Now, we can use the fact that the integral of e^x is e^x. This gives us the following integral: 
+
+(1/2) int_0^(pi/2) (e^(i*theta) - e^(-i*theta)) d(theta)
+
+Now, we can use the fact that the integral of e^x is e^x. This gives us the following integral: 
+
+(1/2) int_0^(pi/2) (e^(i*theta) - e^(-i*theta)) d(theta)
+
+Now, we can use the fact that the integral of e^x is e^x. This gives us the following integral: 
+
+(1/2) int_0^(pi/2) (e^(i*theta) - e^(-i*theta)) d(theta)
+
+Now, we can use the fact that the integral of e^x is e^x. This gives us the following integral: 
+
+(1/2) int_0^(pi/2) (e^(i*theta) - e^(-i*theta)) d(theta)
+
+Now, we can use the fact that the integral of e^x is e^x. This gives us the following integral: 
+
+(1/2) int_0^(pi/2) (e^(i*theta) - e^(-i*theta)) d(theta)
+
+Now, we can use the fact that the integral of e^x is e^x. This gives us the following integral: 
+
+(1/2) int_0^(pi/2) (e^(i*theta) - e^(-i*theta)) d(theta)
+
+Now, we can use the fact that the integral of e^x is e^x. This gives us the following integral: 
+
+(1/2) int_0^(pi/2) (e^(i*theta) - e^(-i*theta)) d(theta)
+
+Now, we can use the fact that the integral of e^x is e^x. This gives us the following integral: 
+
+(1/2) int_0^(pi/2) (e^(i*theta) - e^(-i*theta)) d(theta)
+
+Now, we can use the fact that the integral of e^x is e^x. This gives us the following",
 5,"Eliminate the parameter and then sketch the curve. x = e^t, y = 4e^2t",data/images/18.02-q5-codex-output-plot.png,"""""""
 write a program that answers the following question: Eliminate the parameter and then sketch the curve. x = e^t, y = 4e^2t
 """"""
@@ -198,7 +411,7 @@ x = np.exp(t)
 y = 4*np.exp(2*t)
 
 plt.plot(x, y)
-plt.show()",,"""""""
+plt.show()",0,"""""""
 write a program that answers the following question: Eliminate the parameter and then sketch the curve. x = e^t, y = 4e^2t
 """"""
 
@@ -225,7 +438,46 @@ Here's what the above code is doing:
 5. y = 4*np.exp(2*t)
     - this creates an array of 100 numbers that are","
 
-y = 4e^2t",,"[2, 6, 8, 24, 7, 11, 23, 4, 12, 20, 9, 21, 19, 1, 17, 3, 22, 16, 25, 18, 10, 13, 15, 14]"
+y = 4e^2t",,"Q: Eliminate the parameter and then sketch the curve. x = e^t, y = 4e^2t
+A: Let's think step by step."," 
+
+First, we can eliminate the parameter by solving for t in terms of x: 
+
+t = ln(x)
+
+Now, we can plug this back into our original equation for y: 
+
+y = 4e^2ln(x)
+
+Now, we can graph this. 
+
+",,"[2, 6, 8, 24, 7, 11, 23, 4, 12, 20, 9, 21, 19, 1, 17, 3, 22, 16, 25, 18, 10, 13, 15, 14]","""""""
+write a program that answers the following question: Eliminate the parameter and then sketch the curve. x = e^t, y = 4e^2t
+""""""
+","
+import numpy as np
+import matplotlib.pyplot as plt
+
+t = np.linspace(-1, 1, 100)
+x = np.exp(t)
+y = 4*np.exp(2*t)
+
+plt.plot(x, y)
+plt.show()",,"Q: Find the center and radius of the circle described in the given equation. x^2 + 2x + y^2 = 4
+A: Center (-1,0), radius sqrt(5)
+
+Q: Eliminate the parameter and then sketch the curve. x = e^t, y = 4e^2t
+A: Let's think step by step."," First, we need to eliminate the parameter. To do that, we can solve for t in terms of x and y:
+
+t = ln(x) / 2
+
+Now we can plug this back into our original equation:
+
+y = 4e^2ln(x) / 2
+
+This is the equation of a curve. To sketch it, we can plot a few points and connect them with a smooth curve:
+
+(0,0), (1,4), (2,16), (3,36), (4,64), (5,100)",
 6,"Find the arc length of the given curve. x = 2t, y = 2/3*t^(3/2), 5<=t<=12",74/3,"""""""
 write a program that answers the following question: Find the arc length of the given curve. x = 2t, y = 2/3*t^(3/2), 5<=t<=12
 """"""
@@ -243,7 +495,7 @@ def main():
         print(arc_length(x, y))
         t += 0.01
 
-main()",,"""""""
+main()",0,"""""""
 write a program that answers the following question: Find the arc length of the given curve. x = 2t, y = 2/3*t^(3/2), 5<=t<=12
 """"""
 
@@ -274,7 +526,101 @@ Here's what the above code is doing:
     f. We then increment t by 0.01.
 3. We then call the main function.","
 
-The arc length of the given curve is approximately 33.4.",,"[2, 4, 8, 5, 21, 23, 12, 24, 7, 20, 9, 17, 25, 1, 10, 3, 11, 19, 22, 18, 16, 13, 15, 14]"
+The arc length of the given curve is approximately 33.4.",,"Q: Find the arc length of the given curve. x = 2t, y = 2/3*t^(3/2), 5<=t<=12
+A: Let's think step by step."," 
+First, we need to find the derivative of the curve. 
+$$\frac{dy}{dx}=\frac{dy}{dt}\cdot \frac{dt}{dx}=\frac{2}{\sqrt{t}}$$
+Now we need to find the integral of the curve. 
+$$\int \sqrt{1+\left(\frac{dy}{dx}\right)^2}dx=\int \sqrt{1+\frac{4}{t}}dt$$
+Now we need to solve the integral. 
+$$\int \sqrt{1+\frac{4}{t}}dt=\int \sqrt{\frac{t^2+4t}{t^2}}dt=\int \sqrt{\frac{(t+2)^2}{t^2}}dt=\int \frac{t+2}{|t|}dt$$
+Now we need to solve the integral. 
+$$\int \frac{t+2}{|t|}dt=\int \frac{t}{|t|}dt+\int \frac{2}{|t|}dt$$
+Now we need to solve the integral. 
+$$\int \frac{t}{|t|}dt=\int 1dt=t+C$$
+Now we need to solve the integral. 
+$$\int \frac{2}{|t|}dt=\int \frac{2}{t}dt=2\ln|t|+C$$
+Now we need to solve the integral. 
+$$\int \sqrt{1+\left(\frac{dy}{dx}\right)^2}dx=t+2\ln|t|+C$$
+Now we need to solve the integral. 
+$$\int \sqrt{1+\left(\frac{dy}{dx}\right)^2}dx=\int \sqrt{1+\frac{4}{t}}dt=t+2\ln|t|+C$$
+Now we need to solve the integral. 
+$$\int \sqrt{1+\left(\frac{dy}{dx}\right)^2}dx=\int \sqrt{1+\frac{4}{t}}dt=t+2\ln|t|+C$$
+Now we need to solve the integral. 
+$$\int \sqrt{1+\left(\frac{dy}{dx}\right)^2}dx=\int \sqrt{1+\frac{4}{t}}dt=t+2\ln|t|+C$$
+Now we need to solve the integral. 
+$$\int \sqrt{1+\left(\frac{dy}{dx}\right)^2}dx=\int \sqrt{1+\frac{4}{t}}dt=t+2\ln|t|+C$$
+Now we need to solve the integral. 
+$$\int \sqrt{1+\left(\frac{dy}{dx}\right)^2}dx=\int \sqrt{1+\frac{4}{t}}dt=t+2\ln|t|+C$$
+Now we need to solve the integral. 
+$$\int \sqrt{1+\left(\frac{dy}{dx}\right)^2}dx=\int \sqrt{1+\frac{4}{t}}dt=t+2\ln|t|+C$$
+Now we need to solve the integral. 
+$$\int \sqrt{1+\left(\frac{dy}{dx}\right)^2}dx=\int \sqrt{1+\frac{4}{t}}dt=t+2\ln|t|+C$$
+Now we need to solve the integral. 
+$$\int \sqrt{1+\left(\frac{dy}{dx}\right)^2}dx=\int \sqrt{1+\frac{4}{t}}dt=t+2\ln|t|+C$$
+Now we need to solve the integral. 
+$$\int \sqrt{1+\left(\frac{dy}{dx}\right)^2}dx=\int \sqrt{1+\frac{4}{t}}dt=t+2\ln|t|+C$$
+Now we need to solve the integral. 
+$$\int \sqrt{1+\left(\frac{dy}{dx}\right)^2}dx=\int \sqrt{1+\frac{4",,"[2, 4, 8, 5, 21, 23, 12, 24, 7, 20, 9, 17, 25, 1, 10, 3, 11, 19, 22, 18, 16, 13, 15, 14]","""""""
+write a program that answers the following question: Find the arc length of the given curve. x = 2t, y = 2/3*t^(3/2), 5<=t<=12
+""""""
+","
+import math
+
+def arc_length(x, y):
+    return math.sqrt(1 + (y/x)**2)
+
+def main():
+    t = 5
+    while t <= 12:
+        x = 2*t
+        y = 2/3*t**(3/2)
+        print(arc_length(x, y))
+        t += 0.01
+
+main()",,"Q: Find the center and radius of the circle described in the given equation. x^2 + 2x + y^2 = 4
+A: Center (-1,0), radius sqrt(5)
+
+Q: Find the arc length of the given curve. x = 2t, y = 2/3*t^(3/2), 5<=t<=12
+A: Let's think step by step."," We need the arc length of the curve from 5 to 12. This is the same as the arc length of the curve from 0 to 7. We can parameterize the curve as x = 2t and y = 2/3*t^(3/2). Then, the arc length is given by the integral:
+
+int_5^12 sqrt(1 + (dy/dx)^2) dx
+
+= int_5^12 sqrt(1 + (4/3*t^(1/2))^2) dx
+
+= int_5^12 sqrt(1 + 16/9*t) dx
+
+= int_5^12 sqrt(25/9 + 16/9*t) dx
+
+= int_5^12 sqrt(41/9)*sqrt(1 + t/41) dx
+
+= sqrt(41/9)*int_5^12 sqrt(1 + t/41) dx
+
+This integral can be solved using a trigonometric substitution. Let t = 41*sin(theta). Then, dx = 41*cos(theta) dtheta and the integral becomes:
+
+= sqrt(41/9)*int_5^12 sqrt(1 + 41*sin(theta))*41*cos(theta) dtheta
+
+= 41*sqrt(41/9)*int_5^12 sqrt(1 + sin(theta))*cos(theta) dtheta
+
+This integral can be solved using a trigonometric identity. Let's use the identity:
+
+sin(theta)*cos(theta) = 1/2*sin(2theta)
+
+= 41*sqrt(41/9)*int_5^12 1/2*sin(2theta) dtheta
+
+= 41*sqrt(41/9)*(-1/2*cos(2theta))|_5^12
+
+= 41*sqrt(41/9)*(-1/2*cos(2*12) + 1/2*cos(2*5))
+
+= 41*sqrt(41/9)*(-1/2*cos(24) + 1/2*cos(10))
+
+= 41*sqrt(41/9)*(-1/2*(-1) + 1/2*cos(10))
+
+= 41*sqrt(41/9)*(1/2 + 1/2*cos(10))
+
+= 41*sqrt(41/9)*(1 + cos(10))/2
+
+= 20.5*sqrt(41/9)*(1 + cos(10))",
 7,"Sketch the parabola with the given equation. Show and label its vertex, focus, axis, and directrix. y^2 = 12x",-x**2+6*x-5,"""""""
 write a program that answers the following question: Sketch the parabola with the given equation. Show and label its vertex, focus, axis, and directrix. y^2 = 12x
 """"""
@@ -287,21 +633,15 @@ y = np.sqrt(12*x)
 
 plt.plot(x, y, 'r')
 plt.plot(x, -y, 'r')
-plt.plot(0, 0, 'bo')
-plt.plot(0, 0, 'bo')
-plt.plot(0, 0, 'bo')
-plt.plot(0, 0, 'bo')
-plt.plot(0, 0, 'bo')
-plt.plot(0, 0, 'bo')
-plt.plot(0, 0, 'bo')
-plt.plot(0, 0, 'bo')
-plt.plot(0, 0, 'bo')
-plt.plot(0, 0, 'bo')
-plt.plot(0, 0, 'bo')
-plt.plot(0, 0, 'bo')
-plt.plot(0, 0, 'bo')
-plt.plot(0, 0, 'bo')
-",,"""""""
+plt.plot(x, np.zeros(len(x)), 'b')
+plt.plot(np.zeros(len(x)), y, 'b')
+plt.plot(np.zeros(len(x)), -y, 'b')
+plt.plot(x, -4*np.ones(len(x)), 'g')
+plt.plot(x, 4*np.ones(len(x)), 'g')
+plt.plot(3*np.ones(len(x)), y, 'g')
+plt.plot(-3*np.ones(len(x)), y, 'g')
+plt.plot(3*np.ones(len(x)), -y, 'g')
+plt.plot(-3*np.ones(len(x",0,"""""""
 write a program that answers the following question: Sketch the parabola with the given equation. Show and label its vertex, focus, axis, and directrix. y^2 = 12x
 """"""
 
@@ -313,34 +653,76 @@ y = np.sqrt(12*x)
 
 plt.plot(x, y, 'r')
 plt.plot(x, -y, 'r')
-plt.plot(0, 0, 'bo')
-plt.plot(0, 0, 'bo')
-plt.plot(0, 0, 'bo')
-plt.plot(0, 0, 'bo')
-plt.plot(0, 0, 'bo')
-plt.plot(0, 0, 'bo')
-plt.plot(0, 0, 'bo')
-plt.plot(0, 0, 'bo')
-plt.plot(0, 0, 'bo')
-plt.plot(0, 0, 'bo')
-plt.plot(0, 0, 'bo')
-plt.plot(0, 0, 'bo')
-plt.plot(0, 0, 'bo')
-plt.plot(0, 0, 'bo')
-
+plt.plot(x, np.zeros(len(x)), 'b')
+plt.plot(np.zeros(len(x)), y, 'b')
+plt.plot(np.zeros(len(x)), -y, 'b')
+plt.plot(x, -4*np.ones(len(x)), 'g')
+plt.plot(x, 4*np.ones(len(x)), 'g')
+plt.plot(3*np.ones(len(x)), y, 'g')
+plt.plot(-3*np.ones(len(x)), y, 'g')
+plt.plot(3*np.ones(len(x)), -y, 'g')
+plt.plot(-3*np.ones(len(x
 
 '''
 Here's what the above code is doing:
-1."," We're creating a variable called x and setting it equal to a numpy array of 100 evenly spaced numbers between -10 and 10.
-2. We're creating a variable called y and setting it equal to the square root of 12 times x.
-3. We're plotting the x and y values as a red line.
-4. We're plotting the x and -y values as a red line.
-5. We're plotting a blue dot at the origin.
+1."," We're creating a list of x values from -10 to 10.
+2. We're creating a list of y values from the equation y^2 = 12x.
+3. We're plotting the parabola.
+4. We're plotting the x-axis.
+5. We're plotting the y-axis.
+6. We're plotting the directrix.
+7. We're plotting the focus.
+8. We're plotting the vertex.
 '''
 
 plt.show()","
 
-The parabola has a vertex at (0,0), a focus at (0,6), an axis at y=0, and a directrix at y=-6.",,"[2, 1, 6, 23, 8, 3, 5, 24, 18, 9, 4, 12, 21, 11, 10, 20, 25, 19, 22, 16, 13, 17, 14, 15]"
+The parabola has a vertex at (0,0), a focus at (0,6), an axis at y=0, and a directrix at y=-6.",,"Q: Sketch the parabola with the given equation. Show and label its vertex, focus, axis, and directrix. y^2 = 12x
+A: Let's think step by step."," 
+
+First, we need to graph the equation. This can be done by plotting points that satisfy the equation and then connecting the points with a smooth curve. 
+
+Some points that satisfy the equation are: 
+(0,0), (1,3), (2,6), (3,9), and (4,12). 
+
+We can graph these points and then connect them with a smooth curve: 
+
+
+Now that we have our graph, we can label the important parts. 
+
+The vertex is the point where the parabola changes direction. In this case, the vertex is (2,6). 
+
+The focus is the point on the parabola where the light rays reflect. In this case, the focus is (2,0). 
+
+The axis is the line that the parabola is symmetrical about. In this case, the axis is the y-axis. 
+
+The directrix is the line that is perpendicular to the axis and passes through the focus. In this case, the directrix is the line x=2.",,"[2, 1, 6, 23, 8, 3, 5, 24, 18, 9, 4, 12, 21, 11, 10, 20, 25, 19, 22, 16, 13, 17, 14, 15]","""""""
+write a program that answers the following question: Sketch the parabola with the given equation. Show and label its vertex, focus, axis, and directrix. y^2 = 12x
+""""""
+","
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = np.linspace(-10, 10, 100)
+y = np.sqrt(12*x)
+
+plt.plot(x, y, 'r')
+plt.plot(x, -y, 'r')
+plt.plot(x, np.zeros(len(x)), 'b')
+plt.plot(np.zeros(len(x)), y, 'b')
+plt.plot(np.zeros(len(x)), -y, 'b')
+plt.plot(x, -4*np.ones(len(x)), 'g')
+plt.plot(x, 4*np.ones(len(x)), 'g')
+plt.plot(3*np.ones(len(x)), y, 'g')
+plt.plot(-3*np.ones(len(x)), y, 'g')
+plt.plot(3*np.ones(len(x)), -y, 'g')
+plt.plot(-3*np.ones(len(x",,"Q: Find the center and radius of the circle described in the given equation. x^2 + 2x + y^2 = 4
+A: Center (-1,0), radius sqrt(5)
+
+Q: Sketch the parabola with the given equation. Show and label its vertex, focus, axis, and directrix. y^2 = 12x
+A: Let's think step by step."," First, we need to graph the equation. We can do this by plotting points that satisfy the equation and then connecting the dots. 
+
+The next step is to find the vertex, focus, axis, and directrix. The vertex is the point where the parabola changes direction. In this case, the vertex is (0,0). The focus is the point on the parabola where the light rays reflect. In this case, the focus is (0,6). The axis is the line that the parabola is symmetrical about. In this case, the axis is the y-axis. The directrix is the line that is perpendicular to the axis and passes through the focus. In this case, the directrix is the line x=0.",
 8,"Find an equation of the ellipse specified. Foci (-2, 2) and (4, 2), eccentricity 1/3",(x-1)^2/81 + (y-2)^2/72 = 1,"""""""
 write a program that answers the following question: Find an equation of the ellipse specified. Foci (-2, 2) and (4, 2), eccentricity 1/3
 """"""
@@ -371,7 +753,7 @@ def find_vertices(c, a, b):
 
 def find_foci(c, a):
     """"""
-    Finds the f",,"""""""
+    Finds the f",0,"""""""
 write a program that answers the following question: Find an equation of the ellipse specified. Foci (-2, 2) and (4, 2), eccentricity 1/3
 """"""
 
@@ -422,7 +804,70 @@ def find_center(f1, f2, e):
     c = math.sqrt(a**2 + b**2)
 ","
 
-(x-2)^2/9 + (y-2)^2/4 = 1",,"[2, 6, 23, 4, 7, 5, 24, 12, 21, 11, 3, 20, 1, 25, 9, 17, 10, 19, 22, 18, 13, 16, 15, 14]"
+(x-2)^2/9 + (y-2)^2/4 = 1",,"Q: Find an equation of the ellipse specified. Foci (-2, 2) and (4, 2), eccentricity 1/3
+A: Let's think step by step."," 
+
+First, we know that the equation of an ellipse with foci at $(-2,2)$ and $(4,2)$ and eccentricity $e$ is given by 
+$$\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1$$
+where $a$ and $b$ are the semi-major and semi-minor axes, respectively. 
+
+We also know that the eccentricity of an ellipse is given by 
+$$e = \frac{c}{a}$$
+where $c$ is the distance between the foci. 
+
+So, we can plug in what we know to solve for $a$ and $b$: 
+$$\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1 \implies \frac{x^2}{\left(\frac{c}{e}\right)^2} + \frac{y^2}{b^2} = 1 \implies \frac{x^2}{\left(\frac{4}{1/3}\right)^2} + \frac{y^2}{b^2} = 1 \implies \frac{x^2}{16} + \frac{y^2}{b^2} = 1 \implies b^2 = \frac{16y^2}{16 - x^2}$$
+
+Therefore, the equation of the ellipse specified is 
+$$\frac{x^2}{16} + \frac{y^2}{\frac{16y^2}{16 - x^2}} = 1 \implies \frac{x^2}{16} + \frac{y^2}{16 - x^2} = 1$$",,"[2, 6, 23, 4, 7, 5, 24, 12, 21, 11, 3, 20, 1, 25, 9, 17, 10, 19, 22, 18, 13, 16, 15, 14]","""""""
+write a program that answers the following question: Find an equation of the ellipse specified. Foci (-2, 2) and (4, 2), eccentricity 1/3
+""""""
+","
+import math
+
+def find_center(f1, f2, e):
+    """"""
+    Finds the center of an ellipse given the foci and eccentricity
+    """"""
+    x1, y1 = f1
+    x2, y2 = f2
+    a = (x1 + x2) / 2
+    b = (y1 + y2) / 2
+    c = math.sqrt(a**2 + b**2)
+    return (a, b, c)
+
+def find_vertices(c, a, b):
+    """"""
+    Finds the vertices of an ellipse given the center and the semi-major and semi-minor axes
+    """"""
+    x, y, c = c
+    v1 = (x + a, y)
+    v2 = (x - a, y)
+    v3 = (x, y + b)
+    v4 = (x, y - b)
+    return (v1, v2, v3, v4)
+
+def find_foci(c, a):
+    """"""
+    Finds the f",,"Q: Find the center and radius of the circle described in the given equation. x^2 + 2x + y^2 = 4
+A: Center (-1,0), radius sqrt(5)
+
+Q: Find an equation of the ellipse specified. Foci (-2, 2) and (4, 2), eccentricity 1/3
+A: Let's think step by step."," We know that the equation of an ellipse with foci at (-2, 2) and (4, 2) is:
+
+(x + 2)^2 + (y - 2)^2 = 16(1/3)^2
+
+We can expand this out to get:
+
+x^2 + 4x + 4 + y^2 - 4y + 4 = 16(1/3)^2
+
+Which can be simplified to:
+
+x^2 + 4x + y^2 - 4y = 16(1/3)^2 - 16
+
+Which can be simplified to:
+
+x^2 + 4x + y^2 - 4y = -8",
 9,"Describe the graph of the function f. f(x,y) = $10 - \sqrt[2]{x^2+y^2}$",data/images/18.02-q9-codex-output-plot.png,"""""""
 write a program that answers the following question: Describe the graph of the function f. f(x,y) = $10 - \sqrt[2]{x^2+y^2}$
 """"""
@@ -443,7 +888,7 @@ Z = f(X,Y)
 fig = plt.figure()
 ax = fig.add_subplot(111, projection='3d')
 ax.plot_surface(X,Y,Z)
-plt.show()",,"""""""
+plt.show()",0,"""""""
 write a program that answers the following question: Describe the graph of the function f. f(x,y) = $10 - \sqrt[2]{x^2+y^2}$
 """"""
 
@@ -473,7 +918,36 @@ Here's what the above code is doing:
 4. Plot the function
 '''","
 
-The graph of the function f is a parabola.",,"[24, 2, 23, 6, 12, 19, 18, 7, 1, 22, 8, 5, 21, 20, 16, 11, 25, 4, 3, 10, 15, 13, 14, 17]"
+The graph of the function f is a parabola.",,"Q: Describe the graph of the function f. f(x,y) = $10 - \sqrt[2]{x^2+y^2}$
+A: Let's think step by step."," 
+
+First, we can graph $y = \sqrt{x^2}$ which is just a line going through the origin with a slope of 1. 
+
+Next, we can graph $y = -\sqrt{x^2}$ which is just a line going through the origin with a slope of -1. 
+
+Now, we can graph $y = \sqrt{10 - x^2}$ which is a semi-circle with a radius of $\sqrt{10}$ and its center at $(0, \sqrt{10})$. 
+
+Putting it all together, we get a graph that looks like two semi-circles that are tangent to each other at the origin.",,"[24, 2, 23, 6, 12, 19, 18, 7, 1, 22, 8, 5, 21, 20, 16, 11, 25, 4, 3, 10, 15, 13, 14, 17]","""""""
+write a program that answers the following question: Describe the graph of the function f. f(x,y) = $10 - \sqrt[2]{x^2+y^2}$
+""""""
+","
+import numpy as np
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+
+def f(x,y):
+    return 10 - np.sqrt(x**2 + y**2)
+
+x = np.linspace(-10,10,100)
+y = np.linspace(-10,10,100)
+
+X,Y = np.meshgrid(x,y)
+Z = f(X,Y)
+
+fig = plt.figure()
+ax = fig.add_subplot(111, projection='3d')
+ax.plot_surface(X,Y,Z)
+plt.show()",,,,
 10,"Determine whether the given infinite series converges or diverges. If it converges, find its sum. 1 + 3 + 5 + 7 + ... + (2n-1) + ....",diverges,"""""""
 write a program that answers the following question: Determine whether the given infinite series converges or diverges. If it converges, find its sum. 1 + 3 + 5 + 7 + ... + (2n-1) + ....
 """"""
@@ -484,7 +958,7 @@ def sum_series(n):
         sum += 2*i - 1
     return sum
 
-print(sum_series(10))",,"""""""
+print(sum_series(10))",0,"""""""
 write a program that answers the following question: Determine whether the given infinite series converges or diverges. If it converges, find its sum. 1 + 3 + 5 + 7 + ... + (2n-1) + ....
 """"""
 
@@ -506,4 +980,23 @@ Here's what the above code is doing:
 6. We print the sum_series function with the parameter 10.
 '''","
 
-The series diverges.",,"[21, 14, 13, 22, 15, 24, 2, 12, 23, 11, 6, 16, 1, 19, 8, 3, 9, 7, 20, 4, 25, 5, 18, 17]"
+The series diverges.",,"Q: Determine whether the given infinite series converges or diverges. If it converges, find its sum. 1 + 3 + 5 + 7 + ... + (2n-1) + ....
+A: Let's think step by step.","
+
+The first thing we need to do is figure out what our nth term is. In this case, we can see that our nth term is simply 2n-1.
+
+Now that we know what our nth term is, we can start to think about whether our series converges or diverges. We can see that our series is simply the sum of all odd numbers.
+
+We can use the Divergence Test to determine whether our series converges or diverges.
+
+We see that our series diverges since our limit is not equal to 0.",,"[21, 14, 13, 22, 15, 24, 2, 12, 23, 11, 6, 16, 1, 19, 8, 3, 9, 7, 20, 4, 25, 5, 18, 17]","""""""
+write a program that answers the following question: Determine whether the given infinite series converges or diverges. If it converges, find its sum. 1 + 3 + 5 + 7 + ... + (2n-1) + ....
+""""""
+","
+def sum_series(n):
+    sum = 0
+    for i in range(1, n+1):
+        sum += 2*i - 1
+    return sum
+
+print(sum_series(10))",,,,

@@ -1,4 +1,4 @@
-Question,Original Question,Actual Solution,Codex Input,Codex Output,Zero-Shot Evaluation,Codex Explanation Input,Codex Explanation,GPT-3 Output,GPT-3 Evaluation,Most Similar Questions
+Question,Original Question,Actual Solution,Codex Input,Codex Output,Zero-Shot Evaluation,Codex Explanation Input,Codex Explanation,GPT-3 Output,GPT-3 Evaluation,GPT-3 CoT Input,GPT-3 CoT Output,GPT-3 CoT Evaluation,Most Similar Questions,Few-Shot Input,Few-Shot Output,Few-Shot Evaluation,GPT-3 CoT Few-Shot Input,GPT-3 CoT Few-Shot Output,GPT-3 CoT Few-Show Evaluation
 1,"Notation: ' means transpose, * means matrix product, . means inner product
 Compute the following expression: ([-1,0,2; 0,1,4]'*[-2;1]).([3,1;0,0;-2,-1]*([5,-3]+[-4,2])')",4,"""""""
 write a program that answers the following question: Notation: ' means transpose, * means matrix product, . means inner product
@@ -12,7 +12,7 @@ b = np.array([[-2],[1]])
 c = np.array([[3,1],[0,0],[-2,-1]])
 d = np.array([[5,-3],[-4,2]])
 
-print(np.dot(np.dot(np.dot(np.transpose(a),b),c),np.transpose(d+d)))",,"""""""
+print(np.dot(np.dot(np.dot(np.transpose(a),b),c),np.transpose(d+d)))",0,"""""""
 write a program that answers the following question: Notation: ' means transpose, * means matrix product, . means inner product
 Compute the following expression: ([-1,0,2; 0,1,4]'*[-2;1]).([3,1;0,0;-2,-1]*([5,-3]+[-4,2])')
 """"""
@@ -39,7 +39,63 @@ Here's what the above code is doing:
 = ([-1,0,2; 0,1,4]'*[-2;1]).([3,1;0,0;-2,-1]*[1, -1; -1, 1])
 = ([-1,0,2; 0,1,4]'*[-2;1]).([3,1;0,0;-2,-1]*[0;0])
 = ([-1,0,2; 0,1,4]'*[-2;1]).([0;0;0])
-= ([-1,0,2; 0,1,4]'*[-2;1]).([0;0])",,"[22, 14, 8, 19, 16, 18, 21, 13, 11, 10, 17, 20, 15, 12, 6, 23, 7, 2, 9, 24, 3, 25, 5, 4]"
+= ([-1,0,2; 0,1,4]'*[-2;1]).([0;0])",,"Q: Notation: ' means transpose, * means matrix product, . means inner product
+Compute the following expression: ([-1,0,2; 0,1,4]'*[-2;1]).([3,1;0,0;-2,-1]*([5,-3]+[-4,2])')
+A: Let's think step by step.","
+
+First, we have ([-1,0,2; 0,1,4]'*[-2;1]). This is a matrix multiplication and a dot product. The result is a 1x1 matrix.
+
+Next, we have ([3,1;0,0;-2,-1]*([5,-3]+[-4,2])'). This is a matrix multiplication and a matrix addition. The result is a 3x2 matrix.
+
+Finally, we have the 1x1 matrix multiplication and the 3x2 matrix. The result is a 3x2 matrix.",,"[22, 14, 8, 19, 16, 18, 21, 13, 11, 10, 17, 20, 15, 12, 6, 23, 7, 2, 9, 24, 3, 25, 5, 4]","""""""
+write a program that answers the following question: Compute the dimension of the null space of the following matrix. [1,2,0,-1;-2,-3,4,5;2,4,0,-2]
+""""""
+
+import numpy as np
+
+A = np.array([[1,2,0,-1],[-2,-3,4,5],[2,4,0,-2]])
+
+print(np.linalg.matrix_rank(A))
+
+""""""
+write a program that answers the following question: Notation: ' means transpose, * means matrix product
+Given a d-dimensional non-zero vector v, compute the rank of the matrix v*v'
+""""""
+
+import numpy as np
+
+def rank(v):
+    """"""
+    Compute the rank of the matrix v*v'
+    """"""
+    return np.linalg.matrix_rank(np.dot(v, v.T))
+
+if __name__ == ""__main__"":
+    v = np.array([1, 2, 3])
+    print(rank(v))
+
+""""""
+write a program that answers the following question: Notation: ' means transpose, * means matrix product, . means inner product
+Compute the following expression: ([-1,0,2; 0,1,4]'*[-2;1]).([3,1;0,0;-2,-1]*([5,-3]+[-4,2])')
+""""""
+","
+import numpy as np
+
+def compute(A, B, C):
+    """"""
+    Compute the following expression: ([-1,0,2; 0,1,4]'*[-2;1]).([3,1;0,0;-2,-1]*([5,-3]+[-4,2])')
+    """"""
+    return np.dot(np.dot(A.T, B), np.dot(C, (A + B).T))
+
+if __name__ == ""__main__"":
+    A = np.array([[-1, 0, 2], [0, 1, 4]])
+    B = np.array([-2, 1])
+    C = np.array([[3, 1], [0, 0], [-2, -1]])
+    print(compute(A, B, C))
+
+""""""
+write a program that answers the following question: Notation: ' means transpose, * means matrix product, . means inner product
+Compute the following expression: ([-1,0,2; 0,1,4]'*[-2;1]).([",,,,
 2,Compute the squared L2 norm of the vector [1;-4;2;8;-1],86,"""""""
 write a program that answers the following question: Compute the squared L2 norm of the vector [1;-4;2;8;-1]
 """"""
@@ -54,7 +110,7 @@ def squared_l2_norm(vector):
 
 if __name__ == ""__main__"":
     vector = np.array([1, -4, 2, 8, -1])
-    print(squared_l2_norm(vector))",,"""""""
+    print(squared_l2_norm(vector))",0,"""""""
 write a program that answers the following question: Compute the squared L2 norm of the vector [1;-4;2;8;-1]
 """"""
 
@@ -78,7 +134,93 @@ Here's what the above code is doing:
 4. We print the result.
 '''","
 
-The squared L2 norm of the vector [1;-4;2;8;-1] is 85.",,"[8, 13, 19, 10, 12, 22, 25, 14, 18, 17, 16, 21, 23, 9, 1, 24, 11, 15, 7, 20, 6, 3, 5, 4]"
+The squared L2 norm of the vector [1;-4;2;8;-1] is 85.",,"Q: Compute the squared L2 norm of the vector [1;-4;2;8;-1]
+A: Let's think step by step.","
+
+The L2 norm of a vector is the square root of the sum of the squares of the components.
+
+The sum of the squares of the components of the vector [1;-4;2;8;-1] is 1+16+4+64+1=86.
+
+Therefore, the squared L2 norm of the vector [1;-4;2;8;-1] is the square root of 86, which is approximately 9.2.",,"[8, 13, 19, 10, 12, 22, 25, 14, 18, 17, 16, 21, 23, 9, 1, 24, 11, 15, 7, 20, 6, 3, 5, 4]","""""""
+write a program that answers the following question: Compute the dimension of the null space of the following matrix. [1,2,0,-1;-2,-3,4,5;2,4,0,-2]
+""""""
+
+import numpy as np
+
+A = np.array([[1,2,0,-1],[-2,-3,4,5],[2,4,0,-2]])
+
+print(np.linalg.matrix_rank(A))
+
+""""""
+write a program that answers the following question: Notation: ' means transpose, * means matrix product
+Given a d-dimensional non-zero vector v, compute the rank of the matrix v*v'
+""""""
+
+import numpy as np
+
+def rank(v):
+    """"""
+    Compute the rank of the matrix v*v'
+    """"""
+    return np.linalg.matrix_rank(np.dot(v, v.T))
+
+if __name__ == ""__main__"":
+    v = np.array([1, 2, 3])
+    print(rank(v))
+
+""""""
+write a program that answers the following question: Compute the squared L2 norm of the vector [1;-4;2;8;-1]
+""""""
+","
+import numpy as np
+
+def norm(v):
+    """"""
+    Compute the squared L2 norm of the vector v
+    """"""
+    return np.dot(v, v)
+
+if __name__ == ""__main__"":
+    v = np.array([1, -4, 2, 8, -1])
+    print(norm(v))
+
+""""""
+write a program that answers the following question: Compute the squared L2 norm of the vector [1;-4;2;8;-1]
+""""""
+
+import numpy as np
+
+def norm(v):
+    """"""
+    Compute the squared L2 norm of the vector v
+    """"""
+    return np.dot(v, v)
+
+if __name__ == ""__main__"":
+    v = np.array([1, -4, 2, 8, -1])
+    print(norm(v))
+
+""""""
+write a program that answers the following question: Compute the squared L2 norm of the vector [1;-4;2;8;-1]
+""""""
+
+import numpy as np
+
+def norm(",,"Q: Compute the dimension of the null space of the following matrix. [1,2,0,-1;-2,-3,4,5;2,4,0,-2]
+A: 2
+
+Q: Compute the squared L2 norm of the vector [1;-4;2;8;-1]
+A: Let's think step by step."," 
+
+The L2 norm of a vector is defined as the square root of the sum of the squares of the vector's components. 
+
+So, the L2 norm of the vector [1;-4;2;8;-1] is the square root of the sum of the squares of its components: 
+
+The square of 1 is 1, the square of -4 is 16, the square of 2 is 4, the square of 8 is 64, and the square of -1 is 1. 
+
+Therefore, the sum of the squares of the components is 1 + 16 + 4 + 64 + 1, which is 86. 
+
+The square root of 86 is 9.3. Therefore, the L2 norm of the vector [1;-4;2;8;-1] is 9.3.",
 3,"Find a solution to the following system of four equations:
      4x - 2y  +  8z   +   w  =  3
     -8x + 10y +          3w  = -2
@@ -98,7 +240,7 @@ b = np.array([3, -2, -1, 8])
 
 x = np.linalg.solve(A, b)
 
-print(x)",,"""""""
+print(x)",0,"""""""
 write a program that answers the following question: Find a solution to the following system of four equations:
      4x - 2y  +  8z   +   w  =  3
     -8x + 10y +          3w  = -2
@@ -122,7 +264,147 @@ Here's what the above code is doing:
 3. We print the solution.
 '''","
 
-x = 1, y = -1, z = 2, w = 3",,"[15, 11, 6, 14, 16, 1, 19, 20, 22, 17, 21, 18, 9, 8, 24, 10, 23, 25, 12, 2, 13, 4, 7, 5]"
+x = 1, y = -1, z = 2, w = 3",,"Q: Find a solution to the following system of four equations:
+     4x - 2y  +  8z   +   w  =  3
+    -8x + 10y +          3w  = -2
+     3x - 1y  +  10z  +  5w  = -1
+     2x + 2y  +  9z   -  2w  =  8
+A: Let's think step by step.","
+
+First, we can add the first and third equations to get:
+
+7x + 7z + 9w = 2
+
+Now, we can subtract twice the second equation from the first and third equations to get:
+
+x - 3y + 2z - w = -5
+
+Now, we can add the second and fourth equations to get:
+
+-6x + 12y + 12z + 3w = 6
+
+Now, we can subtract the first equation from the second equation to get:
+
+-10x + 12y + 4z + 4w = 7
+
+Now, we can subtract the third equation from the fourth equation to get:
+
+4x + 8y + 2z - 2w = 9
+
+We now have a system of three equations in three unknowns. We can solve this using elimination.
+
+Adding the first and second equations, we get:
+
+-6x + 12y + 4z + 4w = 7
+
+Adding the first and third equations, we get:
+
+4x + 8y + 2z - 2w = 9
+
+Now, we can subtract the second equation from the third equation to get:
+
+10x + 4y + 2w = 2
+
+We now have a system of two equations in two unknowns. We can solve this using elimination.
+
+Adding the first and second equations, we get:
+
+4x + 8y + 2z - 2w = 9
+
+Now, we can subtract the second equation from the first equation to get:
+
+2x + 2z - 2w = -1
+
+We now have a system of two equations in two unknowns. We can solve this using substitution.
+
+From the second equation, we can solve for w in terms of x and z:
+
+w = x + z - 1
+
+Now, we can plug this value of w into the first equation and solve for x in terms of z:
+
+2x + 2z - 2(x + z - 1) = -1
+
+2x + 2z - 2x - 2z + 2 = -1
+
+4z + 2 = -1
+
+4z = -3
+
+z = -3/4
+
+Now that we know the value of z, we can plug it back into the equation for w to solve for w:
+
+w = x + z - 1
+
+w = x - 3/4 - 1
+
+w = x - 7/4
+
+Now that we know the value of w, we can plug it back into the equation for x to solve for x:
+
+2x + 2z - 2(x - 7/4) = -1
+
+2x + 2z - 2x + 14/4 = -1
+
+14/4 = -1
+
+14 = -4
+
+This is a contradiction, so there is no solution to the system.",,"[15, 11, 6, 14, 16, 1, 19, 20, 22, 17, 21, 18, 9, 8, 24, 10, 23, 25, 12, 2, 13, 4, 7, 5]","""""""
+write a program that answers the following question: Compute the dimension of the null space of the following matrix. [1,2,0,-1;-2,-3,4,5;2,4,0,-2]
+""""""
+
+import numpy as np
+
+A = np.array([[1,2,0,-1],[-2,-3,4,5],[2,4,0,-2]])
+
+print(np.linalg.matrix_rank(A))
+
+""""""
+write a program that answers the following question: Notation: ' means transpose, * means matrix product
+Given a d-dimensional non-zero vector v, compute the rank of the matrix v*v'
+""""""
+
+import numpy as np
+
+def rank(v):
+    """"""
+    Compute the rank of the matrix v*v'
+    """"""
+    return np.linalg.matrix_rank(np.dot(v, v.T))
+
+if __name__ == ""__main__"":
+    v = np.array([1, 2, 3])
+    print(rank(v))
+
+""""""
+write a program that answers the following question: Find a solution to the following system of four equations:
+     4x - 2y  +  8z   +   w  =  3
+    -8x + 10y +          3w  = -2
+     3x - 1y  +  10z  +  5w  = -1
+     2x + 2y  +  9z   -  2w  =  8
+""""""
+","
+import numpy as np
+
+A = np.array([[4, -2, 8, 1], [-8, 10, 0, 3], [3, -1, 10, 5], [2, 2, 9, -2]])
+b = np.array([3, -2, -1, 8])
+
+print(np.linalg.solve(A, b))
+
+""""""
+write a program that answers the following question: Find a solution to the following system of four equations:
+     4x - 2y  +  8z   +   w  =  3
+    -8x + 10y +          3w  = -2
+     3x - 1y  +  10z  +  5w  = -1
+     2x + 2y  +  9z   -  2w  =  8
+""""""
+
+import numpy as np
+
+A = np.array([[4, -2, 8, 1], [-8, 10, 0, 3], [3, -1, 10, 5], [2, 2, 9, -2]])
+b = np.array([3",,,,
 4,"A mining company has two mines. One day's operation at mine A produces ore that contains 10 metric tons of copper and 120 kilograms of silver, while one day's operation at mine B produces ore containing 6 metric tons of copper and 140 kilograms of silver. Let a=[10;120] and b=[6;140]. Then a and b represent the daily output of mines A and B, respectively. Suppose that the mining company operates mine A for x days and mine B for y days.
 Calculate how many number of days each mine should operate in order to produce 72 tons of copper and 1340 kilograms of silver.","x=3, y=7","""""""
 write a program that answers the following question: A mining company has two mines. One day's operation at mine A produces ore that contains 10 metric tons of copper and 120 kilograms of silver, while one day's operation at mine B produces ore containing 6 metric tons of copper and 140 kilograms of silver. Let a=[10;120] and b=[6;140]. Then a and b represent the daily output of mines A and B, respectively. Suppose that the mining company operates mine A for x days and mine B for y days.
@@ -138,7 +420,7 @@ c = np.array([72, 1340])
 
 x = np.linalg.solve(np.array([a, b]), c)
 
-print(x)",,"""""""
+print(x)",0,"""""""
 write a program that answers the following question: A mining company has two mines. One day's operation at mine A produces ore that contains 10 metric tons of copper and 120 kilograms of silver, while one day's operation at mine B produces ore containing 6 metric tons of copper and 140 kilograms of silver. Let a=[10;120] and b=[6;140]. Then a and b represent the daily output of mines A and B, respectively. Suppose that the mining company operates mine A for x days and mine B for y days.
 Calculate how many number of days each mine should operate in order to produce 72 tons of copper and 1340 kilograms of silver.
 """"""
@@ -182,7 +464,94 @@ y=(10/6)x-(72/6)
 y=(5/3)x-12
 
 120x+140(5/3)x-12(140)-1340=0
-120x+700x/3-1680-1340=0",,"[3, 15, 11, 8, 14, 10, 1, 9, 12, 6, 17, 22, 16, 24, 19, 20, 5, 25, 23, 2, 7, 18, 21, 13]"
+120x+700x/3-1680-1340=0",,"Q: A mining company has two mines. One day's operation at mine A produces ore that contains 10 metric tons of copper and 120 kilograms of silver, while one day's operation at mine B produces ore containing 6 metric tons of copper and 140 kilograms of silver. Let a=[10;120] and b=[6;140]. Then a and b represent the daily output of mines A and B, respectively. Suppose that the mining company operates mine A for x days and mine B for y days.
+Calculate how many number of days each mine should operate in order to produce 72 tons of copper and 1340 kilograms of silver.
+A: Let's think step by step."," 
+
+We know that one day's operation at mine A produces 10 metric tons of copper and 120 kilograms of silver. So, 10 metric tons of copper and 120 kilograms of silver is one unit. 
+We also know that one day's operation at mine B produces 6 metric tons of copper and 140 kilograms of silver. So, 6 metric tons of copper and 140 kilograms of silver is one unit. 
+We want to find out how many units of each mine we need in order to produce 72 tons of copper and 1340 kilograms of silver. 
+We can set up the equation 72/10=x and 1340/120=x to solve for x. This tells us that we need 7.2 units from mine A and 11.16667 units from mine B. 
+Now we need to find out how many days each mine should operate. We know that one day's operation at mine A produces 10 metric tons of copper and 120 kilograms of silver. So, 7.2 units would be produced in 7.2 days. Similarly, we can say that 11.16667 units would be produced in 11.16667 days. 
+
+Therefore, mine A should operate for 7.2 days and mine B should operate for 11.16667 days.",,"[3, 15, 11, 8, 14, 10, 1, 9, 12, 6, 17, 22, 16, 24, 19, 20, 5, 25, 23, 2, 7, 18, 21, 13]","""""""
+write a program that answers the following question: Compute the dimension of the null space of the following matrix. [1,2,0,-1;-2,-3,4,5;2,4,0,-2]
+""""""
+
+import numpy as np
+
+A = np.array([[1,2,0,-1],[-2,-3,4,5],[2,4,0,-2]])
+
+print(np.linalg.matrix_rank(A))
+
+""""""
+write a program that answers the following question: Notation: ' means transpose, * means matrix product
+Given a d-dimensional non-zero vector v, compute the rank of the matrix v*v'
+""""""
+
+import numpy as np
+
+def rank(v):
+    """"""
+    Compute the rank of the matrix v*v'
+    """"""
+    return np.linalg.matrix_rank(np.dot(v, v.T))
+
+if __name__ == ""__main__"":
+    v = np.array([1, 2, 3])
+    print(rank(v))
+
+""""""
+write a program that answers the following question: A mining company has two mines. One day's operation at mine A produces ore that contains 10 metric tons of copper and 120 kilograms of silver, while one day's operation at mine B produces ore containing 6 metric tons of copper and 140 kilograms of silver. Let a=[10;120] and b=[6;140]. Then a and b represent the daily output of mines A and B, respectively. Suppose that the mining company operates mine A for x days and mine B for y days.
+Calculate how many number of days each mine should operate in order to produce 72 tons of copper and 1340 kilograms of silver.
+""""""
+","
+import numpy as np
+
+def solve(A, b):
+    """"""
+    Solve the linear system Ax = b
+    """"""
+    return np.linalg.solve(A, b)
+
+if __name__ == ""__main__"":
+    A = np.array([[10, 120], [6, 140]])
+    b = np.array([72, 1340])
+    print(solve(A, b))
+
+""""""
+write a program that answers the following question: A mining company has two mines. One day's operation at mine A produces ore that contains 10 metric tons of copper and 120 kilograms of silver, while one day's operation at mine B produces ore containing 6 metric tons of copper and 140 kilograms of silver. Let a=[10;120] and b=[6;140]. Then a and b represent the daily output of mines A and B, respectively. Suppose that the mining company operates mine A for x days and mine B for y days.
+Calculate how many number of days each mine should operate in order to produce 72 tons of copper and 1340 kilograms of silver.
+""""""
+
+import numpy as np
+
+def solve",,"Q: Find a solution to the following system of four equations:
+     4x - 2y  +  8z   +   w  =  3
+    -8x + 10y +          3w  = -2
+     3x - 1y  +  10z  +  5w  = -1
+     2x + 2y  +  9z   -  2w  =  8
+A: x=11/4, y=97/44, z=-4/11, w=-15/22
+
+Q: A mining company has two mines. One day's operation at mine A produces ore that contains 10 metric tons of copper and 120 kilograms of silver, while one day's operation at mine B produces ore containing 6 metric tons of copper and 140 kilograms of silver. Let a=[10;120] and b=[6;140]. Then a and b represent the daily output of mines A and B, respectively. Suppose that the mining company operates mine A for x days and mine B for y days.
+Calculate how many number of days each mine should operate in order to produce 72 tons of copper and 1340 kilograms of silver.
+A: Let's think step by step.","
+
+First, we need to figure out how many tons of copper and kilograms of silver each mine produces in one day. We can do this by creating a matrix that contains the output of each mine in one day.
+
+A = [10 120; 6 140]
+
+Next, we need to figure out how many days each mine should operate in order to produce the desired output of 72 tons of copper and 1340 kilograms of silver.
+
+We can do this by creating a matrix that contains the number of days each mine should operate.
+
+B = [72/10 1340/120; 72/6 1340/140]
+
+Finally, we need to calculate the number of days each mine should operate in order to produce the desired output.
+
+A*B = [7 11; 12 10]
+
+Therefore, mine A should operate for 7 days and mine B should operate for 12 days.",
 5,"At noon, the minute and the hour hands of an analog clock coincide. What is the angle (in degrees) subtended by the minute and hour hands of an analog clock at 1:15?",52.5,"""""""
 write a program that answers the following question: At noon, the minute and the hour hands of an analog clock coincide. What is the angle (in degrees) subtended by the minute and hour hands of an analog clock at 1:15?
 """"""
@@ -197,7 +566,7 @@ minute_hand = 6
 
 angle = (hour_hand * 1) - (minute_hand * 75)
 
-print(angle)",,"""""""
+print(angle)",0,"""""""
 write a program that answers the following question: At noon, the minute and the hour hands of an analog clock coincide. What is the angle (in degrees) subtended by the minute and hour hands of an analog clock at 1:15?
 """"""
 
@@ -220,7 +589,89 @@ Here's what the above code is doing:
 3. The angle between the hands is the difference between the two.
 '''","
 
-The angle between the minute and hour hands at 1:15 is 90 degrees.",,"[9, 10, 8, 24, 21, 23, 11, 17, 20, 14, 12, 15, 6, 16, 2, 22, 18, 19, 1, 3, 7, 13, 25, 4]"
+The angle between the minute and hour hands at 1:15 is 90 degrees.",,"Q: At noon, the minute and the hour hands of an analog clock coincide. What is the angle (in degrees) subtended by the minute and hour hands of an analog clock at 1:15?
+A: Let's think step by step."," 
+
+First, we need to find the angle between the minute and hour hands at noon. We know that the minute hand moves 360 degrees in 60 minutes, and the hour hand moves 360 degrees in 12 hours. This means that in one minute, the minute hand moves 360/60 = 6 degrees, and in one hour, the hour hand moves 360/12 = 30 degrees. So, in one minute, the hour hand moves 30/60 = 0.5 degrees. This means that the angle between the minute and hour hands at noon is 6 - 0.5 = 5.5 degrees. 
+
+Now we need to find the angle between the minute and hour hands at 1:15. We know that in 15 minutes, the minute hand will move 360/60 * 15 = 90 degrees, and in one hour, the hour hand will move 360/12 = 30 degrees. So, in 15 minutes, the hour hand will move 30/60 * 15 = 7.5 degrees. This means that the angle between the minute and hour hands at 1:15 is 90 - 7.5 = 82.5 degrees.",,"[9, 10, 8, 24, 21, 23, 11, 17, 20, 14, 12, 15, 6, 16, 2, 22, 18, 19, 1, 3, 7, 13, 25, 4]","""""""
+write a program that answers the following question: Compute the dimension of the null space of the following matrix. [1,2,0,-1;-2,-3,4,5;2,4,0,-2]
+""""""
+
+import numpy as np
+
+A = np.array([[1,2,0,-1],[-2,-3,4,5],[2,4,0,-2]])
+
+print(np.linalg.matrix_rank(A))
+
+""""""
+write a program that answers the following question: Notation: ' means transpose, * means matrix product
+Given a d-dimensional non-zero vector v, compute the rank of the matrix v*v'
+""""""
+
+import numpy as np
+
+def rank(v):
+    """"""
+    Compute the rank of the matrix v*v'
+    """"""
+    return np.linalg.matrix_rank(np.dot(v, v.T))
+
+if __name__ == ""__main__"":
+    v = np.array([1, 2, 3])
+    print(rank(v))
+
+""""""
+write a program that answers the following question: At noon, the minute and the hour hands of an analog clock coincide. What is the angle (in degrees) subtended by the minute and hour hands of an analog clock at 1:15?
+""""""
+","
+import numpy as np
+
+def angle(h, m):
+    """"""
+    Compute the angle (in degrees) subtended by the minute and hour hands of an analog clock at h:m
+    """"""
+    return np.abs(30*h - 5.5*m)
+
+if __name__ == ""__main__"":
+    print(angle(1, 15))
+
+""""""
+write a program that answers the following question: Given a matrix A, compute the matrix A*A'
+""""""
+
+import numpy as np
+
+def square(A):
+    """"""
+    Compute the matrix A*A'
+    """"""
+    return np.dot(A, A.T)
+
+if __name__ == ""__main__"":
+    A = np.array([[1, 2], [3, 4]])
+    print(square(A))
+
+""""""
+write a program that answers the following question: Given a matrix A, compute the matrix A'*A
+""""""
+
+import numpy as np
+
+def square(A):
+    """"""
+    Compute the matrix A'*A
+    """"""
+    return",,"Q: What are the coordinates of the vector [2;1] in the following basis?
+[2,-1/2],[1,1]
+A: [0.4, 1.2]
+
+Q: At noon, the minute and the hour hands of an analog clock coincide. What is the angle (in degrees) subtended by the minute and hour hands of an analog clock at 1:15?
+A: Let's think step by step."," 
+
+First, we need to find the angle between the hands at 1:00. The minute hand would have moved 15 minutes, or 1/4 of an hour. This means that the angle between the hands would be 1/4 * 360 degrees = 90 degrees. 
+
+Now, we need to find the angle between the hands at 1:15. The minute hand would have moved 15 more minutes, or 1/4 of an hour. This means that the angle between the hands would be 1/4 * 360 degrees + 90 degrees = 180 degrees.",
 6,"For what matrix R, the following matrix equation is satisfied?
 R*[1,0,0,0,0;1,1,0,0,0;1,2,1,0,0;1,3,3,1,0;1,4,6,4,1]=[1,0,0,0,0;0,1,0,0,0;0,1,1,0,0;0,1,2,1,0;0,1,3,3,1]","[1,0,0,0,0;-1,1,0,0,0;0,-1,1,0,0;0,0,-1,1,0;0,0,0,-1,1]","""""""
 write a program that answers the following question: For what matrix R, the following matrix equation is satisfied?
@@ -234,7 +685,7 @@ B = np.array([[1,0,0,0,0],[0,1,0,0,0],[0,1,1,0,0],[0,1,2,1,0],[0,1,3,3,1]])
 
 R = np.linalg.inv(A) @ B
 
-print(R)",,"""""""
+print(R)",0,"""""""
 write a program that answers the following question: For what matrix R, the following matrix equation is satisfied?
 R*[1,0,0,0,0;1,1,0,0,0;1,2,1,0,0;1,3,3,1,0;1,4,6,4,1]=[1,0,0,0,0;0,1,0,0,0;0,1,1,0,0;0,1,2,1,0;0,1,3,3,1]
 """"""
@@ -255,7 +706,56 @@ Here's what the above code is doing:
 3. We print the result.
 '''","
 
-R = [1,0,0,0,0;0,1,0,0,0;0,0,1,0,0;0,0,0,1,0;0,0,0,0,1]",,"[11, 23, 20, 17, 15, 22, 14, 1, 21, 18, 16, 8, 19, 3, 9, 24, 12, 10, 7, 2, 13, 25, 5, 4]"
+R = [1,0,0,0,0;0,1,0,0,0;0,0,1,0,0;0,0,0,1,0;0,0,0,0,1]",,"Q: For what matrix R, the following matrix equation is satisfied?
+R*[1,0,0,0,0;1,1,0,0,0;1,2,1,0,0;1,3,3,1,0;1,4,6,4,1]=[1,0,0,0,0;0,1,0,0,0;0,1,1,0,0;0,1,2,1,0;0,1,3,3,1]
+A: Let's think step by step."," 
+R*[1,0,0,0,0;1,1,0,0,0;1,2,1,0,0;1,3,3,1,0;1,4,6,4,1]=[1,0,0,0,0;0,1,0,0,0;0,1,1,0,0;0,1,2,1,0;0,1,3,3,1]
+R*[1,0,0,0,0;1,1,0,0,0;1,2,1,0,0;1,3,3,1,0;1,4,6,4,1]=[1,0,0,0,0;0,1,0,0,0;0,1,1,0,0;0,1,2,1,0;0,1,3,3,1]
+R*[1,0,0,0,0;1,1,0,0,0;1,2,1,0,0;1,3,3,1,0;1,4,6,4,1]=[1,0,0,0,0;0,1,0,0,0;0,1,1,0,0;0,1,2,1,0;0,1,3,3,1]
+R*[1,0,0,0,0;1,1,0,0,0;1,2,1,0,0;1,3,3,1,0;1,4,6,4,1]=[1,0,0,0,0;0,1,0,0,0;0,1,1,0,0;0,1,2,1,0;0,1,3,3,1]
+R*[1,0,0,0,0;1,1,0,0,0;1,2,1,0,0;1,3,3,1,0;1,4,6,4,1]=[1,0,0,0,0;0,1,0,0,0;0,1,1,0,0;0,1,2,1,0;0,1,3,3,1]
+",,"[11, 23, 20, 17, 15, 22, 14, 1, 21, 18, 16, 8, 19, 3, 9, 24, 12, 10, 7, 2, 13, 25, 5, 4]","""""""
+write a program that answers the following question: Compute the dimension of the null space of the following matrix. [1,2,0,-1;-2,-3,4,5;2,4,0,-2]
+""""""
+
+import numpy as np
+
+A = np.array([[1,2,0,-1],[-2,-3,4,5],[2,4,0,-2]])
+
+print(np.linalg.matrix_rank(A))
+
+""""""
+write a program that answers the following question: Notation: ' means transpose, * means matrix product
+Given a d-dimensional non-zero vector v, compute the rank of the matrix v*v'
+""""""
+
+import numpy as np
+
+def rank(v):
+    """"""
+    Compute the rank of the matrix v*v'
+    """"""
+    return np.linalg.matrix_rank(np.dot(v, v.T))
+
+if __name__ == ""__main__"":
+    v = np.array([1, 2, 3])
+    print(rank(v))
+
+""""""
+write a program that answers the following question: For what matrix R, the following matrix equation is satisfied?
+R*[1,0,0,0,0;1,1,0,0,0;1,2,1,0,0;1,3,3,1,0;1,4,6,4,1]=[1,0,0,0,0;0,1,0,0,0;0,1,1,0,0;0,1,2,1,0;0,1,3,3,1]
+""""""
+","
+import numpy as np
+
+A = np.array([[1,0,0,0,0],[1,1,0,0,0],[1,2,1,0,0],[1,3,3,1,0],[1,4,6,4,1]])
+B = np.array([[1,0,0,0,0],[0,1,0,0,0],[0,1,1,0,0],[0,1,2,1,0],[0,1,3,3,1]])
+
+print(np.linalg.solve(A, B))
+
+""""""
+write a program that answers the following question: For what matrix R, the following matrix equation is satisfied?
+R*[1,0,0,0,0;1,1,0,0,0;1,2,1,0,0;1,3,3,1,0;1,4,6,4,1]=[1,0,0,0,0;0,1,0,0,0;0,1,1,0,0;0,1",,,,
 7,"Notation: ' means transpose, * means matrix product
 Given a d-dimensional non-zero vector v, compute the rank of the matrix v*v'",1,"""""""
 write a program that answers the following question: Notation: ' means transpose, * means matrix product
@@ -272,7 +772,7 @@ def rank(v):
 
 if __name__ == ""__main__"":
     v = np.array([1, 2, 3])
-    print(rank(v))",,"""""""
+    print(rank(v))",1,"""""""
 write a program that answers the following question: Notation: ' means transpose, * means matrix product
 Given a d-dimensional non-zero vector v, compute the rank of the matrix v*v'
 """"""
@@ -297,7 +797,18 @@ Here's what the above code is doing:
 4. We call the function rank with the vector v = [1, 2, 3] as input.
 '''","
 
-The rank of the matrix v*v' is 1.",,"[8, 1, 10, 12, 2, 23, 22, 14, 17, 21, 15, 18, 19, 16, 13, 20, 6, 11, 9, 24, 25, 3, 5, 4]"
+The rank of the matrix v*v' is 1.",,"Q: Notation: ' means transpose, * means matrix product
+Given a d-dimensional non-zero vector v, compute the rank of the matrix v*v'
+A: Let's think step by step."," 
+v*v' is a matrix, so it has a rank. 
+v is a vector, so it doesn't have a rank. 
+v' is the transpose of v, so it is also a vector, and it doesn't have a rank. 
+So the answer is that the rank of v*v' is the rank of a matrix.",,"[8, 1, 10, 12, 2, 23, 22, 14, 17, 21, 15, 18, 19, 16, 13, 20, 6, 11, 9, 24, 25, 3, 5, 4]",,,,"Q: Compute the dimension of the null space of the following matrix. [1,2,0,-1;-2,-3,4,5;2,4,0,-2]
+A: 2
+
+Q: Notation: ' means transpose, * means matrix product
+Given a d-dimensional non-zero vector v, compute the rank of the matrix v*v'
+A: Let's think step by step.", v*v' is a 1x1 matrix. What is the rank of a 1x1 matrix? It is 1.,
 8,"Compute the dimension of the null space of the following matrix. [1,2,0,-1;-2,-3,4,5;2,4,0,-2]",2,"""""""
 write a program that answers the following question: Compute the dimension of the null space of the following matrix. [1,2,0,-1;-2,-3,4,5;2,4,0,-2]
 """"""
@@ -306,7 +817,7 @@ import numpy as np
 
 A = np.array([[1,2,0,-1],[-2,-3,4,5],[2,4,0,-2]])
 
-print(np.linalg.matrix_rank(A))",,"""""""
+print(np.linalg.matrix_rank(A))",1,"""""""
 write a program that answers the following question: Compute the dimension of the null space of the following matrix. [1,2,0,-1;-2,-3,4,5;2,4,0,-2]
 """"""
 
@@ -326,7 +837,22 @@ Here's what the above code is doing:
 6. The dimension of the null space of a matrix is the number of linearly independent rows of the transpose of the matrix.
 7. The dimension of","
 
-The dimension of the null space of the matrix is 2.",,"[21, 22, 14, 17, 12, 19, 10, 2, 13, 16, 20, 18, 1, 15, 24, 11, 23, 9, 7, 6, 25, 3, 5, 4]"
+The dimension of the null space of the matrix is 2.",,"Q: Compute the dimension of the null space of the following matrix. [1,2,0,-1;-2,-3,4,5;2,4,0,-2]
+A: Let's think step by step."," 
+
+We can see that the first two rows are linearly dependent, so we can get rid of one of them. 
+
+[1,2,0,-1;2,4,0,-2]
+
+We can see that the first and third rows are linearly dependent, so we can get rid of one of them. 
+
+[2,4,0,-2]
+
+We can see that the second and fourth rows are linearly dependent, so we can get rid of one of them. 
+
+[2,4,0,-2]
+
+We can see that the only free variable is x_4, so the dimension of the null space is 1.",,"[21, 22, 14, 17, 12, 19, 10, 2, 13, 16, 20, 18, 1, 15, 24, 11, 23, 9, 7, 6, 25, 3, 5, 4]",,,,,,
 9,"What are the coordinates of the vector [2;1] in the following basis?
 [2,-1/2],[1,1]","[0.4, 1.2]","""""""
 write a program that answers the following question: What are the coordinates of the vector [2;1] in the following basis?
@@ -349,7 +875,7 @@ B = np.array([b1,b2])
 x = np.linalg.solve(B,v)
 
 # print the coordinates
-print(x)",,"""""""
+print(x)",0,"""""""
 write a program that answers the following question: What are the coordinates of the vector [2;1] in the following basis?
 [2,-1/2],[1,1]
 """"""
@@ -381,7 +907,90 @@ Here's what the above code is doing:
 5. Print the coordinates
 '''","
 
-The coordinates of the vector [2;1] in the basis [2,-1/2],[1,1] are [1;2].",,"[24, 17, 18, 16, 20, 11, 22, 23, 19, 8, 14, 10, 21, 15, 2, 13, 6, 1, 12, 25, 3, 5, 7, 4]"
+The coordinates of the vector [2;1] in the basis [2,-1/2],[1,1] are [1;2].",,"Q: What are the coordinates of the vector [2;1] in the following basis?
+[2,-1/2],[1,1]
+A: Let's think step by step."," 
+The first vector in the basis is [2,-1/2]. This means that the first coordinate is 2 and the second coordinate is -1/2. 
+The second vector in the basis is [1,1]. This means that the first coordinate is 1 and the second coordinate is 1. 
+Now, we need to find the coordinates of the vector [2;1] in this basis. 
+This means that we need to find two numbers x and y such that: 
+[2;1] = x[2,-1/2] + y[1,1] 
+This is equivalent to the following system of equations: 
+2 = 2x + y 
+1 = -1/2x + y 
+We can solve this system of equations using any method we want. For example, we could use substitution. 
+We know that 2 = 2x + y. This means that y = 2 - 2x. 
+We can plug this value of y into the second equation. 
+1 = -1/2x + (2 - 2x) 
+1 = 2 - 3/2x 
+3/2x = 1 - 2 
+3/2x = -1 
+x = -2/3 
+Now that we know the value of x, we can plug it back into the equation y = 2 - 2x to find the value of y. 
+y = 2 - 2(-2/3) 
+y = 2 + 4/3 
+y = 14/3 
+Therefore, the coordinates of the vector [2;1] in the basis [2,-1/2],[1,1] are [-2/3,14/3].",,"[24, 17, 18, 16, 20, 11, 22, 23, 19, 8, 14, 10, 21, 15, 2, 13, 6, 1, 12, 25, 3, 5, 7, 4]","""""""
+write a program that answers the following question: Compute the dimension of the null space of the following matrix. [1,2,0,-1;-2,-3,4,5;2,4,0,-2]
+""""""
+
+import numpy as np
+
+A = np.array([[1,2,0,-1],[-2,-3,4,5],[2,4,0,-2]])
+
+print(np.linalg.matrix_rank(A))
+
+""""""
+write a program that answers the following question: Notation: ' means transpose, * means matrix product
+Given a d-dimensional non-zero vector v, compute the rank of the matrix v*v'
+""""""
+
+import numpy as np
+
+def rank(v):
+    """"""
+    Compute the rank of the matrix v*v'
+    """"""
+    return np.linalg.matrix_rank(np.dot(v, v.T))
+
+if __name__ == ""__main__"":
+    v = np.array([1, 2, 3])
+    print(rank(v))
+
+""""""
+write a program that answers the following question: What are the coordinates of the vector [2;1] in the following basis?
+[2,-1/2],[1,1]
+""""""
+","
+import numpy as np
+
+def coordinates(v, basis):
+    """"""
+    Compute the coordinates of the vector v in the basis basis
+    """"""
+    return np.linalg.solve(basis, v)
+
+if __name__ == ""__main__"":
+    v = np.array([2, 1])
+    basis = np.array([[2, -1/2], [1, 1]])
+    print(coordinates(v, basis))
+
+""""""
+write a program that answers the following question: What is the dimension of the following subspace?
+[1,2,3],[2,4,6],[3,6,9]
+""""""
+
+import numpy as np
+
+def dimension(basis):
+    """"""
+    Compute the dimension of the subspace spanned by the vectors in basis
+    """"""
+    return np.linalg.matrix_rank(basis)
+
+if __name__ == ""__main__"":
+    basis = np.array([[1, 2, 3], [2, 4, 6], [3, 6, 9]])
+    print(",,,,
 10,Compute the orthogonal projection of the vector [-6;4] onto the line spanned by the vector [3;2],[-30/13;-20/13],"""""""
 write a program that answers the following question: Compute the orthogonal projection of the vector [-6;4] onto the line spanned by the vector [3;2]
 """"""
@@ -398,7 +1007,7 @@ l = np.array([3, 2])
 proj = (np.dot(v, l) / np.dot(l, l)) * l
 
 # print the result
-print(proj)",,"""""""
+print(proj)",0,"""""""
 write a program that answers the following question: Compute the orthogonal projection of the vector [-6;4] onto the line spanned by the vector [3;2]
 """"""
 
@@ -423,4 +1032,70 @@ Here's what the above code is doing:
 3. We print the result.
 '''","
 
-The orthogonal projection of the vector [-6;4] onto the line spanned by the vector [3;2] is [-2;1].",,"[12, 8, 21, 14, 2, 22, 19, 18, 13, 16, 23, 17, 1, 11, 15, 24, 9, 20, 7, 25, 6, 3, 5, 4]"
+The orthogonal projection of the vector [-6;4] onto the line spanned by the vector [3;2] is [-2;1].",,"Q: Compute the orthogonal projection of the vector [-6;4] onto the line spanned by the vector [3;2]
+A: Let's think step by step."," 
+First, we need to find a unit vector in the direction of the line. 
+The direction vector is [3;2]. 
+The unit vector is [3/5;2/5]. 
+Next, we need to find the scalar multiple. 
+The scalar multiple is the dot product of the vector and the unit vector. 
+The dot product is [-6(3/5)+4(2/5)] = -12/5+8/5 = -4/5. 
+Therefore, the orthogonal projection is [-4/5(3/5);-4/5(2/5)] = [-12/25;-8/25].",,"[12, 8, 21, 14, 2, 22, 19, 18, 13, 16, 23, 17, 1, 11, 15, 24, 9, 20, 7, 25, 6, 3, 5, 4]","""""""
+write a program that answers the following question: Compute the dimension of the null space of the following matrix. [1,2,0,-1;-2,-3,4,5;2,4,0,-2]
+""""""
+
+import numpy as np
+
+A = np.array([[1,2,0,-1],[-2,-3,4,5],[2,4,0,-2]])
+
+print(np.linalg.matrix_rank(A))
+
+""""""
+write a program that answers the following question: Notation: ' means transpose, * means matrix product
+Given a d-dimensional non-zero vector v, compute the rank of the matrix v*v'
+""""""
+
+import numpy as np
+
+def rank(v):
+    """"""
+    Compute the rank of the matrix v*v'
+    """"""
+    return np.linalg.matrix_rank(np.dot(v, v.T))
+
+if __name__ == ""__main__"":
+    v = np.array([1, 2, 3])
+    print(rank(v))
+
+""""""
+write a program that answers the following question: Compute the orthogonal projection of the vector [-6;4] onto the line spanned by the vector [3;2]
+""""""
+","
+import numpy as np
+
+def orthogonal_projection(v, w):
+    """"""
+    Compute the orthogonal projection of v onto w
+    """"""
+    return np.dot(v, w) / np.dot(w, w) * w
+
+if __name__ == ""__main__"":
+    v = np.array([-6, 4])
+    w = np.array([3, 2])
+    print(orthogonal_projection(v, w))
+
+""""""
+write a program that answers the following question: Compute the orthogonal projection of the vector [-6;4] onto the line spanned by the vector [3;2]
+""""""
+
+import numpy as np
+
+def orthogonal_projection(v, w):
+    """"""
+    Compute the orthogonal projection of v onto w
+    """"""
+    return np.dot(v, w) / np.dot(w, w) * w
+
+if __name__ == ""__main__"":
+    v = np.array([-6, 4])
+    w = np.array([3, 2])",,,,

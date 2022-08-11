@@ -1,9 +1,9 @@
-Question,Original Question,Actual Solution,Codex Input,Codex Output,Zero-Shot Evaluation,Codex Explanation Input,Codex Explanation,GPT-3 Output,GPT-3 Evaluation,Most Similar Questions
-1,What is the greatest integer less than -15/4?,-4.0,"""""""
+Question,Original Question,Actual Solution,Codex Input,Codex Output,Zero-Shot Evaluation,Codex Explanation Input,Codex Explanation,GPT-3 Output,GPT-3 Evaluation,GPT-3 CoT Input,GPT-3 CoT Output,GPT-3 CoT Evaluation,Most Similar Questions,Few-Shot Input,Few-Shot Output,Few-Shot Evaluation
+1,What is the greatest integer less than -15/4?,-4,"""""""
 write a program that answers the following question: What is the greatest integer less than -15/4?
 """"""
 ","
-print(int(-15/4))",,"""""""
+print(int(-15/4))",1,"""""""
 write a program that answers the following question: What is the greatest integer less than -15/4?
 """"""
 
@@ -16,14 +16,21 @@ Here's what the above code is doing:
 3. -3 is the greatest integer less than -3.75
 '''","
 
--4",,"[6, 4, 9, 12, 15, 7, 10, 5, 11, 3, 13, 14, 8, 2]"
-2,Evaluate log base sqrt(6) of 216*sqrt(6).,7.0,"""""""
+-4",,"Q: What is the greatest integer less than -15/4?
+A: Let's think step by step."," 
+
+-15/4 = -3.75
+
+The greatest integer less than -3.75 is -4. 
+
+Therefore, the greatest integer less than -15/4 is -4.",,"[6, 4, 9, 12, 15, 7, 10, 5, 11, 3, 13, 14, 8, 2]",n/a,n/a,
+2,Evaluate log base sqrt(6) of 216*sqrt(6).,7,"""""""
 write a program that answers the following question: Evaluate log base sqrt(6) of 216*sqrt(6).
 """"""
 ","
 import math
 
-print(math.log(216*math.sqrt(6), math.sqrt(6)))",,"""""""
+print(math.log(216*math.sqrt(6), math.sqrt(6)))",0,"""""""
 write a program that answers the following question: Evaluate log base sqrt(6) of 216*sqrt(6).
 """"""
 
@@ -37,14 +44,201 @@ Here's what the above code is doing:
 2. print the log of 216*sqrt(6) with base sqrt(6)
 '''","
 
-log base sqrt(6) of 216*sqrt(6) = log base sqrt(6) of (6*6*6)*sqrt(6) = 3*log base sqrt(6) of 6 + log base sqrt(6) of sqrt(6) = 3*log base sqrt(6) of 6 + (1/2)*log base sqrt(6) of 6 = 9/2",,"[14, 3, 10, 15, 9, 8, 7, 5, 6, 13, 12, 4, 1, 11]"
-3,Evaluate x^3 + x^2 + x + 1 when x = 3.,40.0,"""""""
+log base sqrt(6) of 216*sqrt(6) = log base sqrt(6) of (6*6*6)*sqrt(6) = 3*log base sqrt(6) of 6 + log base sqrt(6) of sqrt(6) = 3*log base sqrt(6) of 6 + (1/2)*log base sqrt(6) of 6 = 9/2",,"Q: Evaluate log base sqrt(6) of 216*sqrt(6).
+A: Let's think step by step.","
+
+log base sqrt(6) of 216*sqrt(6)
+
+log base sqrt(6) of (216*sqrt(6))
+
+log base sqrt(6) of (216*6)
+
+log base sqrt(6) of (1296)
+
+log base sqrt(6) of (1296)
+
+log base sqrt(6) of (1296)
+
+log base sqrt(6) of (1296)
+
+log base sqrt(6) of (1296)
+
+log base sqrt(6) of (1296)
+
+log base sqrt(6) of (1296)
+
+log base sqrt(6) of (1296)
+
+log base sqrt(6) of (1296)
+
+log base sqrt(6) of (1296)
+
+log base sqrt(6) of (1296)
+
+log base sqrt(6) of (1296)
+
+log base sqrt(6) of (1296)
+
+log base sqrt(6) of (1296)
+
+log base sqrt(6) of (1296)
+
+log base sqrt(6) of (1296)
+
+log base sqrt(6) of (1296)
+
+log base sqrt(6) of (1296)
+
+log base sqrt(6) of (1296)
+
+log base sqrt(6) of (1296)
+
+log base sqrt(6) of (1296)
+
+log base sqrt(6) of (1296)
+
+log base sqrt(6) of (1296)
+
+log base sqrt(6) of (1296)
+
+log base sqrt(6) of (1296)
+
+log base sqrt(6) of (1296)
+
+log base sqrt(6) of (1296)
+
+log base sqrt(6) of (1296)
+
+log base sqrt(6) of (1296)
+
+log base sqrt(6) of (1296)
+
+log base sqrt(6) of (1296)
+
+log base sqrt(6) of (1296)
+
+log base sqrt(6) of (1296)
+
+log base sqrt(6) of (1296)
+
+log base sqrt(6) of (1296)
+
+log base sqrt(6) of (1296)
+
+log base sqrt(6) of (1296)
+
+log base sqrt(6) of (1296)
+
+log base sqrt(6) of (1296)
+
+log base sqrt(6) of (1296)
+
+log base sqrt(6) of (1296)
+
+log base sqrt(6) of (1296)
+
+log base sqrt(6) of (1296)
+
+log base sqrt(6) of (1296)
+
+log base sqrt(6) of (1296)
+
+log base sqrt(6) of (1296)
+
+log base sqrt(6) of (1296)
+
+log base sqrt(6) of (1296)
+
+log base sqrt(6) of (1296)
+
+log base sqrt(6) of (1296)
+
+log base sqrt(6) of (1296)
+
+log base sqrt(6) of (1296)
+
+log base sqrt(6) of (1296)
+
+log base sqrt(6) of (1296)
+
+log base sqrt(6) of (1296)
+
+log base sqrt(6) of (1296)
+
+log base sqrt(6) of (1296)
+
+log base sqrt(6) of (1296)
+
+log base sqrt(6) of (1296)
+
+log base sqrt(6) of (1296)
+
+log base sqrt(6) of (1296)
+
+log base sqrt(6) of (1296)
+
+log base sqrt(6) of (1296)
+
+log base sqrt(6) of (1296)
+
+log base sqrt(6) of (1296)
+
+log base sqrt(6) of (1296)
+
+log base sqrt(6) of (1296)
+
+log base sqrt(6) of (12",,"[14, 3, 10, 15, 9, 8, 7, 5, 6, 13, 12, 4, 1, 11]","""""""
+write a program that answers the following question: Evaluate x^3 + x^2 + x + 1 when x = 3.
+""""""
+
+x = 3
+
+print(x**3 + x**2 + x + 1)
+
+""""""
+write a program that answers the following question: When simplified, what is the value of 3^(1/2) * 3^(1/2) + 12 / 3 * 2 - 4^(3/2)?
+""""""
+
+print(3**(1/2) * 3**(1/2) + 12 / 3 * 2 - 4**(3/2))
+
+""""""
+write a program that answers the following question: Find the distance between the points (0,4) and (3,0).
+""""""
+
+import math
+
+x1 = 0
+y1 = 4
+x2 = 3
+y2 = 0
+
+distance = math.sqrt((x2 - x1)**2 + (y2 - y1)**2)
+
+print(distance)
+
+""""""
+write a program that answers the following question: What is the greatest integer less than -15/4?
+""""""
+
+print(int(-15/4))
+
+""""""
+write a program that answers the following question: Evaluate log base sqrt(6) of 216*sqrt(6).
+""""""
+","
+import math
+
+print(math.log(216 * math.sqrt(6), math.sqrt(6)))
+
+""""""
+write a program that answers the following question: Evaluate log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2",
+3,Evaluate x^3 + x^2 + x + 1 when x = 3.,40,"""""""
 write a program that answers the following question: Evaluate x^3 + x^2 + x + 1 when x = 3.
 """"""
 ","
 x = 3
 
-print(x**3 + x**2 + x + 1)",,"""""""
+print(x**3 + x**2 + x + 1)",1,"""""""
 write a program that answers the following question: Evaluate x^3 + x^2 + x + 1 when x = 3.
 """"""
 
@@ -60,8 +254,21 @@ Here's what the above code is doing:
 4. print(40)
 '''","
 
-x^3 + x^2 + x + 1 = 3^3 + 3^2 + 3 + 1 = 27 + 9 + 3 + 1 = 40",,"[14, 15, 10, 9, 7, 5, 2, 8, 13, 4, 11, 1, 6, 12]"
-4,"What is the distance between (-2,4) and (3,-8)?",13.0,"""""""
+x^3 + x^2 + x + 1 = 3^3 + 3^2 + 3 + 1 = 27 + 9 + 3 + 1 = 40",,"Q: Evaluate x^3 + x^2 + x + 1 when x = 3.
+A: Let's think step by step."," 
+
+First, we need to calculate x^3. We know that x = 3, so x^3 = 3^3 = 27.
+
+Next, we need to calculate x^2. We know that x = 3, so x^2 = 3^2 = 9.
+
+After that, we need to calculate x. We know that x = 3, so x = 3.
+
+Lastly, we need to calculate 1. We know that 1 = 1.
+
+Now, we can put everything together. We have:
+
+x^3 + x^2 + x + 1 = 27 + 9 + 3 + 1 = 40.",,"[14, 15, 10, 9, 7, 5, 2, 8, 13, 4, 11, 1, 6, 12]",n/a,n/a,
+4,"What is the distance between (-2,4) and (3,-8)?",13,"""""""
 write a program that answers the following question: What is the distance between (-2,4) and (3,-8)?
 """"""
 ","
@@ -70,7 +277,7 @@ import math
 def distance(x1, y1, x2, y2):
     return math.sqrt((x2 - x1)**2 + (y2 - y1)**2)
 
-print(distance(-2, 4, 3, -8))",,"""""""
+print(distance(-2, 4, 3, -8))",0,"""""""
 write a program that answers the following question: What is the distance between (-2,4) and (3,-8)?
 """"""
 
@@ -89,8 +296,92 @@ Here's what the above code is doing:
 4. print the result of calling the distance function with the arguments -2, 4, 3, -8
 '''","
 
-The distance between (-2,4) and (3,-8) is 13.",,"[5, 15, 1, 9, 7, 6, 8, 12, 10, 3, 14, 13, 2, 11]"
-5,"Find the distance between the points (0,4) and (3,0).",5.0,"""""""
+The distance between (-2,4) and (3,-8) is 13.",,"Q: What is the distance between (-2,4) and (3,-8)?
+A: Let's think step by step."," 
+
+First, we need to find the difference between the x-coordinates. This is 3-(-2), which is 5. 
+
+Next, we need to find the difference between the y-coordinates. This is -8-4, which is -12. 
+
+Now we need to take the square root of the sum of the squares of our differences. This is the square root of 5^2 + (-12)^2, which is the square root of 169 + 144, which is the square root of 313. 
+
+Therefore, the distance between (-2,4) and (3,-8) is the square root of 313, which is approximately 17.6.",,"[5, 15, 1, 9, 7, 6, 8, 12, 10, 3, 14, 13, 2, 11]","""""""
+write a program that answers the following question: Find the distance between the points (0,4) and (3,0).
+""""""
+
+import math
+
+x1 = 0
+y1 = 4
+x2 = 3
+y2 = 0
+
+distance = math.sqrt((x2 - x1)**2 + (y2 - y1)**2)
+
+print(distance)
+
+""""""
+write a program that answers the following question: What is the greatest integer less than -15/4?
+""""""
+
+print(int(-15/4))
+
+""""""
+write a program that answers the following question: When simplified, what is the value of 3^(1/2) * 3^(1/2) + 12 / 3 * 2 - 4^(3/2)?
+""""""
+
+print(3**(1/2) * 3**(1/2) + 12 / 3 * 2 - 4**(3/2))
+
+""""""
+write a program that answers the following question: Evaluate x^3 + x^2 + x + 1 when x = 3.
+""""""
+
+x = 3
+
+print(x**3 + x**2 + x + 1)
+
+""""""
+write a program that answers the following question: What is the distance between (-2,4) and (3,-8)?
+""""""
+","
+x1 = -2
+y1 = 4
+x2 = 3
+y2 = -8
+
+distance = math.sqrt((x2 - x1)**2 + (y2 - y1)**2)
+
+print(distance)
+
+""""""
+write a program that answers the following question: What is the distance between (0,0) and (1,1)?
+""""""
+
+x1 = 0
+y1 = 0
+x2 = 1
+y2 = 1
+
+distance = math.sqrt((x2 - x1)**2 + (y2 - y1)**2)
+
+print(distance)
+
+""""""
+write a program that answers the following question: What is the distance between (0,0) and (2,2)?
+""""""
+
+x1 = 0
+y1 = 0
+x2 = 2
+y2 = 2
+
+distance = math.sqrt((x2 - x1)**2 + (y2 - y1)**2)
+
+print(distance)
+
+""""""
+write a program that answers the following question: What is the distance between (0,0) and (3,",
+5,"Find the distance between the points (0,4) and (3,0).",5,"""""""
 write a program that answers the following question: Find the distance between the points (0,4) and (3,0).
 """"""
 ","
@@ -103,7 +394,7 @@ y2 = 0
 
 distance = math.sqrt((x2 - x1)**2 + (y2 - y1)**2)
 
-print(distance)",,"""""""
+print(distance)",1,"""""""
 write a program that answers the following question: Find the distance between the points (0,4) and (3,0).
 """"""
 
@@ -126,8 +417,15 @@ Here's what the above code is doing:
 4. We print the distance.
 '''","
 
-The distance between the points (0,4) and (3,0) is 5.",,"[4, 8, 3, 9, 10, 15, 7, 13, 12, 1, 14, 6, 2, 11]"
-6,"What is the sum of the even, positive integers less than 62?",930.0,"""""""
+The distance between the points (0,4) and (3,0) is 5.",,"Q: Find the distance between the points (0,4) and (3,0).
+A: Let's think step by step."," 
+
+First, we need to find the difference between the x-coordinates, which is 3 - 0 = 3. 
+Then, we need to find the difference between the y-coordinates, which is 4 - 0 = 4. 
+Now we need to take the square root of 3² + 4² = 9 + 16 = 25. 
+The square root of 25 is 5. 
+Therefore, the distance between the points (0,4) and (3,0) is 5.",,"[4, 8, 3, 9, 10, 15, 7, 13, 12, 1, 14, 6, 2, 11]",n/a,n/a,
+6,"What is the sum of the even, positive integers less than 62?",930,"""""""
 write a program that answers the following question: What is the sum of the even, positive integers less than 62?
 """"""
 ","
@@ -138,7 +436,7 @@ sum = 0
 for i in range(0, 62, 2):
     sum += i
 
-print(sum)",,"""""""
+print(sum)",0,"""""""
 write a program that answers the following question: What is the sum of the even, positive integers less than 62?
 """"""
 
@@ -159,8 +457,133 @@ Here's what the above code is doing:
 4. We print the sum variable.
 '''","
 
-The sum of the even, positive integers less than 62 is 912.",,"[1, 12, 9, 15, 7, 4, 10, 13, 8, 5, 3, 2, 14, 11]"
-7,"If f(1)=5, f(2)=8 and f(x)=ax+bx+2, what is the value of f(3)?",11.0,"""""""
+The sum of the even, positive integers less than 62 is 912.",,"Q: What is the sum of the even, positive integers less than 62?
+A: Let's think step by step."," The first even, positive integer is 2. The next is 4, then 6, then 8, and so on. We can list them out:
+
+2
+4
+6
+8
+10
+12
+14
+16
+18
+20
+22
+24
+26
+28
+30
+32
+34
+36
+38
+40
+42
+44
+46
+48
+50
+52
+54
+56
+58
+60
+
+If we add them all up, we get:
+
+2 + 4 + 6 + 8 + 10 + 12 + 14 + 16 + 18 + 20 + 22 + 24 + 26 + 28 + 30 + 32 + 34 + 36 + 38 + 40 + 42 + 44 + 46 + 48 + 50 + 52 + 54 + 56 + 58 + 60 = 
+
+620",,"[1, 12, 9, 15, 7, 4, 10, 13, 8, 5, 3, 2, 14, 11]","""""""
+write a program that answers the following question: What is the greatest integer less than -15/4?
+""""""
+
+print(int(-15/4))
+
+""""""
+write a program that answers the following question: When simplified, what is the value of 3^(1/2) * 3^(1/2) + 12 / 3 * 2 - 4^(3/2)?
+""""""
+
+print(3**(1/2) * 3**(1/2) + 12 / 3 * 2 - 4**(3/2))
+
+""""""
+write a program that answers the following question: Find the distance between the points (0,4) and (3,0).
+""""""
+
+import math
+
+x1 = 0
+y1 = 4
+x2 = 3
+y2 = 0
+
+distance = math.sqrt((x2 - x1)**2 + (y2 - y1)**2)
+
+print(distance)
+
+""""""
+write a program that answers the following question: Evaluate x^3 + x^2 + x + 1 when x = 3.
+""""""
+
+x = 3
+
+print(x**3 + x**2 + x + 1)
+
+""""""
+write a program that answers the following question: What is the sum of the even, positive integers less than 62?
+""""""
+","
+sum = 0
+
+for i in range(0, 62, 2):
+    sum += i
+
+print(sum)
+
+""""""
+write a program that answers the following question: What is the sum of the odd, positive integers less than 62?
+""""""
+
+sum = 0
+
+for i in range(1, 62, 2):
+    sum += i
+
+print(sum)
+
+""""""
+write a program that answers the following question: What is the sum of the even, positive integers less than 62?
+""""""
+
+sum = 0
+
+for i in range(0, 62, 2):
+    sum += i
+
+print(sum)
+
+""""""
+write a program that answers the following question: What is the sum of the odd, positive integers less than 62?
+""""""
+
+sum = 0
+
+for i in range(1, 62, 2):
+    sum += i
+
+print(sum)
+
+""""""
+write a program that answers the following question: What is the sum of the even, positive integers less than 62?
+""""""
+
+sum = 0
+
+for i in range(0, 62, 2):
+    sum += i
+",
+7,"If f(1)=5, f(2)=8 and f(x)=ax+bx+2, what is the value of f(3)?",11,"""""""
 write a program that answers the following question: If f(1)=5, f(2)=8 and f(x)=ax+bx+2, what is the value of f(3)?
 """"""
 ","
@@ -169,7 +592,7 @@ def f(x):
     b = 1
     return a*x + b*x + 2
 
-print(f(3))",,"""""""
+print(f(3))",0,"""""""
 write a program that answers the following question: If f(1)=5, f(2)=8 and f(x)=ax+bx+2, what is the value of f(3)?
 """"""
 
@@ -182,14 +605,139 @@ print(f(3))
 
 '''
 Here's what the above code is doing:
-1."," Define a function f(x) that takes in a parameter x
-2. Define two variables a and b
-3. Return the value of a*x + b*x + 2
-4. Call the function f(3) and print the result
+1."," Define a function f(x)
+2. Define a variable a and set it equal to 1
+3. Define a variable b and set it equal to 1
+4. Return the value of a*x + b*x + 2
+5. Print the value of f(3)
 '''","
 
-f(3)=3a+3b+2",,"[10, 9, 15, 13, 8, 3, 12, 6, 4, 5, 14, 1, 11, 2]"
-8,What is the x-intercept of the line perpendicular to 3x-2y = 6 with y-intercept is 2.,3.0,"""""""
+f(3)=3a+3b+2",,"Q: If f(1)=5, f(2)=8 and f(x)=ax+bx+2, what is the value of f(3)?
+A: Let's think step by step."," 
+
+First, we know that f(1)=5. This means that when we plug in 1 for x in our equation, we get 5. 
+
+f(1)=a(1)+b(1)+2
+5=a+b+2
+
+We also know that f(2)=8. This means that when we plug in 2 for x in our equation, we get 8. 
+
+f(2)=a(2)+b(2)+2
+8=2a+2b+2
+
+Now, we want to solve for f(3). We can do this by plugging in 3 for x in our equation. 
+
+f(3)=a(3)+b(3)+2
+f(3)=3a+3b+2
+
+We have two equations and two unknowns, so we can solve this system of equations using substitution. 
+
+3a+3b+2=f(3)
+a+b+2=5
+
+a+b=3
+3a+3b+2=f(3)
+9a+2=f(3)
+9a=f(3)-2
+a=(f(3)-2)/9
+
+Now that we have solved for a, we can plug this back into one of our original equations to solve for b. 
+
+a+b=3
+(f(3)-2)/9+b=3
+b=3-(f(3)-2)/9
+
+Now that we have solved for both a and b, we can plug these values back into our original equation to solve for f(3). 
+
+f(3)=(f(3)-2)/9(3)+(3-(f(3)-2)/9)(3)+2
+f(3)=3(f(3)-2)/9+3(3-(f(3)-2)/9)+2
+f(3)=3(f(3)-2+9-(f(3)-2))/9+2
+f(3)=3(11-f(3))/9+2
+f(3)=33/9-f(3)/9+2
+f(3)=33/9-f(3)/9+2
+f(3)=33/9-f(3)/9+2
+f(3)=33/9-f(3)/9+2
+
+f(3)=33/9-f(3)/9+2
+
+This equation is not solvable.",,"[10, 9, 15, 13, 8, 3, 12, 6, 4, 5, 14, 1, 11, 2]","""""""
+write a program that answers the following question: When simplified, what is the value of 3^(1/2) * 3^(1/2) + 12 / 3 * 2 - 4^(3/2)?
+""""""
+
+print(3**(1/2) * 3**(1/2) + 12 / 3 * 2 - 4**(3/2))
+
+""""""
+write a program that answers the following question: Evaluate x^3 + x^2 + x + 1 when x = 3.
+""""""
+
+x = 3
+
+print(x**3 + x**2 + x + 1)
+
+""""""
+write a program that answers the following question: Find the distance between the points (0,4) and (3,0).
+""""""
+
+import math
+
+x1 = 0
+y1 = 4
+x2 = 3
+y2 = 0
+
+distance = math.sqrt((x2 - x1)**2 + (y2 - y1)**2)
+
+print(distance)
+
+""""""
+write a program that answers the following question: What is the greatest integer less than -15/4?
+""""""
+
+print(int(-15/4))
+
+""""""
+write a program that answers the following question: If f(1)=5, f(2)=8 and f(x)=ax+bx+2, what is the value of f(3)?
+""""""
+","
+a = 1
+b = 1
+x = 3
+
+print(a*x + b*x + 2)
+
+""""""
+write a program that answers the following question: If f(x)=x^2+2x+1, what is the value of f(3)?
+""""""
+
+x = 3
+
+print(x**2 + 2*x + 1)
+
+""""""
+write a program that answers the following question: If f(x)=x^2+2x+1, what is the value of f(3)?
+""""""
+
+x = 3
+
+print(x**2 + 2*x + 1)
+
+""""""
+write a program that answers the following question: If f(x)=x^2+2x+1, what is the value of f(3)?
+""""""
+
+x = 3
+
+print(x**2 + 2*x + 1)
+
+""""""
+write a program that answers the following question: If f(x)=x^2+2x+1, what is the value of f(3)?
+""""""
+
+x = 3
+
+print(x**2 + 2*x + 1)
+",
+8,What is the x-intercept of the line perpendicular to 3x-2y = 6 with y-intercept is 2.,3,"""""""
 write a program that answers the following question: What is the x-intercept of the line perpendicular to 3x-2y = 6 with y-intercept is 2.
 """"""
 ","
@@ -219,7 +767,7 @@ write a program that answers the following question: What is the x-intercept of 
 # y = -3/2x + 2
 # y = -3/2x + 2
 # y = -3/2x + 2
-# y",,"""""""
+# y",0,"""""""
 write a program that answers the following question: What is the x-intercept of the line perpendicular to 3x-2y = 6 with y-intercept is 2.
 """"""
 
@@ -259,16 +807,105 @@ Here's what the above code is doing:
 4. It's returning the values of ""m"" and ""b"".
 '''
 
-# Now let's use the function to find the slope and y-intercept of the line 3x - 2y = 6.
+# Now let's use the function to find the slope and y-intercept of the line y = 2x + 1.
 
-# First, we need to define the values of ""","
+# First, we need to assign the values of 2 and","
 
-The x-intercept of the line perpendicular to 3x-2y = 6 with y-intercept is 2 is -2.",,"[9, 7, 15, 5, 13, 14, 10, 12, 3, 4, 6, 2, 1, 11]"
-9,"When simplified, what is the value of 3^(1/2) * 3^(1/2) + 12 / 3 * 2 - 4^(3/2)?",3.0,"""""""
+The x-intercept of the line perpendicular to 3x-2y = 6 with y-intercept is 2 is -2.",,"Q: What is the x-intercept of the line perpendicular to 3x-2y = 6 with y-intercept is 2.
+A: Let's think step by step."," 
+
+First, we need to find the slope of the line 3x-2y = 6. We can do this by solving for y:
+
+y = (3/2)x - 3
+
+Now that we have the slope, we know that the slope of the line perpendicular to this line will have a slope that is the negative reciprocal of 3/2. This means that the slope of the line perpendicular to 3x-2y = 6 is -2/3.
+
+Now that we have the slope, we can use the point-slope form of a line to write the equation of the line perpendicular to 3x-2y = 6 with y-intercept 2.
+
+y - 2 = -(2/3)(x - 0)
+
+y = -(2/3)x + 2",,"[9, 7, 15, 5, 13, 14, 10, 12, 3, 4, 6, 2, 1, 11]","""""""
+write a program that answers the following question: When simplified, what is the value of 3^(1/2) * 3^(1/2) + 12 / 3 * 2 - 4^(3/2)?
+""""""
+
+print(3**(1/2) * 3**(1/2) + 12 / 3 * 2 - 4**(3/2))
+
+""""""
+write a program that answers the following question: Find the distance between the points (0,4) and (3,0).
+""""""
+
+import math
+
+x1 = 0
+y1 = 4
+x2 = 3
+y2 = 0
+
+distance = math.sqrt((x2 - x1)**2 + (y2 - y1)**2)
+
+print(distance)
+
+""""""
+write a program that answers the following question: Evaluate x^3 + x^2 + x + 1 when x = 3.
+""""""
+
+x = 3
+
+print(x**3 + x**2 + x + 1)
+
+""""""
+write a program that answers the following question: What is the greatest integer less than -15/4?
+""""""
+
+print(int(-15/4))
+
+""""""
+write a program that answers the following question: What is the x-intercept of the line perpendicular to 3x-2y = 6 with y-intercept is 2.
+""""""
+","
+x = 6 / (3 * 2)
+
+print(x)
+
+""""""
+write a program that answers the following question: What is the slope of the line perpendicular to 3x-2y = 6 with y-intercept is 2.
+""""""
+
+slope = -3 / 2
+
+print(slope)
+
+""""""
+write a program that answers the following question: What is the slope of the line perpendicular to the line with slope -3/2 and y-intercept is 2.
+""""""
+
+slope = -2 / 3
+
+print(slope)
+
+""""""
+write a program that answers the following question: What is the slope of the line perpendicular to the line with slope -3/2 and y-intercept is 2.
+""""""
+
+slope = -2 / 3
+
+print(slope)
+
+""""""
+write a program that answers the following question: What is the slope of the line perpendicular to the line with slope -3/2 and y-intercept is 2.
+""""""
+
+slope = -2 / 3
+
+print(slope)
+
+""""""
+write a program that answers the following question: What is the",
+9,"When simplified, what is the value of 3^(1/2) * 3^(1/2) + 12 / 3 * 2 - 4^(3/2)?",3,"""""""
 write a program that answers the following question: When simplified, what is the value of 3^(1/2) * 3^(1/2) + 12 / 3 * 2 - 4^(3/2)?
 """"""
 ","
-print(3**(1/2) * 3**(1/2) + 12 / 3 * 2 - 4**(3/2))",,"""""""
+print(3**(1/2) * 3**(1/2) + 12 / 3 * 2 - 4**(3/2))",1,"""""""
 write a program that answers the following question: When simplified, what is the value of 3^(1/2) * 3^(1/2) + 12 / 3 * 2 - 4^(3/2)?
 """"""
 
@@ -284,15 +921,19 @@ Here's what the above code is doing:
     - 3^1 is the same as 3
 2. 12 /","
 
-The value of 3^(1/2) * 3^(1/2) + 12 / 3 * 2 - 4^(3/2) is 9.",,"[7, 15, 12, 13, 6, 4, 8, 3, 1, 10, 5, 14, 2, 11]"
-10,"If f(x)=(5x+1)/(x-1), find the value of f(7).",6.0,"""""""
+The value of 3^(1/2) * 3^(1/2) + 12 / 3 * 2 - 4^(3/2) is 9.",,"Q: When simplified, what is the value of 3^(1/2) * 3^(1/2) + 12 / 3 * 2 - 4^(3/2)?
+A: Let's think step by step."," 
+3^(1/2) * 3^(1/2) is 9. 
+9 + 12 / 3 * 2 is 9 + 8 = 17. 
+17 - 4^(3/2) is 17 - 8 = 9.",,"[7, 15, 12, 13, 6, 4, 8, 3, 1, 10, 5, 14, 2, 11]",n/a,n/a,
+10,"If f(x)=(5x+1)/(x-1), find the value of f(7).",6,"""""""
 write a program that answers the following question: If f(x)=(5x+1)/(x-1), find the value of f(7).
 """"""
 ","
 def f(x):
     return (5*x+1)/(x-1)
 
-print(f(7))",,"""""""
+print(f(7))",0,"""""""
 write a program that answers the following question: If f(x)=(5x+1)/(x-1), find the value of f(7).
 """"""
 
@@ -304,8 +945,93 @@ print(f(7))
 '''
 Here's what the above code is doing:
 1."," Define a function f(x) that takes in a parameter x.
-2. Return the value of (5x+1)/(x-1)
+2. Return the value of (5*x+1)/(x-1)
 3. Print the value of f(7)
 '''","
 
-The value of f(7) is 12.",,"[7, 15, 3, 9, 14, 8, 5, 13, 4, 12, 6, 2, 1, 11]"
+The value of f(7) is 12.",,"Q: If f(x)=(5x+1)/(x-1), find the value of f(7).
+A: Let's think step by step."," 
+
+First, we need to plug in 7 for x in the equation. This gives us: 
+
+f(7) = (5(7)+1)/(7-1)
+
+Next, we need to simplify this equation. We can start by multiplying 5 and 7, which gives us 35. Then, we add 1 to 35 to get 36. Finally, we divide 36 by 6 to get 6. 
+
+Therefore, the value of f(7) is 6.",,"[7, 15, 3, 9, 14, 8, 5, 13, 4, 12, 6, 2, 1, 11]","""""""
+write a program that answers the following question: Evaluate x^3 + x^2 + x + 1 when x = 3.
+""""""
+
+x = 3
+
+print(x**3 + x**2 + x + 1)
+
+""""""
+write a program that answers the following question: When simplified, what is the value of 3^(1/2) * 3^(1/2) + 12 / 3 * 2 - 4^(3/2)?
+""""""
+
+print(3**(1/2) * 3**(1/2) + 12 / 3 * 2 - 4**(3/2))
+
+""""""
+write a program that answers the following question: Find the distance between the points (0,4) and (3,0).
+""""""
+
+import math
+
+x1 = 0
+y1 = 4
+x2 = 3
+y2 = 0
+
+distance = math.sqrt((x2 - x1)**2 + (y2 - y1)**2)
+
+print(distance)
+
+""""""
+write a program that answers the following question: What is the greatest integer less than -15/4?
+""""""
+
+print(int(-15/4))
+
+""""""
+write a program that answers the following question: If f(x)=(5x+1)/(x-1), find the value of f(7).
+""""""
+","
+x = 7
+
+print((5*x+1)/(x-1))
+
+""""""
+write a program that answers the following question: If f(x)=x^2+2x+1, find the value of f(3).
+""""""
+
+x = 3
+
+print(x**2 + 2*x + 1)
+
+""""""
+write a program that answers the following question: If f(x)=x^2+2x+1, find the value of f(3).
+""""""
+
+x = 3
+
+print(x**2 + 2*x + 1)
+
+""""""
+write a program that answers the following question: If f(x)=x^2+2x+1, find the value of f(3).
+""""""
+
+x = 3
+
+print(x**2 + 2*x + 1)
+
+""""""
+write a program that answers the following question: If f(x)=x^2+2x+1, find the value of f(3).
+""""""
+
+x = 3
+
+print(x**2 + 2*x + 1)
+
+""""""
+write a program that answers the following question",
