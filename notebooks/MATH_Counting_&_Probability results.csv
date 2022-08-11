@@ -463,7 +463,60 @@ Now, we want to compute 17 choose 9. We can use the same method:
 
 5005 * 1072 = 
 
-537940",,"[9, 4, 6, 10, 2, 11, 12, 1, 15, 14, 8, 7, 13, 3]",,,
+537940",,"[9, 4, 6, 10, 2, 11, 12, 1, 15, 14, 8, 7, 13, 3]","""""""
+write a program that answers the following question: Compute \dbinom{8}{4}.
+""""""
+
+def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n-1)
+
+def binomial(n, k):
+    return factorial(n) / (factorial(k) * factorial(n-k))
+
+print(binomial(8, 4))
+
+""""""
+write a program that answers the following question: In how many ways can George choose two out of seven colors to paint his room?
+""""""
+
+# Solution
+
+# The number of ways to choose two out of seven colors is the same as the number of ways to choose five out of seven colors.
+# The number of ways to choose five out of seven colors is the same as the number of ways to choose two out of seven colors.
+
+# The number of ways to choose two out of seven colors is the same as the number of ways to choose five out of seven colors.
+# The number of ways to choose five out of seven colors is the same as the number of ways to choose two out of seven colors.
+
+# The number of ways to choose two out of seven colors is the same as the number of ways to choose five out of seven colors.
+# The number of ways to choose five out of seven colors is the same as the number of ways to choose two out of seven colors.
+
+# The number of ways to choose two out of seven colors is the same as the number of ways to choose five out of seven colors.
+# The number of ways to choose five out of seven colors is the same as the number of ways to choose two out of seven colors.
+
+# The number of ways to choose two out of seven colors is the
+
+""""""
+write a program that answers the following question: Write a program. Compute 17 choose 9. You are told that 15 choose 6 = 5005 and 15 choose 8 = 6435.
+""""""
+","
+# Solution
+
+# The number of ways to choose two out of seven colors is the same as the number of ways to choose five out of seven colors.
+# The number of ways to choose five out of seven colors is the same as the number of ways to choose two out of seven colors.
+
+# The number of ways to choose two out of seven colors is the same as the number of ways to choose five out of seven colors.
+# The number of ways to choose five out of seven colors is the same as the number of ways to choose two out of seven colors.
+
+# The number of ways to choose two out of seven colors is the same as the number of ways to choose five out of seven colors.
+# The number of ways to choose five out of seven colors is the same as the number of ways to choose two out of seven colors.
+
+# The number of ways to choose two out of seven colors is the same as the number of ways to choose five out of seven colors.
+# The number of ways to choose five out of seven colors is the same as the number of ways to choose two out of seven colors.
+
+# The number of ways to choose two out of seven colors is the",
 6,How many four-digit positive integers have at least one digit that is a 2 or a 3?,5416,"""""""
 write a program that answers the following question: How many four-digit positive integers have at least one digit that is a 2 or a 3?
 """"""
@@ -502,7 +555,66 @@ Here's what the above code is doing:
 There are 24 four-digit positive integers with at least one digit that is a 2 or a 3.",,"Q: How many four-digit positive integers have at least one digit that is a 2 or a 3?
 A: Let's think step by step."," 
 There are 9 choices for the first digit, 8 for the second, 7 for the third, and 6 for the fourth. However, we have to be careful because we're double-counting the numbers where the first digit is a 2 and the second is a 3 (or vice versa). So we have to subtract those out. 
-There are 9 * 8 - 1 = 71 such numbers.",,"[4, 10, 9, 1, 12, 2, 5, 15, 3, 7, 13, 8, 14, 11]",,,
+There are 9 * 8 - 1 = 71 such numbers.",,"[4, 10, 9, 1, 12, 2, 5, 15, 3, 7, 13, 8, 14, 11]","""""""
+write a program that answers the following question: In how many ways can George choose two out of seven colors to paint his room?
+""""""
+
+# Solution
+
+# The number of ways to choose two out of seven colors is the same as the number of ways to choose five out of seven colors.
+# The number of ways to choose five out of seven colors is the same as the number of ways to choose two out of seven colors.
+
+# The number of ways to choose two out of seven colors is the same as the number of ways to choose five out of seven colors.
+# The number of ways to choose five out of seven colors is the same as the number of ways to choose two out of seven colors.
+
+# The number of ways to choose two out of seven colors is the same as the number of ways to choose five out of seven colors.
+# The number of ways to choose five out of seven colors is the same as the number of ways to choose two out of seven colors.
+
+# The number of ways to choose two out of seven colors is the same as the number of ways to choose five out of seven colors.
+# The number of ways to choose five out of seven colors is the same as the number of ways to choose two out of seven colors.
+
+# The number of ways to choose two out of seven colors is the
+
+""""""
+write a program that answers the following question: Compute \dbinom{8}{4}.
+""""""
+
+def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n-1)
+
+def binomial(n, k):
+    return factorial(n) / (factorial(k) * factorial(n-k))
+
+print(binomial(8, 4))
+
+""""""
+write a program that answers the following question: How many four-digit positive integers have at least one digit that is a 2 or a 3?
+""""""
+","
+# Solution
+
+# There are 10 choices for the first digit, 9 choices for the second digit, 8 choices for the third digit, and 7 choices for the fourth digit.
+# The number of four-digit positive integers with at least one digit that is a 2 or a 3 is 10 \cdot 9 \cdot 8 \cdot 7.
+
+""""""
+write a program that answers the following question: How many four-digit positive integers have at least one digit that is a 2 or a 3?
+""""""
+
+# Solution
+
+# There are 10 choices for the first digit, 9 choices for the second digit, 8 choices for the third digit, and 7 choices for the fourth digit.
+# The number of four-digit positive integers with at least one digit that is a 2 or a 3 is 10 \cdot 9 \cdot 8 \cdot 7.
+
+""""""
+write a program that answers the following question: How many four-digit positive integers have at least one digit that is a 2 or a 3?
+""""""
+
+# Solution
+
+# There are 10 choices for the first digit, 9 choices for the second digit, 8 choices for the third digit, and 7 choices for the fourth",
 7,In how many ways can George choose two out of seven colors to paint his room?,21,"""""""
 write a program that answers the following question: In how many ways can George choose two out of seven colors to paint his room?
 """"""
@@ -564,7 +676,7 @@ A: Let's think step by step.","
 
 George can choose any two colors out of the seven to paint his room. This can be done in C(7,2) ways.
 
-",,"[4, 6, 10, 15, 12, 13, 5, 9, 2, 1, 3, 14, 8, 11]",,,
+",,"[4, 6, 10, 15, 12, 13, 5, 9, 2, 1, 3, 14, 8, 11]",n/a,n/a,
 8,Compute \dbinom{8}{4}.,70,"""""""
 write a program that answers the following question: Compute \dbinom{8}{4}.
 """"""
@@ -607,7 +719,7 @@ We want to choose 4 objects from a set of 8.
 
 We can choose the first object in 8 ways. For each of these ways, we can choose the second object in 7 ways. For each of these ways, we can choose the third object in 6 ways. For each of these ways, we can choose the fourth object in 5 ways. 
 
-Therefore, there are $8 \cdot 7 \cdot 6 \cdot 5$ ways to choose 4 objects from a set of 8.",,"[14, 11, 9, 1, 12, 5, 6, 10, 2, 4, 15, 7, 13, 3]",,,
+Therefore, there are $8 \cdot 7 \cdot 6 \cdot 5$ ways to choose 4 objects from a set of 8.",,"[14, 11, 9, 1, 12, 5, 6, 10, 2, 4, 15, 7, 13, 3]",n/a,n/a,
 9,Find the sum of all integers k such that \binom{23}{4} + \binom{23}{5} = \binom{24}{k}.,24,"""""""
 write a program that answers the following question: Find the sum of all integers k such that \binom{23}{4} + \binom{23}{5} = \binom{24}{k}.
 """"""
@@ -683,7 +795,58 @@ $\binom{23}{4} + \binom{23}{5} = \binom{24}{4} + \binom{24}{5} - \binom{24}{6} +
 $\binom{23}{4} + \binom{23}{5} = \binom{24}{4} + \binom{24}{5} - \binom{24}{6} + \binom{24}{7} - \binom{24}{8} + \binom{24}{9} - \binom{24}{10} + \binom{24}{11} - \binom{24}{12} + \binom{24}{13}$
 $\binom{23}{4} + \binom{23}{5} = \binom{24}{4} + \binom{24}{5} - \binom{24}{6} + \binom{24}{7} - \binom{24}{8} + \binom{24}{9} - \binom{24}{10} + \binom{24}{11} - \binom{24}{12} + \binom{24}{13} - \binom{24}{14}$
 $\binom{23}{4} + \binom{23}{5} = \binom{24}{4} + \binom{24}{5} - \binom{24}{6} + \binom{24}{7} - \binom{24}{8} + \binom{24}{9} - \binom{24}{10} + \binom{24}{11} - \binom{24}{12} + \binom{24}{13} - \binom{24}{14} + \binom{24}{15}$
-$\binom{23}{4} + \binom{23}{5} = \binom{24}{4} + \binom{24}{5} - \binom{24}{6} + \binom{24}{7} - \",,"[2, 6, 4, 12, 5, 1, 10, 8, 14, 11, 3, 15, 13, 7]",,,
+$\binom{23}{4} + \binom{23}{5} = \binom{24}{4} + \binom{24}{5} - \binom{24}{6} + \binom{24}{7} - \",,"[2, 6, 4, 12, 5, 1, 10, 8, 14, 11, 3, 15, 13, 7]","""""""
+write a program that answers the following question: Compute \dbinom{8}{4}.
+""""""
+
+def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n-1)
+
+def binomial(n, k):
+    return factorial(n) / (factorial(k) * factorial(n-k))
+
+print(binomial(8, 4))
+
+""""""
+write a program that answers the following question: In how many ways can George choose two out of seven colors to paint his room?
+""""""
+
+# Solution
+
+# The number of ways to choose two out of seven colors is the same as the number of ways to choose five out of seven colors.
+# The number of ways to choose five out of seven colors is the same as the number of ways to choose two out of seven colors.
+
+# The number of ways to choose two out of seven colors is the same as the number of ways to choose five out of seven colors.
+# The number of ways to choose five out of seven colors is the same as the number of ways to choose two out of seven colors.
+
+# The number of ways to choose two out of seven colors is the same as the number of ways to choose five out of seven colors.
+# The number of ways to choose five out of seven colors is the same as the number of ways to choose two out of seven colors.
+
+# The number of ways to choose two out of seven colors is the same as the number of ways to choose five out of seven colors.
+# The number of ways to choose five out of seven colors is the same as the number of ways to choose two out of seven colors.
+
+# The number of ways to choose two out of seven colors is the
+
+""""""
+write a program that answers the following question: Find the sum of all integers k such that \binom{23}{4} + \binom{23}{5} = \binom{24}{k}.
+""""""
+","
+# Solution
+
+# The number of ways to choose four out of twenty-three is the same as the number of ways to choose five out of twenty-three.
+# The number of ways to choose five out of twenty-three is the same as the number of ways to choose four out of twenty-three.
+
+# The number of ways to choose four out of twenty-three is the same as the number of ways to choose five out of twenty-three.
+# The number of ways to choose five out of twenty-three is the same as the number of ways to choose four out of twenty-three.
+
+# The number of ways to choose four out of twenty-three is the same as the number of ways to choose five out of twenty-three.
+# The number of ways to choose five out of twenty-three is the same as the number of ways to choose four out of twenty-three.
+
+# The number of ways to choose four out of twenty-three is the same as the number of ways to choose five out of twenty-three.
+# The number of ways to choose five out of twenty-three is the same as the number of ways to choose four out of twenty-three.",
 10,How many odd numbers between 100 and 999 have distinct digits?,320,"""""""
 write a program that answers the following question: How many odd numbers between 100 and 999 have distinct digits?
 """"""
@@ -759,4 +922,55 @@ There are 72 odd numbers between 100 and 999 with distinct digits.",,"Q: How man
 A: Let's think step by step."," 
 
 There are 9 choices for the first digit. For each of these choices, there are 8 choices for the second digit (because it can't be the same as the first). For each of *these* choices, there are 7 choices for the third digit. So the answer is $9 \cdot 8 \cdot 7 = 504$. 
-",,"[6, 4, 1, 12, 9, 2, 5, 7, 3, 15, 13, 14, 11, 8]",,,
+",,"[6, 4, 1, 12, 9, 2, 5, 7, 3, 15, 13, 14, 11, 8]","""""""
+write a program that answers the following question: In how many ways can George choose two out of seven colors to paint his room?
+""""""
+
+# Solution
+
+# The number of ways to choose two out of seven colors is the same as the number of ways to choose five out of seven colors.
+# The number of ways to choose five out of seven colors is the same as the number of ways to choose two out of seven colors.
+
+# The number of ways to choose two out of seven colors is the same as the number of ways to choose five out of seven colors.
+# The number of ways to choose five out of seven colors is the same as the number of ways to choose two out of seven colors.
+
+# The number of ways to choose two out of seven colors is the same as the number of ways to choose five out of seven colors.
+# The number of ways to choose five out of seven colors is the same as the number of ways to choose two out of seven colors.
+
+# The number of ways to choose two out of seven colors is the same as the number of ways to choose five out of seven colors.
+# The number of ways to choose five out of seven colors is the same as the number of ways to choose two out of seven colors.
+
+# The number of ways to choose two out of seven colors is the
+
+""""""
+write a program that answers the following question: Compute \dbinom{8}{4}.
+""""""
+
+def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n-1)
+
+def binomial(n, k):
+    return factorial(n) / (factorial(k) * factorial(n-k))
+
+print(binomial(8, 4))
+
+""""""
+write a program that answers the following question: How many odd numbers between 100 and 999 have distinct digits?
+""""""
+","
+# Solution
+
+# The number of odd numbers between 100 and 999 with distinct digits is the same as the number of even numbers between 100 and 999 with distinct digits.
+# The number of even numbers between 100 and 999 with distinct digits is the same as the number of odd numbers between 100 and 999 with distinct digits.
+
+# The number of odd numbers between 100 and 999 with distinct digits is the same as the number of even numbers between 100 and 999 with distinct digits.
+# The number of even numbers between 100 and 999 with distinct digits is the same as the number of odd numbers between 100 and 999 with distinct digits.
+
+# The number of odd numbers between 100 and 999 with distinct digits is the same as the number of even numbers between 100 and 999 with distinct digits.
+# The number of even numbers between 100 and 999 with distinct digits is the same as the number of odd numbers between 100 and 999 with distinct digits.
+
+# The number of odd numbers between 100 and 999 with distinct digits is the same as the number of even numbers between 100 and 999 with distinct digits.
+# The number of even numbers between 100 and 999 with distinct digits is the same as the number of odd numbers between 100 and 999 with distinct digits.",
