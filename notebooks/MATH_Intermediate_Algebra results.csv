@@ -45,7 +45,69 @@ x = (25 ± 49)/2
 
 x = 12 ± 7
 
-x = 19 or x = 5",,"[11, 7, 2, 4, 8, 12, 6, 13, 15, 9, 3, 5, 14, 10]",,,
+x = 19 or x = 5",,"[11, 7, 2, 4, 8, 12, 6, 13, 15, 9, 3, 5, 14, 10]","""""""
+write a program that answers the following question: Find the remainder when r^13 + 1 is divided by r - 1.
+""""""
+
+def remainder(r):
+    return (r**13 + 1) % (r - 1)
+
+print(remainder(2))
+print(remainder(3))
+print(remainder(4))
+print(remainder(5))
+print(remainder(6))
+print(remainder(7))
+print(remainder(8))
+print(remainder(9))
+print(remainder(10))
+print(remainder(11))
+print(remainder(12))
+print(remainder(13))
+print(remainder(14))
+print(remainder(15))
+print(remainder(16))
+print(remainder(17))
+print(remainder(18))
+print(remainder(19))
+print(remainder(20))
+print(remainder(21))
+print(remainder(22))
+print(remainder(23))
+print(remainder(24))
+print(remainder(25))
+print(remainder(26))
+print(remainder(
+
+""""""
+write a program that answers the following question: Find all positive real numbers x that satisfy x√(12 - x) + √(12x - x^3) >= 12. Enter all solutions, separated by commas.
+""""""
+","
+def real_numbers(x):
+    return x*(12 - x)**(1/2) + (12*x - x**3)**(1/2) >= 12
+
+print(real_numbers(1))
+print(real_numbers(2))
+print(real_numbers(3))
+print(real_numbers(4))
+print(real_numbers(5))
+print(real_numbers(6))
+print(real_numbers(7))
+print(real_numbers(8))
+print(real_numbers(9))
+print(real_numbers(10))
+print(real_numbers(11))
+print(real_numbers(12))
+print(real_numbers(13))
+print(real_numbers(14))
+print(real_numbers(15))
+print(real_numbers(16))
+print(real_numbers(17))
+print(real_numbers(18))
+print(real_numbers(19))
+print(real_numbers(20))
+print(real_numbers(21))
+",
 2,"Given that x^2 + y^2 = 14x + 6y + 6, find the largest possible value of 3x + 4y.",73,"""""""
 write a program that answers the following question: Given that x^2 + y^2 = 14x + 6y + 6, find the largest possible value of 3x + 4y.
 """"""
@@ -135,7 +197,69 @@ Now, we want to find the point on this circle that is farthest away from the ori
 
 There are two points that satisfy this condition: (1, 0) and (-1, 0). 
 
-Therefore, the largest possible value of 3x + 4y is 3.",,"[7, 12, 11, 8, 15, 1, 6, 13, 9, 5, 3, 4, 14, 10]",,,
+Therefore, the largest possible value of 3x + 4y is 3.",,"[7, 12, 11, 8, 15, 1, 6, 13, 9, 5, 3, 4, 14, 10]","""""""
+write a program that answers the following question: Find the remainder when r^13 + 1 is divided by r - 1.
+""""""
+
+def remainder(r):
+    return (r**13 + 1) % (r - 1)
+
+print(remainder(2))
+print(remainder(3))
+print(remainder(4))
+print(remainder(5))
+print(remainder(6))
+print(remainder(7))
+print(remainder(8))
+print(remainder(9))
+print(remainder(10))
+print(remainder(11))
+print(remainder(12))
+print(remainder(13))
+print(remainder(14))
+print(remainder(15))
+print(remainder(16))
+print(remainder(17))
+print(remainder(18))
+print(remainder(19))
+print(remainder(20))
+print(remainder(21))
+print(remainder(22))
+print(remainder(23))
+print(remainder(24))
+print(remainder(25))
+print(remainder(26))
+print(remainder(
+
+""""""
+write a program that answers the following question: Given that x^2 + y^2 = 14x + 6y + 6, find the largest possible value of 3x + 4y.
+""""""
+","
+def largest_value(x, y):
+    return 3 * x + 4 * y
+
+print(largest_value(1, 1))
+print(largest_value(2, 2))
+print(largest_value(3, 3))
+print(largest_value(4, 4))
+print(largest_value(5, 5))
+print(largest_value(6, 6))
+print(largest_value(7, 7))
+print(largest_value(8, 8))
+print(largest_value(9, 9))
+print(largest_value(10, 10))
+print(largest_value(11, 11))
+print(largest_value(12, 12))
+print(largest_value(13, 13))
+print(largest_value(14, 14))
+print(largest_value(15, 15))
+print(largest_value(16, 16))
+print(largest_value(17, 17))
+print(largest_value(18, 18))
+print(largest_value(19, 19))
+print(largest_value(20, 20))
+print(largest_value(21, 21))
+print(",
 3,"Let k be a real number such that k > 1 and
  \[\sum_{n=1}^{\infty} \frac{5n-1}{k^n} = \frac{13}{4}.\] Find k.",3,"""""""
 write a program that answers the following question: Let k be a real number such that k > 1 and
@@ -215,7 +339,82 @@ Now, we can see that the sum is equal to:
 Now, we can see that the sum is equal to:
 \[\frac{5k-5}{k(k-1)} = \frac{13}{4}\]
 Now, we can see that the sum is equal to:
-\[\frac{5k-5}{k(k-1",,"[8, 11, 2, 12, 4, 7, 14, 9, 15, 10, 5, 1, 6, 13]",,,
+\[\frac{5k-5}{k(k-1",,"[8, 11, 2, 12, 4, 7, 14, 9, 15, 10, 5, 1, 6, 13]","""""""
+write a program that answers the following question: Find the remainder when r^13 + 1 is divided by r - 1.
+""""""
+
+def remainder(r):
+    return (r**13 + 1) % (r - 1)
+
+print(remainder(2))
+print(remainder(3))
+print(remainder(4))
+print(remainder(5))
+print(remainder(6))
+print(remainder(7))
+print(remainder(8))
+print(remainder(9))
+print(remainder(10))
+print(remainder(11))
+print(remainder(12))
+print(remainder(13))
+print(remainder(14))
+print(remainder(15))
+print(remainder(16))
+print(remainder(17))
+print(remainder(18))
+print(remainder(19))
+print(remainder(20))
+print(remainder(21))
+print(remainder(22))
+print(remainder(23))
+print(remainder(24))
+print(remainder(25))
+print(remainder(26))
+print(remainder(
+
+""""""
+write a program that answers the following question: Let k be a real number such that k > 1 and
+ \[\sum_{n=1}^{\infty} \frac{5n-1}{k^n} = \frac{13}{4}.\] Find k.
+""""""
+","
+def k(n):
+    return (5*n - 1) / (k**n)
+
+def sum(n):
+    return sum(k(n))
+
+print(sum(1))
+print(sum(2))
+print(sum(3))
+print(sum(4))
+print(sum(5))
+print(sum(6))
+print(sum(7))
+print(sum(8))
+print(sum(9))
+print(sum(10))
+print(sum(11))
+print(sum(12))
+print(sum(13))
+print(sum(14))
+print(sum(15))
+print(sum(16))
+print(sum(17))
+print(sum(18))
+print(sum(19))
+print(sum(20))
+print(sum(21))
+print(sum(22))
+print(sum(23))
+print(sum(24))
+print(sum(25))
+print(sum(26))
+print(sum(27))
+print(sum(28))
+print(sum(29))
+print(sum(30))
+print(sum(31",
 4,"Find the number of permutations (a_1, a_2, a_3, a_4, a_5, a_6) of (1,2,3,4,5,6) that satisfy (a_1 + 1)/2 * (a_2 + 2)/2 * (a_3 + 3)/2 * (a_4 + 4)/2 * (a_5 + 5)/2 * (a_6 + 6)/2 > 6!.",719,"""""""
 write a program that answers the following question: Find the number of permutations (a_1, a_2, a_3, a_4, a_5, a_6) of (1,2,3,4,5,6) that satisfy (a_1 + 1)/2 * (a_2 + 2)/2 * (a_3 + 3)/2 * (a_4 + 4)/2 * (a_5 + 5)/2 * (a_6 + 6)/2 > 6!.
 """"""
