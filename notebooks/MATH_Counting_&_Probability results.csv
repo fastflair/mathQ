@@ -1,4 +1,4 @@
-Question,Original Question,Actual Solution,Codex Input,Codex Output,Zero-Shot Evaluation,Codex Explanation Input,Codex Explanation,GPT-3 Output,GPT-3 Evaluation,GPT-3 CoT Input,GPT-3 CoT Output,GPT-3 CoT Evaluation,Most Similar Questions,Few-Shot Input,Few-Shot Output,Few-Shot Evaluation
+Question,Original Question,Actual Solution,Codex Input,Codex Output,Zero-Shot Evaluation,Codex Explanation Input,Codex Explanation,GPT-3 Output,GPT-3 Evaluation,GPT-3 CoT Input,GPT-3 CoT Output,GPT-3 CoT Evaluation,Most Similar Questions,Few-Shot Input,Few-Shot Output,Few-Shot Evaluation,GPT-3 CoT Few-Shot Input,GPT-3 CoT Few-Shot Output,GPT-3 CoT Few-Show Evaluation
 1,"What is the value of 9^3 + 3(9^2) + 3(9) + 1?
 ",1000,"""""""
 write a program that answers the following question: What is the value of 9^3 + 3(9^2) + 3(9) + 1?
@@ -81,7 +81,22 @@ write a program that answers the following question: What is the value of 9^3 + 
 # The value of 9^3 + 3(9^2) + 3(9) + 1 is the same as the value of 9^3 + 3(9^2) + 3(9) + 1.
 # The value of 9^3 + 3(9^2) + 3(9) + 1 is the same as the value of 9^3 + 3(9^2) + 3(9) + 1.
 # The value of 9^3 + 3(9^2) + 3(9) + 1 is the same as the value of 9^3 + 3(9^2) + 3(9) + 1.
-# The value of 9^3 + 3(9^2) +",
+# The value of 9^3 + 3(9^2) +",,"Q: How many four-digit positive integers have at least one digit that is a 2 or a 3?
+A: 5416
+
+Q: What is the value of 9^3 + 3(9^2) + 3(9) + 1?
+
+A: Let's think step by step."," 
+
+9^3 = 729
+
+3(9^2) = 3(81) = 243
+
+3(9) = 3(9) = 27
+
+1 = 1
+
+Now we can add all of these values together to get the answer: 729 + 243 + 27 + 1 = 1000",
 2,"A standard six-sided fair die is rolled four times. The probability that the product of all four numbers rolled is a perfect square is m/n, where m and n are relatively prime positive integers. Find m+n.",187,"""""""
 write a program that answers the following question: A standard six-sided fair die is rolled four times. The probability that the product of all four numbers rolled is a perfect square is m/n, where m and n are relatively prime positive integers. Find m+n.
 """"""
@@ -193,7 +208,23 @@ write a program that answers the following question: A standard six-sided fair d
 
 # The probability that the product of all four numbers rolled is a perfect square is m/n, where m and n are relatively prime positive integers.
 
-# The probability that the product of all four numbers rolled is a perfect square is m/n, where m and n are relatively",
+# The probability that the product of all four numbers rolled is a perfect square is m/n, where m and n are relatively",,"Q: Find the sum of all integers k such that \binom{23}{4} + \binom{23}{5} = \binom{24}{k}.
+A: 24
+
+Q: A standard six-sided fair die is rolled four times. The probability that the product of all four numbers rolled is a perfect square is m/n, where m and n are relatively prime positive integers. Find m+n.
+A: Let's think step by step."," 
+
+There are 6^4 possible outcomes. 
+There are 4 ways to get a 1, 6 ways to get a 2, and so on. 
+The probability of rolling a 1 is 4/6^4. 
+The probability of rolling a 2 is 6/6^4. 
+
+Now, we need to figure out how many of the 6^4 outcomes will give us a perfect square. 
+
+There are 1 ways to get a 1, 4 ways to get a 4, 9 ways to get a 9, and so on. 
+The probability of rolling a perfect square is 1/6^4 + 4/6^4 + 9/6^4 + ...
+
+Therefore, m/n = 1/6^4 + 4/6^4 + 9/6^4 + ... and m+n = 6^4(1/6^4 + 4/6^4 + 9/6^4 + ...) = 6^4.",
 3,"The Rotokas of Papua New Guinea have twelve letters in their alphabet. The letters are: A, E, G, I, K, O, P, R, S, T, U, and V. Suppose license plates of five letters utilize only the letters in the Rotoka alphabet. How many license plates of five letters are possible that begin with either G or K, end with T, cannot contain S, and have no letters that repeat?",1008,"""""""
 write a program that answers the following question: The Rotokas of Papua New Guinea have twelve letters in their alphabet. The letters are: A, E, G, I, K, O, P, R, S, T, U, and V. Suppose license plates of five letters utilize only the letters in the Rotoka alphabet. How many license plates of five letters are possible that begin with either G or K, end with T, cannot contain S, and have no letters that repeat?
 """"""
@@ -291,7 +322,20 @@ write a program that answers the following question: The Rotokas of Papua New Gu
 # The number of ways to choose two letters out of ten letters is the same as the number of ways to choose three letters out of ten letters.
 
 # The number of ways to choose three letters out of ten letters is the same as the number of ways to choose two letters out of ten letters.
-# The number of ways to choose two letters out of ten letters is the same as the number of ways to choose three letters out of ten letters.",
+# The number of ways to choose two letters out of ten letters is the same as the number of ways to choose three letters out of ten letters.",,"Q: How many positive two-digit integers are there in which each of the two digits is prime?
+A: 16
+
+Q: The Rotokas of Papua New Guinea have twelve letters in their alphabet. The letters are: A, E, G, I, K, O, P, R, S, T, U, and V. Suppose license plates of five letters utilize only the letters in the Rotoka alphabet. How many license plates of five letters are possible that begin with either G or K, end with T, cannot contain S, and have no letters that repeat?
+A: Let's think step by step."," 
+
+There are 12 letters in the Rotokas alphabet. 
+There are 12*11*10*9*8 possible 5 letter license plates that do not have any letters that repeat. 
+There are 12*11*10*9 possible 5 letter license plates that do not have any letters that repeat and do not contain the letter S. 
+There are 12*11*10 possible 5 letter license plates that do not have any letters that repeat, do not contain the letter S, and end in the letter T. 
+There are 12*11 possible 5 letter license plates that do not have any letters that repeat, do not contain the letter S, end in the letter T, and begin with the letter G. 
+There are 12*11 possible 5 letter license plates that do not have any letters that repeat, do not contain the letter S, end in the letter T, and begin with the letter K. 
+
+Therefore, there are 12*11*10*9*8 - 12*11*10*9 - 12*11*10 - 12*11 - 12*11 = 9408 possible 5 letter license plates that begin with either G or K, end with T, cannot contain S, and have no letters that repeat.",
 4,How many positive two-digit integers are there in which each of the two digits is prime?,16,"""""""
 write a program that answers the following question: How many positive two-digit integers are there in which each of the two digits is prime?
 """"""
@@ -400,7 +444,16 @@ write a program that answers the following question: How many positive two-digit
 
 # The number of positive two-digit integers in which each of the two digits is prime is the same as the number of ways to choose two out of the five prime numbers less than 10.
 
-# The number of",
+# The number of",,"Q: How many four-digit positive integers have at least one digit that is a 2 or a 3?
+A: 5416
+
+Q: How many positive two-digit integers are there in which each of the two digits is prime?
+A: Let's think step by step."," 
+
+There are 9 prime numbers less than 10. 
+There are 4 prime numbers less than 20. 
+
+So there are 9*4 = 36 two-digit integers in which each of the two digits is prime.",
 5,Write a program. Compute 17 choose 9. You are told that 15 choose 6 = 5005 and 15 choose 8 = 6435.,24310,"""""""
 write a program that answers the following question: Write a program. Compute 17 choose 9. You are told that 15 choose 6 = 5005 and 15 choose 8 = 6435.
 """"""
@@ -516,7 +569,15 @@ write a program that answers the following question: Write a program. Compute 17
 # The number of ways to choose two out of seven colors is the same as the number of ways to choose five out of seven colors.
 # The number of ways to choose five out of seven colors is the same as the number of ways to choose two out of seven colors.
 
-# The number of ways to choose two out of seven colors is the",
+# The number of ways to choose two out of seven colors is the",,"Q: Find the sum of all integers k such that \binom{23}{4} + \binom{23}{5} = \binom{24}{k}.
+A: 24
+
+Q: Write a program. Compute 17 choose 9. You are told that 15 choose 6 = 5005 and 15 choose 8 = 6435.
+A: Let's think step by step."," 
+
+First, we can compute 15 choose 9 = 15*14*13/(9*8*7) = 455. 
+
+Then, we can compute 17 choose 9 = 17*16*15/(9*8*7) = 910.",
 6,How many four-digit positive integers have at least one digit that is a 2 or a 3?,5416,"""""""
 write a program that answers the following question: How many four-digit positive integers have at least one digit that is a 2 or a 3?
 """"""
@@ -614,7 +675,12 @@ write a program that answers the following question: How many four-digit positiv
 
 # Solution
 
-# There are 10 choices for the first digit, 9 choices for the second digit, 8 choices for the third digit, and 7 choices for the fourth",
+# There are 10 choices for the first digit, 9 choices for the second digit, 8 choices for the third digit, and 7 choices for the fourth",,"Q: How many positive two-digit integers are there in which each of the two digits is prime?
+A: 16
+
+Q: How many four-digit positive integers have at least one digit that is a 2 or a 3?
+A: Let's think step by step."," 
+There are 9 possibilities for the first digit (it can't be 0). For each of those possibilities, there are 8 possibilities for the second digit, and so on. So the answer is 9 * 8 * 7 * 6, or 3024.",
 7,In how many ways can George choose two out of seven colors to paint his room?,21,"""""""
 write a program that answers the following question: In how many ways can George choose two out of seven colors to paint his room?
 """"""
@@ -676,7 +742,17 @@ A: Let's think step by step.","
 
 George can choose any two colors out of the seven to paint his room. This can be done in C(7,2) ways.
 
-",,"[4, 6, 10, 15, 12, 13, 5, 9, 2, 1, 3, 14, 8, 11]",n/a,n/a,
+",,"[4, 6, 10, 15, 12, 13, 5, 9, 2, 1, 3, 14, 8, 11]",,,,"Q: How many positive two-digit integers are there in which each of the two digits is prime?
+A: 16
+
+Q: In how many ways can George choose two out of seven colors to paint his room?
+A: Let's think step by step."," 
+
+There are 7 colors to choose from. 
+For the first color, there are 7 options. 
+For the second color, there are 6 options, since we've already chosen one color. 
+
+Therefore, there are 7*6 = 42 ways for George to choose two colors to paint his room.",
 8,Compute \dbinom{8}{4}.,70,"""""""
 write a program that answers the following question: Compute \dbinom{8}{4}.
 """"""
@@ -719,7 +795,7 @@ We want to choose 4 objects from a set of 8.
 
 We can choose the first object in 8 ways. For each of these ways, we can choose the second object in 7 ways. For each of these ways, we can choose the third object in 6 ways. For each of these ways, we can choose the fourth object in 5 ways. 
 
-Therefore, there are $8 \cdot 7 \cdot 6 \cdot 5$ ways to choose 4 objects from a set of 8.",,"[14, 11, 9, 1, 12, 5, 6, 10, 2, 4, 15, 7, 13, 3]",n/a,n/a,
+Therefore, there are $8 \cdot 7 \cdot 6 \cdot 5$ ways to choose 4 objects from a set of 8.",,"[14, 11, 9, 1, 12, 5, 6, 10, 2, 4, 15, 7, 13, 3]",,,,,,
 9,Find the sum of all integers k such that \binom{23}{4} + \binom{23}{5} = \binom{24}{k}.,24,"""""""
 write a program that answers the following question: Find the sum of all integers k such that \binom{23}{4} + \binom{23}{5} = \binom{24}{k}.
 """"""
@@ -846,7 +922,55 @@ write a program that answers the following question: Find the sum of all integer
 # The number of ways to choose five out of twenty-three is the same as the number of ways to choose four out of twenty-three.
 
 # The number of ways to choose four out of twenty-three is the same as the number of ways to choose five out of twenty-three.
-# The number of ways to choose five out of twenty-three is the same as the number of ways to choose four out of twenty-three.",
+# The number of ways to choose five out of twenty-three is the same as the number of ways to choose four out of twenty-three.",,"Q: A standard six-sided fair die is rolled four times. The probability that the product of all four numbers rolled is a perfect square is m/n, where m and n are relatively prime positive integers. Find m+n.
+A: 187
+
+Q: Find the sum of all integers k such that \binom{23}{4} + \binom{23}{5} = \binom{24}{k}.
+A: Let's think step by step."," 
+
+\binom{23}{4} + \binom{23}{5} = \binom{23}{4} + \binom{23}{4} = \binom{24}{4}
+
+\binom{23}{4} + \binom{23}{5} = \binom{23}{5} + \binom{23}{5} = \binom{24}{5}
+
+\binom{23}{4} + \binom{23}{5} = \binom{23}{6} + \binom{23}{6} = \binom{24}{6}
+
+\binom{23}{4} + \binom{23}{5} = \binom{23}{7} + \binom{23}{7} = \binom{24}{7}
+
+\binom{23}{4} + \binom{23}{5} = \binom{23}{8} + \binom{23}{8} = \binom{24}{8}
+
+\binom{23}{4} + \binom{23}{5} = \binom{23}{9} + \binom{23}{9} = \binom{24}{9}
+
+\binom{23}{4} + \binom{23}{5} = \binom{23}{10} + \binom{23}{10} = \binom{24}{10}
+
+\binom{23}{4} + \binom{23}{5} = \binom{23}{11} + \binom{23}{11} = \binom{24}{11}
+
+\binom{23}{4} + \binom{23}{5} = \binom{23}{12} + \binom{23}{12} = \binom{24}{12}
+
+\binom{23}{4} + \binom{23}{5} = \binom{23}{13} + \binom{23}{13} = \binom{24}{13}
+
+\binom{23}{4} + \binom{23}{5} = \binom{23}{14} + \binom{23}{14} = \binom{24}{14}
+
+\binom{23}{4} + \binom{23}{5} = \binom{23}{15} + \binom{23}{15} = \binom{24}{15}
+
+\binom{23}{4} + \binom{23}{5} = \binom{23}{16} + \binom{23}{16} = \binom{24}{16}
+
+\binom{23}{4} + \binom{23}{5} = \binom{23}{17} + \binom{23}{17} = \binom{24}{17}
+
+\binom{23}{4} + \binom{23}{5} = \binom{23}{18} + \binom{23}{18} = \binom{24}{18}
+
+\binom{23}{4} + \binom{23}{5} = \binom{23}{19} + \binom{23}{19} = \binom{24}{19}
+
+\binom{23}{4} + \binom{23}{5} = \binom{23}{20} + \binom{23}{20} = \binom{24}{20}
+
+\binom{23}{4} + \binom{23}{5} = \binom{23}{21} + \binom{23}{21} = \binom{24}{21}
+
+\binom{23}{4} + \binom{23}{5} = \binom{23}{22} + \binom{23}{22} = \binom{24}{22}
+
+\binom{23}{4} + \binom{23}{5} = \binom{23}{23} + \binom{23}{23} = \binom{24}{23}
+
+\binom{23}{4} + \binom{23}{5} = \binom{23}{24} + \binom{23}{24} = \binom{24}{24}
+
+\binom{23}{4} + \binom{23}{5} = \binom{23}{25} + \binom{",
 10,How many odd numbers between 100 and 999 have distinct digits?,320,"""""""
 write a program that answers the following question: How many odd numbers between 100 and 999 have distinct digits?
 """"""
@@ -973,4 +1097,14 @@ write a program that answers the following question: How many odd numbers betwee
 # The number of even numbers between 100 and 999 with distinct digits is the same as the number of odd numbers between 100 and 999 with distinct digits.
 
 # The number of odd numbers between 100 and 999 with distinct digits is the same as the number of even numbers between 100 and 999 with distinct digits.
-# The number of even numbers between 100 and 999 with distinct digits is the same as the number of odd numbers between 100 and 999 with distinct digits.",
+# The number of even numbers between 100 and 999 with distinct digits is the same as the number of odd numbers between 100 and 999 with distinct digits.",,"Q: How many four-digit positive integers have at least one digit that is a 2 or a 3?
+A: 5416
+
+Q: How many odd numbers between 100 and 999 have distinct digits?
+A: Let's think step by step."," 
+
+There are 9 choices for the first digit, 8 for the second, and 7 for the third. This gives us 9 * 8 * 7 = 504 possibilities. 
+
+However, we have counted some numbers multiple times. For example, we counted both 132 and 231 as possibilities. So we must subtract the number of ways to choose 3 distinct digits from 9, 8, and 7. This is 9 * 8 * 7 - 9 * 8 = 432. 
+
+Therefore, there are 504 - 432 = 72 possibilities.",

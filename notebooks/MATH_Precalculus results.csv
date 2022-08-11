@@ -1,4 +1,4 @@
-Question,Original Question,Actual Solution,Codex Input,Codex Output,Zero-Shot Evaluation,Codex Explanation Input,Codex Explanation,GPT-3 Output,GPT-3 Evaluation,GPT-3 CoT Input,GPT-3 CoT Output,GPT-3 CoT Evaluation,Most Similar Questions
+Question,Original Question,Actual Solution,Codex Input,Codex Output,Zero-Shot Evaluation,Codex Explanation Input,Codex Explanation,GPT-3 Output,GPT-3 Evaluation,GPT-3 CoT Input,GPT-3 CoT Output,GPT-3 CoT Evaluation,Most Similar Questions,Few-Shot Input,Few-Shot Output,Few-Shot Evaluation,GPT-3 CoT Few-Shot Input,GPT-3 CoT Few-Shot Output,GPT-3 CoT Few-Show Evaluation
 1,"If ||a|| = 3 and ||b|| = 6, then find (a + b) * (a - b).",-27,"""""""
 write a program that answers the following question: If ||a|| = 3 and ||b|| = 6, then find (a + b) * (a - b).
 """"""
@@ -55,7 +55,77 @@ And for the third term, we have:
 
 Putting everything together, we have:
 
-(a + b) * (a - b) = a1^2 - b1^2 + a2^2 - b2^2 + a3^2 - b3^2",,"[6, 4, 7, 2, 12, 13, 10, 8, 15, 9, 11, 5, 3, 14]"
+(a + b) * (a - b) = a1^2 - b1^2 + a2^2 - b2^2 + a3^2 - b3^2",,"[6, 4, 7, 2, 12, 13, 10, 8, 15, 9, 11, 5, 3, 14]","""""""
+write a program that answers the following question: If the determinant of A is 2 and the determinant of B is 12, then find the determinant of A*B.
+""""""
+
+import numpy as np
+
+A = np.array([[1,2],[3,4]])
+B = np.array([[5,6],[7,8]])
+
+print(np.linalg.det(A))
+print(np.linalg.det(B))
+print(np.linalg.det(A*B))
+
+""""""
+write a program that answers the following question: If the determinant of A is 5, find the determinant of A^3.
+""""""
+
+import numpy as np
+
+A = np.array([[1,2,3],[4,5,6],[7,8,9]])
+
+print(np.linalg.det(A))
+
+print(np.linalg.det(np.linalg.matrix_power(A,3)))
+
+""""""
+write a program that answers the following question: If ||a|| = 3 and ||b|| = 6, then find (a + b) * (a - b).
+""""""
+","
+import numpy as np
+
+a = np.array([1,2,3])
+b = np.array([4,5,6])
+
+print(np.linalg.norm(a))
+print(np.linalg.norm(b))
+
+print((a+b)*(a-b))
+
+""""""
+write a program that answers the following question: If ||a|| = 3 and ||b|| = 6, then find ||a + b||.
+""""""
+
+import numpy as np
+
+a = np.array([1,2,3])
+b = np.array([4,5,6])
+
+print(np.linalg.norm(a))
+print(np.linalg.norm(b))
+
+print(np.linalg.norm(a+b))
+
+""""""
+write a program that answers the following question: If ||a|| = 3 and ||b|| = 6, then find ||a - b||.
+""""""
+
+import numpy as np
+
+a = np.array([1,2,3])
+b = np.array([4,5,6",,"Q: If the determinant of A is 2 and the determinant of B is 12, then find the determinant of A*B.
+A: 24
+
+Q: If ||a|| = 3 and ||b|| = 6, then find (a + b) * (a - b).
+A: Let's think step by step."," 
+
+First, we'll calculate (a + b). This is just the vector addition of a and b. So, (a + b) = <3,6>. 
+
+Next, we'll calculate (a - b). This is just the vector subtraction of a and b. So, (a - b) = <3,-6>. 
+
+Now, we can calculate (a + b) * (a - b). This is just the dot product of (a + b) and (a - b). So, (a + b) * (a - b) = <3,6> * <3,-6> = 9 + (-36) = -27.",
 2,"If tan(x) = 2, then find tan(x + pi/4).",-3,"""""""
 write a program that answers the following question: If tan(x) = 2, then find tan(x + pi/4).
 """"""
@@ -90,7 +160,90 @@ Now let's look at the angle x + pi/4.
 This angle is in the third quadrant, where the tangent function is negative. 
 The value of this angle must be between pi and 3pi/2. 
 
-Therefore, the value of tan(x + pi/4) must be negative.",,"[1, 4, 11, 6, 3, 10, 8, 15, 12, 9, 14, 7, 5, 13]"
+Therefore, the value of tan(x + pi/4) must be negative.",,"[1, 4, 11, 6, 3, 10, 8, 15, 12, 9, 14, 7, 5, 13]","""""""
+write a program that answers the following question: If the determinant of A is 5, find the determinant of A^3.
+""""""
+
+import numpy as np
+
+A = np.array([[1,2,3],[4,5,6],[7,8,9]])
+
+print(np.linalg.det(A))
+
+print(np.linalg.det(np.linalg.matrix_power(A,3)))
+
+""""""
+write a program that answers the following question: If the determinant of A is 2 and the determinant of B is 12, then find the determinant of A*B.
+""""""
+
+import numpy as np
+
+A = np.array([[1,2],[3,4]])
+B = np.array([[5,6],[7,8]])
+
+print(np.linalg.det(A))
+print(np.linalg.det(B))
+print(np.linalg.det(A*B))
+
+""""""
+write a program that answers the following question: If tan(x) = 2, then find tan(x + pi/4).
+""""""
+","
+import numpy as np
+
+x = np.arctan(2)
+
+print(np.tan(x + np.pi/4))
+
+""""""
+write a program that answers the following question: If sin(x) = 1/2, then find sin(x + pi/4).
+""""""
+
+import numpy as np
+
+x = np.arcsin(1/2)
+
+print(np.sin(x + np.pi/4))
+
+""""""
+write a program that answers the following question: If cos(x) = 1/2, then find cos(x + pi/4).
+""""""
+
+import numpy as np
+
+x = np.arccos(1/2)
+
+print(np.cos(x + np.pi/4))
+
+""""""
+write a program that answers the following question: If sin(x) = 1/2, then find cos(x).
+""""""
+
+import numpy as np
+
+x = np.arcsin(1/2)
+
+print(np.cos(x))
+
+""""""
+write a program that answers the following question: If cos(x",,"Q: If ||a|| = 3 and ||b|| = 6, then find (a + b) * (a - b).
+A: -27
+
+Q: If tan(x) = 2, then find tan(x + pi/4).
+A: Let's think step by step."," 
+
+tan(x) = 2
+x = arctan(2)
+
+Now we have to find tan(x + pi/4). 
+
+tan(x + pi/4) = tan(arctan(2) + pi/4)
+tan(x + pi/4) = tan(pi/4 + arctan(2))
+tan(x + pi/4) = tan(pi/4 + 2)
+tan(x + pi/4) = tan(2 + pi/4)
+tan(x + pi/4) = tan(2 + pi/4)
+tan(x + pi/4) = tan(6)
+tan(x + pi/4) = 3",
 3,Evaluate (2-w)*(2-w^2)*...*(2-w^10) where w=e^(2pi*i/11).,2047,"""""""
 write a program that answers the following question: Evaluate (2-w)*(2-w^2)*...*(2-w^10) where w=e^(2pi*i/11).
 """"""
@@ -136,7 +289,84 @@ Now, we need to evaluate this.
 Twelfth, we have (2-w)*(2-w^2)*(2-w^3)*(2-w^4)*(2-w^5)*(2-w^6)*(2-w^7)*(2-w^8)*(2-w^9)*(2-w^10).
 Thirteenth, we have (2-w)*(2-w^2)*(2-w^3)*(2-w^4)*(2-w^5)*(2-w^6)*(2-w^7)*(2-w^8)*(2-w^9)*(2-w^10).
 Fourteenth, we have (2-w)*(2-w^2)*(2-w^3)*(2-w^4)*(2-w^5)*(2-w^6)*(2-w^7)*(2-w^8)*(2-w^9)*(2-w^10).
-Fifteenth, we have (2-w)*(2-w^2)*(2-w^3)*(2-w^4)*(2-w^5)*(2-",,"[2, 6, 1, 14, 4, 11, 10, 9, 8, 12, 5, 7, 13, 15]"
+Fifteenth, we have (2-w)*(2-w^2)*(2-w^3)*(2-w^4)*(2-w^5)*(2-",,"[2, 6, 1, 14, 4, 11, 10, 9, 8, 12, 5, 7, 13, 15]","""""""
+write a program that answers the following question: If the determinant of A is 2 and the determinant of B is 12, then find the determinant of A*B.
+""""""
+
+import numpy as np
+
+A = np.array([[1,2],[3,4]])
+B = np.array([[5,6],[7,8]])
+
+print(np.linalg.det(A))
+print(np.linalg.det(B))
+print(np.linalg.det(A*B))
+
+""""""
+write a program that answers the following question: If the determinant of A is 5, find the determinant of A^3.
+""""""
+
+import numpy as np
+
+A = np.array([[1,2,3],[4,5,6],[7,8,9]])
+
+print(np.linalg.det(A))
+
+print(np.linalg.det(np.linalg.matrix_power(A,3)))
+
+""""""
+write a program that answers the following question: Evaluate (2-w)*(2-w^2)*...*(2-w^10) where w=e^(2pi*i/11).
+""""""
+","
+import numpy as np
+
+w = np.exp(2*np.pi*1j/11)
+
+print(np.prod([2-w**i for i in range(1,11)]))
+
+""""""
+write a program that answers the following question: Evaluate (2-w)*(2-w^2)*...*(2-w^10) where w=e^(2pi*i/11).
+""""""
+
+import numpy as np
+
+w = np.exp(2*np.pi*1j/11)
+
+print(np.prod([2-w**i for i in range(1,11)]))
+
+""""""
+write a program that answers the following question: Evaluate (2-w)*(2-w^2)*...*(2-w^10) where w=e^(2pi*i/11).
+""""""
+
+import numpy as np
+
+w = np.exp(2*np.pi*1j/11)
+
+print(np.prod([2-w**i for i in range(1,11)]))
+
+""""""
+",,"Q: If tan(x) = 2, then find tan(x + pi/4).
+A: -3
+
+Q: Evaluate (2-w)*(2-w^2)*...*(2-w^10) where w=e^(2pi*i/11).
+A: Let's think step by step."," 
+
+First, we can simplify this a bit: 
+(2-w)*(2-w^2)*...*(2-w^10) = 2^10 * (1-w)*(1-w^2)*...*(1-w^10)
+
+Next, we can use the fact that 
+(1-w)*(1-w^2)*...*(1-w^10) = 1 - w - w^2 - ... - w^10
+
+So our expression becomes: 
+2^10 * (1 - w - w^2 - ... - w^10)
+
+Now, we can use the fact that w=e^(2pi*i/11) to simplify this further: 
+2^10 * (1 - e^(2pi*i/11) - e^(4pi*i/11) - ... - e^(20pi*i/11))
+
+Finally, we can use Euler's formula to simplify this even more: 
+2^10 * (1 - cos(2pi/11) - cos(4pi/11) - ... - cos(20pi/11) - i*sin(2pi/11) - i*sin(4pi/11) - ... - i*sin(20pi/11))
+
+A: 2^10 * (1 - cos(2pi/11) - cos(4pi/11) - ... - cos(20pi/11) - i*sin(2pi/11) - i*sin(4pi/11) - ... - i*sin(20pi/11))",
 4,"If the determinant of A is 5, find the determinant of A^3.",125,"""""""
 write a program that answers the following question: If the determinant of A is 5, find the determinant of A^3.
 """"""
@@ -173,7 +403,15 @@ The determinant of A is 5.
 The determinant of A^2 is the determinant of the matrix that results from multiplying A by A. 
 The determinant of A^3 is the determinant of the matrix that results from multiplying A^2 by A. 
 
-The determinant of A is 5, so the determinant of A^2 is 5*5=25, and the determinant of A^3 is 25*5=125.",,"[6, 1, 2, 9, 10, 12, 7, 5, 8, 15, 11, 13, 3, 14]"
+The determinant of A is 5, so the determinant of A^2 is 5*5=25, and the determinant of A^3 is 25*5=125.",,"[6, 1, 2, 9, 10, 12, 7, 5, 8, 15, 11, 13, 3, 14]",,,,"Q: If the determinant of A is 2 and the determinant of B is 12, then find the determinant of A*B.
+A: 24
+
+Q: If the determinant of A is 5, find the determinant of A^3.
+A: Let's think step by step."," 
+
+The determinant of A is 5. 
+The determinant of A^2 is the determinant of the matrix that results from squaring A. 
+The determinant of A^3 is the determinant of the matrix that results from cubing A.",
 5,"Let S be a region in the plane with area 10.  When we apply the matrix [2, 1; 7, -3] to S, we obtain S'. Find the area of S'.",130,"""""""
 write a program that answers the following question: Let S be a region in the plane with area 10.  When we apply the matrix [2, 1; 7, -3] to S, we obtain S'. Find the area of S'.
 """"""
@@ -234,7 +472,71 @@ The image of (0, 10) is (2(0) + 1(10), 7(0) - 3(10)) = (-3, -23).
 The image of (10, 10) is (2(10) + 1(10), 7(10) - 3(10)) = (17, -13). 
 Therefore, the vertices of S' are (2, 7), (22, 67), (-3, -23), and (17, -13). 
 Now that we have the vertices of S', we can find its area. 
-The area of S' is |(2 * 67) - (22 * 7)| + |(17 * 7) - (-3 * 67)| = |134 - 154| + |119 + 201| = 268.",,"[6, 10, 9, 4, 13, 1, 7, 15, 8, 12, 14, 2, 11, 3]"
+The area of S' is |(2 * 67) - (22 * 7)| + |(17 * 7) - (-3 * 67)| = |134 - 154| + |119 + 201| = 268.",,"[6, 10, 9, 4, 13, 1, 7, 15, 8, 12, 14, 2, 11, 3]","""""""
+write a program that answers the following question: If the determinant of A is 2 and the determinant of B is 12, then find the determinant of A*B.
+""""""
+
+import numpy as np
+
+A = np.array([[1,2],[3,4]])
+B = np.array([[5,6],[7,8]])
+
+print(np.linalg.det(A))
+print(np.linalg.det(B))
+print(np.linalg.det(A*B))
+
+""""""
+write a program that answers the following question: If the determinant of A is 5, find the determinant of A^3.
+""""""
+
+import numpy as np
+
+A = np.array([[1,2,3],[4,5,6],[7,8,9]])
+
+print(np.linalg.det(A))
+
+print(np.linalg.det(np.linalg.matrix_power(A,3)))
+
+""""""
+write a program that answers the following question: Let S be a region in the plane with area 10.  When we apply the matrix [2, 1; 7, -3] to S, we obtain S'. Find the area of S'.
+""""""
+","
+import numpy as np
+
+A = np.array([[2,1],[7,-3]])
+
+print(np.linalg.det(A))
+
+""""""
+write a program that answers the following question: Let S be a region in the plane with area 10.  When we apply the matrix [2, 1; 7, -3] to S, we obtain S'. Find the area of S'.
+""""""
+
+import numpy as np
+
+A = np.array([[2,1],[7,-3]])
+
+print(np.linalg.det(A))
+
+""""""
+write a program that answers the following question: Let S be a region in the plane with area 10.  When we apply the matrix [2, 1; 7, -3] to S, we obtain S'. Find the area of S'.
+""""""
+
+import numpy as np
+
+A = np.array([[2,1],[7,-3]])
+
+print(np.linalg.det(A))
+
+""""""
+write a program that answers the following question: Let S be a region in the plane with area 10.  When",,"Q: If the determinant of A is 2 and the determinant of B is 12, then find the determinant of A*B.
+A: 24
+
+Q: Let S be a region in the plane with area 10.  When we apply the matrix [2, 1; 7, -3] to S, we obtain S'. Find the area of S'.
+A: Let's think step by step."," 
+
+First, we need to find the vertices of S'. We can do this by finding the image of the vertices of S under the transformation given by the matrix. So, the vertices of S are (0,0), (10,0), (0,10), and (10,10). The image of (0,0) is (0*2+1*0,0*7+(-3)*0)=(1,0), the image of (10,0) is (2*10+1*0,7*10+(-3)*0)=(21,70), the image of (0,10) is (2*0+1*10,7*0+(-3)*10)=(1,-30), and the image of (10,10) is (2*10+1*10,7*10+(-3)*10)=(21,40). So, the vertices of S' are (1,0), (21,70), (1,-30), and (21,40).
+
+Now that we have the vertices of S', we can find its area. To do this, we can use the formula for the area of a parallelogram, which is A=bh. In this case, b is the length of the base, and h is the height. The length of the base is the distance between the points (1,0) and (21,70), which is 20. The height is the distance between the points (1,0) and (1,-30), which is 30. So, the area of S' is 20*30=600.",
 6,"If the determinant of A is 2 and the determinant of B is 12, then find the determinant of A*B.",24,"""""""
 write a program that answers the following question: If the determinant of A is 2 and the determinant of B is 12, then find the determinant of A*B.
 """"""
@@ -273,7 +575,15 @@ The determinant of A is 2.
 The determinant of B is 12. 
 The determinant of A*B is (2)(12) = 24. 
 
-Therefore, the determinant of A*B is 24.",,"[4, 1, 9, 7, 5, 13, 12, 2, 15, 10, 8, 3, 11, 14]"
+Therefore, the determinant of A*B is 24.",,"[4, 1, 9, 7, 5, 13, 12, 2, 15, 10, 8, 3, 11, 14]",,,,"Q: If the determinant of A is 5, find the determinant of A^3.
+A: 125
+
+Q: If the determinant of A is 2 and the determinant of B is 12, then find the determinant of A*B.
+A: Let's think step by step."," 
+
+The determinant of A is 2 and the determinant of B is 12. 
+
+The determinant of A*B is the product of the determinants of A and B, so the determinant of A*B is 2*12=24.",
 7,"If the six solutions of x^6=-64 are written in the form a+bi, where a and b are real, find the product of those solutions with a>0.",4,"""""""
 write a program that answers the following question: If the six solutions of x^6=-64 are written in the form a+bi, where a and b are real, find the product of those solutions with a>0.
 """"""
@@ -319,7 +629,70 @@ The six solutions of x^6=-64 are x=2i, x=-2i, x=4, x=-4, x=2, x=-2.
 
 The solutions with a>0 are x=4, x=2. 
 
-The product of those solutions is 8.",,"[1, 6, 13, 4, 9, 15, 5, 12, 14, 2, 8, 10, 3, 11]"
+The product of those solutions is 8.",,"[1, 6, 13, 4, 9, 15, 5, 12, 14, 2, 8, 10, 3, 11]","""""""
+write a program that answers the following question: If the determinant of A is 2 and the determinant of B is 12, then find the determinant of A*B.
+""""""
+
+import numpy as np
+
+A = np.array([[1,2],[3,4]])
+B = np.array([[5,6],[7,8]])
+
+print(np.linalg.det(A))
+print(np.linalg.det(B))
+print(np.linalg.det(A*B))
+
+""""""
+write a program that answers the following question: If the determinant of A is 5, find the determinant of A^3.
+""""""
+
+import numpy as np
+
+A = np.array([[1,2,3],[4,5,6],[7,8,9]])
+
+print(np.linalg.det(A))
+
+print(np.linalg.det(np.linalg.matrix_power(A,3)))
+
+""""""
+write a program that answers the following question: If the six solutions of x^6=-64 are written in the form a+bi, where a and b are real, find the product of those solutions with a>0.
+""""""
+","
+import numpy as np
+
+A = np.array([[1,2,3],[4,5,6],[7,8,9]])
+
+print(np.linalg.det(A))
+
+print(np.linalg.det(np.linalg.matrix_power(A,3)))
+
+""""""
+write a program that answers the following question: If the six solutions of x^6=-64 are written in the form a+bi, where a and b are real, find the product of those solutions with a>0.
+""""""
+
+import numpy as np
+
+A = np.array([[1,2,3],[4,5,6],[7,8,9]])
+
+print(np.linalg.det(A))
+
+print(np.linalg.det(np.linalg.matrix_power(A,3)))
+
+""""""
+write a program that answers the following question: If the six solutions of x^6=-64 are written in the form a+bi, where a and b are real, find the product of those solutions with a>0.
+""""""",,"Q: If ||a|| = 3 and ||b|| = 6, then find (a + b) * (a - b).
+A: -27
+
+Q: If the six solutions of x^6=-64 are written in the form a+bi, where a and b are real, find the product of those solutions with a>0.
+A: Let's think step by step."," 
+
+The six solutions of x^6=-64 are x=2i, x=-2i, x=4, x=-4, x=2, x=-2.
+
+We need to find the product of those solutions with a>0. 
+
+The solutions with a>0 are x=2i, x=4, x=2. 
+
+The product of those solutions is x=2i * x=4 * x=2 = 32i.",
 8,Simplify (tan^3(75) + cotan^3(75))/(tan(75) + cotan(75)). All angles are in degrees.,13,"""""""
 write a program that answers the following question: Simplify (tan^3(75) + cotan^3(75))/(tan(75) + cotan(75)). All angles are in degrees.
 """"""
@@ -400,7 +773,57 @@ $$\tan(x) + \cotan(x) = \frac{\sin(2x)}{\cos(2x)}$$
 
 Now, we can put everything together to get:
 
-$$\frac{\tan^3(75) + \cotan^3(75)}{\tan(75) + \cotan(75)} = \frac{\sin^2(2\cdot 75)}{\cos(2\cdot 75)} = \frac{\sin^2(150)}{\cos(150)}$$",,"[11, 9, 14, 1, 4, 6, 10, 2, 5, 15, 12, 13, 7, 3]"
+$$\frac{\tan^3(75) + \cotan^3(75)}{\tan(75) + \cotan(75)} = \frac{\sin^2(2\cdot 75)}{\cos(2\cdot 75)} = \frac{\sin^2(150)}{\cos(150)}$$",,"[11, 9, 14, 1, 4, 6, 10, 2, 5, 15, 12, 13, 7, 3]","""""""
+write a program that answers the following question: If the determinant of A is 5, find the determinant of A^3.
+""""""
+
+import numpy as np
+
+A = np.array([[1,2,3],[4,5,6],[7,8,9]])
+
+print(np.linalg.det(A))
+
+print(np.linalg.det(np.linalg.matrix_power(A,3)))
+
+""""""
+write a program that answers the following question: If the determinant of A is 2 and the determinant of B is 12, then find the determinant of A*B.
+""""""
+
+import numpy as np
+
+A = np.array([[1,2],[3,4]])
+B = np.array([[5,6],[7,8]])
+
+print(np.linalg.det(A))
+print(np.linalg.det(B))
+print(np.linalg.det(A*B))
+
+""""""
+write a program that answers the following question: Simplify (tan^3(75) + cotan^3(75))/(tan(75) + cotan(75)). All angles are in degrees.
+""""""
+","
+import numpy as np
+
+print((np.tan(75)**3 + 1/np.tan(75)**3)/(np.tan(75) + 1/np.tan(75)))
+
+""""""
+write a program that answers the following question: Simplify (tan^3(75) + cotan^3(75))/(tan(75) + cotan(75)). All angles are in degrees.
+""""""
+
+import numpy as np
+
+print((np.tan(75)**3 + 1/np.tan(75)**3)/(np.tan(75) + 1/np.tan(75)))
+
+""""""
+write a program that answers the following question: Simplify (tan^3(75) + cotan^3(75))/(tan(75) + cotan(75)). All angles are in degrees.
+""""""
+
+import numpy as np
+
+print((np.tan(75)**3 + 1/np.tan(75)**3)/(np.tan(75) + 1/np.tan(75)))
+
+""""""
+write a program that answers the following question:",,,,
 9,"Compute the determinant of the matrix [cos 1, cos 2, cos 3; cos 4, cos 5, cos 6; cos 7, cos 8; cos 9]. All the angles are in radians.",0,"""""""
 write a program that answers the following question: Compute the determinant of the matrix [cos 1, cos 2, cos 3; cos 4, cos 5, cos 6; cos 7, cos 8; cos 9]. All the angles are in radians.
 """"""
@@ -461,7 +884,53 @@ $= \cos(1)\cos(5)(\sin(1) - \sin(2)) - \cos(1)\cos(6)(\sin(2) - \sin(3)) - \cos(
 
 $= \cos(1)\cos(5)(\sin(1) - \sin(2)) - \cos(1)\cos(6)(\sin(2) - \sin(3)) - \cos(2)\cos(4)(\sin(3) - \sin(1)) + \cos(2)\cos(6)(\sin(1) - \sin(2)) + \cos(3)\cos(4)(\sin(2) - \sin(3)) - \cos(3)\cos(5)(\sin(3) - \sin(1))$
 
-$= \cos(1)\cos(5)(\sin(",,"[14, 8, 6, 4, 11, 5, 7, 13, 1, 10, 15, 12, 2, 3]"
+$= \cos(1)\cos(5)(\sin(",,"[14, 8, 6, 4, 11, 5, 7, 13, 1, 10, 15, 12, 2, 3]","""""""
+write a program that answers the following question: If the determinant of A is 2 and the determinant of B is 12, then find the determinant of A*B.
+""""""
+
+import numpy as np
+
+A = np.array([[1,2],[3,4]])
+B = np.array([[5,6],[7,8]])
+
+print(np.linalg.det(A))
+print(np.linalg.det(B))
+print(np.linalg.det(A*B))
+
+""""""
+write a program that answers the following question: If the determinant of A is 5, find the determinant of A^3.
+""""""
+
+import numpy as np
+
+A = np.array([[1,2,3],[4,5,6],[7,8,9]])
+
+print(np.linalg.det(A))
+
+print(np.linalg.det(np.linalg.matrix_power(A,3)))
+
+""""""
+write a program that answers the following question: Compute the determinant of the matrix [cos 1, cos 2, cos 3; cos 4, cos 5, cos 6; cos 7, cos 8; cos 9]. All the angles are in radians.
+""""""
+","
+import numpy as np
+
+A = np.array([[np.cos(1),np.cos(2),np.cos(3)],[np.cos(4),np.cos(5),np.cos(6)],[np.cos(7),np.cos(8),np.cos(9)]])
+
+print(np.linalg.det(A))
+
+""""""
+write a program that answers the following question: Compute the determinant of the matrix [sin 1, sin 2, sin 3; sin 4, sin 5, sin 6; sin 7, sin 8; sin 9]. All the angles are in radians.
+""""""
+
+import numpy as np
+
+A = np.array([[np.sin(1),np.sin(2),np.sin(3)],[np.sin(4),np.sin(5),np.sin(6)],[np.sin(7),np.sin(8),np.sin(9)]])
+
+print(np.linalg.det(A))
+
+""""""
+write a program that answers the following question: Compute the determinant of the matrix",,,,
 10,"Find the area of the triangle with vertices (-1,4), (7,0), and (11,5).",28,"""""""
 write a program that answers the following question: Find the area of the triangle with vertices (-1,4), (7,0), and (11,5).
 """"""
@@ -514,4 +983,77 @@ The length of side AC is a little trickier, since it's not one of the sides of t
 
 Now that we have the lengths of all three sides, we can use Heron's Formula, which is A=sqrt(s(s-a)(s-b)(s-c)), where a, b, and c are the lengths of the sides of the triangle, and s is half the perimeter of the triangle. In this case, s=(10+6+18)/2, or s=34/2, or s=17. 
 
-Therefore, A=sqrt(17(17-10)(17-6)(17-18)), which is sqrt(17*7*11*-1), or sqrt(17*7*11*-1), or sqrt(-1197), or about 34.4.",,"[5, 4, 12, 1, 6, 11, 9, 2, 8, 15, 3, 7, 13, 14]"
+Therefore, A=sqrt(17(17-10)(17-6)(17-18)), which is sqrt(17*7*11*-1), or sqrt(17*7*11*-1), or sqrt(-1197), or about 34.4.",,"[5, 4, 12, 1, 6, 11, 9, 2, 8, 15, 3, 7, 13, 14]","""""""
+write a program that answers the following question: If the determinant of A is 5, find the determinant of A^3.
+""""""
+
+import numpy as np
+
+A = np.array([[1,2,3],[4,5,6],[7,8,9]])
+
+print(np.linalg.det(A))
+
+print(np.linalg.det(np.linalg.matrix_power(A,3)))
+
+""""""
+write a program that answers the following question: If the determinant of A is 2 and the determinant of B is 12, then find the determinant of A*B.
+""""""
+
+import numpy as np
+
+A = np.array([[1,2],[3,4]])
+B = np.array([[5,6],[7,8]])
+
+print(np.linalg.det(A))
+print(np.linalg.det(B))
+print(np.linalg.det(A*B))
+
+""""""
+write a program that answers the following question: Find the area of the triangle with vertices (-1,4), (7,0), and (11,5).
+""""""
+","
+import numpy as np
+
+A = np.array([[-1,4],[7,0],[11,5]])
+
+print(np.linalg.det(A))
+
+""""""
+write a program that answers the following question: Find the area of the triangle with vertices (1,1), (2,2), and (3,3).
+""""""
+
+import numpy as np
+
+A = np.array([[1,1],[2,2],[3,3]])
+
+print(np.linalg.det(A))
+
+""""""
+write a program that answers the following question: Find the area of the triangle with vertices (1,1), (2,2), and (3,3).
+""""""
+
+import numpy as np
+
+A = np.array([[1,1],[2,2],[3,3]])
+
+print(np.linalg.det(A))
+
+""""""
+write a program that answers the following question: Find the area of the triangle with vertices (1,1), (2,2), and (3,3).
+""""""
+
+import numpy as",,"Q: Let S be a region in the plane with area 10.  When we apply the matrix [2, 1; 7, -3] to S, we obtain S'. Find the area of S'.
+A: 130
+
+Q: Find the area of the triangle with vertices (-1,4), (7,0), and (11,5).
+A: Let's think step by step."," 
+
+First, we need to find the equation of the line that contains the segment connecting (-1,4) and (7,0). We can do this by finding the slope and using the point-slope form of a line. The slope is -4/6, so the equation of the line is y = -4/6x + b. We can plug in either point to solve for b, and we get b = 22/3. So, the equation of the line is y = -4/6x + 22/3.
+
+Now, we need to find the equation of the line that contains the segment connecting (7,0) and (11,5). The slope is 5/4, so the equation of the line is y = 5/4x + b. We can plug in either point to solve for b, and we get b = -7/4. So, the equation of the line is y = 5/4x - 7/4.
+
+We need to find the point of intersection of these two lines. We can do this by solving the system of equations {y = -4/6x + 22/3, y = 5/4x - 7/4}. We get that the point of intersection is (77/12, 143/24).
+
+Now, we can use the distance formula to find the length of each side of the triangle. The length of the side connecting (-1,4) and (7,0) is √((7-(-1))^2 + (0-4)^2) = √(64 + 16) = √80. The length of the side connecting (7,0) and (11,5) is √((11-7)^2 + (5-0)^2) = √(16 + 25) = √41. The length of the side connecting (11,5) and (-1,4) is √((-1-11)^2 + (4-5)^2) = √(144 + 1) = √145.
+
+Now, we can use Heron's formula to find the area of the triangle. The area is √(s(s-a)(s-b)(s-c)), where a, b, and c are the lengths of the sides of the triangle and s is the semiperimeter, which is (a+b+c)/2. So, the area is √((80+41+145)/2 * (80+41+145)/2-80 * (80+41+145)/2-41 * (80+41+145)/2-145)). This simplifies to √(3265/24). So, the area of the triangle is 3265/24.",

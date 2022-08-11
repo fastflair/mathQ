@@ -1,4 +1,4 @@
-Question,Original Question,Actual Solution,Codex Input,Codex Output,Zero-Shot Evaluation,Codex Explanation Input,Codex Explanation,GPT-3 Output,GPT-3 Evaluation,GPT-3 CoT Input,GPT-3 CoT Output,GPT-3 CoT Evaluation,Most Similar Questions
+Question,Original Question,Actual Solution,Codex Input,Codex Output,Zero-Shot Evaluation,Codex Explanation Input,Codex Explanation,GPT-3 Output,GPT-3 Evaluation,GPT-3 CoT Input,GPT-3 CoT Output,GPT-3 CoT Evaluation,Most Similar Questions,Few-Shot Input,Few-Shot Output,Few-Shot Evaluation,GPT-3 CoT Few-Shot Input,GPT-3 CoT Few-Shot Output,GPT-3 CoT Few-Show Evaluation
 1,"At Frank's Fruit Market, 3 bananas cost as much as 2 apples, and 6 apples cost as much as 4 oranges. How many oranges cost as much as 18 bananas?",8,"""""""
 write a program that answers the following question: At Frank's Fruit Market, 3 bananas cost as much as 2 apples, and 6 apples cost as much as 4 oranges. How many oranges cost as much as 18 bananas?
 """"""
@@ -108,7 +108,7 @@ Here's what the above code is doing:
 A: Let's think step by step."," 
 3 bananas cost as much as 2 apples. 
 6 apples cost as much as 4 oranges. 
-Therefore, 18 bananas cost as much as 12 oranges.",,"[14, 11, 5, 2, 15, 13, 10, 6, 7, 4, 3, 12, 9, 8]"
+Therefore, 18 bananas cost as much as 12 oranges.",,"[14, 11, 5, 2, 15, 13, 10, 6, 7, 4, 3, 12, 9, 8]",,,,,,
 2,How many different primes are in the prime factorization of 87*89*91*93?,6,"""""""
 write a program that answers the following question: How many different primes are in the prime factorization of 87*89*91*93?
 """"""
@@ -163,7 +163,144 @@ Here's what the above code is doing:
 There are six different primes in the prime factorization of 87*89*91*93.",,"Q: How many different primes are in the prime factorization of 87*89*91*93?
 A: Let's think step by step."," 
 87*89*91*93 = 7*11*13*17*19*23*29*31. 
-There are 7 different primes in the prime factorization of 87*89*91*93.",,"[5, 10, 12, 7, 14, 4, 3, 1, 11, 13, 6, 15, 8, 9]"
+There are 7 different primes in the prime factorization of 87*89*91*93.",,"[5, 10, 12, 7, 14, 4, 3, 1, 11, 13, 6, 15, 8, 9]","""""""
+write a program that answers the following question: What is the value of sqrt(36*sqrt(16))?
+""""""
+
+import math
+
+print(math.sqrt(36*math.sqrt(16)))
+
+""""""
+write a program that answers the following question: Find the smallest positive a such that a is a multiple of 4 and a is a multiple of 14.
+""""""
+
+def smallest_multiple(x,y):
+    """"""
+    Find the smallest positive a such that a is a multiple of x and a is a multiple of y.
+    """"""
+    a = 1
+    while True:
+        if a % x == 0 and a % y == 0:
+            return a
+        a += 1
+
+print(smallest_multiple(4,14))
+
+""""""
+write a program that answers the following question: At Frank's Fruit Market, 3 bananas cost as much as 2 apples, and 6 apples cost as much as 4 oranges. How many oranges cost as much as 18 bananas?
+""""""
+
+# bananas = 3
+# apples = 2
+# oranges = 4
+
+# bananas = 18
+# apples = 12
+# oranges = 8
+
+# oranges = 18 * 4 / 3
+# print(oranges)
+
+""""""
+write a program that answers the following question: At Frank's Fruit Market, 3 bananas cost as much as 2 apples, and 6 apples cost as much as 4 oranges. How many oranges cost as much as 18 bananas?
+""""""
+
+# bananas = 3
+# apples = 2
+# oranges = 4
+
+# bananas = 18
+# apples = 12
+# oranges = 8
+
+# oranges = 18 * 4 / 3
+# print(oranges)
+
+""""""
+write a program that answers the following question: At Frank's Fruit Market, 3 bananas cost as much as 2 apples, and 6 apples cost as much as 4 oranges. How many oranges cost as much as 18 bananas?
+""""""
+
+# bananas = 3
+# apples = 2
+# oranges = 4
+
+# bananas = 18
+# apples = 12
+# oranges = 8
+
+# oranges = 18 * 4 / 3
+# print(oranges)
+
+""""""
+write a program that answers
+
+""""""
+write a program that answers the following question: The 5 a.m. temperatures for seven consecutive days were -7 degrees, -4 degrees, -4 degrees, -5 degrees, 1 degree, 3 degrees and 2 degrees Celsius. What is the mean 5 a.m. temperature for the week in degrees Celsius?
+""""""
+
+temps = [-7, -4, -4, -5, 1, 3, 2]
+
+def mean(temps):
+    total = 0
+    for temp in temps:
+        total += temp
+    return total / len(temps)
+
+print(mean(temps))
+
+""""""
+write a program that answers the following question: Calculate 8 divided by 1/8.
+""""""
+
+print(8 / (1 / 8))
+
+""""""
+write a program that answers the following question: How many different primes are in the prime factorization of 87*89*91*93?
+""""""
+","
+def prime_factorization(n):
+    """"""
+    Return the prime factorization of n.
+    """"""
+    factors = []
+    d = 2
+    while n > 1:
+        while n % d == 0:
+            factors.append(d)
+            n /= d
+        d += 1
+    return factors
+
+print(len(set(prime_factorization(87*89*91*93))))
+
+""""""
+write a program that answers the following question: How many different primes are in the prime factorization of 87*89*91*93?
+""""""
+
+def prime_factorization(n):
+    """"""
+    Return the prime factorization of n.
+    """"""
+    factors = []
+    d = 2
+    while n > 1:
+        while n % d == 0:
+            factors.append(d)
+            n /= d
+        d += 1
+    return factors
+
+print(len(set(prime_factorization(87*89*91*93))))
+
+""""""
+write a program that answers the following question: How many different primes are in the prime factorization of 87*89*",,"Q: How many four-digit positive integers are there with thousands digit 2?
+A: 1000
+
+Q: How many different primes are in the prime factorization of 87*89*91*93?
+A: Let's think step by step."," 
+87*89*91*93 = 7*11*13*17*19*23*29*31. 
+The number of different primes in the prime factorization of this number is 8.",
 3,"What is the greatest common factor of 84, 112 and 210?",14,"""""""
 write a program that answers the following question: What is the greatest common factor of 84, 112 and 210?
 """"""
@@ -202,7 +339,147 @@ A: Let's think step by step.","
 
 The greatest common factor of 84 and 112 is 28. 
 
-The greatest common factor of 28 and 210 is 14.",,"[10, 2, 14, 12, 7, 5, 4, 13, 9, 6, 1, 8, 11, 15]"
+The greatest common factor of 28 and 210 is 14.",,"[10, 2, 14, 12, 7, 5, 4, 13, 9, 6, 1, 8, 11, 15]","""""""
+write a program that answers the following question: What is the value of sqrt(36*sqrt(16))?
+""""""
+
+import math
+
+print(math.sqrt(36*math.sqrt(16)))
+
+""""""
+write a program that answers the following question: Find the smallest positive a such that a is a multiple of 4 and a is a multiple of 14.
+""""""
+
+def smallest_multiple(x,y):
+    """"""
+    Find the smallest positive a such that a is a multiple of x and a is a multiple of y.
+    """"""
+    a = 1
+    while True:
+        if a % x == 0 and a % y == 0:
+            return a
+        a += 1
+
+print(smallest_multiple(4,14))
+
+""""""
+write a program that answers the following question: What is 5/6 of 30?
+""""""
+
+print(5/6*30)
+
+""""""
+write a program that answers the following question: The 5 a.m. temperatures for seven consecutive days were -7 degrees, -4 degrees, -4 degrees, -5 degrees, 1 degree, 3 degrees and 2 degrees Celsius. What is the mean 5 a.m. temperature for the week in degrees Celsius?
+""""""
+
+temps = [-7, -4, -4, -5, 1, 3, 2]
+
+def mean(temps):
+    total = 0
+    for temp in temps:
+        total += temp
+    return total / len(temps)
+
+print(mean(temps))
+
+""""""
+write a program that answers the following question: At Frank's Fruit Market, 3 bananas cost as much as 2 apples, and 6 apples cost as much as 4 oranges. How many oranges cost as much as 18 bananas?
+""""""
+
+# bananas = 3
+# apples = 2
+# oranges = 4
+
+# bananas = 18
+# apples = 12
+# oranges = 8
+
+# oranges = 18 * 4 / 3
+# print(oranges)
+
+""""""
+write a program that answers the following question: At Frank's Fruit Market, 3 bananas cost as much as 2 apples, and 6 apples cost as much as 4 oranges. How many oranges cost as much as 18 bananas?
+""""""
+
+# bananas = 3
+# apples = 2
+# oranges = 4
+
+# bananas = 18
+# apples = 12
+# oranges = 8
+
+# oranges = 18 * 4 / 3
+# print(oranges)
+
+""""""
+write a program that answers the following question: At Frank's Fruit Market, 3 bananas cost as much as 2 apples, and 6 apples cost as much as 4 oranges. How many oranges cost as much as 18 bananas?
+""""""
+
+# bananas = 3
+# apples = 2
+# oranges = 4
+
+# bananas = 18
+# apples = 12
+# oranges = 8
+
+# oranges = 18 * 4 / 3
+# print(oranges)
+
+""""""
+write a program that answers
+
+""""""
+write a program that answers the following question: What is the greatest common factor of 84, 112 and 210?
+""""""
+","
+def gcf(x,y):
+    """"""
+    Find the greatest common factor of x and y.
+    """"""
+    if x > y:
+        smaller = y
+    else:
+        smaller = x
+    for i in range(1, smaller+1):
+        if((x % i == 0) and (y % i == 0)):
+            gcf = i
+    return gcf
+
+print(gcf(84,112))
+print(gcf(84,210))
+print(gcf(112,210))
+
+""""""
+write a program that answers the following question: What is the least common multiple of 84, 112 and 210?
+""""""
+
+def lcm(x,y):
+    """"""
+    Find the least common multiple of x and y.
+    """"""
+    if x > y:
+        greater = x
+    else:
+        greater = y
+    while(True):
+        if((greater % x == 0) and (greater % y == 0)):
+            lcm = greater
+            break
+        greater += 1
+    return lcm
+
+print(lcm(84,112",,"Q: What is the sum of the prime numbers between 10 and 20?
+A: 60
+
+Q: What is the greatest common factor of 84, 112 and 210?
+A: Let's think step by step."," 
+
+The greatest common factor of 84 and 112 is 28. 
+The greatest common factor of 28 and 210 is 14. 
+Therefore, the greatest common factor of 84, 112 and 210 is 14.",
 4,Find the smallest positive a such that a is a multiple of 4 and a is a multiple of 14.,28,"""""""
 write a program that answers the following question: Find the smallest positive a such that a is a multiple of 4 and a is a multiple of 14.
 """"""
@@ -249,7 +526,16 @@ A: Let's think step by step.","
 The smallest positive integer that is a multiple of 4 is 4. 
 The smallest positive integer that is a multiple of 14 is 14. 
 
-Therefore, the smallest positive integer that is a multiple of both 4 and 14 is 4.",,"[5, 10, 2, 7, 14, 12, 1, 3, 8, 6, 15, 11, 13, 9]"
+Therefore, the smallest positive integer that is a multiple of both 4 and 14 is 4.",,"[5, 10, 2, 7, 14, 12, 1, 3, 8, 6, 15, 11, 13, 9]",,,,"Q: How many four-digit positive integers are there with thousands digit 2?
+A: 1000
+
+Q: Find the smallest positive a such that a is a multiple of 4 and a is a multiple of 14.
+A: Let's think step by step."," 
+
+The smallest positive integer that is a multiple of 4 is 4. 
+The smallest positive integer that is a multiple of 14 is 14. 
+
+Therefore, the smallest positive integer that is a multiple of both 4 and 14 is 14.",
 5,How many four-digit positive integers are there with thousands digit 2?,1000,"""""""
 write a program that answers the following question: How many four-digit positive integers are there with thousands digit 2?
 """"""
@@ -307,7 +593,148 @@ There are 10 possibilities for the hundreds digit.
 There are 10 possibilities for the tens digit. 
 There are 10 possibilities for the ones digit. 
 We can use the fundamental counting principle. 
-9*10*10*10=9000 possibilities.",,"[10, 2, 4, 7, 12, 14, 1, 3, 11, 13, 6, 15, 9, 8]"
+9*10*10*10=9000 possibilities.",,"[10, 2, 4, 7, 12, 14, 1, 3, 11, 13, 6, 15, 9, 8]","""""""
+write a program that answers the following question: Find the smallest positive a such that a is a multiple of 4 and a is a multiple of 14.
+""""""
+
+def smallest_multiple(x,y):
+    """"""
+    Find the smallest positive a such that a is a multiple of x and a is a multiple of y.
+    """"""
+    a = 1
+    while True:
+        if a % x == 0 and a % y == 0:
+            return a
+        a += 1
+
+print(smallest_multiple(4,14))
+
+""""""
+write a program that answers the following question: What is the value of sqrt(36*sqrt(16))?
+""""""
+
+import math
+
+print(math.sqrt(36*math.sqrt(16)))
+
+""""""
+write a program that answers the following question: At Frank's Fruit Market, 3 bananas cost as much as 2 apples, and 6 apples cost as much as 4 oranges. How many oranges cost as much as 18 bananas?
+""""""
+
+# bananas = 3
+# apples = 2
+# oranges = 4
+
+# bananas = 18
+# apples = 12
+# oranges = 8
+
+# oranges = 18 * 4 / 3
+# print(oranges)
+
+""""""
+write a program that answers the following question: At Frank's Fruit Market, 3 bananas cost as much as 2 apples, and 6 apples cost as much as 4 oranges. How many oranges cost as much as 18 bananas?
+""""""
+
+# bananas = 3
+# apples = 2
+# oranges = 4
+
+# bananas = 18
+# apples = 12
+# oranges = 8
+
+# oranges = 18 * 4 / 3
+# print(oranges)
+
+""""""
+write a program that answers the following question: At Frank's Fruit Market, 3 bananas cost as much as 2 apples, and 6 apples cost as much as 4 oranges. How many oranges cost as much as 18 bananas?
+""""""
+
+# bananas = 3
+# apples = 2
+# oranges = 4
+
+# bananas = 18
+# apples = 12
+# oranges = 8
+
+# oranges = 18 * 4 / 3
+# print(oranges)
+
+""""""
+write a program that answers
+
+""""""
+write a program that answers the following question: The 5 a.m. temperatures for seven consecutive days were -7 degrees, -4 degrees, -4 degrees, -5 degrees, 1 degree, 3 degrees and 2 degrees Celsius. What is the mean 5 a.m. temperature for the week in degrees Celsius?
+""""""
+
+temps = [-7, -4, -4, -5, 1, 3, 2]
+
+def mean(temps):
+    total = 0
+    for temp in temps:
+        total += temp
+    return total / len(temps)
+
+print(mean(temps))
+
+""""""
+write a program that answers the following question: What is 5/6 of 30?
+""""""
+
+print(5/6*30)
+
+""""""
+write a program that answers the following question: How many four-digit positive integers are there with thousands digit 2?
+""""""
+","
+count = 0
+for i in range(2000, 3000):
+    if str(i)[0] == '2':
+        count += 1
+print(count)
+
+""""""
+write a program that answers the following question: How many four-digit positive integers are there with thousands digit 2?
+""""""
+
+count = 0
+for i in range(2000, 3000):
+    if str(i)[0] == '2':
+        count += 1
+print(count)
+
+""""""
+write a program that answers the following question: How many four-digit positive integers are there with thousands digit 2?
+""""""
+
+count = 0
+for i in range(2000, 3000):
+    if str(i)[0] == '2':
+        count += 1
+print(count)
+
+""""""
+write a program that answers the following question: How many four-digit positive integers are there with thousands digit 2?
+""""""
+
+count = 0
+for i in range(2000, 3000):
+    if str(i)[0] == '2':
+        count += 1
+print(count)
+
+""""""
+write a program that answers the following question: How many four-",,"Q: What is the sum of the prime numbers between 10 and 20?
+A: 60
+
+Q: How many four-digit positive integers are there with thousands digit 2?
+A: Let's think step by step."," 
+There are 9999 possible four-digit integers. 
+The number 2000 is not possible, because the thousands digit must be 2. 
+The number 2999 is possible, because the thousands digit is 2 and the units digit is 9. 
+Therefore, there are 9999 - 2000 + 1 = 7999 possible four-digit integers with thousands digit 2.",
 6,"The 5 a.m. temperatures for seven consecutive days were -7 degrees, -4 degrees, -4 degrees, -5 degrees, 1 degree, 3 degrees and 2 degrees Celsius. What is the mean 5 a.m. temperature for the week in degrees Celsius?",-2,"""""""
 write a program that answers the following question: The 5 a.m. temperatures for seven consecutive days were -7 degrees, -4 degrees, -4 degrees, -5 degrees, 1 degree, 3 degrees and 2 degrees Celsius. What is the mean 5 a.m. temperature for the week in degrees Celsius?
 """"""
@@ -357,7 +784,7 @@ Now that we have the sum of all the temperatures, we need to divide it by the nu
 
 -14 / 7 = -2 
 
-This gives us the mean, or average, temperature.",,"[14, 1, 10, 13, 4, 7, 2, 11, 5, 15, 3, 12, 9, 8]"
+This gives us the mean, or average, temperature.",,"[14, 1, 10, 13, 4, 7, 2, 11, 5, 15, 3, 12, 9, 8]",,,,,,
 7,What is the value of sqrt(36*sqrt(16))?,12,"""""""
 write a program that answers the following question: What is the value of sqrt(36*sqrt(16))?
 """"""
@@ -387,7 +814,7 @@ The value of sqrt(36) is 6.
 
 The value of sqrt(sqrt(16)) is 2. 
 
-Therefore, the value of sqrt(36*sqrt(16)) is 6*2, or 12.",,"[12, 10, 5, 2, 8, 9, 4, 14, 3, 1, 6, 15, 11, 13]"
+Therefore, the value of sqrt(36*sqrt(16)) is 6*2, or 12.",,"[12, 10, 5, 2, 8, 9, 4, 14, 3, 1, 6, 15, 11, 13]",,,,,,
 8,Calculate 8 divided by 1/8.,64,"""""""
 write a program that answers the following question: Calculate 8 divided by 1/8.
 """"""
@@ -421,7 +848,17 @@ A: Let's think step by step.","
 
 16 added to 16 is the same as 32. 
 
-Therefore, 8 divided by 1/8 is 32.",,"[7, 12, 9, 4, 10, 5, 3, 2, 14, 15, 1, 6, 13, 11]"
+Therefore, 8 divided by 1/8 is 32.",,"[7, 12, 9, 4, 10, 5, 3, 2, 14, 15, 1, 6, 13, 11]",,,,"Q: What is the value of sqrt(36*sqrt(16))?
+A: 12
+
+Q: Calculate 8 divided by 1/8.
+A: Let's think step by step."," 
+
+8 divided by 1/8 can be rewritten as 8 multiplied by 8/1. 
+8 multiplied by 8/1 can be rewritten as 8 multiplied by 8 multiplied by 1/1. 
+8 multiplied by 8 multiplied by 1/1 can be rewritten as 64. 
+
+Therefore, 8 divided by 1/8 equals 64.",
 9,What is 5/6 of 30?,25,"""""""
 write a program that answers the following question: What is 5/6 of 30?
 """"""
@@ -478,7 +915,18 @@ Therefore, 5/6 of 30 is equal to 10/12 of 30.
 
 We can simplify this fraction by multiplying the numerator and denominator by 2.5. 
 
-This gives us the answer: 25/30.",,"[7, 10, 12, 8, 3, 5, 14, 6, 4, 2, 15, 13, 1, 11]"
+This gives us the answer: 25/30.",,"[7, 10, 12, 8, 3, 5, 14, 6, 4, 2, 15, 13, 1, 11]",,,,"Q: What is the value of sqrt(36*sqrt(16))?
+A: 12
+
+Q: What is 5/6 of 30?
+A: Let's think step by step."," 
+
+5/6 of 30 is the same as 5/6*30. 
+5/6*30 is the same as 5*30/6. 
+5*30/6 is the same as 150/6. 
+150/6 is the same as 25. 
+
+Therefore, 5/6 of 30 is 25.",
 10,What is the sum of the prime numbers between 10 and 20?,60,"""""""
 write a program that answers the following question: What is the sum of the prime numbers between 10 and 20?
 """"""
@@ -527,4 +975,142 @@ Here's what the above code is doing:
 '''","
 
 There are six prime numbers between 10 and 20: 11, 13, 17, 19, 23, 29. The sum of these numbers is 116.",,"Q: What is the sum of the prime numbers between 10 and 20?
-A: Let's think step by step."," The first prime number is 2, the second is 3, the third is 5, the fourth is 7, the fifth is 11, the sixth is 13, the seventh is 17, and the eighth is 19. So, 2 + 3 + 5 + 7 + 11 + 13 + 17 + 19 = 77.",,"[5, 2, 12, 7, 4, 3, 14, 9, 13, 1, 6, 11, 15, 8]"
+A: Let's think step by step."," The first prime number is 2, the second is 3, the third is 5, the fourth is 7, the fifth is 11, the sixth is 13, the seventh is 17, and the eighth is 19. So, 2 + 3 + 5 + 7 + 11 + 13 + 17 + 19 = 77.",,"[5, 2, 12, 7, 4, 3, 14, 9, 13, 1, 6, 11, 15, 8]","""""""
+write a program that answers the following question: What is the value of sqrt(36*sqrt(16))?
+""""""
+
+import math
+
+print(math.sqrt(36*math.sqrt(16)))
+
+""""""
+write a program that answers the following question: Find the smallest positive a such that a is a multiple of 4 and a is a multiple of 14.
+""""""
+
+def smallest_multiple(x,y):
+    """"""
+    Find the smallest positive a such that a is a multiple of x and a is a multiple of y.
+    """"""
+    a = 1
+    while True:
+        if a % x == 0 and a % y == 0:
+            return a
+        a += 1
+
+print(smallest_multiple(4,14))
+
+""""""
+write a program that answers the following question: What is 5/6 of 30?
+""""""
+
+print(5/6*30)
+
+""""""
+write a program that answers the following question: At Frank's Fruit Market, 3 bananas cost as much as 2 apples, and 6 apples cost as much as 4 oranges. How many oranges cost as much as 18 bananas?
+""""""
+
+# bananas = 3
+# apples = 2
+# oranges = 4
+
+# bananas = 18
+# apples = 12
+# oranges = 8
+
+# oranges = 18 * 4 / 3
+# print(oranges)
+
+""""""
+write a program that answers the following question: At Frank's Fruit Market, 3 bananas cost as much as 2 apples, and 6 apples cost as much as 4 oranges. How many oranges cost as much as 18 bananas?
+""""""
+
+# bananas = 3
+# apples = 2
+# oranges = 4
+
+# bananas = 18
+# apples = 12
+# oranges = 8
+
+# oranges = 18 * 4 / 3
+# print(oranges)
+
+""""""
+write a program that answers the following question: At Frank's Fruit Market, 3 bananas cost as much as 2 apples, and 6 apples cost as much as 4 oranges. How many oranges cost as much as 18 bananas?
+""""""
+
+# bananas = 3
+# apples = 2
+# oranges = 4
+
+# bananas = 18
+# apples = 12
+# oranges = 8
+
+# oranges = 18 * 4 / 3
+# print(oranges)
+
+""""""
+write a program that answers
+
+""""""
+write a program that answers the following question: The 5 a.m. temperatures for seven consecutive days were -7 degrees, -4 degrees, -4 degrees, -5 degrees, 1 degree, 3 degrees and 2 degrees Celsius. What is the mean 5 a.m. temperature for the week in degrees Celsius?
+""""""
+
+temps = [-7, -4, -4, -5, 1, 3, 2]
+
+def mean(temps):
+    total = 0
+    for temp in temps:
+        total += temp
+    return total / len(temps)
+
+print(mean(temps))
+
+""""""
+write a program that answers the following question: What is the sum of the prime numbers between 10 and 20?
+""""""
+","
+def is_prime(n):
+    if n == 1:
+        return False
+    for i in range(2,n):
+        if n % i == 0:
+            return False
+    return True
+
+def sum_primes(x,y):
+    total = 0
+    for i in range(x,y+1):
+        if is_prime(i):
+            total += i
+    return total
+
+print(sum_primes(10,20))
+
+""""""
+write a program that answers the following question: What is the sum of the first 100 odd numbers?
+""""""
+
+def sum_odds(n):
+    total = 0
+    for i in range(1,n+1):
+        if i % 2 == 1:
+            total += i
+    return total
+
+print(sum_odds(100))
+
+""""""
+write a program that answers the following question: What is the sum of the first 100 odd numbers?
+""""""
+
+def sum_odds(n):
+    total = 0
+    for i in range(1,n+1):
+        if i % 2 == 1:
+",,"Q: How many four-digit positive integers are there with thousands digit 2?
+A: 1000
+
+Q: What is the sum of the prime numbers between 10 and 20?
+A: Let's think step by step."," The first prime number is 2, the second is 3, the third is 5, the fourth is 7, the fifth is 11, the sixth is 13, the seventh is 17, and the eighth is 19. So, the sum of the prime numbers between 10 and 20 is 2 + 3 + 5 + 7 + 11 + 13 + 17 + 19 = 76.",

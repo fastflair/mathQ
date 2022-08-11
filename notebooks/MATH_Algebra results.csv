@@ -1,4 +1,4 @@
-Question,Original Question,Actual Solution,Codex Input,Codex Output,Zero-Shot Evaluation,Codex Explanation Input,Codex Explanation,GPT-3 Output,GPT-3 Evaluation,GPT-3 CoT Input,GPT-3 CoT Output,GPT-3 CoT Evaluation,Most Similar Questions,Few-Shot Input,Few-Shot Output,Few-Shot Evaluation
+Question,Original Question,Actual Solution,Codex Input,Codex Output,Zero-Shot Evaluation,Codex Explanation Input,Codex Explanation,GPT-3 Output,GPT-3 Evaluation,GPT-3 CoT Input,GPT-3 CoT Output,GPT-3 CoT Evaluation,Most Similar Questions,Few-Shot Input,Few-Shot Output,Few-Shot Evaluation,GPT-3 CoT Few-Shot Input,GPT-3 CoT Few-Shot Output,GPT-3 CoT Few-Show Evaluation
 1,What is the greatest integer less than -15/4?,-4,"""""""
 write a program that answers the following question: What is the greatest integer less than -15/4?
 """"""
@@ -23,7 +23,18 @@ A: Let's think step by step.","
 
 The greatest integer less than -3.75 is -4. 
 
-Therefore, the greatest integer less than -15/4 is -4.",,"[6, 4, 9, 12, 15, 7, 10, 5, 11, 3, 13, 14, 8, 2]",n/a,n/a,
+Therefore, the greatest integer less than -15/4 is -4.",,"[6, 4, 9, 12, 15, 7, 10, 5, 11, 3, 13, 14, 8, 2]",,,,"Q: What is the sum of the even, positive integers less than 62?
+A: 930
+
+Q: What is the greatest integer less than -15/4?
+A: Let's think step by step."," 
+
+-15/4 is less than -3.75
+-3.75 is less than -3
+-3 is less than -2.5
+-2.5 is less than -2
+
+So, the greatest integer less than -15/4 is -2.",
 2,Evaluate log base sqrt(6) of 216*sqrt(6).,7,"""""""
 write a program that answers the following question: Evaluate log base sqrt(6) of 216*sqrt(6).
 """"""
@@ -231,7 +242,7 @@ import math
 print(math.log(216 * math.sqrt(6), math.sqrt(6)))
 
 """"""
-write a program that answers the following question: Evaluate log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2",
+write a program that answers the following question: Evaluate log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2 of (log base 2",,,,
 3,Evaluate x^3 + x^2 + x + 1 when x = 3.,40,"""""""
 write a program that answers the following question: Evaluate x^3 + x^2 + x + 1 when x = 3.
 """"""
@@ -267,7 +278,7 @@ Lastly, we need to calculate 1. We know that 1 = 1.
 
 Now, we can put everything together. We have:
 
-x^3 + x^2 + x + 1 = 27 + 9 + 3 + 1 = 40.",,"[14, 15, 10, 9, 7, 5, 2, 8, 13, 4, 11, 1, 6, 12]",n/a,n/a,
+x^3 + x^2 + x + 1 = 27 + 9 + 3 + 1 = 40.",,"[14, 15, 10, 9, 7, 5, 2, 8, 13, 4, 11, 1, 6, 12]",,,,,,
 4,"What is the distance between (-2,4) and (3,-8)?",13,"""""""
 write a program that answers the following question: What is the distance between (-2,4) and (3,-8)?
 """"""
@@ -380,7 +391,17 @@ distance = math.sqrt((x2 - x1)**2 + (y2 - y1)**2)
 print(distance)
 
 """"""
-write a program that answers the following question: What is the distance between (0,0) and (3,",
+write a program that answers the following question: What is the distance between (0,0) and (3,",,"Q: Find the distance between the points (0,4) and (3,0).
+A: 5
+
+Q: What is the distance between (-2,4) and (3,-8)?
+A: Let's think step by step."," 
+
+First, we need to find the difference in the x-coordinates. This is 3-(-2), which is 5. 
+
+Next, we need to find the difference in the y-coordinates. This is -8-4, which is -12. 
+
+Now we need to take the square root of the sum of the squares of the differences in the x- and y-coordinates. This is the square root of 5^2 + (-12)^2, which is the square root of 25 + 144, which is the square root of 169, which is 13.",
 5,"Find the distance between the points (0,4) and (3,0).",5,"""""""
 write a program that answers the following question: Find the distance between the points (0,4) and (3,0).
 """"""
@@ -424,7 +445,23 @@ First, we need to find the difference between the x-coordinates, which is 3 - 0 
 Then, we need to find the difference between the y-coordinates, which is 4 - 0 = 4. 
 Now we need to take the square root of 3² + 4² = 9 + 16 = 25. 
 The square root of 25 is 5. 
-Therefore, the distance between the points (0,4) and (3,0) is 5.",,"[4, 8, 3, 9, 10, 15, 7, 13, 12, 1, 14, 6, 2, 11]",n/a,n/a,
+Therefore, the distance between the points (0,4) and (3,0) is 5.",,"[4, 8, 3, 9, 10, 15, 7, 13, 12, 1, 14, 6, 2, 11]",,,,"Q: What is the distance between (-2,4) and (3,-8)?
+A: 13
+
+Q: Find the distance between the points (0,4) and (3,0).
+A: Let's think step by step."," We know that the distance between two points is given by the formula:
+
+distance = sqrt((x2-x1)^2 + (y2-y1)^2)
+
+In this case, we have:
+
+distance = sqrt((3-0)^2 + (0-4)^2)
+
+distance = sqrt(9 + 16)
+
+distance = sqrt(25)
+
+distance = 5",
 6,"What is the sum of the even, positive integers less than 62?",930,"""""""
 write a program that answers the following question: What is the sum of the even, positive integers less than 62?
 """"""
@@ -582,7 +619,17 @@ sum = 0
 
 for i in range(0, 62, 2):
     sum += i
-",
+",,"Q: What is the greatest integer less than -15/4?
+A: -4
+
+Q: What is the sum of the even, positive integers less than 62?
+A: Let's think step by step."," 
+
+The even, positive integers less than 62 are: 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60.
+
+The sum of these numbers is: 
+
+2 + 4 + 6 + 8 + 10 + 12 + 14 + 16 + 18 + 20 + 22 + 24 + 26 + 28 + 30 + 32 + 34 + 36 + 38 + 40 + 42 + 44 + 46 + 48 + 50 + 52 + 54 + 56 + 58 + 60 = 780.",
 7,"If f(1)=5, f(2)=8 and f(x)=ax+bx+2, what is the value of f(3)?",11,"""""""
 write a program that answers the following question: If f(1)=5, f(2)=8 and f(x)=ax+bx+2, what is the value of f(3)?
 """"""
@@ -736,7 +783,22 @@ write a program that answers the following question: If f(x)=x^2+2x+1, what is t
 x = 3
 
 print(x**2 + 2*x + 1)
-",
+",,"Q: If f(x)=(5x+1)/(x-1), find the value of f(7).
+A: 6
+
+Q: If f(1)=5, f(2)=8 and f(x)=ax+bx+2, what is the value of f(3)?
+A: Let's think step by step."," 
+
+We know that f(1)=5, so we can say that 5=a+b+2. 
+We also know that f(2)=8, so we can say that 8=4a+2b+2. 
+Now we have two equations with two unknowns, so we can solve for a and b. 
+
+From equation 1, we know that a+b=3. 
+From equation 2, we know that 4a+2b=6. 
+
+We can solve this system of equations using substitution. We know that a+b=3, so we can substitute 3 for a+b in equation 2. This gives us 4a+2b=6. We can then solve for a by subtracting 2b from both sides. This gives us 4a=6-2b. We can then divide both sides by 4 to solve for a. This gives us a=(6-2b)/4. We can then substitute this value for a in equation 1. This gives us 3=(6-2b)/4+b. We can then solve for b by subtracting (6-2b)/4 from both sides. This gives us b=3-(6-2b)/4. We can then simplify this equation to get b=12/7. 
+
+We now know that a=(6-2b)/4 and b=12/7. We can substitute these values for a and b in f(x)=ax+bx+2 to get f(x)=((6-2b)/4)x+(12/7)x+2. We can then substitute x=3 into this equation to get f(3)=((6-2(12/7))/4)*3+(12/7)*3+2. This simplifies to f(3)=6.",
 8,What is the x-intercept of the line perpendicular to 3x-2y = 6 with y-intercept is 2.,3,"""""""
 write a program that answers the following question: What is the x-intercept of the line perpendicular to 3x-2y = 6 with y-intercept is 2.
 """"""
@@ -900,7 +962,11 @@ slope = -2 / 3
 print(slope)
 
 """"""
-write a program that answers the following question: What is the",
+write a program that answers the following question: What is the",,"Q: When simplified, what is the value of 3^(1/2) * 3^(1/2) + 12 / 3 * 2 - 4^(3/2)?
+A: 3
+
+Q: What is the x-intercept of the line perpendicular to 3x-2y = 6 with y-intercept is 2.
+A: Let's think step by step."," We know that the slope of the line perpendicular to 3x-2y = 6 is 2/3. We also know that the y-intercept of this line is 2. So, we can write the equation of this line as y = (2/3)x + 2. Now, we need to find the x-intercept of this line. To do this, we can set y = 0 in the equation and solve for x. This gives us x = -2. So, the x-intercept of the line perpendicular to 3x-2y = 6 with y-intercept 2 is -2.",
 9,"When simplified, what is the value of 3^(1/2) * 3^(1/2) + 12 / 3 * 2 - 4^(3/2)?",3,"""""""
 write a program that answers the following question: When simplified, what is the value of 3^(1/2) * 3^(1/2) + 12 / 3 * 2 - 4^(3/2)?
 """"""
@@ -925,7 +991,14 @@ The value of 3^(1/2) * 3^(1/2) + 12 / 3 * 2 - 4^(3/2) is 9.",,"Q: When simplifie
 A: Let's think step by step."," 
 3^(1/2) * 3^(1/2) is 9. 
 9 + 12 / 3 * 2 is 9 + 8 = 17. 
-17 - 4^(3/2) is 17 - 8 = 9.",,"[7, 15, 12, 13, 6, 4, 8, 3, 1, 10, 5, 14, 2, 11]",n/a,n/a,
+17 - 4^(3/2) is 17 - 8 = 9.",,"[7, 15, 12, 13, 6, 4, 8, 3, 1, 10, 5, 14, 2, 11]",,,,"Q: If f(1)=5, f(2)=8 and f(x)=ax+bx+2, what is the value of f(3)?
+A: 11
+
+Q: When simplified, what is the value of 3^(1/2) * 3^(1/2) + 12 / 3 * 2 - 4^(3/2)?
+A: Let's think step by step."," 
+3^(1/2) * 3^(1/2) is 9. 
+9 + 12 / 3 * 2 is 9 + 8 = 17. 
+17 - 4^(3/2) is 17 - 8 = 9.",
 10,"If f(x)=(5x+1)/(x-1), find the value of f(7).",6,"""""""
 write a program that answers the following question: If f(x)=(5x+1)/(x-1), find the value of f(7).
 """"""
@@ -1034,4 +1107,13 @@ x = 3
 print(x**2 + 2*x + 1)
 
 """"""
-write a program that answers the following question",
+write a program that answers the following question",,"Q: If f(1)=5, f(2)=8 and f(x)=ax+bx+2, what is the value of f(3)?
+A: 11
+
+Q: If f(x)=(5x+1)/(x-1), find the value of f(7).
+A: Let's think step by step."," 
+
+f(7) = (5(7)+1)/(7-1)
+f(7) = (35+1)/6
+f(7) = 36/6
+f(7) = 6",
